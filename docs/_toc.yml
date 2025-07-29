@@ -7,6 +7,10 @@ parts:
 - caption: Labs and Exercises
   chapters:
   - file: PseudoTemplateLab
+  - file: BeginnerSegmentation/CPbeginner_Segmentation.md
+  - file: AdvancedSegmentation/BBBC022_AnalysisExercise.md
+  - file: Translocation/Translocation.md
+  - file: BeginnerSegmentation/BeginnerSegmentationPlugins.md
 - caption:  Additional Resources
   chapters:
   - file: links
