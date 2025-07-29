@@ -1,0 +1,904 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Interfacing CellProfiler with other software tools via files and plugins &#8212; QI 2025 Analysis Lab Manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'BeginnerSegmentation/BeginnerSegmentationPlugins';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Helpful links for now and the future" href="../links.html" />
+    <link rel="prev" title="Translocation Tutorial" href="../Translocation/Translocation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">QI 2025 Analysis Lab Manual</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to BAB3
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and Exercises</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PseudoTemplateLab.html">Lab Title</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CPbeginner_Segmentation.html">Beginner segmentation and organelle analysis:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AdvancedSegmentation/BBBC022_AnalysisExercise.html">Advanced segmentation and organelle analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Translocation/Translocation.html">Translocation Tutorial</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Interfacing CellProfiler with other software tools via files and plugins</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../links.html">Helpful links for now and the future</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/QI-CSHL/QuantLabs2025" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/QI-CSHL/QuantLabs2025/edit/main/qi_2025_analysis_lab_manual/BeginnerSegmentation/BeginnerSegmentationPlugins.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/QI-CSHL/QuantLabs2025/issues/new?title=Issue%20on%20page%20%2FBeginnerSegmentation/BeginnerSegmentationPlugins.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/BeginnerSegmentation/BeginnerSegmentationPlugins.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Interfacing CellProfiler with other software tools via files and plugins</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-information"><strong>Background information</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embo-course-specific-information">EMBO Course specific information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-background-information">General background information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-this-exercise">What is this exercise?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plugins">Plugins</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-desktop-skip-at">Docker Desktop (Skip at    )</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-importing-masks-from-another-segmentation-tool"><strong>Exercise 1: Importing masks from another segmentation tool</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#only-if-you-are-curious-how-did-we-make-these-label-masks">Only if you are curious - how did we make these label masks?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-label-masks-into-cellprofiler">Loading the label masks into CellProfiler</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-engineer-how-this-worked">Reverse engineer how this worked</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-to-the-bonus-add-the-provided-nuclear-segmentations-as-well">Bonus-to-the-Bonus - add the provided nuclear segmentations as well</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-running-ilastik-locally-or-from-a-docker-container"><strong>Exercise 2: Running ilastik locally or from a Docker container</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#only-if-you-are-curious-how-did-we-train-the-classifier">Only if you are curious - how did we train the classifier?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grab-the-runilastik-plugin-skip-at">Grab the Runilastik plugin (Skip at    )</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-classifier-and-evaluate-it">Load the classifier and evaluate it</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-to-the-bonus-train-your-own-ilastik-model">Bonus-to-the-Bonus - train your own ilastik model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-running-cellpose-from-a-docker-container"><strong>Exercise 3: Running Cellpose from a Docker container</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-docker-desktop-skip-at">Start Docker Desktop (Skip at    )</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grab-the-runcellpose-plugin-skip-at">Grab the RunCellpose plugin (Skip at    )</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-pipeline-and-evaluate-segmentation">Load the pipeline and evaluate segmentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-to-the-bonus-1-test-on-a-more-varied-data-set">Bonus-to-the-Bonus 1 - test on a more varied data set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-to-the-bonus-2-improve-cellpose-segmentation">Bonus-to-the-Bonus 2 - improve Cellpose segmentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-to-the-bonus-3-test-your-classical-segmentation-skills">Bonus-to-the-Bonus 3 - test your classical segmentation skills</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-next-want-to-know-more-about-cellprofliler-plugins-and-modules">What next? Want to know more about CellProfliler plugins and modules?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="interfacing-cellprofiler-with-other-software-tools-via-files-and-plugins">
+<h1>Interfacing CellProfiler with other software tools via files and plugins<a class="headerlink" href="#interfacing-cellprofiler-with-other-software-tools-via-files-and-plugins" title="Link to this heading">#</a></h1>
+<p>Beth Cimini
+<br>
+Broad Institute of MIT and Harvard, Cambridge, MA.</p>
+<section id="background-information">
+<h2><strong>Background information</strong><a class="headerlink" href="#background-information" title="Link to this heading">#</a></h2>
+<section id="embo-course-specific-information">
+<h3>EMBO Course specific information<a class="headerlink" href="#embo-course-specific-information" title="Link to this heading">#</a></h3>
+<p>In this course, you have access to a virtual machine which comes with all plugins pre-installed and the ilastk path pre-set for RunIlastik - so you can for now skip every instruction around installations and about Docker. But if you want to do these exercises at home on your own computer, you’ll need these instructions, so we’ve left them in. We’ve left a note “(Skip at    <a class="reference internal" href="../_images/embl_logo.png"><img alt="../_images/embl_logo.png" src="../_images/embl_logo.png" style="width: 40px;" /></a>)” next to the instructions you can ignore right now.</p>
+</section>
+<section id="general-background-information">
+<h3>General background information<a class="headerlink" href="#general-background-information" title="Link to this heading">#</a></h3>
+<p>This exercise is meant to extend and build upon the Beginner Segmentation exercise available from <a class="reference internal" href="#tutorials.cellprofiler.org"><span class="xref myst">the CellProfiler tutorials page</span></a> . Please consult that tutorial for general information on how to configure CellProfiler as well as information about the images. It will be generally assumed you understand the modules covered in that tutorial, including input, object creation, overlays, and saving.</p>
+</section>
+<section id="what-is-this-exercise">
+<h3>What is this exercise?<a class="headerlink" href="#what-is-this-exercise" title="Link to this heading">#</a></h3>
+<p>There are a number of great software tools available to life scientists wishing to analyze images these days - <a class="reference internal" href="#forum.image.sc"><span class="xref myst">forum.image.sc</span></a> alone has more than 60 open-source tools! Sometimes, though, it helps to have a multi-tool workflow - do one step in Tool A, and then another in Tool B (and then possibly C, D, etc, but hopefully not!). In this tutorial, you’ll try 3 different ways of accessing work you did in other tools.</p>
+<ol class="arabic simple">
+<li><p>Loading masks created by other segmentation tools (in this case, <a class="reference external" href="https://www.cellpose.org/">Cellpose</a>, but the same strategy works for many tools which use this format).</p></li>
+<li><p>Accessing <a class="reference external" href="https://www.ilastik.org/">ilastik</a> to use a trained pixel classification model via CellProfiler’s plugins system.</p></li>
+<li><p>Running Cellpose in CellProfiler via CellProfiler’s plugins system and a Docker container.</p></li>
+</ol>
+</section>
+<section id="plugins">
+<h3>Plugins<a class="headerlink" href="#plugins" title="Link to this heading">#</a></h3>
+<p>While CellProfiler doesn’t have as many plugins as, say, Fiji, it does have many for you to try!
+You can visit <a class="reference external" href="http://plugins.cellprofiler.org">plugins.cellprofiler.org</a> to learn more. To quote from that site:</p>
+<blockquote>
+<div><p>Plugins advance the capabilities of CellProfiler but are not officially supported in the same way as modules. A module may be in CellProfiler-plugins instead of CellProfiler itself because:</p>
+<ul class="simple">
+<li><p>it is under active development</p></li>
+<li><p>it has a niche audience</p></li>
+<li><p>it is not documented to CellProfiler’s standards</p></li>
+<li><p>it only works with certain version of CellProfiler</p></li>
+<li><p>it requires extra libraries or other dependencies we are unable or unwilling to require for CellProfiler</p></li>
+<li><p>it has been contributed by a community member</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>(Skip at    <a class="reference internal" href="../_images/embl_logo.png"><img alt="../_images/embl_logo.png" src="../_images/embl_logo.png" style="width: 40px;" /></a>)</p>
+<p>While that documentation has instructions for <a class="reference external" href="https://plugins.cellprofiler.org/using_plugins.html#installing-plugins-without-dependencies">installing plugins</a>, in step 2 it suggests downloading all of the CellProfiler plugins; this isn’t a bad thing to do, but you can download individual plugins from GitHub with the website button below as well or instead.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/GitHubDownloadButton.png"><img alt="../_images/GitHubDownloadButton.png" src="../_images/GitHubDownloadButton.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">GitHub’s “Download Raw Files” button</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>(Skip at    <a class="reference internal" href="../_images/embl_logo.png"><img alt="../_images/embl_logo.png" src="../_images/embl_logo.png" style="width: 40px;" /></a>)</p>
+<p>We strongly recommend making a dedicated folder to store your CellProfiler plugins, as loading can be slow if there are a lot of other miscellaneous files around (such if they sit in the Downloads folder, for example).</p>
+</div>
+</section>
+<section id="docker-desktop-skip-at">
+<h3>Docker Desktop (Skip at    <a class="reference internal" href="../_images/embl_logo.png"><img alt="../_images/embl_logo.png" src="../_images/embl_logo.png" style="width: 40px;" /></a>)<a class="headerlink" href="#docker-desktop-skip-at" title="Link to this heading">#</a></h3>
+<p>In Exercise 3 (and for Windows users, optionally Excercise 2 as well), we want to access software that we either don’t want to install locally because it’s painful if you’re not pretty comfortable in Python (Cellpose) or that we CAN install locally but may not play nicely with other tools’ multiprocessing setup (ilastik).</p>
+<p>Computer scientists will often use software <strong>containers</strong> to ship tools or data that are hard to install - <a class="reference external" href="https://journals.sagepub.com/doi/10.1177/25152459211017853">here</a> is a good introduction and overview for non-computer scientists. You can think of containers as “a pre-configured operating system in a box”. Because they come to you pre-configured, installation of any software happens once-and-only-once (by the creator of the container, not by you), and should stay working for long after ie the latest Mac upgrade breaks a certain older software installation. Groups like <a class="reference external" href="https://biocontainers.pro/">biocontainers</a> have already containerized many of the tools you know and love. There are a number of types of software containers, but one of the most common is called a <strong>Docker</strong> container.</p>
+<p>Most life scientists aren’t aware of or don’t use containers, especially because typical usage involves accessing them via your terminal. But Docker doesn’t have to mean terminal! There are <a class="reference external" href="https://github.com/COBA-NIH/docker_gradio_demo">containers that spit out interactive websites for you to use</a>, and CellProfiler has plugins that are specifically set up to call other tools that live (and are executed) inside Docker containers.</p>
+<p>To do this, CellProfiler needs to have the infrastructure for Docker containers up and running, which you can give it by installing a free program called <a class="reference external" href="https://www.docker.com/products/docker-desktop/"><strong>Docker Desktop</strong></a>. You don’t need to make an account to use it, but you probably will need to reboot your computer after installation is complete. Then, whenever you want to use a Docker-calling plugin in CellProfiler, you simply must make sure that Docker Desktop is open and running, CellProfiler will take care of everything else!</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/DockerDesktop.png"><img alt="../_images/DockerDesktop.png" src="../_images/DockerDesktop.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">The Docker Desktop interface for Mac. Containers can be searched for in the top search bar!</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Anytime you’re installing a program that can run other programs, you must of course be careful. Dockers give you access to a huge variety of tools that might otherwise be hard to install (or install together), but exercise caution in only running containers you recognize or trust!</p>
+</div>
+</section>
+</section>
+<section id="exercise-1-importing-masks-from-another-segmentation-tool">
+<h2><strong>Exercise 1: Importing masks from another segmentation tool</strong><a class="headerlink" href="#exercise-1-importing-masks-from-another-segmentation-tool" title="Link to this heading">#</a></h2>
+<p>In this exercise, we will be loading in <em>label masks</em> (sometimes also called <em>label matrices</em>) made in Cellpose. Simply, a label mask is an image in which all the background pixels have a value of 0, all the pixels of object 1 have a value of 1, all the pixels of object 2 have a value of 2, etc. It is a commonly used format by many tools that do object segmentation (though unsuitable for applications where you have overlapping objects). Since many tools (including CellProfiler) can make these masks, CellProfiler has the ability to read them in and automatically detect them as objects.</p>
+<p>We’ve used Cellpose 2.2.2 to generate nuclear masks from the DNA images and cell masks from the ActinGolgi images.</p>
+<section id="only-if-you-are-curious-how-did-we-make-these-label-masks">
+<h3>Only if you are curious - how did we make these label masks?<a class="headerlink" href="#only-if-you-are-curious-how-did-we-make-these-label-masks" title="Link to this heading">#</a></h3>
+<p>Cellpose was installed in a conda environment according to the <a class="reference external" href="https://github.com/MouseLand/cellpose?tab=readme-ov-file#installation">official instructions</a> for installation with the GUI. The software was started in that conda environment using the command <code class="docutils literal notranslate"><span class="pre">cellpose</span></code>.</p>
+<p>Nuclear masks were made by dragging each DNA image into the GUI, selecting the ‘nuclei’ model with default settings, and then saving them individually as PNG using <em>Cmd+N</em> (Mac) <em>Ctl+N</em> (Windows). Since there were only 10 images and the hotkeys were available, this was not too time-consuming to do.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/CellposeGUI.png"><img alt="../_images/CellposeGUI.png" src="../_images/CellposeGUI.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Nuclei segmented in the Cellpose GUI</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Cell masks were made by navigating into the image folder and then running the command below; this requires some knowledge of the <a class="reference external" href="https://cellpose.readthedocs.io/en/latest/cli.html">Cellpose command line syntax</a> but is much easier for large numbers of images.</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">cellpose</span> <span class="pre">--dir</span> <span class="pre">.</span> <span class="pre">--img_filter</span> <span class="pre">Ch4</span> <span class="pre">--pretrained_model</span> <span class="pre">cyto2</span> <span class="pre">--diameter</span> <span class="pre">40</span> <span class="pre">--save_png</span> <span class="pre">--verbose</span></code></p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/CellposeCLI.png"><img alt="../_images/CellposeCLI.png" src="../_images/CellposeCLI.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 39 </span><span class="caption-text">Command line execution of Cellpose</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="loading-the-label-masks-into-cellprofiler">
+<h3>Loading the label masks into CellProfiler<a class="headerlink" href="#loading-the-label-masks-into-cellprofiler" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Open up a clean copy of CellProfiler (or run File -&gt; New Project) and drag <code class="docutils literal notranslate"><span class="pre">bonus_1_import_masks.cppipe</span></code> into the pipeline panel.</p></li>
+<li><p>Drag the <code class="docutils literal notranslate"><span class="pre">images_Illum-corrected</span></code> subfolder from the main Beginner Segmentation exercise and also the <code class="docutils literal notranslate"><span class="pre">cellpose_masks_cells</span></code> subfolder from this exercise. <em>Do not drag in the <code class="docutils literal notranslate"><span class="pre">cellpose_masks_nuclei</span></code> folder.</em></p></li>
+<li><p>Put CellProfiler into TestMode <a class="reference internal" href="BeginnerSegmentation/TutorialImages/startTestMode.png"><img alt="BeginnerSegmentation/TutorialImages/startTestMode.png" src="BeginnerSegmentation/TutorialImages/startTestMode.png" style="width: 120px;" /></a>, open the eye icon <a class="reference internal" href="../_images/EyeOpen.png"><img alt="../_images/EyeOpen.png" src="../_images/EyeOpen.png" style="width: 50px;" /></a> next to OverlayOutlines, and then hit <a class="reference internal" href="../_images/Step.png"><img alt="../_images/Step.png" src="../_images/Step.png" style="width: 120px;" /></a> 3 times to create a classical segmentation and compare it with the Cellpose-generated version. You can check the settings in the OverlayOutlines module to see which outline color corresponds to which segmentation in the output.</p></li>
+<li><p>Optionally, open the Workspace Viewer using <a class="reference internal" href="../_images/ViewWorkspace.png"><img alt="../_images/ViewWorkspace.png" src="../_images/ViewWorkspace.png" style="width: 120px;" /></a> to create easily on-the-fly customizable overlays.</p></li>
+<li><p>Optionally, open the Workspace Viewer using <a class="reference internal" href="../_images/ViewWorkspace.png"><img alt="../_images/ViewWorkspace.png" src="../_images/ViewWorkspace.png" style="width: 120px;" /></a> to create easily on-the-fly customizable overlays.</p></li>
+<li><p>Hit <a class="reference internal" href="../_images/NextImageSet.png"><img alt="../_images/NextImageSet.png" src="../_images/NextImageSet.png" style="width: 120px;" /></a> and repeat a couple of times to examine the segmentations on more images.</p></li>
+</ol>
+<div class="admonition-question-for-you admonition">
+<p class="admonition-title">Question for you</p>
+<p>Are there cases where you think classical segmentation typically performs better? Where Cellpose performs better?</p>
+</div>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../_images/WorkspaceViewerImportedMasks.png"><img alt="../_images/WorkspaceViewerImportedMasks.png" src="../_images/WorkspaceViewerImportedMasks.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 40 </span><span class="caption-text">Visualization of images and objects in the Workspace Viewer</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="reverse-engineer-how-this-worked">
+<h3>Reverse engineer how this worked<a class="headerlink" href="#reverse-engineer-how-this-worked" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Open the NamesAndTypes module.</p></li>
+<li><p>Scroll down in NamesAndTypes to find the entry that adds the masks - is there any setting you notice about it that is different than for the other images?</p></li>
+<li><p>Find the entry in NamesAndTypes that has 2 rules the image has to pass, not just one - do you understand why that is?</p></li>
+</ol>
+</section>
+<section id="bonus-to-the-bonus-add-the-provided-nuclear-segmentations-as-well">
+<h3>Bonus-to-the-Bonus - add the provided nuclear segmentations as well<a class="headerlink" href="#bonus-to-the-bonus-add-the-provided-nuclear-segmentations-as-well" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Drag and drop the <code class="docutils literal notranslate"><span class="pre">cellpose_masks_nuclei</span></code> folder in the Images module to add the nuclear masks to the image list.</p></li>
+<li><p>Go to the NamesAndTypes module and configure it so both kinds of masks can be loaded (hint: there’s a duplicate button you can use to make a second copy of a channel!)</p></li>
+<li><p>Go to the NamesAndTypes module and configure it so both kinds of masks can be loaded (hint: there’s a duplicate button you can use to make a second copy of a channel!)</p></li>
+</ol>
+<ul class="simple">
+<li><p>You’ll probably have to modify the existing settings for loading the cell masks by changing its rule or adding a second rule. Do you understand how/why?</p></li>
+</ul>
+</section>
+</section>
+<section id="exercise-2-running-ilastik-locally-or-from-a-docker-container">
+<h2><strong>Exercise 2: Running ilastik locally or from a Docker container</strong><a class="headerlink" href="#exercise-2-running-ilastik-locally-or-from-a-docker-container" title="Link to this heading">#</a></h2>
+<p>Classical segmentation requires the thing you care about in an image be bright and every single other pixel dark(er). If you have a good clean fluorescent signal for the thing you care about, great! If not, you may need to resort to some tricks.</p>
+<p>One such trick is to train a classifier on a pixel-by-pixel basis to say “here is what I think is the likelihood that this is a pixel you want to end up in your segmentation”; this classifier then ends up creating for each  pixel a <em>probability value</em> that corresponds to how likely it thinks it is you want to segment that pixel. If your classifier is good, that will give you an image where the pixels you care about are high-probability (bright) and everywhere else is low-probability (dark). That’s exactly what we want! Life scientists tend to call this <strong>“Pixel Classification”</strong>; computer scientists will sometimes refer to it as <strong>“Semantic Segmentation”</strong>.</p>
+<p>There are a few popular Fiji plugins for doing this, including Weka Trainable Segmentation and Labkit, and you should absolutely use them if they work better for you! We tend to use ilastik, because it makes it easy to automate creating a classifier from a very small number of images and then bulk-applying it to many others in “Batch Processing” mode. You can check out a tutorial we have written for running ilastik, and <em>then</em> CellProfiler at <a class="reference external" href="https://tutorials.cellprofiler.org/#pixel-based-classification">tutorials.cellprofiler.org</a> (look for Pixel-based Classification).</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../_images/IlastikBatchMode.png"><img alt="../_images/IlastikBatchMode.png" src="../_images/IlastikBatchMode.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 41 </span><span class="caption-text">ilastik’s Batch Processing mode</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Why do two steps though, when you can do one instead? In this tutorial we’ll take a pre-trained ilastik classifer and run it inside our CellProfiler pipeline, so we can find and measure objects all in one step.</p>
+<p>You will need either ilastik or Docker Desktop installed on your computer for this exercise. If ilastik, make sure it is CLOSED, if Docker Desktop, make sure it is OPEN. We recommend installing ilastik because it is a good and helpful tool, and will allow you to do this exercise’s bonus challenge.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you are on Windows, execute RunIlastik in Local mode (working on an installed copy of ilastik, rather than a copy inside a Docker file), this exercise will work in TestMode, but not will not run in analysis mode - we are working with the ilastik developers to determine why that is. This is fine for the purpose of this exercise; if you have a lot of your own data you want to run later, you can still use ilastik in a two step process, and/or use Dockerized ilastik.</p>
+</div>
+<section id="only-if-you-are-curious-how-did-we-train-the-classifier">
+<h3>Only if you are curious - how did we train the classifier?<a class="headerlink" href="#only-if-you-are-curious-how-did-we-train-the-classifier" title="Link to this heading">#</a></h3>
+<p>This classifer was made in ilastik 1.4.1b5 by training on 4 images (A14_site1, E18_site1, D16_site1, and C12_site1) in which we labeled just two classes: one class for nucleoli (yellow in the figure below), and one class for every other part of the image (blue in the imagebelow). One COULD have made more classes, but this, in practice, worked.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../_images/IlastikLiveUpdate.png"><img alt="../_images/IlastikLiveUpdate.png" src="../_images/IlastikLiveUpdate.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 42 </span><span class="caption-text">Screenshot of this ilastik classifer</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>When using ilastik for fluorescence microscopy, you will likely get the best performance if you <strong>keep your annotations extremely minimal</strong> - the classifier you’re going to use was trained by using 31 total pixels of annotation across the 4 images (13 pixels of annotation inside nucleoli, and 18 pixels outside of them); no image had more than 14 pixels annotated in total. We strongly suggest you make your classifiers one pixel at a time, doing point annotations! Resist the urge to draw squiggly lines all over the image! This feels counterintuitive but we promise it’s true.</p>
+</section>
+<section id="grab-the-runilastik-plugin-skip-at">
+<h3>Grab the Runilastik plugin (Skip at    <a class="reference internal" href="../_images/embl_logo.png"><img alt="../_images/embl_logo.png" src="../_images/embl_logo.png" style="width: 40px;" /></a>)<a class="headerlink" href="#grab-the-runilastik-plugin-skip-at" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Download <a class="reference external" href="https://github.com/CellProfiler/CellProfiler-plugins/blob/master/active_plugins/runilastik.py">the plugin</a> into a folder on your local computer. As stated above, we strongly suggest a folder that contains ONLY plugins.</p></li>
+<li><p>In CellProfiler’s File -&gt; Preferences menu (CellProfiler -&gt; Preferences in Mac), set the <code class="docutils literal notranslate"><span class="pre">CellProfiler</span> <span class="pre">plugins</span> <span class="pre">directory</span></code> to the folder containing the plugin.</p></li>
+<li><p>Close and reopen CellProfiler to load the plugin.</p></li>
+</ol>
+</section>
+<section id="load-the-classifier-and-evaluate-it">
+<h3>Load the classifier and evaluate it<a class="headerlink" href="#load-the-classifier-and-evaluate-it" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Drag <code class="docutils literal notranslate"><span class="pre">bonus_2_ilastik.cppipe</span></code> into the pipeline panel.</p></li>
+<li><p>Drag the <code class="docutils literal notranslate"><span class="pre">images_Illum-corrected</span></code> subfolder from the main exercise into the Images panel.</p></li>
+<li><p>Open the RunIlastik module, set the path to your project file (<code class="docutils literal notranslate"><span class="pre">NucleoliDetection.ilp</span></code>) and then also:</p></li>
+</ol>
+<ul class="simple">
+<li><p>ilastik-installed (recommended): set the path to your local installation of ilastik. (Already done for you at    <a class="reference internal" href="../_images/embl_logo.png"><img alt="../_images/embl_logo.png" src="../_images/embl_logo.png" style="width: 40px;" /></a>)</p></li>
+<li><p>Docker-installed: change the top setting from Local to Docker. (Skip at    <a class="reference internal" href="../_images/embl_logo.png"><img alt="../_images/embl_logo.png" src="../_images/embl_logo.png" style="width: 40px;" /></a>)</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Put CellProfiler into TestMode <a class="reference internal" href="BeginnerSegmentation/TutorialImages/startTestMode.png"><img alt="BeginnerSegmentation/TutorialImages/startTestMode.png" src="BeginnerSegmentation/TutorialImages/startTestMode.png" style="width: 120px;" /></a>, open the eye icons <a class="reference internal" href="../_images/EyeOpen.png"><img alt="../_images/EyeOpen.png" src="../_images/EyeOpen.png" style="width: 50px;" /></a> next to Runilastik and OverlayOutlines, and then hit <a class="reference internal" href="../_images/Run.png"><img alt="../_images/Run.png" src="../_images/Run.png" style="width: 120px;" /></a>. You can check the settings in the OverlayOutlines module to see which outline color corresponds to which segmentation in the output.</p></li>
+</ol>
+<ul class="simple">
+<li><p>You may wish to put a pause <a class="reference internal" href="../_images/Pause.png"><img alt="../_images/Pause.png" src="../_images/Pause.png" style="width: 50px;" /></a> next to SaveImages, or uncheck it <a class="reference internal" href="../_images/InactivatedModule.png"><img alt="../_images/InactivatedModule.png" src="../_images/InactivatedModule.png" style="width: 50px;" /></a>, to keep it from saving images, but that’s up to you.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>(Skip at    <a class="reference internal" href="../_images/embl_logo.png"><img alt="../_images/embl_logo.png" src="../_images/embl_logo.png" style="width: 40px;" /></a>)</p>
+<p>If using Docker, the very first time you execute the Runilastik module, it will need to download a ~5GB file, which may be slow depending on your internet connection. You only need to do this step once, however!</p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Evaluate your prediction in Runilastik across a few image sets - how well does it perform? Does it perform worse on images it wasn’t trained on?</p></li>
+</ol>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="BeginnerSegmentation/TutorialImages/RunIlastik.png"><img alt="BeginnerSegmentation/TutorialImages/RunIlastik.png" src="BeginnerSegmentation/TutorialImages/RunIlastik.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Screenshot of the Runilastik module</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="5">
+<li><p>Evaluate your segmentations across a few image sets using OverlayOutlines and/or the WorkspaceViewer - are there cases where you think the ilastik model-based segmentation performs better? The filtering-and-masking segmentation?</p></li>
+</ol>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="../_images/WorkspaceViewerilastik.png"><img alt="../_images/WorkspaceViewerilastik.png" src="../_images/WorkspaceViewerilastik.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 44 </span><span class="caption-text">Evaluating segmentations in the Workspace Viewer</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="bonus-to-the-bonus-train-your-own-ilastik-model">
+<h3>Bonus-to-the-Bonus - train your own ilastik model<a class="headerlink" href="#bonus-to-the-bonus-train-your-own-ilastik-model" title="Link to this heading">#</a></h3>
+<p>Based on your evaluations above, can you identify some places where additional training might help fix some issues in the ilastik model?</p>
+<ol class="arabic simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">NucleoliDetection.ilp</span></code> in ilastik.</p></li>
+<li><p>Navigate to the <code class="docutils literal notranslate"><span class="pre">Training</span></code> tab.</p></li>
+<li><p>Turn <code class="docutils literal notranslate"><span class="pre">LiveUpdate</span></code> on.</p></li>
+<li><p>Pick an image you think needed some help and add (a very small number of single-pixel) annotations. Did things get better or worse?</p></li>
+<li><p>Add some very large annotations (a long, squiggly line, for example) to one image, then switch images in order to prove to yourself large annotations can actually harm in some cases rather than help (if you want to save your classifier, go back and use the eraser tool to delete these!).</p></li>
+<li><p>If you think you’ve sufficiently improved the prediction, save this model and return to CellProfiler. Did it help in the cases where you thought it would?</p></li>
+</ol>
+</section>
+</section>
+<section id="exercise-3-running-cellpose-from-a-docker-container">
+<h2><strong>Exercise 3: Running Cellpose from a Docker container</strong><a class="headerlink" href="#exercise-3-running-cellpose-from-a-docker-container" title="Link to this heading">#</a></h2>
+<p>RunCellpose is by far our most popular plugin, simply because a) Cellpose is awesome! and b) <code class="docutils literal notranslate"><span class="pre">conda</span></code> installing software when you aren’t very computationally comfortable isn’t. You can use the plugin in either of two modes - using a local <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">python</span></code> installation that contains both CellProfiler and Cellpose, OR using Docker. The run time with Docker is substantially slower (about a minute more per image, in our testing), but if installation would take you a long time and be frustrating, in this sense you can “trade” your personal hands-on frustration time for time where CellProfiler is running on your computer (but you aren’t there). For many people, this is a good trade!</p>
+<section id="start-docker-desktop-skip-at">
+<h3>Start Docker Desktop (Skip at    <a class="reference internal" href="../_images/embl_logo.png"><img alt="../_images/embl_logo.png" src="../_images/embl_logo.png" style="width: 40px;" /></a>)<a class="headerlink" href="#start-docker-desktop-skip-at" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>If you have not already installed Docker Desktop from the link above, please do so! This may involve rebooting your computer.</p></li>
+<li><p>Start Docker Desktop.</p></li>
+<li><p>Optional but strongly recommended - once Docker Desktop opens, use the search functionality to search <code class="docutils literal notranslate"><span class="pre">Cellpose</span></code> and look for the <code class="docutils literal notranslate"><span class="pre">cellprofiler/runcellpose_with_pretrained</span></code> model and pull it. If for whatever reason this isn’t working, move on, but it will save you some time later.</p></li>
+</ol>
+</section>
+<section id="grab-the-runcellpose-plugin-skip-at">
+<h3>Grab the RunCellpose plugin (Skip at    <a class="reference internal" href="../_images/embl_logo.png"><img alt="../_images/embl_logo.png" src="../_images/embl_logo.png" style="width: 40px;" /></a>)<a class="headerlink" href="#grab-the-runcellpose-plugin-skip-at" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Download <a class="reference external" href="https://github.com/CellProfiler/CellProfiler-plugins/blob/11b46ee7f6eb78f97f784a731c5a1931b66c90d4/active_plugins/runcellpose.py">the plugin</a> into a folder on your local computer. As stated above, we strongly suggest a folder that contains ONLY plugins.</p></li>
+<li><p>In CellProfiler’s File -&gt; Preferences menu, set the <code class="docutils literal notranslate"><span class="pre">CellProfiler</span> <span class="pre">plugins</span> <span class="pre">directory</span></code> to the folder containing the plugin.</p></li>
+<li><p>Close and reopen CellProfiler to load the plugin.</p></li>
+</ol>
+</section>
+<section id="load-the-pipeline-and-evaluate-segmentation">
+<h3>Load the pipeline and evaluate segmentation<a class="headerlink" href="#load-the-pipeline-and-evaluate-segmentation" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Drag <code class="docutils literal notranslate"><span class="pre">bonus_3_cellpose.cppipe</span></code> into the pipeline panel.</p></li>
+<li><p>Drag the <code class="docutils literal notranslate"><span class="pre">images_Illum-corrected</span></code> subfolder from the main exercise into the Images module</p></li>
+<li><p>Put CellProfiler into TestMode <a class="reference internal" href="BeginnerSegmentation/TutorialImages/startTestMode.png"><img alt="BeginnerSegmentation/TutorialImages/startTestMode.png" src="BeginnerSegmentation/TutorialImages/startTestMode.png" style="width: 120px;" /></a>, open the eye icons <a class="reference internal" href="../_images/EyeOpen.png"><img alt="../_images/EyeOpen.png" src="../_images/EyeOpen.png" style="width: 50px;" /></a> next to RunCellpose and OverlayOutlines, and then hit <a class="reference internal" href="../_images/Run.png"><img alt="../_images/Run.png" src="../_images/Run.png" style="width: 120px;" /></a></p></li>
+</ol>
+<ul class="simple">
+<li><p>You may wish to put a pause next to SaveImages, or uncheck it, to keep it from saving images, but that’s up to you</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>(Skip at    <a class="reference internal" href="../_images/embl_logo.png"><img alt="../_images/embl_logo.png" src="../_images/embl_logo.png" style="width: 40px;" /></a>)</p>
+<p>If you didn’t already pull the container in the Docker Desktop section above, the very first time you hit the RunCellpose module, it will need to download a ~13GB file, which may be slow depending on your connection. You only need to do this step once however!</p>
+</div>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="../_images/RunCellpose.png"><img alt="../_images/RunCellpose.png" src="../_images/RunCellpose.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 45 </span><span class="caption-text">The output of the RunCellpose module - Will say “Python” rather than “Docker” at    <a class="reference internal" href="../_images/embl_logo.png"><img alt="../_images/embl_logo.png" src="../_images/embl_logo.png" style="width: 40px;" /></a>)</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>As before, using OverlayOutlines and/or the WorkspaceViewer, evaluate segmentation on a few images. Where is CellProfiler doing better, and where is Cellpose doing better?</p></li>
+<li><p>Use the <a class="reference internal" href="../_images/Info.png"><img alt="../_images/Info.png" src="../_images/Info.png" style="width: 35px;" /></a> button to learn more about the different parameters you can pass to Cellpose (we don’t offer all of them, but many!) - how does tweaking these affect your output? How about changing the model you’re using, and/or the image you’re segmenting?</p></li>
+</ol>
+</section>
+<section id="bonus-to-the-bonus-1-test-on-a-more-varied-data-set">
+<h3>Bonus-to-the-Bonus 1 - test on a more varied data set<a class="headerlink" href="#bonus-to-the-bonus-1-test-on-a-more-varied-data-set" title="Link to this heading">#</a></h3>
+<p>The data we gave you in this exercise was all very clean, and all from the negative control wells of this experiment. The <code class="docutils literal notranslate"><span class="pre">extra_bonus_more_images</span></code> folder contains images with a broader variety of phenotypes - try replacing the images in the <code class="docutils literal notranslate"><span class="pre">Images</span></code> module with this folder instead and see how well the two kinds of segmentation work in different conditions!</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="../_images/Fig2.png"><img alt="../_images/Fig2.png" src="../_images/Fig2.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 46 </span><span class="caption-text">A broader range of phenotypes can be harder to consistently account for in conducting segmentation.</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You’re encouraged to explore the performance in some random images on your own (you can do this from the <code class="docutils literal notranslate"><span class="pre">Test</span></code> menu with the <code class="docutils literal notranslate"><span class="pre">Random</span> <span class="pre">Image</span> <span class="pre">Set</span></code> option), but if you find yourself consistently ending up with images that look similar you can try examining images from the following list of wells- A08, A12, B12, B18, C7, D6, D19, D22, E3. You can pick these with <code class="docutils literal notranslate"><span class="pre">Test</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Choose</span> <span class="pre">Image</span> <span class="pre">Set</span></code></p>
+</div>
+</section>
+<section id="bonus-to-the-bonus-2-improve-cellpose-segmentation">
+<h3>Bonus-to-the-Bonus 2 - improve Cellpose segmentation<a class="headerlink" href="#bonus-to-the-bonus-2-improve-cellpose-segmentation" title="Link to this heading">#</a></h3>
+<p>Based on your evaluations above, can you identify some places where additional training might help fix some issues in the Cellpose model? Open Cellpose with some of the <code class="docutils literal notranslate"><span class="pre">Ch1</span></code> images and see if you can train a model that will perform better.</p>
+</section>
+<section id="bonus-to-the-bonus-3-test-your-classical-segmentation-skills">
+<h3>Bonus-to-the-Bonus 3 - test your classical segmentation skills<a class="headerlink" href="#bonus-to-the-bonus-3-test-your-classical-segmentation-skills" title="Link to this heading">#</a></h3>
+<p>The classical segmentation parameters provided here are based on expert tuning from a very experienced CellProfiler user - how close can you get? Add another IdentifyPrimaryObjects module to the pipeline, tune it yourself, and then look in the workspace viewer to see how it performs, especially in the more diverse image set from Bonus-to-the-Bonus 1. Compare your parameters to the expert ones - how do they differ? Do you understand why some of these settings may have been chosen?</p>
+</section>
+</section>
+<section id="what-next-want-to-know-more-about-cellprofliler-plugins-and-modules">
+<h2>What next? Want to know more about CellProfliler plugins and modules?<a class="headerlink" href="#what-next-want-to-know-more-about-cellprofliler-plugins-and-modules" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Read the <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/37690102/">CellProfiler-plugins paper</a></p></li>
+<li><p>Watch this <a class="reference external" href="https://www.youtube.com/watch?v=fgF_YueM1b8">video</a> to learn how to write a module</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./BeginnerSegmentation"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Translocation/Translocation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Translocation Tutorial</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../links.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Helpful links for now and the future</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-information"><strong>Background information</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embo-course-specific-information">EMBO Course specific information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-background-information">General background information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-this-exercise">What is this exercise?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plugins">Plugins</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-desktop-skip-at">Docker Desktop (Skip at    )</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-importing-masks-from-another-segmentation-tool"><strong>Exercise 1: Importing masks from another segmentation tool</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#only-if-you-are-curious-how-did-we-make-these-label-masks">Only if you are curious - how did we make these label masks?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-label-masks-into-cellprofiler">Loading the label masks into CellProfiler</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-engineer-how-this-worked">Reverse engineer how this worked</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-to-the-bonus-add-the-provided-nuclear-segmentations-as-well">Bonus-to-the-Bonus - add the provided nuclear segmentations as well</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-running-ilastik-locally-or-from-a-docker-container"><strong>Exercise 2: Running ilastik locally or from a Docker container</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#only-if-you-are-curious-how-did-we-train-the-classifier">Only if you are curious - how did we train the classifier?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grab-the-runilastik-plugin-skip-at">Grab the Runilastik plugin (Skip at    )</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-classifier-and-evaluate-it">Load the classifier and evaluate it</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-to-the-bonus-train-your-own-ilastik-model">Bonus-to-the-Bonus - train your own ilastik model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-running-cellpose-from-a-docker-container"><strong>Exercise 3: Running Cellpose from a Docker container</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-docker-desktop-skip-at">Start Docker Desktop (Skip at    )</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grab-the-runcellpose-plugin-skip-at">Grab the RunCellpose plugin (Skip at    )</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-pipeline-and-evaluate-segmentation">Load the pipeline and evaluate segmentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-to-the-bonus-1-test-on-a-more-varied-data-set">Bonus-to-the-Bonus 1 - test on a more varied data set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-to-the-bonus-2-improve-cellpose-segmentation">Bonus-to-the-Bonus 2 - improve Cellpose segmentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-to-the-bonus-3-test-your-classical-segmentation-skills">Bonus-to-the-Bonus 3 - test your classical segmentation skills</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-next-want-to-know-more-about-cellprofliler-plugins-and-modules">What next? Want to know more about CellProfliler plugins and modules?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By QI 2025
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

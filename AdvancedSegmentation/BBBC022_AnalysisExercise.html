@@ -1,0 +1,1100 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Advanced segmentation and organelle analysis &#8212; QI 2025 Analysis Lab Manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'AdvancedSegmentation/BBBC022_AnalysisExercise';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Translocation Tutorial" href="../Translocation/Translocation.html" />
+    <link rel="prev" title="Beginner segmentation and organelle analysis:" href="../BeginnerSegmentation/CPbeginner_Segmentation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">QI 2025 Analysis Lab Manual</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to BAB3
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and Exercises</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PseudoTemplateLab.html">Lab Title</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BeginnerSegmentation/CPbeginner_Segmentation.html">Beginner segmentation and organelle analysis:</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Advanced segmentation and organelle analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Translocation/Translocation.html">Translocation Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BeginnerSegmentation/BeginnerSegmentationPlugins.html">Interfacing CellProfiler with other software tools via files and plugins</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../links.html">Helpful links for now and the future</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/QI-CSHL/QuantLabs2025" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/QI-CSHL/QuantLabs2025/edit/main/qi_2025_analysis_lab_manual/AdvancedSegmentation/BBBC022_AnalysisExercise.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/QI-CSHL/QuantLabs2025/issues/new?title=Issue%20on%20page%20%2FAdvancedSegmentation/BBBC022_AnalysisExercise.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/AdvancedSegmentation/BBBC022_AnalysisExercise.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Advanced segmentation and organelle analysis</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-information"><strong>Background information:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-of-this-exercise"><strong>Goals of this exercise:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials-necessary-for-this-exercise"><strong>Materials necessary for this exercise:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-images-and-configure-metadata"><strong>Input images and configure metadata</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-images-and-metadata">1. <strong>Load images and metadata</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-metadata-from-the-csv">2. <strong>Import metadata from the CSV</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examine-the-channel-mappings-in-namesandtypes-optional">3. <strong>Examine the channel mappings in NamesAndTypes (optional)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illumination-correction"><strong>Illumination correction</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examine-the-output-of-the-correctilluminationapply-module-optional">4. <strong>Examine the output of the CorrectIlluminationApply module (optional)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#segmenet-nuclei-cells-and-cytoplasm"><strong>Segmenet Nuclei, Cells and Cytoplasm</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifyprimaryobjects-nuclei">5. <strong>IdentifyPrimaryObjects- Nuclei</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifysecondaryobjects-cells">6. <strong>IdentifySecondaryObjects- Cells</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-robustness-of-your-segmentation-parameters-across-multiple-compounds">7. <strong>Test the robustness of your segmentation parameters across multiple compounds</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifytertiaryobjects-cytoplasm">8. <strong>IdentifyTertiaryObjects- Cytoplasm</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#segment-nucleoli-inside-the-nuclei"><strong>Segment Nucleoli inside the Nuclei</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examine-the-steps-used-to-segment-the-nucleoli">9. <strong>Examine the steps used to segment the Nucleoli</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#segment-the-mitochondria-inside-the-cytoplasm"><strong>Segment the Mitochondria inside the Cytoplasm</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mask-the-mito-image-by-the-cytoplasm-object">10. <strong>Mask the Mito image by the Cytoplasm object</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifyprimaryobjects-mitochondria">12. <strong>IdentifyPrimaryObjects- Mitochondria</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-measurements"><strong>Perform Measurements</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-measurement-modules-to-your-pipeline">13. <strong>Add measurement modules to your pipeline</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-data"><strong>Export data</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relate-nucleoli-and-mitochondria-to-their-respective-nuclei-cells"><strong>Relate Nucleoli and Mitochondria to their respective nuclei/cells</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examine-the-settings-of-relateobjects">14. Examine the settings of RelateObjects</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-the-analysis-on-all-the-images"><strong>Perform the analysis on ALL the images</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-pipeline-optional">15. <strong>Run the pipeline (optional)</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="advanced-segmentation-and-organelle-analysis">
+<h1>Advanced segmentation and organelle analysis<a class="headerlink" href="#advanced-segmentation-and-organelle-analysis" title="Link to this heading">#</a></h1>
+<p><em><strong>A computer exercise using the CellProfiler &amp; CellProfiler Analyst softwares</strong></em></p>
+<p><strong>Beth Cimini</strong>
+<br>
+<strong>Broad Institute of MIT and Harvard, Cambridge, MA</strong></p>
+<section id="background-information">
+<h2><strong>Background information:</strong><a class="headerlink" href="#background-information" title="Link to this heading">#</a></h2>
+<p>The images in this experiment come from the <a class="reference external" href="https://data.broadinstitute.org/bbbc/BBBC022/">Broad Bioimage Benchmark
+Collection</a>. They are
+240 of 69,120 fields of U2OS cells treated with a panel of 1600 known
+bioactive compounds and imaged in five channels for a so-called Cell
+Painting assay- see Gustafsdottir et al, 2013 for more information. The
+compounds target a wide range of cell pathways, meaning that some cells
+and organelles will have very different morphologies both from each
+other and from the mock treated controls. This will give you an
+opportunity to try to find segmentation parameters that work across a
+wide range of conditions.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/Fig1.png"><img alt="../_images/Fig1.png" src="../_images/Fig1.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text"><em>Figure 1: Images and channels from a CellPainting assay.</em></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>While in the traditional Cell Painting protocol we do not actually
+segment out any organelles (other than the nucleus), the large number of
+stained compartments make this an excellent set of images to find
+subcellular features. Finding the average or count of smaller objects
+inside a larger ‘parent’ object is a feature of many pipelines and an
+important skill to have in setting up a CellProfiler analysis.</p>
+<p>Cell Painting generally consists of a few simple segmentation steps
+followed by adding as many measurement modules as can be reasonably
+included in a single pipeline; we have found that by doing this we can
+measure ~1500 features of each cell and from that create a
+‘morphological profile’ that can be used to predict interesting biology
+including drug mechanisms of action, gene-pathway interactions, and
+more. See Bray et al 2016 and citations within for more information.</p>
+</section>
+<section id="goals-of-this-exercise">
+<h2><strong>Goals of this exercise:</strong><a class="headerlink" href="#goals-of-this-exercise" title="Link to this heading">#</a></h2>
+<p>This exercise will give you practice at finding segmentation parameters
+that will be robust across whatever variability may exist in your
+sample. This is not always straightforward, so examining your
+segmentation across a wide range of images will be necessary.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/Fig2.png"><img alt="../_images/Fig2.png" src="../_images/Fig2.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text"><em>Figure 2: Examples of varied nuclei found in this data set.</em></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This exercise will additionally show you some ways to pull out smaller
+features in your image by segmenting organelles within the cells and
+nuclei. You will also be shown how to use RelateObjects so that you can
+study the average counts, distances, and measurements of the smaller
+organelles inside their larger parent objects.</p>
+</section>
+<section id="materials-necessary-for-this-exercise">
+<h2><strong>Materials necessary for this exercise:</strong><a class="headerlink" href="#materials-necessary-for-this-exercise" title="Link to this heading">#</a></h2>
+<p>These 1200 images (240 sites in 5 channels) represent 120 wells from a
+single 384 well plate, either mock treated with DMSO or treated with a
+variety of bioactive compounds. A CSV file containing associated drug
+treatment information has also been included.</p>
+<p>It is additionally expected that you are generally familiar with
+CellProfiler, preferably after completing the Translocation tutorial or
+a similar introductory exercise.</p>
+</section>
+<section id="input-images-and-configure-metadata">
+<h2><strong>Input images and configure metadata</strong><a class="headerlink" href="#input-images-and-configure-metadata" title="Link to this heading">#</a></h2>
+<section id="load-images-and-metadata">
+<h3>1. <strong>Load images and metadata</strong><a class="headerlink" href="#load-images-and-metadata" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Start CellProfiler by double-clicking the desktop icon <a class="reference internal" href="../_images/CellProfilerLogo.png"><img alt="CellProfiler icon" src="../_images/CellProfilerLogo.png" style="width: 35px;" /></a></p></li>
+</ul>
+<ul class="simple">
+<li><p>Drag and drop the ‘BBBC022_Analysis_Start.cppipe’ file into the
+‘Analysis modules’ box. 7 modules should pop up, and almost all of
+them will show errors. <strong>This is the expected behavior.</strong></p></li>
+<li><p>Drag and drop the ‘BBBC022_20585_AE’ folder into the ‘File list’ box.
+It should automatically populate. Notice that illumination correction
+images (with a file extension of ‘.npy’) are included in this data
+set.</p></li>
+</ul>
+</section>
+<section id="import-metadata-from-the-csv">
+<h3>2. <strong>Import metadata from the CSV</strong><a class="headerlink" href="#import-metadata-from-the-csv" title="Link to this heading">#</a></h3>
+<p>So that we can explore what cells treated with different drugs look like later in the exercise, we must add this information into CellProfiler from the CSV. Provided with this exercise is a CSV called ‘20585_AE.csv’ detailing drug treatment
+info for each image.</p>
+<ul class="simple">
+<li><p>In the ‘Metadata’ module, three metadata extraction methods should already be present and fully configured:</p>
+<ul>
+<li><p>The first pulls Well, Site, and Channel metadata from all of the
+image files except for the illumination correction functions</p></li>
+<li><p>The second pulls Plate metadata from the image folder</p></li>
+<li><p>The third pulls Plate metadata from the illumination correction
+functions</p></li>
+</ul>
+</li>
+<li><p>The fourth metadata extraction step requires you to tell CellProfiler the
+location of the CSV file.  It is looking for it in CellProfiler’s Default
+Input Folder, which we must therefore configure.</p>
+<ul>
+<li><p>Select the  <a class="reference internal" href="../_images/OutputSettings.png"><img alt="../_images/OutputSettings.png" src="../_images/OutputSettings.png" style="width: 120px;" /></a> button in the bottom left corner of the screen.</p></li>
+<li><p>Set the ‘Default Input Folder’ to the location of ‘20585_AE.csv’ within the exercise folder</p></li>
+</ul>
+</li>
+<li><p>Return to the ‘Metadata’ module and press ‘Update’. You should now see a number of columns in the Metadata window.</p>
+<ul>
+<li><p>If you like, examine the CSV and how the ‘Match file and image’ settings are configured:</p>
+<ul>
+<li><p>Image_Metadata_PlateID (from the spreadsheet) is matched to Plate (extracted from the folder name by the second extraction step)</p></li>
+<li><p>Image_Metadata_CPD_WELL_POSITION (from the spreadsheet) is matched to Well (extracted from the file name by the first extraction step)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="examine-the-channel-mappings-in-namesandtypes-optional">
+<h3>3. <strong>Examine the channel mappings in NamesAndTypes (optional)</strong><a class="headerlink" href="#examine-the-channel-mappings-in-namesandtypes-optional" title="Link to this heading">#</a></h3>
+<p>The channel mapping here is a bit more complicated than anything we’ve worked with before- we have a single set of illumination correction images that map to each and every well and site.  We can use the metadata we extracted in the last module to make that association possible.</p>
+<ul>
+<li><p>Two different ways of mapping images to channel names are
+demonstrated here. There are several others, and often you could
+create several correct mappings for a given set of images, but these
+may serve as a helpful example to refer to in your own work.</p>
+<ul>
+<li><p>The ‘.tif’ image files are assigned a name by the Metadata
+extracted in the previous module (specifically ChannelNumber)</p></li>
+<li><p>The ‘.npy’ illumination correction functions are assigned a name
+based on a unique string in the name (such as ‘IllumER’)</p>
+<p>As there is only one set of illumination correction functions for
+each entire plate, the image sets cannot simply be constructed by
+using ‘Image set matching’ as ‘Order’.</p>
+</li>
+</ul>
+</li>
+<li><p>Scroll to the bottom of the ‘NamesAndTypes’ to see how the image sets
+are constructed</p>
+<ul class="simple">
+<li><p>‘Image set matching’ is set to ‘Metadata’</p></li>
+<li><p>Each image channel is set to ‘Plate-&gt;Well-&gt;Site’.</p></li>
+<li><p>Each illumination correction function is set to
+‘Plate-&gt;(None)-&gt;(None)’</p></li>
+</ul>
+</li>
+<li><p>Metadata based matching can be useful in any circumstance where a
+larger group of images needs to be mapped with a smaller one, such as
+every plate in an image set having its own illumination correction
+function or every movie in a series of timelapse movies being matched
+to its own unique cropping mask.</p></li>
+</ul>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/Fig3.png"><img alt="../_images/Fig3.png" src="../_images/Fig3.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text"><em>Figure 3: A section of the ‘Image set matching’ dialog.</em></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="illumination-correction">
+<h2><strong>Illumination correction</strong><a class="headerlink" href="#illumination-correction" title="Link to this heading">#</a></h2>
+<section id="examine-the-output-of-the-correctilluminationapply-module-optional">
+<h3>4. <strong>Examine the output of the CorrectIlluminationApply module (optional)</strong><a class="headerlink" href="#examine-the-output-of-the-correctilluminationapply-module-optional" title="Link to this heading">#</a></h3>
+<p>Since microscope objectives don’t typically have a completely uniform illumination
+pattern, applying an illumination correction function can help make segmentation
+better and measurements more even by compensating for this.  Pay close attention
+to the top of the field of view to see the greatest effect.</p>
+<ul class="simple">
+<li><p>Enter test mode and hit ‘Step’ to run the CorrectIlluminationApply
+module.</p></li>
+<li><p>Briefly examine the output of the CorrectIlluminationApply module-
+you can see that the illumination correction functions show
+significant heterogeneity across the field of view.</p>
+<ul>
+<li><p>These functions were created by averaging and smoothing all 3456
+images from this plate, indicating the image captured is
+consistently dimmer in those regions for nearly all images.</p></li>
+</ul>
+</li>
+<li><p>Also note that while the illumination correction functions for each
+channel are similar, they aren’t identical; each channel in your own
+experiments should therefore be illumination corrected independently.</p></li>
+</ul>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/Fig4.png"><img alt="../_images/Fig4.png" src="../_images/Fig4.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text"><em>Figure 4: Application of the illumination correction functions.</em></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="segmenet-nuclei-cells-and-cytoplasm">
+<h2><strong>Segmenet Nuclei, Cells and Cytoplasm</strong><a class="headerlink" href="#segmenet-nuclei-cells-and-cytoplasm" title="Link to this heading">#</a></h2>
+<section id="identifyprimaryobjects-nuclei">
+<h3>5. <strong>IdentifyPrimaryObjects- Nuclei</strong><a class="headerlink" href="#identifyprimaryobjects-nuclei" title="Link to this heading">#</a></h3>
+<p>Next we’ll take a first pass at identifying nuclei and cells in our initial image.</p>
+<ul class="simple">
+<li><p><strong>After</strong> the CorrectIlluminationApply module but <strong>before</strong> any
+others, add an IdentifyPrimaryObjects module (from the ‘Object
+Processing’ module category).</p></li>
+<li><p>Create objects called Nuclei by segmenting on the Hoechst channel.
+Hit ‘Step’ to run the module. How does your segmentation look?</p></li>
+<li><p>Use the magnifying glass at the top of the window to zoom in on an
+area that was segmented poorly, then update some of your parameters
+in IdentifyPrimaryObjects and hit ‘Step’ to rerun the segmentation.</p></li>
+<li><p>Adjust the segmentation parameters until you feel you’re ready to
+move on to identifying the cells around the nuclei; as you will test
+the parameters for robustness later, however, the identification
+should be good but doesn’t need to be perfect before you move on.</p></li>
+</ul>
+</section>
+<section id="identifysecondaryobjects-cells">
+<h3>6. <strong>IdentifySecondaryObjects- Cells</strong><a class="headerlink" href="#identifysecondaryobjects-cells" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>After</strong> the IdentifyPrimaryObjects module but <strong>before</strong> the
+EnhanceOrSuppressFeatures module, add an IdentifySecondaryObjects
+module.</p></li>
+<li><p>Create an object called Cells that is seeded on the Nuclei primary
+objects that you just created; use the Ph_golgi image.</p></li>
+<li><p>For the purposes of this exercise, you need not worry about excluding
+cell bodies that touch the edge of the image.</p></li>
+<li><p>Examine the segmentation and adjust the segmentation parameters until
+you feel you’re ready to test them on another image; they need not be
+perfect before you move on.</p></li>
+</ul>
+</section>
+<section id="test-the-robustness-of-your-segmentation-parameters-across-multiple-compounds">
+<h3>7. <strong>Test the robustness of your segmentation parameters across multiple compounds</strong><a class="headerlink" href="#test-the-robustness-of-your-segmentation-parameters-across-multiple-compounds" title="Link to this heading">#</a></h3>
+<p>It’s (relatively!) easy to come up with a good set of segmentation parameters for a single image or a set of similar images; this data set however contains images from cells treated with many different classes of drugs, many of which have very different phenotypes. It’s valuable to learn how to create a set of parameters that can segment cells that display a variety of morphologies since you may come across a similar problem in your own experiments!</p>
+<ul class="simple">
+<li><p>Go to Test-&gt;Choose Image Set to bring up a list of the images in your
+experiment.</p></li>
+</ul>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../_images/Fig5.png"><img alt="../_images/Fig5.png" src="../_images/Fig5.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text"><em>Figure 5: A section of the ‘Choose Image Set’ menu.</em></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Look at the column titled ‘Image_Metadata_SOURCE_COMPOUND_NAME’ to
+see what chemical was used in each well of the experiment. You may
+click on the column to sort the whole table by the values in it if
+you so desire.</p></li>
+<li><p>Choose a row where ‘Image_Metadata_SOURCE_COMPOUND_NAME’ is blank-
+this will be a mock treated well. Press the ‘OK’ button, then run
+that image in test mode for your first 3 modules (through your
+IdentifySecondaryObjects step). Examine the output – did your nuclear
+and cellular segmentation hold up compared to the first images you looked at?
+Once your segmentation is good, try it on one additional mock treated image.</p></li>
+<li><p>Test your segmentation on images from a few different compounds- you
+may choose ones you’ve worked with before, random ones, or some
+combination therein; if possible avoid using multiple compounds you
+KNOW have the same mechanism of action, though it’s alright if they
+occasionally do. Update your segmentation parameters until they work
+well on a few different compound wells, then go back to a mock
+treated well to make sure it still works well there.</p>
+<ul>
+<li><p>You’re encouraged to explore the compound list on your own, but if
+you find yourself consistently ending up with images that look
+similar you can try adding images from the following list of
+wells- A08, A12, B12, B18, C7, D6, D19, D22, E3</p></li>
+<li><p>Some hints on what to play with:
+-  In both IdentifyPrimaryObjects and IdentifySecondaryObjects adjusting the threshold limits can be a good thing for when wells are empty, confluent, or have bright debris in them
+-  In both IdentifyPrimaryObjects and IdentifySecondaryObjects adjusting the threshold method may lead to better (or worse!) results.
+-  In IdentifyPrimaryObjects, adjusting the declumping settings (make sure to turn ‘Use advanced settings?’ on) will probably be necessary for a robust segmentation
+-  In IdentifySecondaryObjects, you will want to test the effects of using the various methods for identifying secondary objects (Propagation, Watershed-Image, Distance-N, etc) and, if using Propagation, the regularization factor.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="identifytertiaryobjects-cytoplasm">
+<h3>8. <strong>IdentifyTertiaryObjects- Cytoplasm</strong><a class="headerlink" href="#identifytertiaryobjects-cytoplasm" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>After</strong> the IdentifySecondaryObjects module but <strong>before</strong> the
+EnhanceOrSuppressFeatures module, add an IdentifyTertiaryObjects
+module.</p></li>
+<li><p>Create an object called Cytoplasm using the Cell and Nuclei objects
+you’ve created; ‘Shrink smaller object prior to subtraction?’ should both set to ‘No’.</p></li>
+</ul>
+</section>
+</section>
+<section id="segment-nucleoli-inside-the-nuclei">
+<h2><strong>Segment Nucleoli inside the Nuclei</strong><a class="headerlink" href="#segment-nucleoli-inside-the-nuclei" title="Link to this heading">#</a></h2>
+<section id="examine-the-steps-used-to-segment-the-nucleoli">
+<h3>9. <strong>Examine the steps used to segment the Nucleoli</strong><a class="headerlink" href="#examine-the-steps-used-to-segment-the-nucleoli" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The next 3 modules have to do with the creation of the Nucleoli
+objects. Look at the output from each to see how the image is
+transformed to aid in segmentation.</p>
+<ul>
+<li><p>EnhanceOrSuppressFeatures is a module that helps enhance
+particular parts of an image- in this case, punctate objects or
+‘Speckles’. By specifying the feature size, you can enhance
+different parts of the object. As we are looking for nucleoli, we
+apply this to the RNA channel (Syto) image, and call the output
+‘FilteredRNA’. (See Fig 6 below)</p></li>
+<li><p>MaskImage allows you to create a version of the ‘FilteredRNA’
+image called ‘SytoNuclei’ where all of the pixels except the ones
+you specify are set to an intensity of 0- in this case, we set to
+0 any pixel not inside a nucleus. By doing this, we can decrease
+the likelihood of detecting the cytoplasmic RNA dots.</p></li>
+<li><p>IdentifyPrimaryObjects is used to find the Nucleoli- this is a
+Primary object segmentation because we are not using another
+object as a seed to grow around, but only segmenting based off the
+intensity in our ‘SytoNuclei’ image.</p>
+<ul>
+<li><p>If you like, you can add an “OverlayOutlines” module at this point to
+overlay the identified nucleoli on the original Syto image to assure
+yourself that the segmentation not only matches the speckle-enhanced
+‘SytoNuclei’ image, but also looks accurate on the unprocessed image as
+well.  This is not necessary but can be a nice “sanity check”.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../_images/Fig6.png"><img alt="../_images/Fig6.png" src="../_images/Fig6.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text"><em>Figure 6: Enhancing the Syto image allows you to isolate nucleoli against the nucleoplasmic background signal.</em></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="segment-the-mitochondria-inside-the-cytoplasm">
+<h2><strong>Segment the Mitochondria inside the Cytoplasm</strong><a class="headerlink" href="#segment-the-mitochondria-inside-the-cytoplasm" title="Link to this heading">#</a></h2>
+<section id="mask-the-mito-image-by-the-cytoplasm-object">
+<h3>10. <strong>Mask the Mito image by the Cytoplasm object</strong><a class="headerlink" href="#mask-the-mito-image-by-the-cytoplasm-object" title="Link to this heading">#</a></h3>
+<p>Now that you’ve seen an example of how to segment an organelle, you
+will do so for Mitochondria in the following steps.</p>
+<ul class="simple">
+<li><p><strong>After</strong> the IdentifyPrimaryObjects module for Nucleoli but
+<strong>before</strong> the RelateObjects modules, add a MaskImage module (from
+the Image Processing module category).</p></li>
+<li><p>Call your output image ‘MaskedMito’.</p></li>
+<li><p>As you saw above with the Nucleoli example, mask the image via
+Objects, and use the Cytoplasm objects to create the mask.</p>
+<ul>
+<li><p>You may even experiment with doing a similar EnhanceOrSuppressFeatures step
+before the masking as was used for the Nucleoli; you may get greater
+signal-to-noise, but possibly at the expense of “fragmenting” the
+Mitochondria objects in the later identification steps.</p></li>
+</ul>
+</li>
+</ul>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../_images/Fig7.png"><img alt="../_images/Fig7.png" src="../_images/Fig7.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text"><em>Figure 7: The MaskedMito image contains only the regions of interest.</em></span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="identifyprimaryobjects-mitochondria">
+<h3>12. <strong>IdentifyPrimaryObjects- Mitochondria</strong><a class="headerlink" href="#identifyprimaryobjects-mitochondria" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>After</strong> your MaskImage module but <strong>before</strong> the RelateObjects
+modules, add an IdentifyPrimary Objects module to identify
+Mitochondria from your MaskedMito image.</p></li>
+<li><p>You should consider using a wide range of pixel sizes here; 2-20 is a
+reasonable first place to start.</p>
+<ul>
+<li><p>If you did use EnhanceOrSuppressFeatures in the previous step, using
+OverlayOutlines to compare the outlines with the original image is
+a good idea once again.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="perform-measurements">
+<h2><strong>Perform Measurements</strong><a class="headerlink" href="#perform-measurements" title="Link to this heading">#</a></h2>
+<section id="add-measurement-modules-to-your-pipeline">
+<h3>13. <strong>Add measurement modules to your pipeline</strong><a class="headerlink" href="#add-measurement-modules-to-your-pipeline" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>After</strong> your segmentation of the mitochondria but <strong>before</strong> the
+RelateObjects modules, add as many object measurement modules as you
+would like.</p></li>
+<li><p>Some suggested modules to add- MeasureObjectSizeShape,
+MeasureObjectIntensity, MeasureGranularity, MeasureObjectNeighbors.</p>
+<ul>
+<li><p>Which objects do you think would be valuable to measure with each
+of these modules? Which channels would you measure your objects
+in?</p></li>
+<li><p>For a typical Cell Painting experiment you would add as many
+measurements as possible, but that isn’t necessary here; however,
+do make sure every object gets at least some measurements.</p></li>
+</ul>
+</li>
+<li><p>While MeasureCorrelation, MeasureTexture, and
+MeasureObjectIntensityDistribution can produce valuable data for
+downstream profiling, they can be memory-intensive and/or slow so
+should not be added for this example pipeline in the interest of
+pipeline run time. MeasureNeurons is not well suited for this
+pipeline.</p></li>
+</ul>
+</section>
+</section>
+<section id="export-data">
+<h2><strong>Export data</strong><a class="headerlink" href="#export-data" title="Link to this heading">#</a></h2>
+<p>In order to use the data visualization and machine learning tools
+in CellProfiler Analyst, the measurements will need to be saved to a
+database using the <strong>ExportToDatabase</strong>.</p>
+<ul class="simple">
+<li><p>Add a module <strong>ExportToDatabase</strong> located under the module <em>“File Processing” category</em></p></li>
+</ul>
+<blockquote>
+<div><p><strong>NOTE:</strong>  while in <em>Test mode</em>, the <strong>ExportToDatabase</strong> module will
+have a yellow warning sign in the pipeline panel and yellow-
+highlighted text in the module settings. Holding the mouse over
+the yellow-highlighted text informs the user that measurements
+produced in Test mode are not written to the database. This is
+normal behavior and does NOT indicate an error.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Set up the module as in the image below:</p></li>
+</ul>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="../_images/Fig8.png"><img alt="../_images/Fig8.png" src="../_images/Fig8.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text"><em>Figure 8: The ExportToDatabase module.  The yellow warning symbol warns you
+that since you’ve chosen to make individual tables for each object, you will
+only be able to examine one object at a time in CellProfiler Analyst.</em></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Check the box “Write image thumbnails directly to database?” From the
+list-box that subsequently appears, select “rawDNA” and “rawGFP”; you
+can make multiple selections by using Ctrl-click (Windows) or
+Command-click (Mac). Leave the rest of the settings at the default
+values.</p></li>
+</ul>
+<blockquote>
+<div><p><strong>NOTE:</strong> Because you have different object counts for some of your different
+types of objects (the counts of Nuclei, Cells, and Cytoplasm will be
+the same, but the counts of Mitochondria and Nucleoli will not be),
+you will not be able to export the objects as a single data table but
+must instead use a different data table for each object. This will
+not affect the actual outcome of the experiment, but will mean that
+each object will get its own properties file and that you can only
+look at the measurement for one object at a time in CellProfiler
+Analyst.</p>
+</div></blockquote>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="../_images/Fig9.png"><img alt="../_images/Fig9.png" src="../_images/Fig9.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text"><em>Figure 9: The  warning symbol warns you
+that since you’ve chosen to make individual tables for each object, you will
+only be able to examine one object at a time in CellProfiler Analyst.</em></span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="relate-nucleoli-and-mitochondria-to-their-respective-nuclei-cells">
+<h2><strong>Relate Nucleoli and Mitochondria to their respective nuclei/cells</strong><a class="headerlink" href="#relate-nucleoli-and-mitochondria-to-their-respective-nuclei-cells" title="Link to this heading">#</a></h2>
+<section id="examine-the-settings-of-relateobjects">
+<h3>14. Examine the settings of RelateObjects<a class="headerlink" href="#examine-the-settings-of-relateobjects" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>After</strong> your Measurement and <strong>before</strong> your Export modules you
+should find two RelateObjects modules. One relates Nucleoli to
+Nuclei, while the other relates Mitochondria to Cells.</p></li>
+<li><p>Relating the objects allows you to create per-parent means (ie, for
+this cell what is the average size of an individual mitochondrion)
+and calculate distances from the child objects to the edge and/or the
+center of the parent (ie how far is each nucleolus from the center of
+the nucleus).</p></li>
+</ul>
+</section>
+</section>
+<section id="perform-the-analysis-on-all-the-images">
+<h2><strong>Perform the analysis on ALL the images</strong><a class="headerlink" href="#perform-the-analysis-on-all-the-images" title="Link to this heading">#</a></h2>
+<section id="run-the-pipeline-optional">
+<h3>15. <strong>Run the pipeline (optional)</strong><a class="headerlink" href="#run-the-pipeline-optional" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>If you have time and/or if you’d like to play with the data in
+CellProfiler Analyst later, exit test mode, close the eyes next to
+each module, and run the pipeline</p></li>
+<li><p>The pipeline will create a database called BBBC022.db, containing the
+output of all of the measurements you have added to your pipeline</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./AdvancedSegmentation"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../BeginnerSegmentation/CPbeginner_Segmentation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Beginner segmentation and organelle analysis:</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Translocation/Translocation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Translocation Tutorial</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-information"><strong>Background information:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-of-this-exercise"><strong>Goals of this exercise:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials-necessary-for-this-exercise"><strong>Materials necessary for this exercise:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-images-and-configure-metadata"><strong>Input images and configure metadata</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-images-and-metadata">1. <strong>Load images and metadata</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-metadata-from-the-csv">2. <strong>Import metadata from the CSV</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examine-the-channel-mappings-in-namesandtypes-optional">3. <strong>Examine the channel mappings in NamesAndTypes (optional)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illumination-correction"><strong>Illumination correction</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examine-the-output-of-the-correctilluminationapply-module-optional">4. <strong>Examine the output of the CorrectIlluminationApply module (optional)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#segmenet-nuclei-cells-and-cytoplasm"><strong>Segmenet Nuclei, Cells and Cytoplasm</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifyprimaryobjects-nuclei">5. <strong>IdentifyPrimaryObjects- Nuclei</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifysecondaryobjects-cells">6. <strong>IdentifySecondaryObjects- Cells</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-robustness-of-your-segmentation-parameters-across-multiple-compounds">7. <strong>Test the robustness of your segmentation parameters across multiple compounds</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifytertiaryobjects-cytoplasm">8. <strong>IdentifyTertiaryObjects- Cytoplasm</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#segment-nucleoli-inside-the-nuclei"><strong>Segment Nucleoli inside the Nuclei</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examine-the-steps-used-to-segment-the-nucleoli">9. <strong>Examine the steps used to segment the Nucleoli</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#segment-the-mitochondria-inside-the-cytoplasm"><strong>Segment the Mitochondria inside the Cytoplasm</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mask-the-mito-image-by-the-cytoplasm-object">10. <strong>Mask the Mito image by the Cytoplasm object</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifyprimaryobjects-mitochondria">12. <strong>IdentifyPrimaryObjects- Mitochondria</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-measurements"><strong>Perform Measurements</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-measurement-modules-to-your-pipeline">13. <strong>Add measurement modules to your pipeline</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-data"><strong>Export data</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relate-nucleoli-and-mitochondria-to-their-respective-nuclei-cells"><strong>Relate Nucleoli and Mitochondria to their respective nuclei/cells</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examine-the-settings-of-relateobjects">14. Examine the settings of RelateObjects</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-the-analysis-on-all-the-images"><strong>Perform the analysis on ALL the images</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-pipeline-optional">15. <strong>Run the pipeline (optional)</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By QI 2025
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
