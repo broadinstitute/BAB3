@@ -1,0 +1,14 @@
+[workspace]
+authors = ["bethac07 <bcimini@broadinstitute.org>"]
+channels = ["conda-forge"]
+name = "cellpose4"
+platforms = ["osx-arm64", "linux-64", "osx-64", "win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "3.10.*"
+
+[pypi-dependencies]
+cellpose = ">=4.0.6, <5"
