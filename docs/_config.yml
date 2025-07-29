@@ -5,10 +5,10 @@
 
 #######################################################################################
 # Book settings
-title                       : QI 2025 Analysis Lab Manual  # The title of the book. Will be placed in the left navbar.
-author                      : QI 2025 # The author of the book
+title                       : BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual  # The title of the book. Will be placed in the left navbar.
+author                      : Broad Institute Imaging Platform # The author of the book
 copyright                   : ""  # Copyright year to be placed in the footer
-logo                        : image001.png  # A path to the book logo
+logo                        : CLab_Square.png  # A path to the book logo
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -26,8 +26,8 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/QI-CSHL/QuantLabs2025  # Online location of your book
-  path_to_book: qi_2025_analysis_lab_manual  # Optional path to your book, relative to the repository root
+  url: https://github.com/broadinstitute/BAB3 # Online location of your book
+  path_to_book: docs  # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
