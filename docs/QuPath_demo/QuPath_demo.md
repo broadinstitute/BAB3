@@ -1,4 +1,6 @@
-## QuPath demo
+# Basics of QuPath
+
+Exercise Objective 
 
 
 
