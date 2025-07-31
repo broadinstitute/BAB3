@@ -7,6 +7,10 @@ version = "0.1.0"
 
 [tasks]
 
+[target.osx-64.dependencies]
+numpy = "<2"
+scipy = "1.13.*"
+
 [dependencies]
 python = "3.10.*"
 
