@@ -8,14 +8,14 @@ platforms = ["win-64", "linux-64", "osx-64", "osx-arm64"]
 
 [feature.mysql.target.unix.activation]
 # https://github.com/PyMySQL/mysqlclient/issues/496#issuecomment-1614688099
-env = { MYSQLCLIENT_CFLAGS = "-I$PIXI_PROJECT_ROOT/.pixi/envs/dev/include/mysql", MYSQLCLIENT_LDFLAGS = "-L$PIXI_PROJECT_ROOT/.pixi/envs/dev/lib -lmysqlclient -rpath $PIXI_PROJECT_ROOT/.pixi/envs/dev/lib" }
+env = { MYSQLCLIENT_CFLAGS = "-I$PIXI_PROJECT_ROOT/.pixi/envs/default/include/mysql", MYSQLCLIENT_LDFLAGS = "-L$PIXI_PROJECT_ROOT/.pixi/envs/default/lib -lmysqlclient -rpath $PIXI_PROJECT_ROOT/.pixi/envs/default/lib" }
 
 # usage of `%` or `$` and `\\` or `/` will depend on if using e.g. cmd.exe or git bash or ...
 [feature.java.target.win-64.activation]
-env = { JAVA_HOME = "%PIXI_PROJECT_ROOT%\\.pixi\\envs\\dev\\Library\\lib\\jvm", JDK_HOME = "%PIXI_PROJECT_ROOT%\\.pixi\\envs\\dev\\Library\\lib\\jvm" }
+env = { JAVA_HOME = "%PIXI_PROJECT_ROOT%\\.pixi\\envs\\default\\Library\\lib\\jvm", JDK_HOME = "%PIXI_PROJECT_ROOT%\\.pixi\\envs\\default\\Library\\lib\\jvm" }
 
 [feature.java.activation]
-env = { JAVA_HOME = "$PIXI_PROJECT_ROOT/.pixi/envs/dev/lib/jvm", JDK_HOME = "$PIXI_PROJECT_ROOT/.pixi/envs/dev/lib/jvm" }
+env = { JAVA_HOME = "$PIXI_PROJECT_ROOT/.pixi/envs/default/lib/jvm", JDK_HOME = "$PIXI_PROJECT_ROOT/.pixi/envs/default/lib/jvm" }
 
 [pypi-dependencies]
 cellprofiler = "==4.2.8"
@@ -64,5 +64,4 @@ openjdk = "11.*"
 maven = ">=3.9.9,<4"
 
 [environments]
-dev = ["mysql", "java"]
 default = ["mysql","java"]
