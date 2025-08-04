@@ -28,11 +28,10 @@ This table will be updated throughout the course with links to materials used du
 | Exercise | Links |
 |----------|-------|
 |Day 1, exercise 1: Course Introduction | [Slide deck](https://docs.google.com/presentation/d/17liBlM8oJoWhG0i_Z8KakW8RXjOD_wrkAtbTTt1qkEY/edit?usp=sharing)|
+|Day 1, exercise 2: Intro to Images and ImageJ | Coming soon!| 
+|Day 1, exercise 4: Intro to Piximi| [Slide deck](https://drive.google.com/drive/folders/170Y4ttapKwzcPBWlpMTGeFEeWL-xFGZS?usp=sharing)|
 
 <!---
-|Day 1, exercise 2: Intro to Images and ImageJ | Coming soon!| 
-|Day 1, exercise 3: Thinking about images | Coming soon!|
-|Day 1, exercise 4: Intro to Piximi| Coming soon!|
 |Day 1, exercise 5: Manual annotation| Coming soon!|
 |Day 2, exercise 1: Classical segmentation concepts | Coming soon!|
 |Day 2, exercise 2: Introduction to CellProfiler | Coming soon!|
