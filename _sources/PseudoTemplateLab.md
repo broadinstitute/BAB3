@@ -2,8 +2,6 @@
 
 *Lab authors: * . 
 
-<small>This file last updated 2025-07-29.</small>
-
 ---
 
 ## LAB NAME
