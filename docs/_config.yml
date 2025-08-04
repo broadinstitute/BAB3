@@ -34,7 +34,7 @@ repository:
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   use_issues_button: true
-  use_repository_button: true
+  use_repository_button: false
   use_edit_page_button: true
   comments:
     hypothesis: true
