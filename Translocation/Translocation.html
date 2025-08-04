@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Translocation Tutorial &#8212; BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual</title>
+    <title>Day 2, exercise 5: Segmentation and Classification with CellProfiler and CellProfiler Analyst &#8212; BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual</title>
   
   
   
@@ -184,6 +184,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../developing_intutions.html">Day 1, Exercise 3: developing image processing intutions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Piximi_ManualAnnotation/Piximi.html">Day 1, Exercise 5 - Making manual annotations with Piximi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BeginnerSegmentation/CPbeginner_Segmentation.html">Day 2, exercise 2: Introduction to CellProfiler</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -328,7 +329,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Translocation Tutorial</h1>
+    <h1>Day 2, exercise 5: Segmentation and Classification with CellProfiler and CellProfiler Analyst</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -338,6 +339,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-information"><strong>Background information:</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-of-this-exercise"><strong>Goals of this exercise:</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials-necessary-for-this-exercise"><strong>Materials necessary for this exercise:</strong></a></li>
@@ -391,11 +393,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="translocation-tutorial">
-<h1>Translocation Tutorial<a class="headerlink" href="#translocation-tutorial" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="day-2-exercise-5-segmentation-and-classification-with-cellprofiler-and-cellprofiler-analyst">
+<h1>Day 2, exercise 5: Segmentation and Classification with CellProfiler and CellProfiler Analyst<a class="headerlink" href="#day-2-exercise-5-segmentation-and-classification-with-cellprofiler-and-cellprofiler-analyst" title="Link to this heading">#</a></h1>
 <p><strong>Image-based screening using subcellular localization of FOXO1A in osteosarcoma cells: A computer exercise using CellProfiler &amp; CellProfiler Analyst software</strong></p>
-<p>Beth Cimini, Carolina Wählby, Martin Simonsson, Megan Rokop and Mark
-Bray, Broad Institute</p>
+<p>*Lab authors: Beth Cimini, Carolina Wählby, Martin Simonsson, Megan Rokop and Mark
+Bray.</p>
+<hr class="docutils" />
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Fix bad segmentation parameters based on past experience with “good” settings</p></li>
+<li><p>Create best-possible segmentations when no constitutive marker is available</p></li>
+<li><p>Perform classical machine learning in CellProfiler Analyst</p></li>
+</ul>
+<p><strong>Lab Data</strong> in <a class="reference external" href="https://github.com/CellProfiler/tutorials/raw/master/Translocation/Archive_EN.zip">this folder</a></p>
+</section>
+<hr class="docutils" />
 <section id="background-information">
 <h2><strong>Background information:</strong><a class="headerlink" href="#background-information" title="Link to this heading">#</a></h2>
 <p>In this experiment, we are working with human U2OS osteosarcoma (bone
@@ -1495,6 +1508,7 @@ Collection at <a class="reference external" href="http://www.broadinstitute.org/
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-information"><strong>Background information:</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-of-this-exercise"><strong>Goals of this exercise:</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials-necessary-for-this-exercise"><strong>Materials necessary for this exercise:</strong></a></li>

@@ -1,19 +1,25 @@
 
-# Beginner segmentation and organelle analysis:
+# Day 2, exercise 2: Introduction to CellProfiler
 
-## A computer exercise using CellProﬁler
+*Lab authors: Beth Cimini, Barbara Diaz-Rohrer, Esteban Miglietta, Paula Llanos, Mario Cruz and Rebecca Senft. 
 
+---
 
-Beth Cimini, Barbara Diaz-Rohrer, Esteban Miglietta, Paula Llanos, Mario Cruz and Rebecca Senft.
-<br>
-Broad Institute of MIT and Harvard, Cambridge, MA.
+## Learning Objectives
+- Practice classical segmentation for the first time
+- Segment multiple organelles, creating parent-child relationships
+- Create overlays for assessing segmentation
+
+**Lab Data** in [this folder](https://github.com/CellProfiler/tutorials/raw/master/BeginnerSegmentation/Archive_EN.zip) (Do not delete, you will need these again on Thursday!)
+
+---
 
 ## **Background information:**
 
 The images in this experiment come from the [Broad Bioimage
 Benchmark Collection](https://data.broadinstitute.org/bbbc/BBBC022/).
 They are ﬁelds of U2OS cells imaged in ﬁve channels (Cell Painting
-assay; see Gustafsdottir et al., 2013).
+assay; see Gustafsdottir et al., 2013{cite}`Gustafsdottir2013-ng`).
 
 >### The **Cell Painting** assay 
 >
@@ -52,7 +58,7 @@ Read through the steps below and follow instructions where stated. Steps where y
 
 ### **1. Load starting pipeline (2 min)**
 
-- Start CellProﬁler by double-clicking the desktop icon: <img src="./TutorialImages/CellProfilerLogo.png" width="40">
+- Start CellProﬁler{cite}`Stirling2021-sg` by double-clicking the desktop icon: <img src="./TutorialImages/CellProfilerLogo.png" width="40">
 
 ```{figure} ./TutorialImages/Fig2.png
 :width: 700
