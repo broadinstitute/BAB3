@@ -1,6 +1,29 @@
 # Links to slides and other course materials
 
+## Installation requirements
+
+We asked before the course for you to install the following tools; if you have not already done so, please download Fiji right away, CellProfiler and CellProfiler Analyst before arriving on Tuesday, and Ilastik and QuPath before arriving on Wednesday.
+
+- [ImageJ/Fiji](https://fiji.sc/)
+- [CellProfiler](https://cellprofiler.org/)
+- [CellProfiler Analyst](https://cellprofileranalyst.org/)
+- [Ilastik](https://www.ilastik.org/)
+- [QuPath](https://qupath.github.io/)
+
+Before Thursday, please install one of the following environment managers, if not already installed on your computer:
+- [Pixi](https://pixi.sh/dev/installation/) (our recommendation) OR
+- [Micromamba](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html#automatic-install) (if you already have conda or mamba running on your machine, this is fine too)
+
+Windows machine users -  you will also need to install the [Microsoft Build Tools](visualstudio.microsoft.com/visual-cpp-build-tools)
+
+Optionally, a container runner will also be used in one exercise but is not required:
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (our recommendation if you're less computationally comfortable)
+- [Podman](https://podman.io/) (our recommendation if you're more computationally comfortable)
+
+## Slide decks and links to other materials
+
 This table will be updated throughout the course with links to materials used during it. Links will be posted as soon as they are available; some activities will be live demos and as such may not have exact materials, but where possible we will try to post one or more relevant links.
+
 
 | Exercise | Links |
 |----------|-------|
