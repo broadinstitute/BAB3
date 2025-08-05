@@ -9,8 +9,9 @@ parts:
   - file: developing_intutions.md
   - file: Piximi_ManualAnnotation/Piximi.md
   - file: BeginnerSegmentation/CPbeginner_Segmentation.md
-  #- file: AdvancedSegmentation/BBBC022_AnalysisExercise.md
+  - file: AdvancedSegmentation/BBBC022_AnalysisExercise.md
   #- file: Translocation/Translocation.md
+  #- file: QuPath_demo/QuPath_demo.md
   #- file: BeginnerSegmentation/BeginnerSegmentationPlugins.md
   #- file: MicroSAM/MicroSAM_workshop.md
 - caption:  Additional Resources
