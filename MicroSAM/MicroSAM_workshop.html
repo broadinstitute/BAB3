@@ -344,9 +344,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-an-image-and-calculating-embeddings">Loading an image and calculating embeddings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-annotation-in-2d">Image annotation in 2D</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-an-entire-folder-the-image-series-annotator">Annotate an entire folder: The image Series Annotator</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-annotation-in-3d">Image Annotation in 3D</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-annotation-in-2d-documentation">Image annotation in 2D (Documentation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-an-entire-folder-the-image-series-annotator-documentation">Annotate an entire folder: The image Series Annotator (Documentation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-annotation-in-3d-documentation">Image Annotation in 3D (Documentation)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-try-samj-in-fiji">Bonus Exercise: try SAMJ in Fiji</a></li>
 </ul>
 </li>
@@ -368,6 +368,8 @@ document.write(`
 <section id="microsam-segment-anything-model-for-microscopy">
 <h2>MicroSAM: ‘Segment Anything’ Model for Microscopy<a class="headerlink" href="#microsam-segment-anything-model-for-microscopy" title="Link to this heading">#</a></h2>
 <p>Segment Anything for Microscopy (or MicroSAM) is a tool for interactive and automatic annotation for microscopy data. It is built on top of <a class="reference external" href="https://segment-anything.com/">the Segment Anything Model</a> (aka. SAM), a foundational model developed by Meta AI for prompt-based and automatic segmentation of images. The original SAM model was trained on millions of annotated masks from thousands of images (mostly natural images, but some scientific and medical images as well). MicroSAM is a specific implementation of SAM which specializes it for microscopy and other biomedical imaging data.</p>
+<p>You can find all the documentation for this tool <a class="reference external" href="https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#annotation-tools">HERE</a>.</p>
+<p>While you can use MicroSAM directly from the <a class="reference external" href="https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#using-the-command-line-interface-cli">command line</a> or as a <a class="reference external" href="https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#using-the-python-library">Python library</a> (they even have <a class="reference external" href="https://github.com/computational-cell-analytics/micro-sam/blob/master/notebooks/quick_start.ipynb">quick start jupyter notebooks</a> that you can run online on Kaggle or Google Colab), we will use the MicroSAM Napari plugin for this workshop.</p>
 <section id="learning-objectives">
 <h3>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -375,7 +377,7 @@ document.write(`
 <li><p>Explore MicroSAM as a tool for aiding in manual annotations in Napari, using the plugin</p></li>
 <li><p>Explore the limitations of the model</p></li>
 </ul>
-<p><strong>Lab Data</strong> in <a class="reference internal" href="#"><span class="xref myst">this folder</span></a> (Machine_Learning)</p>
+<p><strong>Lab Data</strong> in <a class="reference external" href="https://drive.google.com/drive/folders/1NOt_OeMVr6Y5ZK5CrYtG97-P05yABHlx?usp=sharing">this folder</a></p>
 </section>
 <hr class="docutils" />
 <section id="installation">
@@ -413,8 +415,8 @@ Clone the BAB3 repo locally and <code class="docutils literal notranslate"><span
 <p>The very first time you run any model, the plugin will first download the model weights, which might take a few minutes.</p>
 </aside>
 </section>
-<section id="image-annotation-in-2d">
-<h3>Image annotation in 2D<a class="headerlink" href="#image-annotation-in-2d" title="Link to this heading">#</a></h3>
+<section id="image-annotation-in-2d-documentation">
+<h3>Image annotation in 2D (<a class="reference external" href="https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#annotator-2d">Documentation</a>)<a class="headerlink" href="#image-annotation-in-2d-documentation" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Segment cells using either bounding box prompts or positive/negative point prompts</p></li>
 </ul>
@@ -428,8 +430,8 @@ Clone the BAB3 repo locally and <code class="docutils literal notranslate"><span
 <li><p>Remember to <code class="docutils literal notranslate"><span class="pre">Commit</span></code> your segmented objects to save them!</p></li>
 </ul>
 </section>
-<section id="annotate-an-entire-folder-the-image-series-annotator">
-<h3>Annotate an entire folder: The image Series Annotator<a class="headerlink" href="#annotate-an-entire-folder-the-image-series-annotator" title="Link to this heading">#</a></h3>
+<section id="annotate-an-entire-folder-the-image-series-annotator-documentation">
+<h3>Annotate an entire folder: The image Series Annotator (<a class="reference external" href="https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#image-series-annotator">Documentation</a>)<a class="headerlink" href="#annotate-an-entire-folder-the-image-series-annotator-documentation" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Go to <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">SegmentAnything</span> <span class="pre">for</span> <span class="pre">Microscopy</span> <span class="pre">&gt;</span> <span class="pre">Image</span> <span class="pre">Series</span> <span class="pre">Annotator</span></code>.</p></li>
 <li><p>As before, select the <code class="docutils literal notranslate"><span class="pre">Model</span></code> according to the image type, and it’s <code class="docutils literal notranslate"><span class="pre">Size</span></code>.</p></li>
@@ -444,8 +446,8 @@ Clone the BAB3 repo locally and <code class="docutils literal notranslate"><span
 <li><p>When the embedding computations are done, segment the image the same way you did before and click <code class="docutils literal notranslate"><span class="pre">Next</span></code> (or hit <code class="docutils literal notranslate"><span class="pre">N</span></code>) to move to the next image in the directory and continue annotating.</p></li>
 </ul>
 </section>
-<section id="image-annotation-in-3d">
-<h3>Image Annotation in 3D<a class="headerlink" href="#image-annotation-in-3d" title="Link to this heading">#</a></h3>
+<section id="image-annotation-in-3d-documentation">
+<h3>Image Annotation in 3D (<a class="reference external" href="https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#annotator-3d">Documentation</a>)<a class="headerlink" href="#image-annotation-in-3d-documentation" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Similar to the the exercise before, but this time use the <code class="docutils literal notranslate"><span class="pre">Annotator</span> <span class="pre">3d</span></code>, from <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">Segment</span> <span class="pre">Anything</span> <span class="pre">for</span> <span class="pre">Microscopy</span></code></p></li>
 </ul>
@@ -525,9 +527,9 @@ Clone the BAB3 repo locally and <code class="docutils literal notranslate"><span
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-an-image-and-calculating-embeddings">Loading an image and calculating embeddings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-annotation-in-2d">Image annotation in 2D</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-an-entire-folder-the-image-series-annotator">Annotate an entire folder: The image Series Annotator</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-annotation-in-3d">Image Annotation in 3D</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-annotation-in-2d-documentation">Image annotation in 2D (Documentation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-an-entire-folder-the-image-series-annotator-documentation">Annotate an entire folder: The image Series Annotator (Documentation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-annotation-in-3d-documentation">Image Annotation in 3D (Documentation)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-try-samj-in-fiji">Bonus Exercise: try SAMJ in Fiji</a></li>
 </ul>
 </li>
