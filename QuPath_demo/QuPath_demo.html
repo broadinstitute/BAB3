@@ -1,0 +1,729 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Basics of QuPath &#8212; BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'QuPath_demo/QuPath_demo';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/CLab_Square.png" class="logo__image only-light" alt="BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual - Home"/>
+    <script>document.write(`<img src="../_static/CLab_Square.png" class="logo__image only-dark" alt="BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to BAB3
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developing_intutions.html">Day 1, Exercise 3: developing image processing intutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Piximi_ManualAnnotation/Piximi.html">Day 1, Exercise 5 - Making manual annotations with Piximi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BeginnerSegmentation/CPbeginner_Segmentation.html">Day 2, exercise 2: Introduction to CellProfiler</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../slides_et_al.html">Links to slides and other course materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../links.html">Helpful links for now and the future</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/QuPath_demo/QuPath_demo.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Basics of QuPath</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Basics of QuPath</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-information">1. Background information</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-qupath">1.1 What is QuPath?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-pyrmidal-file-formats">1.2 What are pyrmidal file formats?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-objectives">2. Exercise Objectives</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-this-exercise-we-will-learn-how-to">In this exercise we will learn how to:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials-necessary-for-this-exercise">3. Materials necessary for this exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-steps">4. Exercise steps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-qupath">4.1 Launch QuPath</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-qupath-project">4.2 Create a QuPath project</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-create-a-new-choose-a-project-folder">A. Create a new / choose a project folder</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-add-images-to-your-project">B. Add images to your project</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-image-properties">4.3 View image properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-regions-of-interest">4.4 Annotate regions of interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-annotation-measurements">4.5 View annotation measurements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detect-cells">4.6 Detect cells</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classify-cells">4.7 Classify cells</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-and-export-measurements">4.8 Perform and export measurements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#congrats-now-you-know-the-basics-of-qupath">Congrats! Now you know the basics of QuPath!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more-about-qupath">Learn more about QuPath:</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="basics-of-qupath">
+<h1>Basics of QuPath<a class="headerlink" href="#basics-of-qupath" title="Link to this heading">#</a></h1>
+<p>Shatavisha Dasgupta,
+Imaging Platform, Broad Institute of MIT and Harvard, Cambridge, MA, USA</p>
+<p>(Adapted from <a class="reference external" href="https://qupath.readthedocs.io/en/stable/docs/tutorials/index.html">QuPath documentaion</a> and <a class="reference external" href="https://youtu.be/xtjsigsUrms?si=PLyccu1S0xfYJHYN">Pete Bankhead’s video tutorial</a>)</p>
+<section id="background-information">
+<h2>1. Background information<a class="headerlink" href="#background-information" title="Link to this heading">#</a></h2>
+<section id="what-is-qupath">
+<h3>1.1 What is QuPath?<a class="headerlink" href="#what-is-qupath" title="Link to this heading">#</a></h3>
+<p>QuPath is open source software for bioimage analysis created and maintained by Peter Bankhead and his team at The University of Edinburgh. QuPath is commonly used for <strong>digital pathology in research</strong> because it offers a powerful set of tools for working with <strong>whole slide images</strong> - but it can be applied to lots of other kinds of image as well.</p>
+<p>Read the <a class="reference external" href="https://doi.org/10.1038/s41598-017-17204-5">original publication introducing QuPath</a>!</p>
+</section>
+<section id="what-are-pyrmidal-file-formats">
+<h3>1.2 What are pyrmidal file formats?<a class="headerlink" href="#what-are-pyrmidal-file-formats" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Whole slide images (WSIs) are a crucial part of translational research projects, because they allow studying changes in individual tissue structure in health or disease the context of the parent organ</p></li>
+<li><p>WSIs are often &gt; 10GB and contain billions of pixels, and are commonly stored in a pyramidal file format</p></li>
+<li><p>A pyramidal file format stores images at multiple resolutions in a single file, organized in a pyramid-like hierarchy(highest resolution at the base, progressively lower resolutions above).</p></li>
+<li><p>This optimizes performance for viewing, processing, and analyzing large images without needing to load the entire high-res image into memory.</p></li>
+<li><p>Common Use Cases:
+Digital pathology (e.g., .svs, .scn, .ndpi, .tiff)
+Spatial Biology (e.g. .tiff)
+Geospatial imaging (e.g., GeoTIFF)</p></li>
+<li><p>In histology images, zooming in (looking under higher magnification) allows examining the finer details in the cell / tissue structures</p></li>
+<li><p>Structure of pyramidal images (as shown in the figure):</p>
+<ul>
+<li><p>Level 0: Full-resolution image</p></li>
+<li><p>Higher levels : Downsampled versions (e.g., 1/2, 1/4, 1/8 scale)</p></li>
+</ul>
+</li>
+<li><p>Advantages of pyramidal file format:</p>
+<ul>
+<li><p>Faster loading and rendering of large images</p></li>
+<li><p>Reduced memory footprint when viewing subsets or low-resolution previews</p></li>
+<li><p>Facilitates region-of-interest (ROI) extraction without full image decoding</p></li>
+</ul>
+</li>
+<li><p>Common pyramidal file formats:</p>
+<ul>
+<li><p>TIFF with pyramid tags (.tiff/.ome.tiff)</p></li>
+<li><p>SVS (Aperio), NDPI (Hamamatsu), SCN (Leica), etc</p></li>
+</ul>
+</li>
+<li><p>Reading Tools:</p>
+<ul>
+<li><p>OpenSlide, Bio-Formats, pyvips, tifffile, QuPath, and others</p></li>
+</ul>
+</li>
+</ul>
+<p>Limitations:
+Larger file sizes due to storage of multiple resolutions
+Requires specialized software for reading/writing</p>
+<a class="reference internal image-reference" href="../_images/pyramidalimage.jpg"><img alt="alt text" src="../_images/pyramidalimage.jpg" style="width: 300px; height: 200px;" />
+</a>
+</section>
+</section>
+<section id="exercise-objectives">
+<h2>2. Exercise Objectives<a class="headerlink" href="#exercise-objectives" title="Link to this heading">#</a></h2>
+<section id="in-this-exercise-we-will-learn-how-to">
+<h3>In this exercise we will learn how to:<a class="headerlink" href="#in-this-exercise-we-will-learn-how-to" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Create a QuPath project</p></li>
+<li><p>View pyramidal files in QuPath</p></li>
+<li><p>Annotate regions of interest</p></li>
+<li><p>Detect cells in the regions of interest</p></li>
+<li><p>Perform and export measurements on detected cells</p></li>
+</ol>
+</section>
+</section>
+<section id="materials-necessary-for-this-exercise">
+<h2>3. Materials necessary for this exercise<a class="headerlink" href="#materials-necessary-for-this-exercise" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://qupath.github.io/">QuPath software</a></p></li>
+</ol>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/downloadqupath.png" alt="alt text" width="300" height="200">
+</div>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/">Example image_1</a></p></li>
+<li><p><a class="reference external" href="https://openslide.cs.cmu.edu/download/openslide-testdata/Aperio/CMU-1.svs">Example image_2</a></p></li>
+</ol>
+</section>
+<section id="exercise-steps">
+<h2>4. Exercise steps<a class="headerlink" href="#exercise-steps" title="Link to this heading">#</a></h2>
+<section id="launch-qupath">
+<h3>4.1 Launch QuPath<a class="headerlink" href="#launch-qupath" title="Link to this heading">#</a></h3>
+<p>The welcome screen links to QuPath documentation, <a class="reference external" href="http://forum.image.sc">forum.image.sc</a>, and the source code</p>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/qupathwelcomescreen.jpg" alt="alt text" width="500" height="300">
+</div>
+</section>
+<section id="create-a-qupath-project">
+<h3>4.2 Create a QuPath project<a class="headerlink" href="#create-a-qupath-project" title="Link to this heading">#</a></h3>
+<p>Although it is possible to view and work with single images in QuPath, creating a “Project” makes saving and reloading data associated with multiple images much more efficient. A QuPath project groups related images to easily switch between them via thumbnails and also organizes associated data files, scripts, and classifiers.</p>
+<section id="a-create-a-new-choose-a-project-folder">
+<h4>A. Create a new / choose a project folder<a class="headerlink" href="#a-create-a-new-choose-a-project-folder" title="Link to this heading">#</a></h4>
+<p>The project folder can be any folder, stored anywhere on your computer, but it <strong>must be empty</strong>.
+This can be done by doing either of the following:</p>
+<ol class="arabic simple">
+<li><p>Through <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">--&gt;</span> <span class="pre">Project...</span> <span class="pre">--&gt;</span> <span class="pre">Create</span> <span class="pre">new</span> <span class="pre">project</span></code></p></li>
+</ol>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/createproject_1.jpg" alt="alt text" width="300" height="100">
+</div>
+<p>This is how a QuPath project folder can look like:</p>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/createproject_2.jpg" alt="alt text" width="120" height="100">
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Dragging and dropping the folder into QuPath</p></li>
+</ol>
+</section>
+<section id="b-add-images-to-your-project">
+<h4>B. Add images to your project<a class="headerlink" href="#b-add-images-to-your-project" title="Link to this heading">#</a></h4>
+<p>You can add images via <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">--&gt;</span> <span class="pre">Project...</span> <span class="pre">--&gt;</span> <span class="pre">Add</span> <span class="pre">images</span></code>, or, you can drag and drop the images into QuPath. This will open a dialog box, where you can set parameters related to the image being imported.</p>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/imageparameters.jpg" alt="alt text" width="300" height="150">
+</div>
+</section>
+</section>
+<section id="view-image-properties">
+<h3>4.3 View image properties<a class="headerlink" href="#view-image-properties" title="Link to this heading">#</a></h3>
+<p>Click the <strong>Image</strong> tab to get a table of properties related to your image.</p>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/imageproperties.jpg" alt="alt text" width="350" height="600">
+</div>
+<p>The <strong>scroll wheel</strong> of your mouse (or equivalent scrolling motion on a trackpad) can be used to <strong>zoom in and out</strong> of an image within QuPath.
+You can visualize the different stains in your image individually by clicking <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">--&gt;</span> <span class="pre">Brightness</span> <span class="pre">and</span> <span class="pre">Contrast</span></code> and choose the specific stains / channels to view</p>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/imagedisplay.jpg" alt="alt text" width="500" height="400">
+</div>
+</section>
+<section id="annotate-regions-of-interest">
+<h3>4.4 Annotate regions of interest<a class="headerlink" href="#annotate-regions-of-interest" title="Link to this heading">#</a></h3>
+<p><strong>Annotation objects</strong> can be created by drawing specific shapes on the image, using rectangle / circle / polygon tools. One can also use the brush tools to draw custom shapes. This can be done by selecting the tool, clicking on the image, and dragging the mouse. Creating annotation objects allows us to define regions within which we can perform detections. Right-clicking on an annotation “locks” it, and prevents it from getting accidentally deleted. One can make annotations of different classes in QuPath and information regarding the class to which the annotation belongs can be entered by right clicking on the annotated area, and then clicking on <code class="docutils literal notranslate"><span class="pre">Set</span> <span class="pre">Classification</span></code>.</p>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/annotations_1.jpg" alt="alt text" width="300" height="300">
+</div>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/annotations_2.jpg" alt="alt text" width="450" height="400">
+</div>
+</section>
+<section id="view-annotation-measurements">
+<h3>4.5 View annotation measurements<a class="headerlink" href="#view-annotation-measurements" title="Link to this heading">#</a></h3>
+<p>Within the <strong>Analysis panel</strong>, below the annotation list you should see a table showing measurements for the currently selected object. This updates automatically if another annotation is selected. Alternatively, you can click on <code class="docutils literal notranslate"><span class="pre">Measure</span> <span class="pre">--&gt;</span> <span class="pre">Show</span> <span class="pre">annotation</span> <span class="pre">measurements</span></code>, and a table will pop-up showing the annotation measurements.</p>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/annotation_measurements.jpg" alt="alt text" width="750" height="400">
+</div>
+</section>
+<section id="detect-cells">
+<h3>4.6 Detect cells<a class="headerlink" href="#detect-cells" title="Link to this heading">#</a></h3>
+<p>For this step, we will use the OS-2.ndpi image.
+We will first open the image and annoate a region of interest.
+Next, we will try to detect all the cells in the annotated area, and also obtain a count of cells that are positive for DAB-staining.
+We will click on <code class="docutils literal notranslate"><span class="pre">Analyze</span> <span class="pre">--&gt;</span> <span class="pre">Cell</span> <span class="pre">detection</span> <span class="pre">--&gt;</span> <span class="pre">Positive</span> <span class="pre">Cell</span> <span class="pre">detection</span></code>.</p>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/cell_detection_1.jpg" alt="alt text" width="400" height="400">
+</div>
+<p>This opens up a window where we can set the parameters that will allow for accurate cell detection. Once the appropriate parameters are set, we can hit <code class="docutils literal notranslate"><span class="pre">Run</span></code>, and the cells will be detected.</p>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/cell_detection_2.jpg" alt="alt text" width="250" height="400">
+</div>
+<p>The Annotations pane will show the count of all cells, positive cells and negative cells that were detected.</p>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/cell_detection_3.jpg" alt="alt text" width="300" height="250">
+</div>
+<p>We can also visualize the detections as a heatmap overlaid on the image by clicking <code class="docutils literal notranslate"><span class="pre">Measure</span> <span class="pre">--&gt;</span> <span class="pre">Show</span> <span class="pre">measurement</span> <span class="pre">maps</span></code></p>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/cell_detection_4.jpg" alt="alt text" width="400" height="250">
+</div>
+</section>
+<section id="classify-cells">
+<h3>4.7 Classify cells<a class="headerlink" href="#classify-cells" title="Link to this heading">#</a></h3>
+<p>We can next assign the positive cells that were detected to specific areas in the tissue, e.g. tumor or stroma. This can help us compare the counts or other characteristics of the positive cells in the tumoral or the stromal regions.
+For this, we first annotate some regions within our region of interest as ‘tumor’ or ‘stroma’, and train the classifier <code class="docutils literal notranslate"><span class="pre">Classify</span> <span class="pre">--&gt;</span> <span class="pre">Object</span> <span class="pre">classification</span> <span class="pre">--&gt;</span> <span class="pre">Train</span> <span class="pre">object</span> <span class="pre">classifier</span></code></p>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/classification_1.jpg" alt="alt text" width="600" height="400">
+</div>
+<p>We will now get the measurement of the positive cells stratified into the classes (tumor/stroma) that we set.</p>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/classification_2.jpg" alt="alt text" width="300" height="400">
+</div>
+</section>
+<section id="perform-and-export-measurements">
+<h3>4.8 Perform and export measurements<a class="headerlink" href="#perform-and-export-measurements" title="Link to this heading">#</a></h3>
+<p>QuPath makes some basic measuerements of the annotations and detections by default if no additional instruction is provided. However, more granular or more advanced measurements can also be made by clicking on <code class="docutils literal notranslate"><span class="pre">Analyze</span> <span class="pre">--&gt;</span> <span class="pre">Calculate</span> <span class="pre">features</span></code> and then selecting the features that you would want to extract.</p>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/measurement_1.jpg" alt="alt text" width="400" height="400">
+</div>
+<p>These measurements can also be viewed as a heatmap overlaid on the image by clicking <code class="docutils literal notranslate"><span class="pre">Measure</span> <span class="pre">--&gt;</span> <span class="pre">Show</span> <span class="pre">measurement</span> <span class="pre">maps</span></code> or as a table by clicking <code class="docutils literal notranslate"><span class="pre">Measure</span> <span class="pre">--&gt;</span> <span class="pre">Show</span> <span class="pre">detection</span> <span class="pre">measurements</span></code></p>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/measurement_2.jpg" alt="alt text" width="600" height="400">
+</div>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/measurement_3.jpg" alt="alt text" width="800" height="400">
+</div>
+<p>Finally, we export the measurements, by clicking <code class="docutils literal notranslate"><span class="pre">Measure</span> <span class="pre">--&gt;</span> <span class="pre">Export</span> <span class="pre">measurements</span></code>  and selecting the measurements we want to export (e.g. measurements for all images / some images, annotation measurements, detection measurements) and also the file format in which we would want the measurements saved (e.g. .csv, .tsv)</p>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/export_1.jpg" alt="alt text" width="400" height="400">
+</div>
+<p>You will see the file with the measurements saved in your QuPath project folder.</p>
+<div style="margin-left: 40px;">
+    <img src="TutorialImages/export_2.jpg" alt="alt text" width="400" height="200">
+</div>
+<hr class="docutils" />
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="congrats-now-you-know-the-basics-of-qupath">
+<h1>Congrats! Now you know the basics of QuPath!<a class="headerlink" href="#congrats-now-you-know-the-basics-of-qupath" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="learn-more-about-qupath">
+<h1>Learn more about QuPath:<a class="headerlink" href="#learn-more-about-qupath" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/qupath">QuPath Repo</a></p></li>
+<li><p><a class="reference external" href="https://qupath.readthedocs.io/en/stable/">QuPath docs</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/&#64;petebankhead/videos">QuPath YouTube Channel</a></p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./QuPath_demo"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Basics of QuPath</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-information">1. Background information</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-qupath">1.1 What is QuPath?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-pyrmidal-file-formats">1.2 What are pyrmidal file formats?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-objectives">2. Exercise Objectives</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-this-exercise-we-will-learn-how-to">In this exercise we will learn how to:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials-necessary-for-this-exercise">3. Materials necessary for this exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-steps">4. Exercise steps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-qupath">4.1 Launch QuPath</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-qupath-project">4.2 Create a QuPath project</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-create-a-new-choose-a-project-folder">A. Create a new / choose a project folder</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-add-images-to-your-project">B. Add images to your project</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-image-properties">4.3 View image properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-regions-of-interest">4.4 Annotate regions of interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-annotation-measurements">4.5 View annotation measurements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detect-cells">4.6 Detect cells</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classify-cells">4.7 Classify cells</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-and-export-measurements">4.8 Perform and export measurements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#congrats-now-you-know-the-basics-of-qupath">Congrats! Now you know the basics of QuPath!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more-about-qupath">Learn more about QuPath:</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Broad Institute Imaging Platform
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
