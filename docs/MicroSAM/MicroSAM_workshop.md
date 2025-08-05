@@ -8,15 +8,16 @@
 
 Segment Anything for Microscopy (or MicroSAM) is a tool for interactive and automatic annotation for microscopy data. It is built on top of [the Segment Anything Model](https://segment-anything.com/) (aka. SAM), a foundational model developed by Meta AI for prompt-based and automatic segmentation of images. The original SAM model was trained on millions of annotated masks from thousands of images (mostly natural images, but some scientific and medical images as well). MicroSAM is a specific implementation of SAM which specializes it for microscopy and other biomedical imaging data.
 
+You can find all the documentation for this tool [HERE](https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#annotation-tools).
+
+While you can use MicroSAM directly from the [command line](https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#using-the-command-line-interface-cli) or as a [Python library](https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#using-the-python-library) (they even have [quick start jupyter notebooks](https://github.com/computational-cell-analytics/micro-sam/blob/master/notebooks/quick_start.ipynb) that you can run online on Kaggle or Google Colab), we will use the MicroSAM Napari plugin for this workshop.
 
 ### Learning Objectives
 - Learn about SAM and it's specific implementation for microscopy: MicroSAM
 - Explore MicroSAM as a tool for aiding in manual annotations in Napari, using the plugin
 - Explore the limitations of the model
 
-**Lab Data** in [this folder]() (Machine_Learning)
-
-
+**Lab Data** in [this folder](https://drive.google.com/drive/folders/1NOt_OeMVr6Y5ZK5CrYtG97-P05yABHlx?usp=sharing)
 
 ---
 
@@ -56,7 +57,7 @@ The very first time you open a sample image, the plugin will first download it, 
 The very first time you run any model, the plugin will first download the model weights, which might take a few minutes.
 ```
 
-### Image annotation in 2D
+### Image annotation in 2D ([Documentation](https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#annotator-2d))
 - Segment cells using either bounding box prompts or positive/negative point prompts
 
 ```{margin}
@@ -69,7 +70,7 @@ Try prompting the plugin to segment structures of varying sizes.
 
 - Remember to `Commit` your segmented objects to save them!
 
-### Annotate an entire folder: The image Series Annotator
+### Annotate an entire folder: The image Series Annotator ([Documentation](https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#image-series-annotator))
 - Go to `Plugins > SegmentAnything for Microscopy > Image Series Annotator`.
 - As before, select the `Model` according to the image type, and it's `Size`.
 - Select the `Input Folder`, `Output Folder` and `embeddings save path` (each one should be a different folder, named accordingly).
@@ -82,7 +83,7 @@ Your input folder should **ONLY** contain your images and nothing else (like oth
 
 - When the embedding computations are done, segment the image the same way you did before and click `Next` (or hit `N`) to move to the next image in the directory and continue annotating.
 
-### Image Annotation in 3D
+### Image Annotation in 3D ([Documentation](https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#annotator-3d))
 - Similar to the the exercise before, but this time use the `Annotator 3d`, from `Plugins > Segment Anything for Microscopy`
 
 ```{margin}
@@ -92,6 +93,7 @@ Note that computing embeddings for the whole stack will, expectedly, take a long
 - Use either bounding boxes or point prompts to segment (`S` key) a few slices across the stack. Then, click `Segment Stack` to predict the segmentation in the rest of the intermediate slices. Go through all of them and correct the ones that are wrong using manual prompts.
 
 - Once you finish, you can `Commit` the 3D annotation.
+
 
 ### Bonus Exercise: try SAMJ in Fiji
 
