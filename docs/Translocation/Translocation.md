@@ -1,10 +1,20 @@
-
-# Translocation Tutorial
+# Day 2, exercise 5: Segmentation and Classification with CellProfiler and CellProfiler Analyst
 
 **Image-based screening using subcellular localization of FOXO1A in osteosarcoma cells: A computer exercise using CellProfiler & CellProfiler Analyst software**
 
-Beth Cimini, Carolina Wählby, Martin Simonsson, Megan Rokop and Mark
-Bray, Broad Institute
+*Lab authors: Beth Cimini, Carolina Wählby, Martin Simonsson, Megan Rokop and Mark
+Bray. 
+
+---
+
+## Learning Objectives
+- Fix bad segmentation parameters based on past experience with "good" settings
+- Create best-possible segmentations when no constitutive marker is available
+- Perform classical machine learning in CellProfiler Analyst
+
+**Lab Data** in [this folder](https://github.com/CellProfiler/tutorials/raw/master/Translocation/Archive_EN.zip) 
+
+---
 
 ## **Background information:**
 

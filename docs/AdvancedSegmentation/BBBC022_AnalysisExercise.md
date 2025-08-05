@@ -1,10 +1,18 @@
+# Day 2, exercise 3: Advanced segmentation and organelle analysis
 
-# Advanced segmentation and organelle analysis
-***A computer exercise using the CellProfiler & CellProfiler Analyst softwares***
+*Lab authors: Beth Cimini* . 
 
- **Beth Cimini** 
-<br>
- **Broad Institute of MIT and Harvard, Cambridge, MA**
+---
+
+## Learning Objectives
+- Learn to create classical segmentation settings robust to debris and blurriness
+- Learn to tune segmentaion models to be robust to many different phenotypes
+- Examine an example pipeline which contains complicated matching parameters in the NamesAndTypes module
+
+**Lab Data** in [this folder](https://drive.google.com/file/d/1qVaQiPZKqOPEsa62lYEpm7ot3th7ADqE/view?usp=sharing) (Machine_Learning)
+
+---
+
 
 ## **Background information:**
 
