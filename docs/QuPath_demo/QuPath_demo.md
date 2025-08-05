@@ -3,6 +3,8 @@
 Shatavisha Dasgupta,
 Imaging Platform, Broad Institute of MIT and Harvard, Cambridge, MA, USA
 
+(Adapted from [QuPath documentaion](https://qupath.readthedocs.io/en/stable/docs/tutorials/index.html) and [Pete Bankhead's video tutorial](https://youtu.be/xtjsigsUrms?si=PLyccu1S0xfYJHYN))
+
 ## 1. Background information
 
 ### 1.1 What is QuPath?
