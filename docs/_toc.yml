@@ -12,7 +12,7 @@ parts:
   #- file: AdvancedSegmentation/BBBC022_AnalysisExercise.md
   #- file: Translocation/Translocation.md
   #- file: BeginnerSegmentation/BeginnerSegmentationPlugins.md
-  - file: MicroSAM/MicroSAM_workshop.md
+  #- file: MicroSAM/MicroSAM_workshop.md
 - caption:  Additional Resources
   chapters:
   - file: slides_et_al
