@@ -31,10 +31,9 @@ This table will be updated throughout the course with links to materials used du
 |Day 1, session 2: Intro to Images and ImageJ | [Slides available here](https://docs.google.com/presentation/d/186pZXoL_ledGe-Gh1-n-6X5cP7sslOYAlcRlkrjPrw8/edit?usp=drive_link), [Demo macro and images available here](https://drive.google.com/drive/folders/1BV7IOCwVzAceacBQl-WKrXpzETakxt_M)| 
 |Day 1, session 4: Intro to Piximi| [Slide deck](https://docs.google.com/presentation/d/1jJLj5Vk2_uBtDhMFKgMgT8zpr57pOOUlpkIf5Bz40zE/edit?usp=sharing)|
 |Day 2, session 1: Classical segmentation concepts | [Slide deck](https://docs.google.com/presentation/d/1CDie17DZFJwHwfSCKyvUchGZ3lcF4Aa88IdESXeIkaw/edit?slide=id.g372eaedf953_0_104#slide=id.g372eaedf953_0_104)|
+|Day 2, session 4: Classical Machine Learning Concepts | [Slide deck](https://docs.google.com/presentation/d/1z8YbI7mHEITIynBhyWxE9ZpU8KB7UxkUF5p3ly6ZzYU/edit?slide=id.p#slide=id.p)|
 
 <!---
-
-|Day 2, session 4: Classical Machine Learning Concepts | [Slide deck](https://docs.google.com/presentation/d/1z8YbI7mHEITIynBhyWxE9ZpU8KB7UxkUF5p3ly6ZzYU/edit?slide=id.p#slide=id.p)|
 |Day 3, session 1: Pitfalls in Classical ML and Introduction to ilastik | Coming soon!|
 |Day 3, session 2: Practical introduction to ilastik | Coming soon!|
 |Day 3, session 3: Introduction to QuPath | Coming soon!|
