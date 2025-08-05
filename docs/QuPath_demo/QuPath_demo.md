@@ -1,9 +1,19 @@
-# Basics of QuPath
+# Day 3, session 4: Practical introduction to QuPath
 
-Shatavisha Dasgupta,
-Imaging Platform, Broad Institute of MIT and Harvard, Cambridge, MA, USA
+*Lab author: Shatavisha Dasgupta* . 
 
-(Adapted from [QuPath documentaion](https://qupath.readthedocs.io/en/stable/docs/tutorials/index.html) and [Pete Bankhead's video tutorial](https://youtu.be/xtjsigsUrms?si=PLyccu1S0xfYJHYN))
+(Adapted from [QuPath documentation](https://qupath.readthedocs.io/en/stable/docs/tutorials/index.html) and [Pete Bankhead's video tutorial](https://youtu.be/xtjsigsUrms?si=PLyccu1S0xfYJHYN))
+
+## Learning Objectives
+- Create a QuPath project
+- View pyramidal files in QuPath
+- Annotate regions of interest
+- Detect cells in the regions of interest
+- Perform and export measurements on detected cells
+
+**Lab Data** in [this folder](https://drive.google.com/drive/folders/1z0FnjmPLGjEnIpPu_P8PTB-4ck6Z9BcA?usp=drive_link) (Originally sourced from [here](https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/) and [here]((https://openslide.cs.cmu.edu/download/openslide-testdata/Aperio/CMU-1.svs))
+
+---
 
 ## 1. Background information
 
@@ -43,34 +53,16 @@ Requires specialized software for reading/writing
 <img src="TutorialImages/pyramidalimage.jpg" alt="alt text" width="300" height="200">
 
 
-## 2. Exercise Objectives
-#### In this exercise we will learn how to:
-1. Create a QuPath project
-2. View pyramidal files in QuPath
-3. Annotate regions of interest
-4. Detect cells in the regions of interest
-5. Perform and export measurements on detected cells
+## 2. Exercise steps
 
-## 3. Materials necessary for this exercise
-1. [QuPath software](https://qupath.github.io/)
-
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/downloadqupath.png" alt="alt text" width="300" height="200">
-</div>
-
-1. [Example image_1](https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/)
-2. [Example image_2](https://openslide.cs.cmu.edu/download/openslide-testdata/Aperio/CMU-1.svs)
-
-## 4. Exercise steps
-
-### 4.1 Launch QuPath
+### 2.1 Launch QuPath
 The welcome screen links to QuPath documentation, forum.image.sc, and the source code
 
 <div style="margin-left: 40px;">
     <img src="TutorialImages/qupathwelcomescreen.jpg" alt="alt text" width="500" height="300">
 </div>
 
-### 4.2 Create a QuPath project
+### 2.2 Create a QuPath project
 Although it is possible to view and work with single images in QuPath, creating a "Project" makes saving and reloading data associated with multiple images much more efficient. A QuPath project groups related images to easily switch between them via thumbnails and also organizes associated data files, scripts, and classifiers.
 
 #### A. Create a new / choose a project folder
@@ -98,7 +90,7 @@ You can add images via `File --> Project... --> Add images`, or, you can drag an
     <img src="TutorialImages/imageparameters.jpg" alt="alt text" width="300" height="150">
 </div>
 
-### 4.3 View image properties
+### 2.3 View image properties
 
 Click the **Image** tab to get a table of properties related to your image.
 <div style="margin-left: 40px;">
@@ -112,7 +104,7 @@ You can visualize the different stains in your image individually by clicking `V
     <img src="TutorialImages/imagedisplay.jpg" alt="alt text" width="500" height="400">
 </div>
 
-### 4.4 Annotate regions of interest
+### 2.4 Annotate regions of interest
 **Annotation objects** can be created by drawing specific shapes on the image, using rectangle / circle / polygon tools. One can also use the brush tools to draw custom shapes. This can be done by selecting the tool, clicking on the image, and dragging the mouse. Creating annotation objects allows us to define regions within which we can perform detections. Right-clicking on an annotation "locks" it, and prevents it from getting accidentally deleted. One can make annotations of different classes in QuPath and information regarding the class to which the annotation belongs can be entered by right clicking on the annotated area, and then clicking on `Set Classification`.
 
 <div style="margin-left: 40px;">
@@ -125,14 +117,14 @@ You can visualize the different stains in your image individually by clicking `V
 </div>
 
 
-### 4.5 View annotation measurements
+### 2.5 View annotation measurements
 Within the **Analysis panel**, below the annotation list you should see a table showing measurements for the currently selected object. This updates automatically if another annotation is selected. Alternatively, you can click on `Measure --> Show annotation measurements`, and a table will pop-up showing the annotation measurements.
 
 <div style="margin-left: 40px;">
     <img src="TutorialImages/annotation_measurements.jpg" alt="alt text" width="750" height="400">
 </div>
 
-### 4.6 Detect cells
+### 2.6 Detect cells
 For this step, we will use the OS-2.ndpi image.
 We will first open the image and annoate a region of interest.
 Next, we will try to detect all the cells in the annotated area, and also obtain a count of cells that are positive for DAB-staining.
@@ -157,7 +149,7 @@ We can also visualize the detections as a heatmap overlaid on the image by click
     <img src="TutorialImages/cell_detection_4.jpg" alt="alt text" width="400" height="250">
 </div>
 
-### 4.7 Classify cells
+### 2.7 Classify cells
 We can next assign the positive cells that were detected to specific areas in the tissue, e.g. tumor or stroma. This can help us compare the counts or other characteristics of the positive cells in the tumoral or the stromal regions.
 For this, we first annotate some regions within our region of interest as 'tumor' or 'stroma', and train the classifier `Classify --> Object classification --> Train object classifier`
 <div style="margin-left: 40px;">
@@ -169,7 +161,7 @@ We will now get the measurement of the positive cells stratified into the classe
     <img src="TutorialImages/classification_2.jpg" alt="alt text" width="300" height="400">
 </div>
 
-### 4.8 Perform and export measurements
+### 2.8 Perform and export measurements
 QuPath makes some basic measuerements of the annotations and detections by default if no additional instruction is provided. However, more granular or more advanced measurements can also be made by clicking on `Analyze --> Calculate features` and then selecting the features that you would want to extract.
 <div style="margin-left: 40px;">
     <img src="TutorialImages/measurement_1.jpg" alt="alt text" width="400" height="400">
@@ -200,10 +192,10 @@ You will see the file with the measurements saved in your QuPath project folder.
 --------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------
 
-# Congrats! Now you know the basics of QuPath!
+## Congrats! Now you know the basics of QuPath!
 
 
-# Learn more about QuPath:
+## Learn more about QuPath:
 - [QuPath Repo](https://github.com/qupath)
 - [QuPath docs](https://qupath.readthedocs.io/en/stable/)
 - [QuPath YouTube Channel](https://www.youtube.com/@petebankhead/videos)

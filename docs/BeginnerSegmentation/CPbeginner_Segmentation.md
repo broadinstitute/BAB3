@@ -1,7 +1,7 @@
 
 # Day 2, exercise 2: Introduction to CellProfiler
 
-*Lab authors: Beth Cimini, Barbara Diaz-Rohrer, Esteban Miglietta, Paula Llanos, Mario Cruz and Rebecca Senft. 
+*Lab authors: Beth Cimini, Barbara Diaz-Rohrer, Esteban Miglietta, Paula Llanos, Mario Cruz and Rebecca Senft.* 
 
 ---
 
