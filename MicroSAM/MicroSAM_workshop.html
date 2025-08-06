@@ -343,9 +343,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microsam-segment-anything-model-for-microscopy">MicroSAM: ‘Segment Anything’ Model for Microscopy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microsam-segment-anything-model-for-microscopy">MicroSAM: ‘Segment Anything’ Model for Microscopy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises:</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-an-image-and-calculating-embeddings">Loading an image and calculating embeddings</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-annotation-in-2d-documentation">Image annotation in 2D (Documentation)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-an-entire-folder-the-image-series-annotator-documentation">Annotate an entire folder: The image Series Annotator (Documentation)</a></li>
@@ -373,8 +374,9 @@ document.write(`
 <p>Segment Anything for Microscopy (or MicroSAM) is a tool for interactive and automatic annotation for microscopy data. It is built on top of <a class="reference external" href="https://segment-anything.com/">the Segment Anything Model</a> (aka. SAM), a foundational model developed by Meta AI for prompt-based and automatic segmentation of images. The original SAM model was trained on millions of annotated masks from thousands of images (mostly natural images, but some scientific and medical images as well). MicroSAM is a specific implementation of SAM which specializes it for microscopy and other biomedical imaging data.</p>
 <p>You can find all the documentation for this tool <a class="reference external" href="https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#annotation-tools">HERE</a>.</p>
 <p>While you can use MicroSAM directly from the <a class="reference external" href="https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#using-the-command-line-interface-cli">command line</a> or as a <a class="reference external" href="https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#using-the-python-library">Python library</a> (they even have <a class="reference external" href="https://github.com/computational-cell-analytics/micro-sam/blob/master/notebooks/quick_start.ipynb">quick start jupyter notebooks</a> that you can run online on Kaggle or Google Colab), we will use the MicroSAM Napari plugin for this workshop.</p>
+</section>
 <section id="learning-objectives">
-<h3>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h3>
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Learn about SAM and it’s specific implementation for microscopy: MicroSAM</p></li>
 <li><p>Explore MicroSAM as a tool for aiding in manual annotations in Napari, using the plugin</p></li>
@@ -384,18 +386,19 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="installation">
-<h3>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h3>
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
 <p>Using Pixi:
 Clone the BAB3 repo locally and <code class="docutils literal notranslate"><span class="pre">cd</span></code> into that directory, then:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pixi_envs</span><span class="o">/</span><span class="n">microsam</span> <span class="c1">#go to the directory containing the pixi files</span>
-<span class="n">pixi</span> <span class="n">install</span> <span class="c1">#install the microsam environment using the local lock file</span>
-<span class="n">pixi</span> <span class="n">shell</span> <span class="c1">#activate the new microsam environment</span>
+<span class="n">pixi</span> <span class="n">shell</span> <span class="o">--</span><span class="n">frozen</span> <span class="c1">#activate the new microsam environment (and install, if not already installed)</span>
 </pre></div>
 </div>
 <p>If succesfull, you should see <code class="docutils literal notranslate"><span class="pre">(microsam)</span></code> before your command line prompt. Within this Pixi shell, you should have everything you need for this workshop.</p>
 <p>You can always exit the Pixi environment using the <code class="docutils literal notranslate"><span class="pre">exit</span></code> command.</p>
 </section>
 <hr class="docutils" />
+<section id="exercises">
+<h2>Exercises:<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <section id="loading-an-image-and-calculating-embeddings">
 <h3>Loading an image and calculating embeddings<a class="headerlink" href="#loading-an-image-and-calculating-embeddings" title="Link to this heading">#</a></h3>
 <p>In order to use the MicroSAM models to segment the image, first we need to use the model to compute a simplified representation of the image, aka. an <em>embedding</em>.</p>
@@ -526,9 +529,10 @@ Clone the BAB3 repo locally and <code class="docutils literal notranslate"><span
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microsam-segment-anything-model-for-microscopy">MicroSAM: ‘Segment Anything’ Model for Microscopy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microsam-segment-anything-model-for-microscopy">MicroSAM: ‘Segment Anything’ Model for Microscopy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises:</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-an-image-and-calculating-embeddings">Loading an image and calculating embeddings</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-annotation-in-2d-documentation">Image annotation in 2D (Documentation)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-an-entire-folder-the-image-series-annotator-documentation">Annotate an entire folder: The image Series Annotator (Documentation)</a></li>
@@ -557,6 +561,13 @@ By Broad Institute Imaging Platform
   
   <div class="footer-item">
     
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
 
   </div>
   
