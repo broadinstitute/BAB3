@@ -250,9 +250,3 @@ Images 1 and 2 have low noise, while images 3 and 4 have high noise; images 1 an
 
 - Turn live update back on and check generalization to other images again - is it better or worse than with all the features?
 - (Optional) - turn live update back off, return to the feature selection menu, and rationally pick a subset of the features - maybe one or two sigma values, and/or one or two categories. Return to the training menu, pull up image 1, and then go back to the **Select Features** menu - how does your rational set of features compare in accuracy and time to all the features or the optimal 7? How about in generalization, if you select them?
-
-## Bonus Exercise: Try out some of ilastik's other functionalities
-
-Ilastik is more than just a pixel classifier- it can do segmentation, tracking, and object classification too!
-
-Try creating a **Pixel Classification + Object Classification** workflow (available on the ilastik front screen under **Other Workflows**) using the microglia [data](https://drive.google.com/drive/folders/1TyV_hzN2pDpX0lVQ_jh08A9AG5e4Bao8?usp=drive_link) from our manual annotation exercise on Day 1 - annotate nuclei and background as pixel classes, try to segment them, and then turn your objects into classes (as with Day 1, you can decide on the classes you want to try - big vs small, microglial vs not, etc). How is segmentation in ilastik different than in CellProfiler? 
