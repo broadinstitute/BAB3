@@ -12,7 +12,7 @@ You can find all the documentation for this tool [HERE](https://computational-ce
 
 While you can use MicroSAM directly from the [command line](https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#using-the-command-line-interface-cli) or as a [Python library](https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#using-the-python-library) (they even have [quick start jupyter notebooks](https://github.com/computational-cell-analytics/micro-sam/blob/master/notebooks/quick_start.ipynb) that you can run online on Kaggle or Google Colab), we will use the MicroSAM Napari plugin for this workshop.
 
-### Learning Objectives
+## Learning Objectives
 - Learn about SAM and it's specific implementation for microscopy: MicroSAM
 - Explore MicroSAM as a tool for aiding in manual annotations in Napari, using the plugin
 - Explore the limitations of the model
@@ -21,14 +21,13 @@ While you can use MicroSAM directly from the [command line](https://computationa
 
 ---
 
-### Installation
+## Installation
 Using Pixi:
 Clone the BAB3 repo locally and `cd` into that directory, then:
 
 ```
 cd pixi_envs/microsam #go to the directory containing the pixi files
-pixi install #install the microsam environment using the local lock file
-pixi shell #activate the new microsam environment
+pixi shell --frozen #activate the new microsam environment (and install, if not already installed)
 ```
 
 If succesfull, you should see `(microsam)` before your command line prompt. Within this Pixi shell, you should have everything you need for this workshop.
@@ -36,6 +35,8 @@ If succesfull, you should see `(microsam)` before your command line prompt. With
 You can always exit the Pixi environment using the `exit` command.
 
 ---
+
+## Exercises:
 
 ### Loading an image and calculating embeddings
 In order to use the MicroSAM models to segment the image, first we need to use the model to compute a simplified representation of the image, aka. an *embedding*.
