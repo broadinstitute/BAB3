@@ -58,9 +58,7 @@ Requires specialized software for reading/writing
 ### 2.1 Launch QuPath
 The welcome screen links to QuPath documentation, forum.image.sc, and the source code
 
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/qupathwelcomescreen.jpg" alt="alt text" width="500" height="300">
-</div>
+<img src="TutorialImages/qupathwelcomescreen.jpg">
 
 ### 2.2 Create a QuPath project
 Although it is possible to view and work with single images in QuPath, creating a "Project" makes saving and reloading data associated with multiple images much more efficient. A QuPath project groups related images to easily switch between them via thumbnails and also organizes associated data files, scripts, and classifiers.
@@ -70,14 +68,11 @@ The project folder can be any folder, stored anywhere on your computer, but it *
 This can be done by doing either of the following:
 1. Through `File --> Project... --> Create new project`
 
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/createproject_1.jpg" alt="alt text" width="300" height="100">
-</div>
+<img src="TutorialImages/createproject_1.jpg">
 
 This is how a QuPath project folder can look like:
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/createproject_2.jpg" alt="alt text" width="120" height="100">
-</div>
+
+<img src="TutorialImages/createproject_2.jpg">
 
 
 
@@ -86,43 +81,31 @@ This is how a QuPath project folder can look like:
 #### B. Add images to your project
 You can add images via `File --> Project... --> Add images`, or, you can drag and drop the images into QuPath. This will open a dialog box, where you can set parameters related to the image being imported.
 
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/imageparameters.jpg" alt="alt text" width="300" height="150">
-</div>
+<img src="TutorialImages/imageparameters.jpg">
 
 ### 2.3 View image properties
 
 Click the **Image** tab to get a table of properties related to your image.
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/imageproperties.jpg" alt="alt text" width="350" height="600">
-</div>
+<img src="TutorialImages/imageproperties.jpg">
 
 
 The **scroll wheel** of your mouse (or equivalent scrolling motion on a trackpad) can be used to **zoom in and out** of an image within QuPath.
 You can visualize the different stains in your image individually by clicking `View --> Brightness and Contrast` and choose the specific stains / channels to view
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/imagedisplay.jpg" alt="alt text" width="500" height="400">
-</div>
+<img src="TutorialImages/imagedisplay.jpg">
 
 ### 2.4 Annotate regions of interest
 **Annotation objects** can be created by drawing specific shapes on the image, using rectangle / circle / polygon tools. One can also use the brush tools to draw custom shapes. This can be done by selecting the tool, clicking on the image, and dragging the mouse. Creating annotation objects allows us to define regions within which we can perform detections. Right-clicking on an annotation "locks" it, and prevents it from getting accidentally deleted. One can make annotations of different classes in QuPath and information regarding the class to which the annotation belongs can be entered by right clicking on the annotated area, and then clicking on `Set Classification`.
 
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/annotations_1.jpg" alt="alt text" width="300" height="300">
-</div>
+<img src="TutorialImages/annotations_1.jpg">
 
 
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/annotations_2.jpg" alt="alt text" width="450" height="400">
-</div>
+<img src="TutorialImages/annotations_2.jpg">
 
 
 ### 2.5 View annotation measurements
 Within the **Analysis panel**, below the annotation list you should see a table showing measurements for the currently selected object. This updates automatically if another annotation is selected. Alternatively, you can click on `Measure --> Show annotation measurements`, and a table will pop-up showing the annotation measurements.
 
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/annotation_measurements.jpg" alt="alt text" width="750" height="400">
-</div>
+<img src="TutorialImages/annotation_measurements.jpg" alt="alt text">
 
 ### 2.6 Detect cells
 For this step, we will use the OS-2.ndpi image.
@@ -130,64 +113,42 @@ We will first open the image and annoate a region of interest.
 Next, we will try to detect all the cells in the annotated area, and also obtain a count of cells that are positive for DAB-staining.
 We will click on `Analyze --> Cell detection --> Positive Cell detection`. 
 
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/cell_detection_1.jpg" alt="alt text" width="400" height="400">
-</div>
+<img src="TutorialImages/cell_detection_1.jpg">
 
 This opens up a window where we can set the parameters that will allow for accurate cell detection. Once the appropriate parameters are set, we can hit `Run`, and the cells will be detected.
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/cell_detection_2.jpg" alt="alt text" width="250" height="400">
-</div>
+<img src="TutorialImages/cell_detection_2.jpg">
 
 The Annotations pane will show the count of all cells, positive cells and negative cells that were detected.
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/cell_detection_3.jpg" alt="alt text" width="300" height="250">
-</div>
+<img src="TutorialImages/cell_detection_3.jpg">
 
 We can also visualize the detections as a heatmap overlaid on the image by clicking `Measure --> Show measurement maps`
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/cell_detection_4.jpg" alt="alt text" width="400" height="250">
-</div>
+<img src="TutorialImages/cell_detection_4.jpg">
 
 ### 2.7 Classify cells
 We can next assign the positive cells that were detected to specific areas in the tissue, e.g. tumor or stroma. This can help us compare the counts or other characteristics of the positive cells in the tumoral or the stromal regions.
 For this, we first annotate some regions within our region of interest as 'tumor' or 'stroma', and train the classifier `Classify --> Object classification --> Train object classifier`
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/classification_1.jpg" alt="alt text" width="600" height="400">
-</div>
+<img src="TutorialImages/classification_1.jpg">
 
 We will now get the measurement of the positive cells stratified into the classes (tumor/stroma) that we set.
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/classification_2.jpg" alt="alt text" width="300" height="400">
-</div>
+<img src="TutorialImages/classification_2.jpg">
 
 ### 2.8 Perform and export measurements
 QuPath makes some basic measuerements of the annotations and detections by default if no additional instruction is provided. However, more granular or more advanced measurements can also be made by clicking on `Analyze --> Calculate features` and then selecting the features that you would want to extract.
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/measurement_1.jpg" alt="alt text" width="400" height="400">
-</div>
+<img src="TutorialImages/measurement_1.jpg">
 
 These measurements can also be viewed as a heatmap overlaid on the image by clicking `Measure --> Show measurement maps` or as a table by clicking `Measure --> Show detection measurements`
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/measurement_2.jpg" alt="alt text" width="600" height="400">
-</div>
+<img src="TutorialImages/measurement_2.jpg">
 
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/measurement_3.jpg" alt="alt text" width="800" height="400">
-</div>
+<img src="TutorialImages/measurement_3.jpg">
 
 
 Finally, we export the measurements, by clicking `Measure --> Export measurements`  and selecting the measurements we want to export (e.g. measurements for all images / some images, annotation measurements, detection measurements) and also the file format in which we would want the measurements saved (e.g. .csv, .tsv)
 
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/export_1.jpg" alt="alt text" width="400" height="400">
-</div>
+<img src="TutorialImages/export_1.jpg">
 
 You will see the file with the measurements saved in your QuPath project folder.
 
-<div style="margin-left: 40px;">
-    <img src="TutorialImages/export_2.jpg" alt="alt text" width="400" height="200">
-</div>
+<img src="TutorialImages/export_2.jpg">
 
 --------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------
