@@ -12,7 +12,7 @@ parts:
   - file: AdvancedSegmentation/BBBC022_AnalysisExercise.md
   - file: Translocation/Translocation.md
   - file: ilastik/PixelClassification.md
-  #- file: QuPath_demo/QuPath_demo.md
+  - file: QuPath_demo/QuPath_demo.md
   #- file: BeginnerSegmentation/BeginnerSegmentationPlugins.md
   #- file: MicroSAM/MicroSAM_workshop.md
 - caption:  Additional Resources
