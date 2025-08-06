@@ -33,12 +33,9 @@ This table will be updated throughout the course with links to materials used du
 |Day 2, session 1: Classical segmentation concepts | [Slide deck](https://docs.google.com/presentation/d/1CDie17DZFJwHwfSCKyvUchGZ3lcF4Aa88IdESXeIkaw/edit?slide=id.g372eaedf953_0_104#slide=id.g372eaedf953_0_104)|
 |Day 2, session 4: Classical Machine Learning Concepts | [Slide deck](https://docs.google.com/presentation/d/1z8YbI7mHEITIynBhyWxE9ZpU8KB7UxkUF5p3ly6ZzYU/edit?slide=id.p#slide=id.p)|
 |Day 3, session 1: Pitfalls in Classical ML and Introduction to ilastik | [Slide deck](https://docs.google.com/presentation/d/1pEwc-odMk9q0byzv1gghN9YH0V1lAK0errcTvGs3nFM/edit?usp=sharing), [ML interactive notebook](https://ciminilab.github.io/developing-intuitions/apps/Machine_Learning_Intutions.html)|
+|Day 3, session 5: Colocalization (by Romain Guiet) | [Learn more about the Coloc Game](https://focalplane.biologists.com/2024/10/20/teaching-co-localisation-analysis-from-lecture-to-leisure/) [Extra handouts for the Coloc Game](https://drive.google.com/drive/folders/1SwBBbCgHNp4qB0qG6uhmk-P0QxB34qKv?usp=drive_link)|
 
 <!---
-|Day 3, session 3: Introduction to QuPath | Coming soon!|
-|Day 3, session 4: Practical introduction to QuPath | Coming soon!|
-|Day 3, session 5: Thinking about measurements | Coming soon!|
-|Day 3, session 6: Colocalization (by Romain Guiet) | [Extra handouts for the Coloc Game](https://drive.google.com/drive/folders/1SwBBbCgHNp4qB0qG6uhmk-P0QxB34qKv?usp=drive_link)|
 |Day 4, session 1: Command lines, environments, and containers | Coming soon!|
 |Day 4, session 2: CellProfiler Plugins | Coming soon!|
 |Day 4, session 3: Introduction to Deep Learning | Coming soon!|

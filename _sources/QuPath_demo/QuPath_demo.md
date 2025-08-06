@@ -1,4 +1,4 @@
-# Day 3, session 4: Practical introduction to QuPath
+# Day 3, session 3: Practical introduction to QuPath
 
 *Lab author: Shatavisha Dasgupta* . 
 
