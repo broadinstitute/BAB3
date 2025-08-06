@@ -96,17 +96,15 @@ referred to in machine learning as a training set.
    - Zoom-in far enough that the grid is no longer visible. This will
      speed up the *Live Update*.
 
-   Begin by labeling pixels for two classes: a cell class as your first class, and a background class as your second class.
-
-```{tip}
-Accidentally made the background class first? No problem, you can either clear the labels and start over, or we can show you how to change CellProfiler's expectations for teh channel order later
-```
-
 4. Open the **Feature Selection** window and add all features.
 5. Open the **Training** window.
 6. Rename the two label classes (if you like, so you don't get confused) to something like `Cells` and `Background`
 7. Using the paint brush tool, label pixels (one at a time) for each
    class until you are satisfied with the segmentation.
+
+```{tip}
+Accidentally made the background class first? No problem, you can either clear the labels and start over, or we can show you how to change CellProfiler's expectations for the channel order later
+```
 
 We recommend creating labels for each class one pixel at a time, rather
 than by making scribbles, to minimize the chance of [over-fitting],
