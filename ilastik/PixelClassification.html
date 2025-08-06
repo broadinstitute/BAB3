@@ -1,0 +1,769 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Day 3, session 2: Practical introduction to ilastik &#8212; BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ilastik/PixelClassification';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Links to slides and other course materials" href="../slides_et_al.html" />
+    <link rel="prev" title="Day 2, exercise 5: Segmentation and Classification with CellProfiler and CellProfiler Analyst" href="../Translocation/Translocation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/CLab_Square.png" class="logo__image only-light" alt="BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual - Home"/>
+    <script>document.write(`<img src="../_static/CLab_Square.png" class="logo__image only-dark" alt="BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to BAB3
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and Exercises</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developing_intutions.html">Day 1, Exercise 3: developing image processing intutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Piximi_ManualAnnotation/Piximi.html">Day 1, Exercise 5 - Making manual annotations with Piximi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BeginnerSegmentation/CPbeginner_Segmentation.html">Day 2, exercise 2: Introduction to CellProfiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AdvancedSegmentation/BBBC022_AnalysisExercise.html">Day 2, exercise 3: Advanced segmentation and organelle analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Translocation/Translocation.html">Day 2, exercise 5: Segmentation and Classification with CellProfiler and CellProfiler Analyst</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Day 3, session 2: Practical introduction to ilastik</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../slides_et_al.html">Links to slides and other course materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../links.html">Helpful links for now and the future</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/ilastik/PixelClassification.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Day 3, session 2: Practical introduction to ilastik</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-ilastik">Introducing Ilastik</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-using-ilastik-to-turn-2d-phase-images-into-pseudo-fluorescence">Exercise 1: Using ilastik to turn 2D phase images into pseudo-fluorescence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-the-dic-conundrum">Step 1: The DIC conundrum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-pixel-based-classification-with-ilastik">Step 2: Pixel-based classification with Ilastik</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-with-2-labels">Annotation with 2 Labels</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#export-the-probability-maps">Export the probability maps</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-segmenting-probabilities-with-cellprofiler">Step 3: Segmenting probabilities with CellProfiler</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-using-ilastik-on-3d-simulated-data">Exercise 2: Using ilastik on 3D simulated data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initiating-the-project">Initiating the project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labeling-the-first-image">Labeling the first image</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#look-at-the-other-images">Look at the other images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#look-at-the-effect-of-feature-size-on-prediction-time-accuracy-and-generalization">Look at the effect of feature size on prediction time, accuracy, and generalization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-try-out-some-of-ilastik-s-other-functionalities">Bonus Exercise: Try out some of ilastik’s other functionalities</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="day-3-session-2-practical-introduction-to-ilastik">
+<h1>Day 3, session 2: Practical introduction to ilastik<a class="headerlink" href="#day-3-session-2-practical-introduction-to-ilastik" title="Link to this heading">#</a></h1>
+<p><em>Lab authors: Kyle Karhohs, Mario Cruz, Beth Cimini</em> .</p>
+<hr class="docutils" />
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Learn how ilastik can easily create probability maps that look like fluorescence</p></li>
+<li><p>Export data from ilastik to use it in a downstream program (in this case, CellProfiler)</p></li>
+<li><p>Try ilastik in 3D, and examine the effect of your noise on your probability predictions</p></li>
+</ul>
+<p><strong>Lab Data</strong> in for Exercise 1 <a class="reference external" href="https://github.com/CellProfiler/tutorials/raw/master/PixelBasedClassification/Archive.zip">available here</a>, for Exercise 2 <a class="reference external" href="https://drive.google.com/drive/folders/103WGOpXX4pu2kUBh3nCEuMrPjI3pZK4N?usp=drive_link">available here</a></p>
+</section>
+<section id="introducing-ilastik">
+<h2>Introducing Ilastik<a class="headerlink" href="#introducing-ilastik" title="Link to this heading">#</a></h2>
+<p>Despite the many problems CellProfiler can readily
+solve, certain types of images are particularly challenging. For
+instance, when the biologically relevant objects are defined more by
+texture and context than raw intensity many classical image processing techniques can be foiled; DIC images of cells are a common biological
+example.</p>
+<p>Thankfully, machine learning, particularly [pixel-based classification]
+has yielded powerful techniques that can often solve these challenging
+cases. <a class="reference external" href="http://ilastik.org/">ilastik</a> is an open-source tool built for pixel-based
+classification, and, when combined with CellProfiler, the range of
+biology that can be quantified from images is greatly expanded beyond
+monocultures of monolayers to include increased complexity such as
+tissues, organoids, or <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pubmed/26687239">co-cultures</a>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title">Want to learn more about working with ilastik?</p>
+<p>Check out the <a class="reference external" href="https://www.ilastik.org/documentation/">documentation and tutorials list</a>, or check them out on <a class="reference external" href="https://forum.image.sc/tag/ilastik">the image.sc forum!</a></p>
+</aside>
+<p>Now, let’s take a look at how ilastik can be used together with
+CellProfiler!</p>
+</section>
+<section id="exercise-1-using-ilastik-to-turn-2d-phase-images-into-pseudo-fluorescence">
+<h2>Exercise 1: Using ilastik to turn 2D phase images into pseudo-fluorescence<a class="headerlink" href="#exercise-1-using-ilastik-to-turn-2d-phase-images-into-pseudo-fluorescence" title="Link to this heading">#</a></h2>
+<section id="step-1-the-dic-conundrum">
+<h3>Step 1: The DIC conundrum<a class="headerlink" href="#step-1-the-dic-conundrum" title="Link to this heading">#</a></h3>
+<p>Consider segmenting DIC images, such as those within the imageset
+<a class="reference external" href="https://bbbc.broadinstitute.org/BBBC030">BBBC030</a>. The goal will be to identify individual Chinese Hamster
+Ovary (CHO) cells and the regions they occupy.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/cho01.png"><img alt="../_images/cho01.png" src="../_images/cho01.png" style="width: 500px;" />
+</a>
+</figure>
+<p>A straightforward thresholding of this image yields poor results,
+because the cells have almost the same pixel intensity values (and
+sometimes even darker!) as the background. There is therefore no true
+foreground for these cells based solely upon an intensity histogram.
+Thresholding renders the CHO cells into moon-like crescents. While these
+fragments could be useful for simple cell counting, most metrics of
+morphology will be inaccurate. Now, note that there is a module,
+EnhanceOrSuppressFeatures, that is specifically capable of transforming
+DIC images into something that is readily segmented. But let’s pretend
+for a moment we didn’t have that option…</p>
+<figure class="align-center">
+<img alt="../_images/cho01_threshold.png" src="../_images/cho01_threshold.png" />
+</figure>
+</section>
+<section id="step-2-pixel-based-classification-with-ilastik">
+<h3>Step 2: Pixel-based classification with Ilastik<a class="headerlink" href="#step-2-pixel-based-classification-with-ilastik" title="Link to this heading">#</a></h3>
+<p>ilastik employs pixel-based classification and complements CellProfiler.
+The CHO cells within the DIC image are obvious to the human eye, because
+we can discern that each cell is defined by a characteristic combination
+of light and dark patterns. These same patterns can be detected with the
+machine-learning algorithms within ilastik.</p>
+<p>The machine-learning implemented by ilastik requires user annotation
+about what is background and what is a CHO cell before it can
+automatically make this determination across a set of images. ilastik
+provides a user interface for labeling, tagging, and identifying the
+objects of interest within an image. This annotation creates what is
+referred to in machine learning as a training set.</p>
+</section>
+<section id="annotation-with-2-labels">
+<h3>Annotation with 2 Labels<a class="headerlink" href="#annotation-with-2-labels" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Open ilastik</p></li>
+<li><p>Start a <em>Pixel Classification</em> project.</p></li>
+<li><p>Load at least several BBBC030 images by drag-and-drop into the <strong>Input Data</strong> window.</p>
+<p>Now explore the image within the ilastik gui. Here are some shortcuts
+that may prove useful are:</p>
+<ul class="simple">
+<li><p><em>Ctrl + mouse-wheel</em> = zoom.</p></li>
+<li><p>The keyboard shortcut <em>Ctrl-D</em> will show the grid Ilastik uses to
+partition the image for processing.</p></li>
+<li><p>Zoom-in far enough that the grid is no longer visible. This will
+speed up the <em>Live Update</em>.</p></li>
+</ul>
+<p>Begin by labeling pixels for two classes: a cell class as your first class, and a background class as your second class.</p>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Accidentally made the background class first? No problem, you can either clear the labels and start over, or we can show you how to change CellProfiler’s expectations for teh channel order later</p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Open the <strong>Feature Selection</strong> window and add all features.</p></li>
+<li><p>Open the <strong>Training</strong> window.</p></li>
+<li><p>Rename the two label classes (if you like, so you don’t get confused) to something like <code class="docutils literal notranslate"><span class="pre">Cells</span></code> and <code class="docutils literal notranslate"><span class="pre">Background</span></code></p></li>
+<li><p>Using the paint brush tool, label pixels (one at a time) for each
+class until you are satisfied with the segmentation.</p></li>
+</ol>
+<p>We recommend creating labels for each class one pixel at a time, rather
+than by making scribbles, to minimize the chance of [over-fitting],
+i.e. too much information about any given area can cause classification
+to do poorly in other slightly-dissimilar areas. To label one pixel at a
+time, we’ll need to zoom in far enough to resolve the individual pixels
+in the image. The image below shows how closely we must view individual
+cells before the pixels of the image become clear.</p>
+<figure class="align-center">
+<img alt="../_images/gridzoom.gif" src="../_images/gridzoom.gif" />
+</figure>
+<p>Using a brush size of 1, we click a single pixel from each class: one
+within a single CHO cell and the other in the surrounding background. In
+the next image, the annotation color of the CHO cell is yellow and the
+annotation color of the background is green. Activating <em>Live Update</em>
+reveals the segmentation looks similar to the results from thresholding.
+This outcome is promising considering this classification was determined
+by 1 feature and 1 pixel each for the <em>CHO</em> and <em>background</em> labels.</p>
+<figure class="align-center">
+<img alt="../_images/Label2pixels.gif" src="../_images/Label2pixels.gif" />
+</figure>
+<p>Adding more labels, one pixel at a time, we continue to refine the
+segmentation. Toggling the <em>Segmentation</em> and <em>Uncertainty</em> views
+provides real-time feedback that can guide the labeling process. Areas
+of high uncertainty will be aqua-blue, so annotating those areas will be
+most beneficial to training the program which pixels belong to which
+class. You should also view the predicted segmentation, and annotate
+pixels that are not currently segmented properly.</p>
+<figure class="align-center">
+<img alt="../_images/labeling.gif" src="../_images/labeling.gif" />
+</figure>
+<p>Continue until it seems that additional labels do not change the
+results, or a subset of the pixels begin “flipping” between CHO cell and
+background, or until you’ve labeled ~20 pixels in your original region. Check and label other cells in the image, as well as in
+other images, to make sure the diversity in your experiment is
+represented in the training set.</p>
+<section id="export-the-probability-maps">
+<h4>Export the probability maps<a class="headerlink" href="#export-the-probability-maps" title="Link to this heading">#</a></h4>
+<p>When satisfied with the results, export the probability maps.</p>
+<ol class="arabic simple">
+<li><p>Open the <strong>Prediction Export</strong> window.</p></li>
+<li><p>Click the <strong>Choose Export Settings</strong> window.</p></li>
+<li><p>Change <strong>Transpose to Axis Order</strong> to <code class="docutils literal notranslate"><span class="pre">cyx</span></code>.</p></li>
+<li><p>Change <strong>Format</strong> to <code class="docutils literal notranslate"><span class="pre">tiff</span></code>.</p></li>
+<li><p>Change the <strong>Convert to Datatype</strong> to <code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">16</span> <span class="pre">bit</span></code></p></li>
+<li><p>Check the button next to <strong>Renormalize [min,max]</strong>. After all these setting changes, your settings should look like below</p></li>
+</ol>
+<figure class="align-center">
+<img alt="../_images/ExportSettings.png" src="../_images/ExportSettings.png" />
+</figure>
+<ol class="arabic simple" start="7">
+<li><p>Close the export settings dialog box and click the <strong>Export All</strong> button.</p></li>
+<li><p>If you did not initially load all the images into ilastik and wish to create predictions for them all now, go to the <strong>Batch Processing</strong> window, select the remaining unpredicted images and hit <strong>Process all files</strong>.  This will take a couple of minutes on most computers.</p></li>
+<li><p>Note that you’re producing a two channel image (Color Image).</p></li>
+</ol>
+</section>
+</section>
+<section id="step-3-segmenting-probabilities-with-cellprofiler">
+<h3>Step 3: Segmenting probabilities with CellProfiler<a class="headerlink" href="#step-3-segmenting-probabilities-with-cellprofiler" title="Link to this heading">#</a></h3>
+<aside class="margin sidebar">
+<p class="sidebar-title">Find doing two separate steps a drag?</p>
+<p>We’ll go through an exercise tomorrow to show you how to directly call ilastik via CellProfiler!</p>
+</aside>
+<p>The probability map images created with ilastik can then be processed by
+CellProfiler to identify and measure the CHO objects within the DIC
+images. The probability map images are grayscale images and can be
+treated as if they were the result of a “stain” for the cells.</p>
+<ol class="arabic simple">
+<li><p>Open CellProfiler.</p></li>
+<li><p>Load the <em>pixel_based_classification.cpppipe</em> pipeline file.</p></li>
+<li><p>Add the exported probability images AND their matching original images to the <strong>Images</strong> module.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you HAVE run all of the images through ilastik, you can just drag and drop the whole folder in. If you haven’t, you should drag and drop in only the pairs of <code class="docutils literal notranslate"><span class="pre">.tiff</span></code>s and <code class="docutils literal notranslate"><span class="pre">.png</span></code>s that you have run - or CellProfiler will get confused how to match them (without doing extra work in the NamesAndTypes module)</p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Enter test mode, run the pipeline, and see what happens!</p></li>
+</ol>
+<p>You should see something like the image below in your IdentifyPrimaryObjects module - thanks to ilastik, we have now transformed the patterns and texture of intensity in the
+DIC image into an image where the intensity reflects the likelihood that
+a given pixel belongs to a cell. The image below demonstrates how the
+IdentifyPrimaryObjects module successfully segments all the CHO cells.</p>
+<figure class="align-center">
+<img alt="../_images/cho01_segmentation.png" src="../_images/cho01_segmentation.png" />
+</figure>
+<ol class="arabic simple" start="5">
+<li><p>(Optional) Didn’t get that? Is it possible that in ilastik, your first class was your background and your second class was the cells? No problem! In the <strong>ColortoGray</strong> module, simply switch from splitting out the Red channel to the Green channel, and be sure to change the name of the split out Green channel to what the Red channel <em>had been</em> (<code class="docutils literal notranslate"><span class="pre">choSegmented</span></code>) before turning the Red channel segmentation off.</p></li>
+<li><p>(Optional): examine the <strong>NamesAndTypes</strong> module; do you understand why everything is set the way that it is?</p></li>
+<li><p>(Optional): the first <strong>Threshold</strong> module isn’t being used in your pipeline, it’s just a demonstration to show you how poorly threshold would perform on the raw images. Is it better or worse than you expected?</p></li>
+<li><p>Exit test mode, set your Default Output Folder to something reasonable, and run the pipeline and review the segmentation images saved to disk.  How robustly did it perform on different images?</p></li>
+</ol>
+</section>
+</section>
+<section id="exercise-2-using-ilastik-on-3d-simulated-data">
+<h2>Exercise 2: Using ilastik on 3D simulated data<a class="headerlink" href="#exercise-2-using-ilastik-on-3d-simulated-data" title="Link to this heading">#</a></h2>
+<p>We discussed earlier overfitting -let’s see if we can make it happen in action, while trying out some of ilastik’s 3D capabilities!</p>
+<p>Our dataset here comes from the Association of Biomolecular Research Facilities - Light Microscopy Research Group (ABRF/LMRG); they made synthetic images of FISH staining in <em>C. elegans</em> which vary in their signal-to-noise ratio
+and the clustering of their objects. Their goal was for people to submit workflows in different tools, so they could assess the accuracy of the workflows people created.</p>
+<p>Images 1 and 2 have low noise, while images 3 and 4 have high noise; images 1 and 3 have FISH spots that are not very clustered, whereas 2 and 4 have lots of spot clusters.</p>
+<section id="initiating-the-project">
+<h3>Initiating the project<a class="headerlink" href="#initiating-the-project" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Start a new pixel classification project in ilastik</p></li>
+<li><p>Drag the new images in</p></li>
+<li><p>Examine ilastik’s 3D viewer - you can look at the images in XY, XZ, and YZ. Can you imagine a time that would be helpful?</p></li>
+</ul>
+<figure class="align-center">
+<img alt="../_images/3Dview.png" src="../_images/3Dview.png" />
+</figure>
+<ul class="simple">
+<li><p>Enable all of the features</p></li>
+</ul>
+</section>
+<section id="labeling-the-first-image">
+<h3>Labeling the first image<a class="headerlink" href="#labeling-the-first-image" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Add a third class of label, and then rename your labels - in any order, you should have a class for background, a class for the body of the worm, and a class for the actual FISH spots themselves</p></li>
+<li><p>On the first image (and only the first image), annotate just a few pixels in each class</p></li>
+<li><p>Turn on live update - how does it look? If not great, annotate just a couple of other pixels until the prediction looks decent.</p></li>
+</ul>
+</section>
+<section id="look-at-the-other-images">
+<h3>Look at the other images<a class="headerlink" href="#look-at-the-other-images" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Switch to image 2 - how does it look compared to image 1?</p></li>
+<li><p>Switch to images 3 and 4 - how does it compare to image 2, which also hasn’t been annotated but has a similar noise distribution?</p></li>
+</ul>
+</section>
+<section id="look-at-the-effect-of-feature-size-on-prediction-time-accuracy-and-generalization">
+<h3>Look at the effect of feature size on prediction time, accuracy, and generalization<a class="headerlink" href="#look-at-the-effect-of-feature-size-on-prediction-time-accuracy-and-generalization" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Return to image 1, and turn off Live Update</p></li>
+<li><p>Click <strong>Suggest Features</strong></p></li>
+<li><p>This menu is designed to help you pick out a subset of features from a single image’s annotations that work the best (where best for you might be “fastest” or “best performing” - it will show you both) - this can be especially important for 3D where in large images feature calculation can be very slow.</p></li>
+</ul>
+<figure class="align-center">
+<img alt="../_images/FeatureSelectionStart.png" src="../_images/FeatureSelectionStart.png" />
+</figure>
+<ul class="simple">
+<li><p>Hit <strong>Run Feature Selection</strong> to have ilastik pick out a set of 7 (or other, if you change the number) features it thinks will do the best job on this image. This may take a minute or two.</p></li>
+<li><p>Look at the bottom left of the menu - it will show you performance on your features in terms of time taken and accuracy <em>on this image</em>. How do these compare between 7 features and all features?</p></li>
+<li><p>(Optional) Hit <strong>Show Feature Names</strong></p></li>
+<li><p>Select ilastik’s recommended 7 features and pick <strong>Select Feature Set</strong> to pick them.</p></li>
+</ul>
+<figure class="align-center">
+<img alt="../_images/FeatureSelectionEnd.png" src="../_images/FeatureSelectionEnd.png" />
+</figure>
+<ul class="simple">
+<li><p>Turn live update back on and check generalization to other images again - is it better or worse than with all the features?</p></li>
+<li><p>(Optional) - turn live update back off, return to the feature selection menu, and rationally pick a subset of the features - maybe one or two sigma values, and/or one or two categories. Return to the training menu, pull up image 1, and then go back to the <strong>Select Features</strong> menu - how does your rational set of features compare in accuracy and time to all the features or the optimal 7? How about in generalization, if you select them?</p></li>
+</ul>
+</section>
+</section>
+<section id="bonus-exercise-try-out-some-of-ilastik-s-other-functionalities">
+<h2>Bonus Exercise: Try out some of ilastik’s other functionalities<a class="headerlink" href="#bonus-exercise-try-out-some-of-ilastik-s-other-functionalities" title="Link to this heading">#</a></h2>
+<p>Ilastik is more than just a pixel classifier- it can do segmentation, tracking, and object classification too!</p>
+<p>Try creating a <strong>Pixel Classification + Object Classification</strong> workflow (available on the ilastik front screen under <strong>Other Workflows</strong>) using the microglia <a class="reference external" href="https://drive.google.com/drive/folders/1TyV_hzN2pDpX0lVQ_jh08A9AG5e4Bao8?usp=drive_link">data</a> from our manual annotation exercise on Day 1 - annotate nuclei and background as pixel classes, try to segment them, and then turn your objects into classes (as with Day 1, you can decide on the classes you want to try - big vs small, microglial vs not, etc). How is segmentation in ilastik different than in CellProfiler?</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./ilastik"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Translocation/Translocation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Day 2, exercise 5: Segmentation and Classification with CellProfiler and CellProfiler Analyst</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../slides_et_al.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Links to slides and other course materials</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-ilastik">Introducing Ilastik</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-using-ilastik-to-turn-2d-phase-images-into-pseudo-fluorescence">Exercise 1: Using ilastik to turn 2D phase images into pseudo-fluorescence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-the-dic-conundrum">Step 1: The DIC conundrum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-pixel-based-classification-with-ilastik">Step 2: Pixel-based classification with Ilastik</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-with-2-labels">Annotation with 2 Labels</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#export-the-probability-maps">Export the probability maps</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-segmenting-probabilities-with-cellprofiler">Step 3: Segmenting probabilities with CellProfiler</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-using-ilastik-on-3d-simulated-data">Exercise 2: Using ilastik on 3D simulated data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initiating-the-project">Initiating the project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labeling-the-first-image">Labeling the first image</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#look-at-the-other-images">Look at the other images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#look-at-the-effect-of-feature-size-on-prediction-time-accuracy-and-generalization">Look at the effect of feature size on prediction time, accuracy, and generalization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-try-out-some-of-ilastik-s-other-functionalities">Bonus Exercise: Try out some of ilastik’s other functionalities</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Broad Institute Imaging Platform
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
