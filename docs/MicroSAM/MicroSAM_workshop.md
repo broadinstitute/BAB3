@@ -86,7 +86,7 @@ Try prompting the plugin to segment structures of varying sizes.
 
 - You can also try to do an `Automatic Segmentation`
 
-```{figure} ./images/auto_segmentation.png
+```{figure} ./images/automatic_segmentation.png
 :width: 600
 :align: center
 
