@@ -224,10 +224,6 @@ Based on your evaluations above, can you identify some places where additional t
 
 RunCellpose is by far our most popular plugin, simply because a) Cellpose is awesome! and b) installing Python packages when you aren't very computationally comfortable isn't. You can use the plugin in either of two modes - using a local `pixi`, `conda` or `python` installation that contains both CellProfiler and Cellpose, OR using Docker. The run time with Docker is substantially slower (about a minute more per image, in our testing), but if installation would take you a long time and be frustrating, in this sense you can "trade" your personal hands-on frustration time for time where CellProfiler is running on your computer (but you aren't there). For many people, this is a good trade!
 
-```{warning}
-Container support for Cellpose 3 and 4 is still experimental - if in doubt (aka if download times are slow or space is at a minimum), use a Cellpose 2 container
-```
-
 ### Start Docker/Podman Desktop
 1. If you have not already installed a container program from the links above, please do so! This may involve rebooting your computer.
 1. Start Docker/Podman Desktop.
