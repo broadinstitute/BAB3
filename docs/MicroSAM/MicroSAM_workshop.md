@@ -23,7 +23,7 @@ While you can use MicroSAM directly from the [command line](https://computationa
 
 ## Installation
 Using Pixi:
-Clone the BAB3 repo locally and `cd` into that directory, then:
+Clone the BAB3 repo locally (during the course, you should have already done this part!) and `cd` into that directory, then:
 
 ```
 cd pixi_envs/microsam #go to the directory containing the pixi files
