@@ -1,5 +1,9 @@
 # Links to slides and other course materials
 
+<!---
+Please take our [post-course survey!](https://forms.gle/6BxGjwLDeSf7q47aA)
+--->
+
 ## Installation requirements
 
 We asked before the course for you to install the following tools; if you have not already done so, please download Fiji right away, CellProfiler and CellProfiler Analyst before arriving on Tuesday, and Ilastik and QuPath before arriving on Wednesday.
@@ -35,9 +39,10 @@ This table will be updated throughout the course with links to materials used du
 |Day 3, session 1: Pitfalls in Classical ML and Introduction to ilastik | [Slide deck](https://docs.google.com/presentation/d/1pEwc-odMk9q0byzv1gghN9YH0V1lAK0errcTvGs3nFM/edit?usp=sharing), [ML interactive notebook](https://ciminilab.github.io/developing-intuitions/apps/Machine_Learning_Intutions.html)|
 |Day 3, session 4: Thinking about metrics and corrections |[Snapshots of the whiteboard](https://docs.google.com/presentation/d/1GBiOIuDUssdAfemffNrkGqXjReYmOLj9zEvXPnw56rM/edit?usp=sharing) / [FPBase](https://www.fpbase.org/) / [MicroscopyU](https://www.microscopyu.com/) |
 |Day 3, session 5: Colocalization (game by Romain Guiet) | [Learn more about the Coloc Game](https://focalplane.biologists.com/2024/10/20/teaching-co-localisation-analysis-from-lecture-to-leisure/) / [Extra handouts for the Coloc Game](https://drive.google.com/drive/folders/1SwBBbCgHNp4qB0qG6uhmk-P0QxB34qKv?usp=drive_link)|
+|Day 4, session 1: Command lines, environments, and containers | [Slide deck](https://docs.google.com/presentation/d/1XhyfhpymUa3scRyj8g3CuJmmYCKRtsgy77YncfvGrRA/edit?usp=sharing)|
 
 <!---
-|Day 4, session 1: Command lines, environments, and containers | [Slide deck](https://docs.google.com/presentation/d/1XhyfhpymUa3scRyj8g3CuJmmYCKRtsgy77YncfvGrRA/edit?usp=sharing)|
+
 |Day 4, session 3: Introduction to Deep Learning | [Slide deck](https://docs.google.com/presentation/d/1W4GB4qLdBknFfvU9scJTma2BpWOvo-s3fMdhlRUvkKI/edit?usp=sharing) / [Tensorflow Playground](https://playground.tensorflow.org/)|
 |Day 4, session 4: Segmentation for Deep Learning | [Slide deck](https://docs.google.com/presentation/d/1uyMqr9h6g27746C9KOEzN_PZ2RquZFHq0-o0k-BSFpo/edit?usp=sharing)|
 |Day 4, session 5: Introduction to Napari | Coming soon!|
@@ -45,6 +50,4 @@ This table will be updated throughout the course with links to materials used du
 |Day 5, session 1: Introduction to Cellpose | Coming soon!|
 |Day 5, session 2: Train your own Cellpose models | Coming soon!|
 |Day 5, session 3: Community Resources | Coming soon!|
-
-
 --->
