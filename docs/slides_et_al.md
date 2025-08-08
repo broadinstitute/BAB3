@@ -43,9 +43,10 @@ This table will be updated throughout the course with links to materials used du
 |Day 4, session 3: Introduction to Deep Learning | [Slide deck](https://docs.google.com/presentation/d/1W4GB4qLdBknFfvU9scJTma2BpWOvo-s3fMdhlRUvkKI/edit?usp=sharing) / [Tensorflow Playground](https://playground.tensorflow.org/)|
 |Day 4, session 4: Segmentation for Deep Learning | [Slide deck](https://docs.google.com/presentation/d/1uyMqr9h6g27746C9KOEzN_PZ2RquZFHq0-o0k-BSFpo/edit?usp=sharing)|
 |Day 4, session 5: Introduction to Napari | [Slide deck](https://docs.google.com/presentation/d/1wwY9B_wC2Ndtknunf2nFdw_s7tFvpwZ8CHUzZE9rNx8/edit?usp=sharing)|
+|Day 5, session 1: Introduction to Cellpose | [Slide deck](https://docs.google.com/presentation/d/1w_OvCa_7vyUs5E1o-tFpxxLpDvrxcTkiI_F9got7Mgw/edit?usp=sharing)|
 
 <!---
-|Day 5, session 1: Introduction to Cellpose | Coming soon!|
+
 |Day 5, session 2: Train your own Cellpose models | Coming soon!|
 |Day 5, session 3: Community Resources | Coming soon!|
 --->
