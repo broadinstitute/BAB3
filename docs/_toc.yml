@@ -16,6 +16,7 @@ parts:
   - file: BeginnerSegmentation/BeginnerSegmentationPlugins.md
   - file: MicroSAM/MicroSAM_workshop.md
   - file: Cellpose/CellposeIntro.md
+  - file: diy
 - caption:  Additional Resources
   chapters:
   - file: slides_et_al
