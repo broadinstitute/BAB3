@@ -1,8 +1,6 @@
 # Links to slides and other course materials
 
-<!---
 Please take our [post-course survey!](https://forms.gle/6BxGjwLDeSf7q47aA)
---->
 
 ## Installation requirements
 
