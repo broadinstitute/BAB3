@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Day 1, Exercise 5 - Making manual annotations with Piximi &#8212; BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual</title>
+    <title>Day 5, Session 2 - Segmenting Data with Cellpose &#8212; BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual</title>
   
   
   
@@ -58,11 +58,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Piximi_ManualAnnotation/Piximi';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Cellpose/CellposeIntro';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Day 2, exercise 2: Introduction to CellProfiler" href="../BeginnerSegmentation/CPbeginner_Segmentation.html" />
-    <link rel="prev" title="Day 1, Exercise 3: developing image processing intutions" href="../developing_intutions.html" />
+    <link rel="next" title="Links to slides and other course materials" href="../slides_et_al.html" />
+    <link rel="prev" title="Day 4, Session 6 - ‘Segment Anything’ Model (SAM) for Microscopy" href="../MicroSAM/MicroSAM_workshop.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,7 +183,7 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and Exercises</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../developing_intutions.html">Day 1, Exercise 3: developing image processing intutions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Day 1, Exercise 5 - Making manual annotations with Piximi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Piximi_ManualAnnotation/Piximi.html">Day 1, Exercise 5 - Making manual annotations with Piximi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../BeginnerSegmentation/CPbeginner_Segmentation.html">Day 2, exercise 2: Introduction to CellProfiler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AdvancedSegmentation/BBBC022_AnalysisExercise.html">Day 2, exercise 3: Advanced segmentation and organelle analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Translocation/Translocation.html">Day 2, exercise 5: Segmentation and Classification with CellProfiler and CellProfiler Analyst</a></li>
@@ -191,7 +191,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../QuPath_demo/QuPath_demo.html">Day 3, session 3: Practical introduction to QuPath</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../BeginnerSegmentation/BeginnerSegmentationPlugins.html">Day 4, Session 2 - Interfacing CellProfiler with other software tools via files and plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MicroSAM/MicroSAM_workshop.html">Day 4, Session 6 - ‘Segment Anything’ Model (SAM) for Microscopy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Cellpose/CellposeIntro.html">Day 5, Session 2 - Segmenting Data with Cellpose</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Day 5, Session 2 - Segmenting Data with Cellpose</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -252,7 +252,7 @@
       
       
       
-      <li><a href="../_sources/Piximi_ManualAnnotation/Piximi.md" target="_blank"
+      <li><a href="../_sources/Cellpose/CellposeIntro.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -336,7 +336,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Day 1, Exercise 5 - Making manual annotations with Piximi</h1>
+    <h1>Day 5, Session 2 - Segmenting Data with Cellpose</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -347,9 +347,16 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-part-1-manually-annotate-some-nuclei">Exercise Part 1 - Manually annotate some nuclei</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-part-2-making-some-measurements">Exercise Part 2 - Making some measurements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-annotating-some-cells"><strong>Bonus Exercise - Annotating some cells</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-part-1-cellpose-3">Exercise part 1 - Cellpose 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initially-explore-performance-with-an-image-set">Initially explore performance with an image set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-parameters-rather-than-retraining">Fixing parameters rather than retraining</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retraining">Retraining</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise">Bonus exercise</a></li>
 </ul>
             </nav>
         </div>
@@ -361,117 +368,132 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="day-1-exercise-5-making-manual-annotations-with-piximi">
-<h1>Day 1, Exercise 5 - Making manual annotations with Piximi<a class="headerlink" href="#day-1-exercise-5-making-manual-annotations-with-piximi" title="Link to this heading">#</a></h1>
-<p><em>Lab authors: Beth Cimini, Kate Bowers</em> .</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="day-5-session-2-segmenting-data-with-cellpose">
+<h1>Day 5, Session 2 - Segmenting Data with Cellpose<a class="headerlink" href="#day-5-session-2-segmenting-data-with-cellpose" title="Link to this heading">#</a></h1>
+<p><em>Lab authors: Beth Cimini</em> .</p>
 <hr class="docutils" />
 <section id="learning-objectives">
 <h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Practice making manual annotations in multichannel images in Piximi</p></li>
-<li><p>Turn images into measurements and graphs</p></li>
+<li><p>Try Cellpose models on a variety of data</p></li>
+<li><p>Learn to tell if Cellpose needs to be re-trained or just the parameters played with</p></li>
+<li><p>Compare performance in Cellpose 4 to performance in Cellpose 3</p></li>
 </ul>
-<p><strong>Lab Data</strong> in <a class="reference external" href="https://drive.google.com/drive/folders/1TyV_hzN2pDpX0lVQ_jh08A9AG5e4Bao8?usp=drive_link">this folder</a></p>
+<p>You can download some sample images from <a class="reference external" href="https://drive.google.com/drive/folders/1NOt_OeMVr6Y5ZK5CrYtG97-P05yABHlx?usp=sharing">this Drive folder</a> (it’s the same data we used yesterday in MicroSAM, if you already downloaded that, plus some of the images we used the first day on Piximi, if you still have those)</p>
 <hr class="docutils" />
-<p>While <a class="reference external" href="https://piximi.app/">Piximi</a><span id="id1"><sup><a class="reference internal" href="../bibliography.html#id27" title="Levin M Moser, Nodar Gogoberidze, Andréa Papaleo, Alice Lucas, David Dao, Christoph A Friedrich, Lassi Paavolainen, Csaba Molnar, David R Stirling, Jane Hung, Rex Wang, Callum Tromans-Coia, Bin Li, Edward L Evans, Kevin W Eliceiri, Peter Horvath, Anne E Carpenter, and Beth A Cimini. Piximi - an images to discovery web tool for bioimages and beyond. bioRxiv, pages 2024.06.03.597232, June 2024.">1</a></sup></span> can do a lot of cool things, today we’ll only be using two of its functionalities - manual annotation and measurement.</p>
-<p>We’ll be using a dataset of microglia stained in rat brains - you can read more of the specifics in the <a class="reference external" href="https://drive.google.com/file/d/1wdz7pikmfWAEXUeGQ3VcDn1rwnqKyYYm/view?usp=sharing">dataset readme</a>.</p>
+<p>It’s finally here, the last software we’re going to teach you - Cellpose!</p>
 </section>
-<section id="exercise-part-1-manually-annotate-some-nuclei">
-<h2>Exercise Part 1 - Manually annotate some nuclei<a class="headerlink" href="#exercise-part-1-manually-annotate-some-nuclei" title="Link to this heading">#</a></h2>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<p>Using Pixi:
+Clone the <strong>BAB3</strong> repo locally (during the course, you should have already done this part!) and <code class="docutils literal notranslate"><span class="pre">cd</span></code> into that directory, then:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pixi_envs</span><span class="o">/</span><span class="n">cellpose3</span> <span class="c1">#go to the directory containing the pixi files</span>
+<span class="n">pixi</span> <span class="n">shell</span> <span class="o">--</span><span class="n">frozen</span> <span class="c1">#activate the new cellpose3 environment (and install, if not already installed)</span>
+</pre></div>
+</div>
+<p>If successful, you should see <code class="docutils literal notranslate"><span class="pre">(cellpose3)</span></code> before your command line prompt. Within this Pixi shell, you should have everything you need for this workshop. You can activate Cellpose just by running <code class="docutils literal notranslate"><span class="pre">cellpose</span></code></p>
+<p>You can always exit the Pixi environment using the <code class="docutils literal notranslate"><span class="pre">exit</span></code> command.</p>
+<p>When you’re ready for Cellpose4, the procedure is the same:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd pixi_envs/cellpose4 #go to the directory containing the pixi files
+pixi shell --frozen #activate the new cellpose4 environment (and install, if not already installed)
+`cellpose`
+</pre></div>
+</div>
+</section>
+<section id="exercise-part-1-cellpose-3">
+<h2>Exercise part 1 - Cellpose 3<a class="headerlink" href="#exercise-part-1-cellpose-3" title="Link to this heading">#</a></h2>
 <aside class="margin sidebar">
-<p class="sidebar-title">Want to learn more about working with Piximi?</p>
-<p>Check out the <a class="reference external" href="https://documentation.piximi.app/intro.html">documentation</a> (which includes some full-length tutorials), or check them out on <a class="reference external" href="https://forum.image.sc/tag/piximi">the image.sc forum!</a></p>
+<p class="sidebar-title">Want to learn more about working with Cellpose?</p>
+<p>Check out the <a class="reference external" href="https://cellpose.readthedocs.io/en/latest/">documentation</a>, or check them out on <a class="reference external" href="https://forum.image.sc/tag/Cellpose">the image.sc forum!</a></p>
 </aside>
+<p>Today, we have access to 3 of the MicroSAM example datasets (a timelapse set, a pathology set, and a 3D set, as well as the microglia images from Monday’s exercise). Let’s see how well they perform!</p>
+<p>Cellpose 3 can be pretty great out of the box - here it is, untrained, on one of the pathology images.</p>
+<img alt="../_images/Path_cyto3.png" src="../_images/Path_cyto3.png" />
+<section id="initially-explore-performance-with-an-image-set">
+<h3>Initially explore performance with an image set<a class="headerlink" href="#initially-explore-performance-with-an-image-set" title="Link to this heading">#</a></h3>
+<p>So let’s go to one that’s a little less good and see how it does.</p>
 <ul class="simple">
-<li><p>Download the dataset linked above to your local machine. We’ll be using it throughout the week, so don’t delete it!</p></li>
-<li><p>Open Piximi.app, and click “Start New Project”.</p></li>
-<li><p>Drag the images from the folder to Piximi, and tell Piximi that they have 2 channels.</p></li>
+<li><p>Load an image from the timelpase set and let the <code class="docutils literal notranslate"><span class="pre">cyto3</span></code> default model run. Good, but not great!</p></li>
 </ul>
-<img alt="../_images/Channels.png" src="../_images/Channels.png" />
+<img alt="../_images/Fluo_cyto3_init.png" src="../_images/Fluo_cyto3_init.png" />
 <ul class="simple">
-<li><p>The images should now all be visible in Piximi’s main experiment view - hit “Annotate” to bring them into the Annotator View (also called the Image View).
-<img alt="../_images/AnnotationButton.png" src="../_images/AnnotationButton.png" /></p></li>
+<li><p>One parameter Cellpose (in 1-3, anyway) is pretty sensitive to is the initial diameter prediction - what happens when we change that?</p></li>
+</ul>
+<img alt="../_images/Fluo_fixedsize.png" src="../_images/Fluo_fixedsize.png" />
+<ul class="simple">
+<li><p>Check the “dataset-specific models” on the left bar - do any of them do better than cyto3?</p></li>
+</ul>
+</section>
+<section id="fixing-parameters-rather-than-retraining">
+<h3>Fixing parameters rather than retraining<a class="headerlink" href="#fixing-parameters-rather-than-retraining" title="Link to this heading">#</a></h3>
+<p>If we can avoid retraining, it is always nice to avoid it where we can. Thankfully, there are a couple more very powerful parameters we can tune in Cellpose - how “coherent” of a flow it needs to have in order to consider an object a cell or not, as well as the probability image of if it’s a cell or not. We can access these images in the top left under the “Views” menu, by changing from “Image” to “gradxy” or “cellprob”.</p>
+<img alt="../_images/Views.png" src="../_images/Views.png" />
+<p>See what they look like below!</p>
+<img alt="../_images/Fluo_cyto3_flows.png" src="../_images/Fluo_cyto3_flows.png" />
+<img alt="../_images/Fluo_cyto3_probmap.png" src="../_images/Fluo_cyto3_probmap.png" />
+<p>In the “Additional Settings” menu, Cellpose lets us adjust these parameters</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Using Cellpose models in CellProfiler? We let you adjust them too!</p>
+</aside>
+<img alt="../_images/Additional_Settings_Menu.png" src="../_images/Additional_Settings_Menu.png" />
+<ul class="simple">
+<li><p>Play around with the flow threshold and cellprob threshold - can you improve the segmentation without retraining?</p></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Running into trouble? Toggle on Piximi’s help mode on the left bar, which will help you figure out how to use each feature!</p>
-<a class="reference internal image-reference" href="../_images/HelpMode.png"><img alt="../_images/HelpMode.png" src="../_images/HelpMode.png" style="width: 150%;" />
-</a>
+<p>Not sure how to tune these parameters or what they mean? Hover over them to learn more!
+<img alt="../_images/HoverHelp.png" src="../_images/HoverHelp.png" /></p>
 </div>
+</section>
+<section id="retraining">
+<h3>Retraining<a class="headerlink" href="#retraining" title="Link to this heading">#</a></h3>
+<p>Human-in-the-loop retraining (and easy finetuning) is why we love Cellpose so much, so let’s give it a try!</p>
 <ul class="simple">
-<li><p>Hit the <code class="docutils literal notranslate"><span class="pre">+</span></code> button next to the word Kinds to make a new object kind - you’ll probably want to call it Nuclei or something like that.</p></li>
-</ul>
-<img alt="../_images/NewKind.png" src="../_images/NewKind.png" />
-<ul class="simple">
-<li><p>Optionally - if you’d like to separate your nuclei into categories (such as “microglial nuclei” or even just “big nuclei” vs “small nuclei”), you can do this in one of two ways:</p>
-<ul>
-<li><p>In the menu under Nuclei, you can make as many categories as you like, and if a category is selected while you are annotating, the object will be automatically assigned to that category.</p></li>
-<li><p>Once you’ve made and saved your annotations, you can see the objects you’ve made back in the Experiment view - you can add (or change!) categories for as many objects as you would like.
-<img alt="../_images/ExperimentViewCategorization.png" src="../_images/ExperimentViewCategorization.png" /></p></li>
-</ul>
-</li>
-<li><p>Time to play! Piximi has several kinds of annotation, <a class="reference external" href="https://documentation.piximi.app/pages/detail/imageviewer.html#annotation-tools">which you can learn more about here</a> and see in action <a class="reference external" href="https://documentation.piximi.app/pages/detail/imageviewer-tools-annotation.html">here</a>.</p></li>
-<li><p>To annotate, select an annotation tool from the right sidebar. Try out a few different tools, and explore their options. For example:</p>
-<ul>
-<li><p>Use the rectangle, ellipse, or polygon tools to make an annotation of a particular shape.</p></li>
-<li><p>Try using the pen tool to fill in a nucleus. You can change the size of the pen by selecting the tool and pressing the small arrow to the left of the icon to access the size slider.</p></li>
-<li><p>With the Color/Fill tool, try clicking the center of a nucleus and dragging out to create an annotation over the object.</p></li>
-<li><p>Play around with the Quick Annotation tool, which tries to predict annotations near your cursor. You can adjust the sensitivity with a slider.</p></li>
-<li><p>Select an area with the Threshold tool, then use the slider to adjust the threshold to detect the bounds of your object. (Any objects identified within this area will be recorded as one annotation.)</p></li>
-</ul>
-</li>
-<li><p>You can also modify existing annotations with the augmentation tools Combine, Subtract, Intersection, and Invert.</p></li>
-<li><p>Which annotation tools work best for you? Are some better for certain “classes” of nuclei?</p></li>
+<li><p>Take a good automatic prediction, and delete the masks you don’t want anymore
+<img alt="../_images/DeleteAnnotations.png" src="../_images/DeleteAnnotations.png" /></p></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Want to change the colors or adjust the brightness contrast? Piximi <a class="reference external" href="https://documentation.piximi.app/pages/detail/imageviewer.html#image-tools">can do that</a>!</p>
+<p>Not sure how to annotate? Try the help menu for tips and hotkeys!
+<img alt="../_images/Help.png" src="../_images/Help.png" /></p>
 </div>
 <ul class="simple">
-<li><p>When you are done annotating (and/or want to change some categories for some annotations), hit the back arrow to return to the main view.</p></li>
-</ul>
-<img alt="../_images/SaveAndReturn.png" src="../_images/SaveAndReturn.png" />
-<ul class="simple">
-<li><p>Make sure to save your project file for future use!</p></li>
-<li><p>In the main view, you can click to the ‘Nuclei’ section on the top bar and see all of the annotations you just made. How do they look? You can add or change categories for any objects.</p></li>
+<li><p>Annotate any cells you need to, by right clicking (or ctl+click to start, then release ctl and just keep drawing until the circle closes)
+<img alt="../_images/AnnotateCell.gif" src="../_images/AnnotateCell.gif" /></p></li>
+<li><p>After you finish on image, go to <code class="docutils literal notranslate"><span class="pre">Models</span> <span class="pre">-&gt;</span> <span class="pre">Train</span></code> to train a new model. Cellpose will automatically run it for you once it’s done training.
+<img alt="../_images/TrainWindow.png" src="../_images/TrainWindow.png" /></p></li>
+<li><p>How did it do?</p></li>
+<li><p>Go to the next image, and try either a builtin model or your one-image model, and then fix up the annotations for training. Train with two images. How well does it work now?</p></li>
+<li><p>How about with 3?</p></li>
 </ul>
 </section>
-<hr class="docutils" />
-<section id="exercise-part-2-making-some-measurements">
-<h2>Exercise Part 2 - Making some measurements<a class="headerlink" href="#exercise-part-2-making-some-measurements" title="Link to this heading">#</a></h2>
-<p>Rarely do we want stop at just finding objects and categorizing them - often, we want to know things about them.
-With Piximi, we can take different measurements of these objects, plot the data in Piximi, and export measurements for further analysis.</p>
-<p>Currently, Piximi supports two broad classes of measurements - intensity measurements, which work for images OR objects, and shape/geometry measurements, which work for objects alone. More categories of measurements will be rolling out in time - stay tuned!</p>
+</section>
+<section id="exercise-2">
+<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Follow Piximi’s <a class="reference external" href="https://documentation.piximi.app/pages/tutorial/creating-measurements.html">Measurements tutorial</a> to learn how to create and export measurements for your identified nuclei.</p>
+<li><p>Play around a bit with the microglia data, as above.</p>
 <ul>
-<li><p>If you’ve created categories (or want to do so now), you can see how your measurements differ by categories as well.</p></li>
+<li><p>How good can you make it look without retraining?</p></li>
+<li><p>How easily can you retrain it?</p></li>
 </ul>
 </li>
-<li><p>Play around with plotting in Piximi. Use histograms to check area and intensity distributions. Try making a scatterplot comparing different measurements, colored by category. How do intensity and shape measurements vary together?</p></li>
-<li><p>Save your measurements as an Excel spreadsheet by selecting your desired measurement categories on the left side of the Measurements window and pressing <code class="docutils literal notranslate"><span class="pre">Export</span></code>. You can save any plot as a PNG by pressing <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">To</span> <span class="pre">PNG</span></code></p></li>
-<li><p>How would you use these measurement and plotting tools on your data?</p></li>
 </ul>
 </section>
-<hr class="docutils" />
-<section id="bonus-exercise-annotating-some-cells">
-<h2><strong>Bonus Exercise - Annotating some cells</strong><a class="headerlink" href="#bonus-exercise-annotating-some-cells" title="Link to this heading">#</a></h2>
+<section id="exercise-3">
+<h2>Exercise 3<a class="headerlink" href="#exercise-3" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Try to annotate some cells - in the annotator view, hit <code class="docutils literal notranslate"><span class="pre">+</span></code> to create a new “Kind” called cells</p></li>
+<li><p>Bring the worst peforming dataset (it will probably be the microglia) over to Cellpose 4. How well does it do out of the box? How well does it work after retraining with one images? Two?</p></li>
 </ul>
-<a class="reference internal image-reference" href="../_images/NewKind.png"><img alt="../_images/NewKind.png" src="../_images/NewKind.png" style="width: 100%;" />
-</a>
+</section>
+<section id="bonus-exercise">
+<h2>Bonus exercise<a class="headerlink" href="#bonus-exercise" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Annotate some cells, trying a few different Piximi functionalities for annotation - do you find the same tools optimal for annotating cells and nuclei? Are some tools better suited for one or the other? You can use the Channel Adjustment tool on the top bar to toggle the nuclei and microglia channels on and off.</p></li>
+<li><p>How do Cellpose 3 (and Cellpose 4, if your computer can handle it) work on the 3D dataset?</p></li>
 </ul>
-<hr class="docutils" />
-<!---
-```{admonition} Question
-:class: important
-
-Questions to ask
- ```
- ---></section>
+<p>(Note that you’ll have to close the GUI and reopen it with <code class="docutils literal notranslate"><span class="pre">cellpose</span> <span class="pre">--Zstack</span></code>)</p>
+<p>What if you try 2.5D mode (leave the stitch threshold parameter at 0) vs overlap mode (set the stitch threshold to something greater than 0)? Note that overlap is much faster, so you may want to try that first!</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -487,7 +509,7 @@ Questions to ask
         },
         kernelOptions: {
             name: "python3",
-            path: "./Piximi_ManualAnnotation"
+            path: "./Cellpose"
         },
         predefinedOutput: true
     }
@@ -505,20 +527,20 @@ Questions to ask
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../developing_intutions.html"
+       href="../MicroSAM/MicroSAM_workshop.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Day 1, Exercise 3: developing image processing intutions</p>
+        <p class="prev-next-title">Day 4, Session 6 - ‘Segment Anything’ Model (SAM) for Microscopy</p>
       </div>
     </a>
     <a class="right-next"
-       href="../BeginnerSegmentation/CPbeginner_Segmentation.html"
+       href="../slides_et_al.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Day 2, exercise 2: Introduction to CellProfiler</p>
+        <p class="prev-next-title">Links to slides and other course materials</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -539,9 +561,16 @@ Questions to ask
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-part-1-manually-annotate-some-nuclei">Exercise Part 1 - Manually annotate some nuclei</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-part-2-making-some-measurements">Exercise Part 2 - Making some measurements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-annotating-some-cells"><strong>Bonus Exercise - Annotating some cells</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-part-1-cellpose-3">Exercise part 1 - Cellpose 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initially-explore-performance-with-an-image-set">Initially explore performance with an image set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-parameters-rather-than-retraining">Fixing parameters rather than retraining</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retraining">Retraining</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise">Bonus exercise</a></li>
 </ul>
   </nav></div>
 
