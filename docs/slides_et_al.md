@@ -16,7 +16,7 @@ Before Thursday, please install one of the following environment managers, if no
 - [Pixi](https://pixi.sh/dev/installation/) (our recommendation) OR
 - [Micromamba](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html#automatic-install) (if you already have conda or mamba running on your machine, this is fine too)
 
-Windows machine users -  you will also need to install the [Microsoft Build Tools](visualstudio.microsoft.com/visual-cpp-build-tools)
+Windows machine users -  you will also need to install the [Microsoft Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools)
 
 Optionally, a container runner will also be used in one session but is not required:
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (our recommendation if you're less computationally comfortable)

@@ -22,7 +22,7 @@ This exercise is meant to extend and build upon our old friend, the Beginner Seg
 
 ### What is this exercise?
 
-There are a number of great software tools available to life scientists wishing to analyze images these days - [forum.image.sc](forum.image.sc) alone has more than 60 open-source tools! Sometimes, though, it helps to have a multi-tool workflow - do one step in Tool A, and then another in Tool B (and then possibly C, D, etc, but hopefully not!). In this tutorial, you'll try 3 different ways of accessing work you did in other tools. 
+There are a number of great software tools available to life scientists wishing to analyze images these days - [forum.image.sc](https://forum.image.sc) alone has more than 60 open-source tools! Sometimes, though, it helps to have a multi-tool workflow - do one step in Tool A, and then another in Tool B (and then possibly C, D, etc, but hopefully not!). In this tutorial, you'll try 3 different ways of accessing work you did in other tools. 
 
 1. Loading masks created by other segmentation tools (in this case, [Cellpose](https://www.cellpose.org/), but the same strategy works for many tools which use this format).
 1. Accessing [ilastik](https://www.ilastik.org/) to use a trained pixel classification model via CellProfiler's plugins system.
@@ -32,7 +32,7 @@ There are a number of great software tools available to life scientists wishing 
 ### Plugins
 
 While CellProfiler doesn't have as many plugins as, say, Fiji, it does have many for you to try! 
-You can visit [plugins.cellprofiler.org](plugins.cellprofiler.org) to learn more. To quote from that site:
+You can visit [plugins.cellprofiler.org](https://plugins.cellprofiler.org) to learn more. To quote from that site:
 
 >Plugins advance the capabilities of CellProfiler but are not officially supported in the same way as modules. A module may be in CellProfiler-plugins instead of CellProfiler itself because:
 >- it is under active development
