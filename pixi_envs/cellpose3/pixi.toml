@@ -10,6 +10,7 @@ version = "0.1.0"
 [dependencies]
 python = "3.9.*"
 numpy = "<2"
+pip = ">=25.2,<26"
 
 [pypi-dependencies]
 cellpose = { version = "<4", extras = ["all"] }
