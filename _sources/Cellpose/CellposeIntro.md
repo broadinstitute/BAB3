@@ -127,3 +127,5 @@ Not sure how to annotate? Try the help menu for tips and hotkeys!
 (Note that you'll have to close the GUI and reopen it with `cellpose --Zstack`)
 
 What if you try 2.5D mode (leave the stitch threshold parameter at 0) vs overlap mode (set the stitch threshold to something greater than 0)? Note that overlap is much faster, so you may want to try that first!
+
+---

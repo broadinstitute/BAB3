@@ -1,0 +1,14 @@
+@media print {
+    .bd-main{
+        .bd-content {
+            h1 {
+        break-before: always;
+        }
+        }
+}
+            .bd-article {
+                h1 {
+            break-before: always;
+            }
+            }
+}

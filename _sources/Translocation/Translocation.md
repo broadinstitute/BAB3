@@ -1077,3 +1077,5 @@ ______________________________________________________________________
   <https://cellprofiler-examples.s3.amazonaws.com/TranslocationData.zip/>.
   (The images were kindly provided through the Broad Bioimage Benchmark
   Collection at <http://www.broadinstitute.org/bbbc/BBBC013/>)
+
+---

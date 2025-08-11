@@ -454,3 +454,5 @@ only be able to examine one object at a time in CellProfiler Analyst.*
   each module, and run the pipeline
 - The pipeline will create a database called BBBC022.db, containing the
   output of all of the measurements you have added to your pipeline
+
+---

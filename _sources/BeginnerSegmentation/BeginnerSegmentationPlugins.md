@@ -294,3 +294,5 @@ Based on your evaluations above, can you identify some places where additional t
 ## What next? Want to know more about CellProfliler plugins and modules?
 1. Read the [CellProfiler-plugins paper](https://pubmed.ncbi.nlm.nih.gov/37690102/)
 2. Watch this [video](https://www.youtube.com/watch?v=fgF_YueM1b8) to learn how to write a module
+
+---

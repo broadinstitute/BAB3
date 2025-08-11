@@ -250,3 +250,5 @@ Images 1 and 2 have low noise, while images 3 and 4 have high noise; images 1 an
 
 - Turn live update back on and check generalization to other images again - is it better or worse than with all the features?
 - (Optional) - turn live update back off, return to the feature selection menu, and rationally pick a subset of the features - maybe one or two sigma values, and/or one or two categories. Return to the training menu, pull up image 1, and then go back to the **Select Features** menu - how does your rational set of features compare in accuracy and time to all the features or the optimal 7? How about in generalization, if you select them?
+
+---

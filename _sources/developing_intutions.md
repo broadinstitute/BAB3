@@ -20,7 +20,7 @@ Given a list of filters (that we'll first discuss and demonstrate) and a set of 
 
 ## Exercise 2
 
-Use the interactive notebook below to see if your intuitions were good! 
+Use the interactive notebook below to see if your intuitions were good! (Or access it via link [here](https://ciminilab.github.io/developing-intuitions/apps/Bioimage_Analysis_Intutions.html))
 
 
 ```{admonition} Question
@@ -33,3 +33,5 @@ src="https://ciminilab.github.io/developing-intuitions/apps/Bioimage_Analysis_In
 width=150%
 height=1500
 ></iframe>
+
+---

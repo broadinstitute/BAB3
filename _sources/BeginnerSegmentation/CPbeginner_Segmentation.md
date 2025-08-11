@@ -515,3 +515,5 @@ The four input modules (**Images**, **Metadata**, **NamesAndTypes**, and **Group
 - For this exercise the **Groups** module is not needed so it is set to ‘No’, this module can be useful when you have more than one plate, or different movies.
 
 > **For more information and examples on how to configure the Input modules we have created a blog and video tutorial that can be accessed [here](https://carpenter-singh-lab.broadinstitute.org/blog/input-modules-tutorial).**
+
+---

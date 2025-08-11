@@ -160,3 +160,5 @@ You will see the file with the measurements saved in your QuPath project folder.
 - [QuPath Repo](https://github.com/qupath)
 - [QuPath docs](https://qupath.readthedocs.io/en/stable/)
 - [QuPath YouTube Channel](https://www.youtube.com/@petebankhead/videos)
+
+---
