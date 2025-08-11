@@ -101,12 +101,3 @@ Currently, Piximi supports two broad classes of measurements - intensity measure
 - Annotate some cells, trying a few different Piximi functionalities for annotation - do you find the same tools optimal for annotating cells and nuclei? Are some tools better suited for one or the other? You can use the Channel Adjustment tool on the top bar to toggle the nuclei and microglia channels on and off.
 
 ---
-
-
-<!---
-```{admonition} Question
-:class: important
-
-Questions to ask
- ```
- --->

@@ -155,3 +155,4 @@ Currently, **SAMj only supports either single channel (grayscale) or 3-channel R
 You can use preexisting point annotations (for example, generated using `Find Maxima`) as prompts by choosing the "Preset Prompts" option.
 ```
 
+---
