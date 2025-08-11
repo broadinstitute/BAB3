@@ -1,7 +1,7 @@
 # Helpful links for now and the future
 
 ## For finding experts to help you right now
-* [Image.sc forum](forum.image.sc) {cite}`Rueden2019-qp` - a centralized forum for >60 open source image analysis tools. Posts from beginners very welcome!
+* [Image.sc forum](https://forum.image.sc) {cite}`Rueden2019-qp` - a centralized forum for >60 open source image analysis tools. Posts from beginners very welcome!
 
 ## Organizations that want to help
 * [AI4Life](https://ai4life.eurobioimaging.eu/)
