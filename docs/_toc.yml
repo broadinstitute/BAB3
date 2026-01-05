@@ -7,16 +7,6 @@ parts:
 - caption: Labs and Exercises
   chapters:
   - file: developing_intutions.md
-  - file: Piximi_ManualAnnotation/Piximi.md
-  - file: BeginnerSegmentation/CPbeginner_Segmentation.md
-  - file: AdvancedSegmentation/BBBC022_AnalysisExercise.md
-  - file: Translocation/Translocation.md
-  - file: ilastik/PixelClassification.md
-  - file: QuPath_demo/QuPath_demo.md
-  - file: BeginnerSegmentation/BeginnerSegmentationPlugins.md
-  - file: MicroSAM/MicroSAM_workshop.md
-  - file: Cellpose/CellposeIntro.md
-  - file: DIY.md
 - caption:  Additional Resources
   chapters:
   - file: slides_et_al

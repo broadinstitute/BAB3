@@ -7,7 +7,7 @@
 # Book settings
 title                       : BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual  # The title of the book. Will be placed in the left navbar.
 author                      : Broad Institute Imaging Platform # The author of the book
-copyright                   : "2025"  # Copyright year to be placed in the footer
+copyright                   : "2026"  # Copyright year to be placed in the footer
 logo                        : CLab_Square.png  # A path to the book logo
 
 # Force re-execution of notebooks on each build.
