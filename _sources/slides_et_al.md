@@ -1,6 +1,6 @@
 # Links to slides and other course materials
 
-Please take our [post-course survey!](https://forms.gle/6BxGjwLDeSf7q47aA)
+<!--Please take our [post-course survey!](https://forms.gle/6BxGjwLDeSf7q47aA)-->
 
 ## Installation requirements
 
@@ -29,6 +29,11 @@ This table will be updated throughout the course with links to materials used du
 
 | session | Links |
 |----------|-------|
+
+
+---
+
+<!--
 |Day 1, session 1: Course Introduction | [Slide deck](https://docs.google.com/presentation/d/17liBlM8oJoWhG0i_Z8KakW8RXjOD_wrkAtbTTt1qkEY/edit?usp=sharing)|
 |Day 1, session 2: Intro to Images and ImageJ | [Slides available here](https://docs.google.com/presentation/d/186pZXoL_ledGe-Gh1-n-6X5cP7sslOYAlcRlkrjPrw8/edit?usp=drive_link), [Demo macro and images available here](https://drive.google.com/drive/folders/1BV7IOCwVzAceacBQl-WKrXpzETakxt_M)| 
 |Day 1, session 4: Intro to Piximi| [Slide deck](https://docs.google.com/presentation/d/1jJLj5Vk2_uBtDhMFKgMgT8zpr57pOOUlpkIf5Bz40zE/edit?usp=sharing)|
@@ -45,4 +50,4 @@ This table will be updated throughout the course with links to materials used du
 |Day 5, session 3: Community Resources |[slide deck](https://docs.google.com/presentation/d/1tEhY6ayOyQhBoUW-7gqBlcvT9bhrMXqJsLXxqpK7wbc/edit?slide=id.p#slide=id.p)|
 |Day 5, session 5: Wrapup | [slide deck](https://docs.google.com/presentation/d/1aln4lUI-H2_TDINVNt1V8bo4efcban1SHgs6CLZ1YfY/edit?slide=id.p#slide=id.p)|
 
----
+-->
