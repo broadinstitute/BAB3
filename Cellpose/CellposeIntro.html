@@ -385,6 +385,10 @@ Clone the <strong>BAB3</strong> repo locally (during the course, you should have
 </div>
 <p>If successful, you should see <code class="docutils literal notranslate"><span class="pre">(cellpose3)</span></code> before your command line prompt. Within this Pixi shell, you should have everything you need for this workshop. You can activate Cellpose just by running <code class="docutils literal notranslate"><span class="pre">cellpose</span></code></p>
 <p>You can always exit the Pixi environment using the <code class="docutils literal notranslate"><span class="pre">exit</span></code> command.</p>
+<p>If you get this error when activating Cellpose: <code class="docutils literal notranslate"><span class="pre">OMP:</span> <span class="pre">Error</span> <span class="pre">#15:</span> <span class="pre">Initializing</span> <span class="pre">libomp.dylib,</span> <span class="pre">but</span> <span class="pre">found</span> <span class="pre">libomp.dylib</span> <span class="pre">already</span> <span class="pre">initialized.</span></code> then run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">force</span><span class="o">-</span><span class="n">reinstall</span> <span class="s2">&quot;cellpose&lt;4&quot;</span> 
+</pre></div>
+</div>
 <p>When you’re ready for Cellpose4, the procedure is the same:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd pixi_envs/cellpose4 #go to the directory containing the pixi files
 pixi shell --frozen #activate the new cellpose4 environment (and install, if not already installed)
