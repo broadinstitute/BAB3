@@ -27,6 +27,11 @@ If successful, you should see `(cellpose3)` before your command line prompt. Wit
 
 You can always exit the Pixi environment using the `exit` command.
 
+If you get this error when activating Cellpose: `OMP: Error #15: Initializing libomp.dylib, but found libomp.dylib already initialized.` then run:
+
+```
+pip install --force-reinstall "cellpose<4" 
+```
 
 When you're ready for Cellpose4, the procedure is the same:
 
