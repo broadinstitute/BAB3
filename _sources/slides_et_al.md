@@ -29,12 +29,12 @@ This table will be updated throughout the course with links to materials used du
 
 | session | Links |
 |----------|-------|
-
+|Day 1, session 1: Course Introduction | [Slide deck](https://docs.google.com/presentation/d/17liBlM8oJoWhG0i_Z8KakW8RXjOD_wrkAtbTTt1qkEY/edit?usp=sharing) , [Participant slide deck](https://docs.google.com/presentation/d/1588L_XSjcq-U433Jr1Rm6xsKjO6SYDQ-1_A2vdzdfOw)|
 
 ---
 
 <!--
-|Day 1, session 1: Course Introduction | [Slide deck](https://docs.google.com/presentation/d/17liBlM8oJoWhG0i_Z8KakW8RXjOD_wrkAtbTTt1qkEY/edit?usp=sharing)|
+
 |Day 1, session 2: Intro to Images and ImageJ | [Slides available here](https://docs.google.com/presentation/d/186pZXoL_ledGe-Gh1-n-6X5cP7sslOYAlcRlkrjPrw8/edit?usp=drive_link), [Demo macro and images available here](https://drive.google.com/drive/folders/1BV7IOCwVzAceacBQl-WKrXpzETakxt_M)| 
 |Day 1, session 4: Intro to Piximi| [Slide deck](https://docs.google.com/presentation/d/1jJLj5Vk2_uBtDhMFKgMgT8zpr57pOOUlpkIf5Bz40zE/edit?usp=sharing)|
 |Day 2, session 1: Classical segmentation concepts | [Slide deck](https://docs.google.com/presentation/d/1CDie17DZFJwHwfSCKyvUchGZ3lcF4Aa88IdESXeIkaw/edit?slide=id.g372eaedf953_0_104#slide=id.g372eaedf953_0_104)|
