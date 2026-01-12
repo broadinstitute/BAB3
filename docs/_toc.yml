@@ -7,6 +7,7 @@ parts:
 - caption: Labs and Exercises
   chapters:
   - file: developing_intutions.md
+  - file: Piximi_ManualAnnotation/Piximi.md
 - caption:  Additional Resources
   chapters:
   - file: slides_et_al
