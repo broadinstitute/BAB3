@@ -19,7 +19,7 @@ Before Thursday, please install one of the following environment managers, if no
 Windows machine users -  you will also need to install the [Microsoft Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools)
 
 Optionally, a container runner will also be used in one session but is not required:
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (our recommendation if you're less computationally comfortable)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (our recommendation if you're less computationally comfortable, though note your institution may be charged for it)
 - [Podman](https://podman.io/) (our recommendation if you're more computationally comfortable)
 
 ## Slide decks and links to other materials
