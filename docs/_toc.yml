@@ -9,6 +9,8 @@ parts:
   - file: developing_intutions.md
   - file: Piximi_ManualAnnotation/Piximi.md
   - file: BeginnerSegmentation/CPbeginner_Segmentation.md
+  - file: AdvancedSegmentation/BBBC022_AnalysisExercise.md
+  - file: Translocation/Translocation.md
 - caption:  Additional Resources
   chapters:
   - file: slides_et_al
