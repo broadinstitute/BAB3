@@ -120,7 +120,7 @@ treated and untreated cells.
   information about the plate, well, site, and channel of each image by
   parsing the file name.
 
-- Click the <img src="./TutorialImages/ReGexCheck.png" width="35"/> icon to the right of the text box labeled “Regular expression”.
+- Click the <img src="./TutorialImages/RegExCheck.png" width="35"/> icon to the right of the text box labeled “Regular expression”.
 
   - A new dialog box will appear to assist in comparing the entered
     regular expression against an example image filename.
