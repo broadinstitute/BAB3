@@ -803,7 +803,7 @@ phenotypes.
   shows up in your classification rules? (2) Is the top-most
   measurement one that you would expect to be the most significant one
   to use in distinguishing the phenotypes?
-
+<!--
 ### 4. **Reviewing the accuracy of the classification with the confusion matrix**
 
 Once you have trained a classifier, you can test the ability of the of
@@ -843,6 +843,7 @@ classifier to find rules that accurately predict which class the cells
 belong to. While the cells in this simple example were able to be
 predicted perfectly, that is rare in real data.*
 ```
+-->
 
 ### 5. **Refining the training set by sorting more “unclassified” cells into the “positive” and “negative” bins**
 
