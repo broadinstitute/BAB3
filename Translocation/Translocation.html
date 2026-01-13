@@ -371,7 +371,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-measurements-in-a-96-well-plate-layout-view">1. <strong>Visualizing the measurements in a 96-well plate layout view</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-classifier-function-of-cpa-to-distinguish-the-cells-foxo1a-gfp-subcellular-localization-phenotypes">2. <strong>Using the Classifier function of CPA to distinguish the cells’ FOXO1A-GFP subcellular localization phenotypes</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reviewing-the-rules-that-cpa-established-based-on-your-training-set-to-classify-positive-and-negative-cells">3. <strong>Reviewing the rules that CPA established (based on your training set) to classify positive and negative cells</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reviewing-the-accuracy-of-the-classification-with-the-confusion-matrix">4. <strong>Reviewing the accuracy of the classification with the confusion matrix</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#refining-the-training-set-by-sorting-more-unclassified-cells-into-the-positive-and-negative-bins">5. <strong>Refining the training set by sorting more “unclassified” cells into the “positive” and “negative” bins</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#refining-the-training-set-by-fetching-positive-and-negative-cells"><strong>Refining the training set by fetching positive and negative cells:</strong></a></li>
 </ul>
@@ -1186,10 +1185,10 @@ shows up in your classification rules? (2) Is the top-most
 measurement one that you would expect to be the most significant one
 to use in distinguishing the phenotypes?</p></li>
 </ul>
-</section>
-<section id="reviewing-the-accuracy-of-the-classification-with-the-confusion-matrix">
-<h3>4. <strong>Reviewing the accuracy of the classification with the confusion matrix</strong><a class="headerlink" href="#reviewing-the-accuracy-of-the-classification-with-the-confusion-matrix" title="Link to this heading">#</a></h3>
-<p>Once you have trained a classifier, you can test the ability of the of
+<!--
+### 4. **Reviewing the accuracy of the classification with the confusion matrix**
+
+Once you have trained a classifier, you can test the ability of the of
 the classification rules to predict which class each cell in your
 training set belongs to. CPA does this by taking each cell in the
 training set, using its measurements and the rules generated in training
@@ -1197,25 +1196,26 @@ to ‘guess’ whether it should be positive or negative, then comparing
 that answer with the bin you actually placed it in. The accuracy of
 these predictions can be graphed in a matrix with the ‘True label’ (the
 bin you assigned) on the Y axis and the ‘Predicted label’ (CPA’s guess)
-on the X axis.</p>
-<ul class="simple">
-<li><p>Press the ‘Evaluate’ button to generate a confusion matrix for the
-cells you’ve classified so far. How accurate is your classification
-after adding only a few cells to your training set?</p></li>
-</ul>
-<p>Note that the confusion matrix is NOT a measure of how accurate the
-classifier will be on your whole data set, simply a measure of <em>how well
-the classifier performs on your hand-picked examples</em>. As your data is
+on the X axis.
+
+- Press the ‘Evaluate’ button to generate a confusion matrix for the
+  cells you’ve classified so far. How accurate is your classification
+  after adding only a few cells to your training set?
+
+Note that the confusion matrix is NOT a measure of how accurate the
+classifier will be on your whole data set, simply a measure of *how well
+the classifier performs on your hand-picked examples*. As your data is
 likely more complicated than just the few cells you’ve chosen to train
 on, you shouldn’t stop at this point even if you have a perfect
 correlation matrix - you need to see how your classifier will perform on
 more data before you can decide whether it’s accurate enough to score
-the whole experiment.</p>
-<figure class="align-center" id="id8">
-<a class="reference internal image-reference" href="../_images/Fig82.png"><img alt="../_images/Fig82.png" src="../_images/Fig82.png" style="width: 900px;" />
-</a>
-<figcaption>
-<p><span class="caption-text"><em>Figure 8: Examples of confusion matrices from a poorly-trained (left)
+the whole experiment.
+
+```{figure} ./TutorialImages/Fig8.png
+:width: 900px
+:align: center
+
+*Figure 8: Examples of confusion matrices from a poorly-trained (left)
 and well-trained (right) classifier. The cells in the classifier on the
 left were assigned to bins of the training set at random, making it very
 difficult to come up with good rules to separate the classes; nearly 50%
@@ -1223,9 +1223,9 @@ of each class is predicted incorrectly. The cells in the classifier on
 the right have been assigned to the correct bins, allowing the
 classifier to find rules that accurately predict which class the cells
 belong to. While the cells in this simple example were able to be
-predicted perfectly, that is rare in real data.</em></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
+predicted perfectly, that is rare in real data.*
+```
+-->
 </section>
 <section id="refining-the-training-set-by-sorting-more-unclassified-cells-into-the-positive-and-negative-bins">
 <h3>5. <strong>Refining the training set by sorting more “unclassified” cells into the “positive” and “negative” bins</strong><a class="headerlink" href="#refining-the-training-set-by-sorting-more-unclassified-cells-into-the-positive-and-negative-bins" title="Link to this heading">#</a></h3>
@@ -1352,11 +1352,11 @@ the order is descending, with the highest score at top.</p></li>
 first column (“ImageNumber”) to display the corresponding image for
 the top-scoring well.</p></li>
 </ul>
-<figure class="align-center" id="id9">
+<figure class="align-center" id="id8">
 <a class="reference internal image-reference" href="../_images/Fig92.png"><img alt="../_images/Fig92.png" src="../_images/Fig92.png" style="width: 800px;" />
 </a>
 <figcaption>
-<p><span class="caption-text"><em>Figure 9: Hit table showing the cell counts and enrichment scores.</em></span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+<p><span class="caption-text"><em>Figure 9: Hit table showing the cell counts and enrichment scores.</em></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>You can also save your training set and/or classifer model for future
@@ -1541,7 +1541,6 @@ Collection at <a class="reference external" href="http://www.broadinstitute.org/
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-measurements-in-a-96-well-plate-layout-view">1. <strong>Visualizing the measurements in a 96-well plate layout view</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-classifier-function-of-cpa-to-distinguish-the-cells-foxo1a-gfp-subcellular-localization-phenotypes">2. <strong>Using the Classifier function of CPA to distinguish the cells’ FOXO1A-GFP subcellular localization phenotypes</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reviewing-the-rules-that-cpa-established-based-on-your-training-set-to-classify-positive-and-negative-cells">3. <strong>Reviewing the rules that CPA established (based on your training set) to classify positive and negative cells</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reviewing-the-accuracy-of-the-classification-with-the-confusion-matrix">4. <strong>Reviewing the accuracy of the classification with the confusion matrix</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#refining-the-training-set-by-sorting-more-unclassified-cells-into-the-positive-and-negative-bins">5. <strong>Refining the training set by sorting more “unclassified” cells into the “positive” and “negative” bins</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#refining-the-training-set-by-fetching-positive-and-negative-cells"><strong>Refining the training set by fetching positive and negative cells:</strong></a></li>
 </ul>
