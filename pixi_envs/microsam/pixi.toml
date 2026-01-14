@@ -9,4 +9,4 @@ version = "0.1.0"
 
 [dependencies]
 python = "3.10.*"
-micro_sam = ">=1.6.0,<2"
+micro_sam = ">=1.7.0,<2"
