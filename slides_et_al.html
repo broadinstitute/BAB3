@@ -63,7 +63,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Helpful links for now and the future" href="links.html" />
-    <link rel="prev" title="Day 2, exercise 5: Segmentation and Classification with CellProfiler and CellProfiler Analyst" href="Translocation/Translocation.html" />
+    <link rel="prev" title="Day 3, session 3: Practical introduction to QuPath" href="QuPath_demo/QuPath_demo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -188,6 +188,8 @@
 <li class="toctree-l1"><a class="reference internal" href="BeginnerSegmentation/CPbeginner_Segmentation.html">Day 2, exercise 2: Introduction to CellProfiler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AdvancedSegmentation/BBBC022_AnalysisExercise.html">Day 2, exercise 3: Advanced segmentation and organelle analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Translocation/Translocation.html">Day 2, exercise 5: Segmentation and Classification with CellProfiler and CellProfiler Analyst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ilastik/PixelClassification.html">Day 3, session 2: Practical introduction to ilastik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QuPath_demo/QuPath_demo.html">Day 3, session 3: Practical introduction to QuPath</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
 <ul class="current nav bd-sidenav">
@@ -405,8 +407,14 @@ document.write(`
 <tr class="row-even"><td><p>Day 2, session 4: Classical Machine Learning Concepts</p></td>
 <td><p><a class="reference external" href="https://docs.google.com/presentation/d/1z8YbI7mHEITIynBhyWxE9ZpU8KB7UxkUF5p3ly6ZzYU/edit?slide=id.p#slide=id.p">Slide deck</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>Placeholder</p></td>
-<td><p>Placeholder</p></td>
+<tr class="row-odd"><td><p>Day 3, session 1: Pitfalls in Classical ML and Introduction to ilastik</p></td>
+<td><p><a class="reference external" href="https://docs.google.com/presentation/d/1pEwc-odMk9q0byzv1gghN9YH0V1lAK0errcTvGs3nFM/edit?usp=sharing">Slide deck</a>, <a class="reference external" href="https://ciminilab.github.io/developing-intuitions/apps/Machine_Learning_Intutions.html">ML interactive notebook</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Day 3, session 4: Thinking about metrics and corrections</p></td>
+<td><p><a class="reference external" href="https://docs.google.com/presentation/d/1GBiOIuDUssdAfemffNrkGqXjReYmOLj9zEvXPnw56rM/edit?usp=sharing">Snapshots of the whiteboard</a> / <a class="reference external" href="https://www.fpbase.org/">FPBase</a> / <a class="reference external" href="https://www.microscopyu.com/">MicroscopyU</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Day 3, session 5: Colocalization (game by Romain Guiet)</p></td>
+<td><p><a class="reference external" href="https://focalplane.biologists.com/2024/10/20/teaching-co-localisation-analysis-from-lecture-to-leisure/">Learn more about the Coloc Game</a> / <a class="reference external" href="https://drive.google.com/drive/folders/1SwBBbCgHNp4qB0qG6uhmk-P0QxB34qKv?usp=drive_link">Extra handouts for the Coloc Game</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -418,9 +426,7 @@ document.write(`
 
 
 
-|Day 3, session 1: Pitfalls in Classical ML and Introduction to ilastik | [Slide deck](https://docs.google.com/presentation/d/1pEwc-odMk9q0byzv1gghN9YH0V1lAK0errcTvGs3nFM/edit?usp=sharing), [ML interactive notebook](https://ciminilab.github.io/developing-intuitions/apps/Machine_Learning_Intutions.html)|
-|Day 3, session 4: Thinking about metrics and corrections |[Snapshots of the whiteboard](https://docs.google.com/presentation/d/1GBiOIuDUssdAfemffNrkGqXjReYmOLj9zEvXPnw56rM/edit?usp=sharing) / [FPBase](https://www.fpbase.org/) / [MicroscopyU](https://www.microscopyu.com/) |
-|Day 3, session 5: Colocalization (game by Romain Guiet) | [Learn more about the Coloc Game](https://focalplane.biologists.com/2024/10/20/teaching-co-localisation-analysis-from-lecture-to-leisure/) / [Extra handouts for the Coloc Game](https://drive.google.com/drive/folders/1SwBBbCgHNp4qB0qG6uhmk-P0QxB34qKv?usp=drive_link)|
+
 |Day 4, session 1: Command lines, environments, and containers | [Slide deck](https://docs.google.com/presentation/d/1XhyfhpymUa3scRyj8g3CuJmmYCKRtsgy77YncfvGrRA/edit?usp=sharing)|
 |Day 4, session 3: Introduction to Deep Learning | [Slide deck](https://docs.google.com/presentation/d/1W4GB4qLdBknFfvU9scJTma2BpWOvo-s3fMdhlRUvkKI/edit?usp=sharing) / [Tensorflow Playground](https://playground.tensorflow.org/)|
 |Day 4, session 4: Segmentation for Deep Learning | [Slide deck](https://docs.google.com/presentation/d/1uyMqr9h6g27746C9KOEzN_PZ2RquZFHq0-o0k-BSFpo/edit?usp=sharing)|
@@ -463,12 +469,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Translocation/Translocation.html"
+       href="QuPath_demo/QuPath_demo.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Day 2, exercise 5: Segmentation and Classification with CellProfiler and CellProfiler Analyst</p>
+        <p class="prev-next-title">Day 3, session 3: Practical introduction to QuPath</p>
       </div>
     </a>
     <a class="right-next"
