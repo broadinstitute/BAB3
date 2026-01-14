@@ -11,6 +11,8 @@ parts:
   - file: BeginnerSegmentation/CPbeginner_Segmentation.md
   - file: AdvancedSegmentation/BBBC022_AnalysisExercise.md
   - file: Translocation/Translocation.md
+  - file: ilastik/PixelClassification.md
+  - file: QuPath_demo/QuPath_demo.md
 - caption:  Additional Resources
   chapters:
   - file: slides_et_al
