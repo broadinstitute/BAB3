@@ -133,7 +133,7 @@ Note that computing embeddings for the whole stack will, expectedly, take a long
 
 SAMJ is an implementation of SAM that can be run in ImageJ/Fiji using a plugin.
 
-- Install the SAMJ-IJ for Fiji/ImageJ following the installation guide [HERE](https://github.com/segment-anything-models-java/SAMJ-IJ?tab=readme-ov-file#model-installation)
+- Install the SAMJ-IJ for Fiji/ImageJ following the installation guide [HERE](https://github.com/segment-anything-models-java/SAMJ-IJ?tab=readme-ov-file#fiji-and-plugin-installation)
 
 - Open `Plugins > SAMJ > SAMJ annotator`
 
