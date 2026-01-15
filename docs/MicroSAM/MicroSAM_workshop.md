@@ -105,7 +105,8 @@ Automatic segmentation
 
 - Go to `Plugins > SegmentAnything for Microscopy > Image Series Annotator`.
 - As before, select the `Model` according to the image type, and it's `Size`.
-- Select the `Input Folder`, `Output Folder` and `embeddings save path` (each one should be a different folder, named accordingly).
+- Select the `Input Folder` (the `timelapse_series` directory in the sample data), `Output Folder` (were the segmentation masks will be saved) and `embeddings save path` (each one should be a different folder, named accordingly).
+
 
 ```{caution}
 Your input folder should **ONLY** contain your images and nothing else (like other files or other subfolders), otherwise the plugin will error.
@@ -122,6 +123,8 @@ Your input folder should **ONLY** contain your images and nothing else (like oth
 ```{margin}
 Note that computing embeddings for the whole stack will, expectedly, take a longer time than for a single 2d image!
 ```
+- You can try this segmentation tool on the `3d_monolayer` images (start with `ch2`, also try the performance on other channels!). If you want to try EM images, you can open
+the `Lucchi++ 3d dataset` (in Napari, `Files > Open Sample > Segment Anything for Microscopy`).
 
 - Use either bounding boxes or point prompts to segment (`S` key) a few slices across the stack. Then, click `Segment Stack` to predict the segmentation in the rest of the intermediate slices. Go through all of them and correct the ones that are wrong using manual prompts.
 
