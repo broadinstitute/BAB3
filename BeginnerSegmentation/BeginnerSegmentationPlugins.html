@@ -407,11 +407,12 @@ document.write(`
 <h2><strong>Setup steps to do first</strong><a class="headerlink" href="#setup-steps-to-do-first" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Download at least one RunCellpose container and one ilastik container from Dockerhub.
-This will happen automatically the first time you call a given Docker from CellProfiler (i.e. run a CellProfiler pipeline that uses the Docker) but if you are running this tutorial in a workshop setting we strongly recommend download in advance of the workshop as these are large files (5-10 GB) and bandwidth is often limited in a workshop setting.
-In Docker Desktop or Podman Desktop you can search for containers in the top search bar (see below).
-Make sure you select a tag (version) that is supported by the plugin you are using and then select “Pull”.
-We recommend <code class="docutils literal notranslate"><span class="pre">biocontainers/ilastik:1.4.0_cv2</span></code> for ilastik and <code class="docutils literal notranslate"><span class="pre">cellprofiler/runcellpose_with_pretrained:3.1.2.2</span></code> for Cellpose.</p></li>
+This will happen automatically the first time you call a given Docker from CellProfiler (i.e. run a CellProfiler pipeline that uses the Docker) but if you are running this tutorial in a workshop setting we strongly recommend download in advance of the workshop as these are large files (5-10 GB) and bandwidth is often limited in a workshop setting.</p></li>
 </ol>
+<p>In Docker Desktop or Podman Desktop you can search for containers in the top search bar (see below).
+Make sure you select a tag (version) that is supported by the plugin you are using and then select “Pull”.
+We recommend <code class="docutils literal notranslate"><span class="pre">biocontainers/ilastik:1.4.0_cv2</span></code> for ilastik and <code class="docutils literal notranslate"><span class="pre">cellprofiler/runcellpose_with_pretrained:3.1.2.2</span></code> for Cellpose.</p>
+<p>If they are not appearing in search, you can instead pull them from the terminal with the command <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">CONTAINER</span></code> or <code class="docutils literal notranslate"><span class="pre">podman</span> <span class="pre">pull</span> <span class="pre">CONTAINER</span></code>, replacing <code class="docutils literal notranslate"><span class="pre">CONTAINER</span></code> with the container name and tag, e.g. <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">biocontainers/ilastik:1.4.0_cv2</span></code></p>
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/DockerSearch.png"><img alt="../_images/DockerSearch.png" src="../_images/DockerSearch.png" style="width: 400px;" />
 </a>

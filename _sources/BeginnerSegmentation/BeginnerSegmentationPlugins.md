@@ -5,6 +5,7 @@
 ---
 
 ## Learning Objectives
+
 - Learn how to download CellProfiler plugins from GitHub and set CellProfiler to use them
 - Learn more about how to use software containers (such as Docker or Podman) to help CellProfiler access other tools
 - Use CellProfiler from a pixi environment, speeding up access to Cellpose
@@ -17,9 +18,12 @@
 
 1. Download at least one RunCellpose container and one ilastik container from Dockerhub.
 This will happen automatically the first time you call a given Docker from CellProfiler (i.e. run a CellProfiler pipeline that uses the Docker) but if you are running this tutorial in a workshop setting we strongly recommend download in advance of the workshop as these are large files (5-10 GB) and bandwidth is often limited in a workshop setting.
+
 In Docker Desktop or Podman Desktop you can search for containers in the top search bar (see below).
 Make sure you select a tag (version) that is supported by the plugin you are using and then select "Pull".
 We recommend `biocontainers/ilastik:1.4.0_cv2` for ilastik and `cellprofiler/runcellpose_with_pretrained:3.1.2.2` for Cellpose.
+
+If they are not appearing in search, you can instead pull them from the terminal with the command `docker pull CONTAINER` or `podman pull CONTAINER`, replacing `CONTAINER` with the container name and tag, e.g. `docker pull biocontainers/ilastik:1.4.0_cv2`
 
 ```{figure} ./TutorialImages/DockerSearch.png
 :width: 400
