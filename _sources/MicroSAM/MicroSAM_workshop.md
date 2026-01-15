@@ -157,7 +157,7 @@ Currently, **SAMj only supports either single channel (grayscale) or 3-channel R
 :width: 600
 :align: center
 
-3D annotation (volume view)
+SAMj annotator in Fiji
 ```
 
 ```{margin}
