@@ -351,7 +351,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises:</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-an-image-and-calculating-embeddings">Loading an image and calculating embeddings</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-annotation-in-2d-documentation-and-video-tutorial">Image annotation in 2D (Documentation  and Video tutorial)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-an-entire-folder-the-image-series-annotator-documentation-and-video-tutorial">Annotate an entire folder: The image Series Annotator (Documentation and Video tutorial)</a></li>
@@ -372,7 +372,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="day-4-session-6-segment-anything-model-sam-for-microscopy">
 <h1>Day 4, Session 6 - ‘Segment Anything’ Model (SAM) for Microscopy<a class="headerlink" href="#day-4-session-6-segment-anything-model-sam-for-microscopy" title="Link to this heading">#</a></h1>
-<p>*Lab authors: Esteban A. Miglietta .</p>
+<p>*Lab authors: Esteban A. Miglietta</p>
 <hr class="docutils" />
 <section id="microsam-segment-anything-model-for-microscopy">
 <h2>MicroSAM: ‘Segment Anything’ Model for Microscopy<a class="headerlink" href="#microsam-segment-anything-model-for-microscopy" title="Link to this heading">#</a></h2>
@@ -392,13 +392,12 @@ document.write(`
 <p>You can download some sample images from <a class="reference external" href="https://drive.google.com/drive/folders/1NOt_OeMVr6Y5ZK5CrYtG97-P05yABHlx?usp=sharing">this Drive folder</a></p>
 </section>
 </section>
-<hr class="docutils" />
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
 <p>Using Pixi:
 Clone the <strong>BAB3</strong> repo locally (during the course, you should have already done this part!) and <code class="docutils literal notranslate"><span class="pre">cd</span></code> into that directory, then:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pixi_envs</span><span class="o">/</span><span class="n">microsam</span> <span class="c1">#go to the directory containing the pixi files</span>
-<span class="n">pixi</span> <span class="n">shell</span> <span class="o">--</span><span class="n">frozen</span> <span class="c1">#activate the new microsam environment (and install, if not already installed)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>pixi_envs/microsam<span class="w"> </span><span class="c1">#go to the directory containing the pixi files</span>
+pixi<span class="w"> </span>shell<span class="w"> </span>--frozen<span class="w"> </span><span class="c1">#activate the new microsam environment (and install, if not already installed)</span>
 </pre></div>
 </div>
 <p>If succesfull, you should see <code class="docutils literal notranslate"><span class="pre">(microsam)</span></code> before your command line prompt. Within this Pixi shell, you should have everything you need for this workshop.</p>
@@ -406,7 +405,7 @@ Clone the <strong>BAB3</strong> repo locally (during the course, you should have
 </section>
 <hr class="docutils" />
 <section id="exercises">
-<h2>Exercises:<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <section id="loading-an-image-and-calculating-embeddings">
 <h3>Loading an image and calculating embeddings<a class="headerlink" href="#loading-an-image-and-calculating-embeddings" title="Link to this heading">#</a></h3>
 <p>In order to use the MicroSAM models to segment the image, first we need to use the model to compute a simplified representation of the image, aka. an <em>embedding</em>.</p>
@@ -431,10 +430,11 @@ Currently, <strong>MicroSAM only supports either single channel (grayscale) or 3
 <p>The very first time you open a sample image, the plugin will first download it, which might take a few seconds.</p>
 </aside>
 <ul class="simple">
-<li><p>Go to <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">SegmentAnything</span> <span class="pre">for</span> <span class="pre">Microscopy</span> <span class="pre">&gt;</span> <span class="pre">2d</span> <span class="pre">annotator</span></code>.</p></li>
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">SegmentAnything</span> <span class="pre">for</span> <span class="pre">Microscopy</span> <span class="pre">&gt;</span> <span class="pre">Annotator</span> <span class="pre">2d</span></code>.</p></li>
 <li><p>In the plugin window, choose the image for which to compute the embeddings in the <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">Layer</span></code> menu and choose the appropriate <code class="docutils literal notranslate"><span class="pre">Model</span></code> according to the type of images to segment.</p></li>
-<li><p>In the Embedding Settings menu, choose the <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">size</span></code> (bigger) and change directory for saving embeddings</p></li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">Compute</span> <span class="pre">Embeddings</span></code> with the default parameters (check where the embeddings are saved, you can specify a different location).</p></li>
+<li><p>In the Embedding Settings menu, choose the <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">size</span></code>. (As of writing this excercise, the options are <code class="docutils literal notranslate"><span class="pre">tiny</span></code>, <code class="docutils literal notranslate"><span class="pre">base</span></code>, and <code class="docutils literal notranslate"><span class="pre">large</span></code>. We recommend starting with <code class="docutils literal notranslate"><span class="pre">base</span></code> but if your computer is struggling with memory you can try <code class="docutils literal notranslate"><span class="pre">tiny</span></code>. <code class="docutils literal notranslate"><span class="pre">large</span></code> will take even longer to compute so you may want to explore comparing models outside of this excercise.)</p></li>
+<li><p>Specify where to save the embeddings by choosing an <code class="docutils literal notranslate"><span class="pre">embeddings</span> <span class="pre">save</span> <span class="pre">path</span></code>.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">Compute</span> <span class="pre">Embeddings</span></code> with the default parameters.</p></li>
 </ul>
 <aside class="margin sidebar">
 <p class="sidebar-title">NOTE</p>
@@ -534,7 +534,6 @@ Currently, <strong>SAMj only supports either single channel (grayscale) or 3-cha
 <p class="sidebar-title"></p>
 <p>You can use preexisting point annotations (for example, generated using <code class="docutils literal notranslate"><span class="pre">Find</span> <span class="pre">Maxima</span></code>) as prompts by choosing the “Preset Prompts” option.</p>
 </aside>
-<hr class="docutils" />
 </section>
 </section>
 </section>
@@ -591,7 +590,7 @@ Currently, <strong>SAMj only supports either single channel (grayscale) or 3-cha
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises:</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-an-image-and-calculating-embeddings">Loading an image and calculating embeddings</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-annotation-in-2d-documentation-and-video-tutorial">Image annotation in 2D (Documentation  and Video tutorial)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-an-entire-folder-the-image-series-annotator-documentation-and-video-tutorial">Annotate an entire folder: The image Series Annotator (Documentation and Video tutorial)</a></li>
