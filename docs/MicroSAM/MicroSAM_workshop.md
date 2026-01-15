@@ -106,7 +106,7 @@ Automatic segmentation
 Your input folder should **ONLY** contain your images and nothing else (like other files or other subfolders), otherwise the plugin will error.
 ```
 
-- Click `Annotate Images`. This will calculate the embeddings for all the images in the folder so it might take a while.
+- Click `Annotate Images` and then `Compute Embeddings`. This will calculate the embeddings for all the images in the folder so it might take a while.
 
 - When the embedding computations are done, segment the image the same way you did before and click `Next` (or hit `N`) to move to the next image in the directory and continue annotating.
 
