@@ -220,7 +220,7 @@ If using a container, the very first time you execute the Runilastik module, it 
 
 4. Evaluate your prediction in Runilastik across a few image sets - how well does it perform? Does it perform worse on images it wasn't trained on?
 
-```{figure} ./TutorialImages/RunIlastik.png
+```{figure} ./TutorialImages/Runilastik.png
 :width: 700
 :align: center
 
