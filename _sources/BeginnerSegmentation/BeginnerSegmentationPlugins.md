@@ -13,6 +13,37 @@
 
 ---
 
+## **Setup steps to do first**
+
+1. Download at least one RunCellpose container and one ilastik container from Dockerhub.
+This will happen automatically the first time you call a given Docker from CellProfiler (i.e. run a CellProfiler pipeline that uses the Docker) but if you are running this tutorial in a workshop setting we strongly recommend download in advance of the workshop as these are large files (5-10 GB) and bandwidth is often limited in a workshop setting.
+In Docker Desktop or Podman Desktop you can search for containers in the top search bar (see below).
+Make sure you select a tag (version) that is supported by the plugin you are using and then select "Pull".
+We recommend `biocontainers/ilastik:1.4.0_cv2` for ilastik and `cellprofiler/runcellpose_with_pretrained:3.1.2.2` for Cellpose.
+
+```{figure} ./TutorialImages/DockerSearch.png
+:width: 400
+:align: center
+
+Search in Docker Desktop for your desired container
+```
+
+2. Once your containers are downloading, either 
+2a. Clone (i.e. download whole) the Cellprofiler-plugins repository.
+In your terminal type `git clone https://github.com/CellProfiler/CellProfiler-plugins.git`. OR 
+2b. Visit the [CellProfiler plugins repository](https://github.com/CellProfiler/CellProfiler-plugins) and then download and unzip all the plugins by hitting the green `Clone` button and then `Download Zip`
+OR 
+2c.Alternatively, download just the [Runilastik plugin](https://github.com/CellProfiler/CellProfiler-plugins/blob/master/active_plugins/runilastik.py) and [RunCellpose plugin](https://github.com/CellProfiler/CellProfiler-plugins/blob/master/active_plugins/runcellpose.py) by selecting the "Download raw file" button.
+
+```{figure} ./TutorialImages/GitHubDownloadButton.png
+:width: 400
+:align: center
+
+GitHub's "Download Raw Files" button
+```
+
+3. In CellProfiler's File -> Preferences menu (CellProfiler -> Preferences in Mac), set the `CellProfiler plugins directory` to the folder containing the plugins.
+4. Close and reopen CellProfiler to load the plugins.
 
 ## **Background information**
 
@@ -22,7 +53,9 @@ This exercise is meant to extend and build upon our old friend, the Beginner Seg
 
 ### What is this exercise?
 
-There are a number of great software tools available to life scientists wishing to analyze images these days - [forum.image.sc](https://forum.image.sc) alone has more than 60 open-source tools! Sometimes, though, it helps to have a multi-tool workflow - do one step in Tool A, and then another in Tool B (and then possibly C, D, etc, but hopefully not!). In this tutorial, you'll try 3 different ways of accessing work you did in other tools. 
+While CellProfiler is an image analysis tool itself, it also serves as a workflow manager that can interact with other tools, automatically passing data back and forth so that you can effectively use other tools within a single CellProfiler pipeline.
+This means in a hypothetical pipeline you have have CellProfiler do steps 1 and 2, Tool A do step 3, Tool B do step 4, and CellProfiler do step 5 all while configuring Tools A and B within CellProfiler and without having to handle data import or export from other tools.
+In this tutorial, you'll explore 3 different ways of accessing work done in other tools:
 
 1. Loading masks created by other segmentation tools (in this case, [Cellpose](https://www.cellpose.org/), but the same strategy works for many tools which use this format).
 1. Accessing [ilastik](https://www.ilastik.org/) to use a trained pixel classification model via CellProfiler's plugins system.
@@ -31,25 +64,21 @@ There are a number of great software tools available to life scientists wishing 
 
 ### Plugins
 
-While CellProfiler doesn't have as many plugins as, say, Fiji, it does have many for you to try! 
-You can visit [plugins.cellprofiler.org](https://plugins.cellprofiler.org) to learn more. To quote from that site:
+CellProfiler has a number of plugins that act like modules within a pipeline.
+Plugins are available [on Github](https://github.com/CellProfiler/CellProfiler-plugins).
+Read more about them in [CellProfiler plugins documentation](plugins.cellprofiler.org) to learn more.
+To quote from that site:
 
 >Plugins advance the capabilities of CellProfiler but are not officially supported in the same way as modules. A module may be in CellProfiler-plugins instead of CellProfiler itself because:
 >- it is under active development
 >- it has a niche audience
 >- it is not documented to CellProfiler’s standards
->- it only works with certain version of CellProfiler
+>- it only works with certain versions of CellProfiler
 >- it requires extra libraries or other dependencies we are unable or unwilling to require for CellProfiler
 >- it has been contributed by a community member
 
 ````{tip}
 While that documentation has instructions for [installing plugins](https://plugins.cellprofiler.org/using_plugins.html#installing-plugins-without-dependencies), in step 2 it suggests downloading all of the CellProfiler plugins; this is generally a good thing to do, but if you prefer you can download individual plugins from GitHub with the website button below as well or instead.
-```{figure} ./TutorialImages/GitHubDownloadButton.png
-:width: 400
-:align: center
-
-GitHub's "Download Raw Files" button
-```
 ````
 
 ```{tip}
@@ -170,11 +199,6 @@ Screenshot of this ilastik classifer
 
 When using ilastik for fluorescence microscopy, you will likely get the best performance if you **keep your annotations extremely minimal** - the classifier you're going to use was trained by using 31 total pixels of annotation across the 4 images (13 pixels of annotation inside nucleoli, and 18 pixels outside of them); no image had more than 14 pixels annotated in total. We strongly suggest you make your classifiers one pixel at a time, doing point annotations! Resist the urge to draw squiggly lines all over the image! This feels counterintuitive but we promise it's true.
 
-### Grab the Runilastik plugin
-1. Download [the plugin](https://github.com/CellProfiler/CellProfiler-plugins/blob/master/active_plugins/runilastik.py) into a folder on your local computer. As stated above, we strongly suggest a folder that contains ONLY plugins.
-1. In CellProfiler's File -> Preferences menu (CellProfiler -> Preferences in Mac), set the `CellProfiler plugins directory` to the folder containing the plugin.
-1. Close and reopen CellProfiler to load the plugin.
-
 ### Load the classifier and evaluate it
 1. Drag `bonus_2_ilastik.cppipe` into the pipeline panel.
 1. Drag the `images_Illum-corrected` subfolder from the main exercise into the Images panel.
@@ -225,19 +249,7 @@ Based on your evaluations above, can you identify some places where additional t
 RunCellpose is by far our most popular plugin, simply because a) Cellpose is awesome! and b) installing Python packages when you aren't very computationally comfortable isn't. You can use the plugin in either of two modes - using a local `pixi`, `conda` or `python` installation that contains both CellProfiler and Cellpose, OR using Docker. The run time with Docker is substantially slower (about a minute more per image, in our testing), but if installation would take you a long time and be frustrating, in this sense you can "trade" your personal hands-on frustration time for time where CellProfiler is running on your computer (but you aren't there). For many people, this is a good trade!
 
 ### Start Docker/Podman Desktop
-1. If you have not already installed a container program from the links above, please do so! This may involve rebooting your computer.
 1. Start Docker/Podman Desktop.
-1. Optional but strongly recommended - once Docker/Podman Desktop opens, use the search functionality to search `Cellpose` and look for one of the `cellprofiler/runcellpose_with_pretrained` containers (we have versions for Cellpose 2, 3, and 4) and pull it. If for whatever reason this isn't working, move on, but it will save you some time later. 
-
-### Grab the RunCellpose plugin
-
-```{tip}
-If you downloaded the whole plugins repository earlier, you don't need to do any of these steps - RunCellpose should already be available to you. If you downloaded just the ilastik plugin and want to put this plugin in the same place, you can skip the middle step here (you still must download the plugin and restart CellProfiler, but you need not change the plugin folder if you're reusing the same one)
-```
-
-1. Download [the plugin](https://github.com/CellProfiler/CellProfiler-plugins/blob/master/active_plugins/runcellpose.py) into a folder on your local computer. As stated above, we strongly suggest a folder that contains ONLY plugins.
-1. In CellProfiler's File -> Preferences menu, set the `CellProfiler plugins directory` to the folder containing the plugin.
-1. Close and reopen CellProfiler to load the plugin.
 
 ### Load the pipeline and evaluate segmentation
 1. Drag `bonus_3_cellpose.cppipe` into the pipeline panel.

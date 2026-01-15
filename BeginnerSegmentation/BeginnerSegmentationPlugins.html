@@ -62,6 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'BeginnerSegmentation/BeginnerSegmentationPlugins';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Links to slides and other course materials" href="../slides_et_al.html" />
+    <link rel="prev" title="Day 3, session 3: Practical introduction to QuPath" href="../QuPath_demo/QuPath_demo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,8 +126,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -182,7 +182,7 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and Exercises</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../developing_intutions.html">Day 1, Exercise 3: developing image processing intutions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Piximi_ManualAnnotation/Piximi.html">Day 1, Exercise 5 - Making manual annotations with Piximi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CPbeginner_Segmentation.html">Day 2, exercise 2: Introduction to CellProfiler</a></li>
@@ -190,6 +190,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Translocation/Translocation.html">Day 2, exercise 5: Segmentation and Classification with CellProfiler and CellProfiler Analyst</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ilastik/PixelClassification.html">Day 3, session 2: Practical introduction to ilastik</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../QuPath_demo/QuPath_demo.html">Day 3, session 3: Practical introduction to QuPath</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Day 4, Session 2 - Interfacing CellProfiler with other software tools via files and plugins</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -345,6 +346,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-steps-to-do-first"><strong>Setup steps to do first</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-information"><strong>Background information</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-background-information">General background information</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-this-exercise">What is this exercise?</a></li>
@@ -361,14 +363,12 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-running-ilastik-locally-or-from-a-container"><strong>Exercise 2: Running ilastik locally or from a container</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#only-if-you-are-curious-how-did-we-train-the-classifier">Only if you are curious - how did we train the classifier?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grab-the-runilastik-plugin">Grab the Runilastik plugin</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-classifier-and-evaluate-it">Load the classifier and evaluate it</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-for-later-if-you-feel-exceptionally-good-on-time-train-your-own-ilastik-model">Bonus exercise (for later if you feel exceptionally good on time) - train your own ilastik model</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-running-cellpose-from-a-container-runner"><strong>Exercise 3: Running Cellpose from a container runner</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-docker-podman-desktop">Start Docker/Podman Desktop</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grab-the-runcellpose-plugin">Grab the RunCellpose plugin</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-pipeline-and-evaluate-segmentation">Load the pipeline and evaluate segmentation</a></li>
 </ul>
 </li>
@@ -403,6 +403,42 @@ document.write(`
 <p><strong>Lab Data</strong> in <a class="reference external" href="https://github.com/CellProfiler/tutorials/raw/master/BeginnerSegmentation/bonus_materials_EN.zip">this folder</a>, as well as the images from the Intro to CellProfiler session on Tuesday (which you hopefully still have, but is <a class="reference external" href="https://github.com/CellProfiler/tutorials/raw/master/BeginnerSegmentation/Archive_EN.zip">linked here</a> if not)</p>
 </section>
 <hr class="docutils" />
+<section id="setup-steps-to-do-first">
+<h2><strong>Setup steps to do first</strong><a class="headerlink" href="#setup-steps-to-do-first" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Download at least one RunCellpose container and one ilastik container from Dockerhub.
+This will happen automatically the first time you call a given Docker from CellProfiler (i.e. run a CellProfiler pipeline that uses the Docker) but if you are running this tutorial in a workshop setting we strongly recommend download in advance of the workshop as these are large files (5-10 GB) and bandwidth is often limited in a workshop setting.
+In Docker Desktop or Podman Desktop you can search for containers in the top search bar (see below).
+Make sure you select a tag (version) that is supported by the plugin you are using and then select “Pull”.
+We recommend <code class="docutils literal notranslate"><span class="pre">biocontainers/ilastik:1.4.0_cv2</span></code> for ilastik and <code class="docutils literal notranslate"><span class="pre">cellprofiler/runcellpose_with_pretrained:3.1.2.2</span></code> for Cellpose.</p></li>
+</ol>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/DockerSearch.png"><img alt="../_images/DockerSearch.png" src="../_images/DockerSearch.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Search in Docker Desktop for your desired container</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="2">
+<li><p>Once your containers are downloading, either
+2a. Clone (i.e. download whole) the Cellprofiler-plugins repository.
+In your terminal type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/CellProfiler/CellProfiler-plugins.git</span></code>. OR
+2b. Visit the <a class="reference external" href="https://github.com/CellProfiler/CellProfiler-plugins">CellProfiler plugins repository</a> and then download and unzip all the plugins by hitting the green <code class="docutils literal notranslate"><span class="pre">Clone</span></code> button and then <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Zip</span></code>
+OR
+2c.Alternatively, download just the <a class="reference external" href="https://github.com/CellProfiler/CellProfiler-plugins/blob/master/active_plugins/runilastik.py">Runilastik plugin</a> and <a class="reference external" href="https://github.com/CellProfiler/CellProfiler-plugins/blob/master/active_plugins/runcellpose.py">RunCellpose plugin</a> by selecting the “Download raw file” button.</p></li>
+</ol>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/GitHubDownloadButton.png"><img alt="../_images/GitHubDownloadButton.png" src="../_images/GitHubDownloadButton.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 38 </span><span class="caption-text">GitHub’s “Download Raw Files” button</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p>In CellProfiler’s File -&gt; Preferences menu (CellProfiler -&gt; Preferences in Mac), set the <code class="docutils literal notranslate"><span class="pre">CellProfiler</span> <span class="pre">plugins</span> <span class="pre">directory</span></code> to the folder containing the plugins.</p></li>
+<li><p>Close and reopen CellProfiler to load the plugins.</p></li>
+</ol>
+</section>
 <section id="background-information">
 <h2><strong>Background information</strong><a class="headerlink" href="#background-information" title="Link to this heading">#</a></h2>
 <section id="general-background-information">
@@ -411,7 +447,9 @@ document.write(`
 </section>
 <section id="what-is-this-exercise">
 <h3>What is this exercise?<a class="headerlink" href="#what-is-this-exercise" title="Link to this heading">#</a></h3>
-<p>There are a number of great software tools available to life scientists wishing to analyze images these days - <a class="reference external" href="https://forum.image.sc">forum.image.sc</a> alone has more than 60 open-source tools! Sometimes, though, it helps to have a multi-tool workflow - do one step in Tool A, and then another in Tool B (and then possibly C, D, etc, but hopefully not!). In this tutorial, you’ll try 3 different ways of accessing work you did in other tools.</p>
+<p>While CellProfiler is an image analysis tool itself, it also serves as a workflow manager that can interact with other tools, automatically passing data back and forth so that you can effectively use other tools within a single CellProfiler pipeline.
+This means in a hypothetical pipeline you have have CellProfiler do steps 1 and 2, Tool A do step 3, Tool B do step 4, and CellProfiler do step 5 all while configuring Tools A and B within CellProfiler and without having to handle data import or export from other tools.
+In this tutorial, you’ll explore 3 different ways of accessing work done in other tools:</p>
 <ol class="arabic simple">
 <li><p>Loading masks created by other segmentation tools (in this case, <a class="reference external" href="https://www.cellpose.org/">Cellpose</a>, but the same strategy works for many tools which use this format).</p></li>
 <li><p>Accessing <a class="reference external" href="https://www.ilastik.org/">ilastik</a> to use a trained pixel classification model via CellProfiler’s plugins system.</p></li>
@@ -421,15 +459,17 @@ document.write(`
 </section>
 <section id="plugins">
 <h3>Plugins<a class="headerlink" href="#plugins" title="Link to this heading">#</a></h3>
-<p>While CellProfiler doesn’t have as many plugins as, say, Fiji, it does have many for you to try!
-You can visit <a class="reference external" href="https://plugins.cellprofiler.org">plugins.cellprofiler.org</a> to learn more. To quote from that site:</p>
+<p>CellProfiler has a number of plugins that act like modules within a pipeline.
+Plugins are available <a class="reference external" href="https://github.com/CellProfiler/CellProfiler-plugins">on Github</a>.
+Read more about them in <a class="reference internal" href="#plugins.cellprofiler.org"><span class="xref myst">CellProfiler plugins documentation</span></a> to learn more.
+To quote from that site:</p>
 <blockquote>
 <div><p>Plugins advance the capabilities of CellProfiler but are not officially supported in the same way as modules. A module may be in CellProfiler-plugins instead of CellProfiler itself because:</p>
 <ul class="simple">
 <li><p>it is under active development</p></li>
 <li><p>it has a niche audience</p></li>
 <li><p>it is not documented to CellProfiler’s standards</p></li>
-<li><p>it only works with certain version of CellProfiler</p></li>
+<li><p>it only works with certain versions of CellProfiler</p></li>
 <li><p>it requires extra libraries or other dependencies we are unable or unwilling to require for CellProfiler</p></li>
 <li><p>it has been contributed by a community member</p></li>
 </ul>
@@ -437,13 +477,6 @@ You can visit <a class="reference external" href="https://plugins.cellprofiler.o
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>While that documentation has instructions for <a class="reference external" href="https://plugins.cellprofiler.org/using_plugins.html#installing-plugins-without-dependencies">installing plugins</a>, in step 2 it suggests downloading all of the CellProfiler plugins; this is generally a good thing to do, but if you prefer you can download individual plugins from GitHub with the website button below as well or instead.</p>
-<figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/GitHubDownloadButton.png"><img alt="../_images/GitHubDownloadButton.png" src="../_images/GitHubDownloadButton.png" style="width: 400px;" />
-</a>
-<figcaption>
-<p><span class="caption-text">GitHub’s “Download Raw Files” button</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -456,11 +489,11 @@ You can visit <a class="reference external" href="https://plugins.cellprofiler.o
 <p>Computer scientists will often use software <strong>containers</strong> to ship tools or data that are hard to install - <a class="reference external" href="https://journals.sagepub.com/doi/10.1177/25152459211017853">here</a> is a good introduction and overview for non-computer scientists. You can think of containers as “a pre-configured operating system in a box”. Because they come to you pre-configured, installation of any software happens once-and-only-once (by the creator of the container, not by you), and should stay working for long after ie the latest Mac upgrade breaks a certain older software installation. Groups like <a class="reference external" href="https://biocontainers.pro/">biocontainers</a> have already containerized many of the tools you know and love. There are a number of types of software containers, but one of the most common is called a <strong>Docker</strong> container; many containers made by Docker, which are therefore sometimes referred to as Docker containers, can nevertheless be run in other container programs, like Singularity and Podman.</p>
 <p>Most life scientists aren’t aware of or don’t use containers, especially because typical usage involves accessing them via your terminal. But Docker doesn’t have to mean terminal! There are <a class="reference external" href="https://github.com/COBA-NIH/docker_gradio_demo">containers that spit out interactive websites for you to use</a>, and CellProfiler has plugins that are specifically set up to call other tools that live (and are executed) inside containers.</p>
 <p>To do this, CellProfiler needs to have the infrastructure for Docker containers up and running, which you can give it by installing a free program like <a class="reference external" href="https://www.docker.com/products/docker-desktop/"><strong>Docker Desktop</strong></a> or <a class="reference external" href="https://podman-desktop.io/downloads"><strong>Podman Desktop</strong></a>. You don’t need to make an account to use it, but you probably will need to reboot your computer after installation is complete. Then, whenever you want to use a container-calling plugin in CellProfiler, you simply must make sure that one of these programs is open and running, CellProfiler will take care of everything else!</p>
-<figure class="align-center" id="id2">
+<figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="../_images/DockerDesktop.png"><img alt="../_images/DockerDesktop.png" src="../_images/DockerDesktop.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">The Docker Desktop interface for Mac. Containers can be searched for in the top search bar!</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 39 </span><span class="caption-text">The Docker Desktop interface for Mac. Containers can be searched for in the top search bar!</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition warning">
@@ -477,20 +510,20 @@ You can visit <a class="reference external" href="https://plugins.cellprofiler.o
 <h3>Only if you are curious - how did we make these label masks?<a class="headerlink" href="#only-if-you-are-curious-how-did-we-make-these-label-masks" title="Link to this heading">#</a></h3>
 <p>Cellpose was installed in a conda environment according to the <a class="reference external" href="https://github.com/MouseLand/cellpose?tab=readme-ov-file#installation">official instructions</a> for installation with the GUI. The software was started in that conda environment using the command <code class="docutils literal notranslate"><span class="pre">cellpose</span></code>.</p>
 <p>Nuclear masks were made by dragging each DNA image into the GUI, selecting the ‘nuclei’ model with default settings, and then saving them individually as PNG using <em>Cmd+N</em> (Mac) <em>Ctl+N</em> (Windows). Since there were only 10 images and the hotkeys were available, this was not too time-consuming to do.</p>
-<figure class="align-center" id="id3">
+<figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="../_images/CellposeGUI.png"><img alt="../_images/CellposeGUI.png" src="../_images/CellposeGUI.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Nuclei segmented in the Cellpose GUI</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 40 </span><span class="caption-text">Nuclei segmented in the Cellpose GUI</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Cell masks were made by navigating into the image folder and then running the command below; this requires some knowledge of the <a class="reference external" href="https://cellpose.readthedocs.io/en/latest/cli.html">Cellpose command line syntax</a> but is much easier for large numbers of images.</p>
 <p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">cellpose</span> <span class="pre">--dir</span> <span class="pre">.</span> <span class="pre">--img_filter</span> <span class="pre">Ch4</span> <span class="pre">--pretrained_model</span> <span class="pre">cyto2</span> <span class="pre">--diameter</span> <span class="pre">40</span> <span class="pre">--save_png</span> <span class="pre">--verbose</span></code></p>
-<figure class="align-center" id="id4">
+<figure class="align-center" id="id5">
 <a class="reference internal image-reference" href="../_images/CellposeCLI.png"><img alt="../_images/CellposeCLI.png" src="../_images/CellposeCLI.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Command line execution of Cellpose</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 41 </span><span class="caption-text">Command line execution of Cellpose</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -507,11 +540,11 @@ You can visit <a class="reference external" href="https://plugins.cellprofiler.o
 <p class="admonition-title">Question for you</p>
 <p>Are there cases where you think classical segmentation typically performs better? Where Cellpose performs better?</p>
 </div>
-<figure class="align-center" id="id5">
+<figure class="align-center" id="id6">
 <a class="reference internal image-reference" href="../_images/WorkspaceViewerImportedMasks.png"><img alt="../_images/WorkspaceViewerImportedMasks.png" src="../_images/WorkspaceViewerImportedMasks.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Visualization of images and objects in the Workspace Viewer</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 42 </span><span class="caption-text">Visualization of images and objects in the Workspace Viewer</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -539,11 +572,11 @@ You can visit <a class="reference external" href="https://plugins.cellprofiler.o
 <p>As you are well aware of by now, classical segmentation requires the thing you care about in an image be bright and every single other pixel dark(er). If you have a good clean fluorescent signal for the thing you care about, great! If not, you may need to resort to some tricks.</p>
 <p>One such trick is to train a classifier on a pixel-by-pixel basis to say “here is what I think is the likelihood that this is a pixel you want to end up in your segmentation”; this classifier then ends up creating for each  pixel a <em>probability value</em> that corresponds to how likely it thinks it is you want to segment that pixel. If your classifier is good, that will give you an image where the pixels you care about are high-probability (bright) and everywhere else is low-probability (dark). That’s exactly what we want! Life scientists tend to call this <strong>“Pixel Classification”</strong>; computer scientists will sometimes refer to it as <strong>“Semantic Segmentation”</strong>.</p>
 <p>There are a few popular Fiji plugins for doing this, including Weka Trainable Segmentation and Labkit, and you should absolutely use them if they work better for you! We tend to use ilastik, because it makes it easy to automate creating a classifier from a very small number of images and then bulk-applying it to many others in “Batch Processing” mode. Earlier in the course we demonstrated running ilastik, and <em>then</em> CellProfiler.</p>
-<figure class="align-center" id="id6">
+<figure class="align-center" id="id7">
 <a class="reference internal image-reference" href="../_images/IlastikBatchMode.png"><img alt="../_images/IlastikBatchMode.png" src="../_images/IlastikBatchMode.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">ilastik’s Batch Processing mode</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 43 </span><span class="caption-text">ilastik’s Batch Processing mode</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Why do two steps though, when you can do one instead? In this tutorial we’ll take a pre-trained ilastik classifer and run it inside our CellProfiler pipeline, so we can find and measure objects all in one step.</p>
@@ -555,22 +588,14 @@ You can visit <a class="reference external" href="https://plugins.cellprofiler.o
 <section id="only-if-you-are-curious-how-did-we-train-the-classifier">
 <h3>Only if you are curious - how did we train the classifier?<a class="headerlink" href="#only-if-you-are-curious-how-did-we-train-the-classifier" title="Link to this heading">#</a></h3>
 <p>This classifer was made in ilastik 1.4.1b5 by training on 4 images (A14_site1, E18_site1, D16_site1, and C12_site1) in which we labeled just two classes: one class for nucleoli (yellow in the figure below), and one class for every other part of the image (blue in the imagebelow). One COULD have made more classes, but this, in practice, worked.</p>
-<figure class="align-center" id="id7">
+<figure class="align-center" id="id8">
 <a class="reference internal image-reference" href="../_images/IlastikLiveUpdate.png"><img alt="../_images/IlastikLiveUpdate.png" src="../_images/IlastikLiveUpdate.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Screenshot of this ilastik classifer</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 44 </span><span class="caption-text">Screenshot of this ilastik classifer</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>When using ilastik for fluorescence microscopy, you will likely get the best performance if you <strong>keep your annotations extremely minimal</strong> - the classifier you’re going to use was trained by using 31 total pixels of annotation across the 4 images (13 pixels of annotation inside nucleoli, and 18 pixels outside of them); no image had more than 14 pixels annotated in total. We strongly suggest you make your classifiers one pixel at a time, doing point annotations! Resist the urge to draw squiggly lines all over the image! This feels counterintuitive but we promise it’s true.</p>
-</section>
-<section id="grab-the-runilastik-plugin">
-<h3>Grab the Runilastik plugin<a class="headerlink" href="#grab-the-runilastik-plugin" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Download <a class="reference external" href="https://github.com/CellProfiler/CellProfiler-plugins/blob/master/active_plugins/runilastik.py">the plugin</a> into a folder on your local computer. As stated above, we strongly suggest a folder that contains ONLY plugins.</p></li>
-<li><p>In CellProfiler’s File -&gt; Preferences menu (CellProfiler -&gt; Preferences in Mac), set the <code class="docutils literal notranslate"><span class="pre">CellProfiler</span> <span class="pre">plugins</span> <span class="pre">directory</span></code> to the folder containing the plugin.</p></li>
-<li><p>Close and reopen CellProfiler to load the plugin.</p></li>
-</ol>
 </section>
 <section id="load-the-classifier-and-evaluate-it">
 <h3>Load the classifier and evaluate it<a class="headerlink" href="#load-the-classifier-and-evaluate-it" title="Link to this heading">#</a></h3>
@@ -597,21 +622,21 @@ You can visit <a class="reference external" href="https://plugins.cellprofiler.o
 <ol class="arabic simple" start="4">
 <li><p>Evaluate your prediction in Runilastik across a few image sets - how well does it perform? Does it perform worse on images it wasn’t trained on?</p></li>
 </ol>
-<figure class="align-center" id="id8">
+<figure class="align-center" id="id9">
 <a class="reference internal image-reference" href="BeginnerSegmentation/TutorialImages/RunIlastik.png"><img alt="BeginnerSegmentation/TutorialImages/RunIlastik.png" src="BeginnerSegmentation/TutorialImages/RunIlastik.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Screenshot of the Runilastik module</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 45 </span><span class="caption-text">Screenshot of the Runilastik module</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple" start="5">
 <li><p>Evaluate your segmentations across a few image sets using OverlayOutlines and/or the WorkspaceViewer - are there cases where you think the ilastik model-based segmentation performs better? The filtering-and-masking segmentation?</p></li>
 </ol>
-<figure class="align-center" id="id9">
+<figure class="align-center" id="id10">
 <a class="reference internal image-reference" href="../_images/WorkspaceViewerilastik.png"><img alt="../_images/WorkspaceViewerilastik.png" src="../_images/WorkspaceViewerilastik.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Evaluating segmentations in the Workspace Viewer</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 46 </span><span class="caption-text">Evaluating segmentations in the Workspace Viewer</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -634,21 +659,7 @@ You can visit <a class="reference external" href="https://plugins.cellprofiler.o
 <section id="start-docker-podman-desktop">
 <h3>Start Docker/Podman Desktop<a class="headerlink" href="#start-docker-podman-desktop" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>If you have not already installed a container program from the links above, please do so! This may involve rebooting your computer.</p></li>
 <li><p>Start Docker/Podman Desktop.</p></li>
-<li><p>Optional but strongly recommended - once Docker/Podman Desktop opens, use the search functionality to search <code class="docutils literal notranslate"><span class="pre">Cellpose</span></code> and look for one of the <code class="docutils literal notranslate"><span class="pre">cellprofiler/runcellpose_with_pretrained</span></code> containers (we have versions for Cellpose 2, 3, and 4) and pull it. If for whatever reason this isn’t working, move on, but it will save you some time later.</p></li>
-</ol>
-</section>
-<section id="grab-the-runcellpose-plugin">
-<h3>Grab the RunCellpose plugin<a class="headerlink" href="#grab-the-runcellpose-plugin" title="Link to this heading">#</a></h3>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you downloaded the whole plugins repository earlier, you don’t need to do any of these steps - RunCellpose should already be available to you. If you downloaded just the ilastik plugin and want to put this plugin in the same place, you can skip the middle step here (you still must download the plugin and restart CellProfiler, but you need not change the plugin folder if you’re reusing the same one)</p>
-</div>
-<ol class="arabic simple">
-<li><p>Download <a class="reference external" href="https://github.com/CellProfiler/CellProfiler-plugins/blob/master/active_plugins/runcellpose.py">the plugin</a> into a folder on your local computer. As stated above, we strongly suggest a folder that contains ONLY plugins.</p></li>
-<li><p>In CellProfiler’s File -&gt; Preferences menu, set the <code class="docutils literal notranslate"><span class="pre">CellProfiler</span> <span class="pre">plugins</span> <span class="pre">directory</span></code> to the folder containing the plugin.</p></li>
-<li><p>Close and reopen CellProfiler to load the plugin.</p></li>
 </ol>
 </section>
 <section id="load-the-pipeline-and-evaluate-segmentation">
@@ -668,11 +679,11 @@ You can visit <a class="reference external" href="https://plugins.cellprofiler.o
 <p class="admonition-title">Note</p>
 <p>If you didn’t already pull the container in the Docker Desktop section above, the very first time you hit the RunCellpose module, it will need to download a ~13GB file, which may be slow depending on your connection. You only need to do this step once however!</p>
 </div>
-<figure class="align-center" id="id10">
+<figure class="align-center" id="id11">
 <a class="reference internal image-reference" href="../_images/RunCellpose.png"><img alt="../_images/RunCellpose.png" src="../_images/RunCellpose.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">The output of the RunCellpose module</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 47 </span><span class="caption-text">The output of the RunCellpose module</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple" start="4">
@@ -695,11 +706,11 @@ You can visit <a class="reference external" href="https://plugins.cellprofiler.o
 <section id="bonus-exercise-for-later-if-you-feel-exceptionally-good-on-time-test-on-a-more-varied-data-set">
 <h3>Bonus exercise (for later if you feel exceptionally good on time) - test on a more varied data set<a class="headerlink" href="#bonus-exercise-for-later-if-you-feel-exceptionally-good-on-time-test-on-a-more-varied-data-set" title="Link to this heading">#</a></h3>
 <p>As you may recall, data we gave you in this exercise was all very clean, and all from the negative control wells of this experiment. The Advanced Segmentation data we used on Tuesday - <a class="reference external" href="https://drive.google.com/file/d/10kZMhr2bVR14vMP7kG5iZGujjUI3Nn3Y/view?usp=sharing">folder linked again here</a> contains images with a broader variety of phenotypes - try replacing the images in the <code class="docutils literal notranslate"><span class="pre">Images</span></code> module with this folder instead and see how well the two kinds of segmentation work in different conditions!</p>
-<figure class="align-center" id="id11">
+<figure class="align-center" id="id12">
 <a class="reference internal image-reference" href="../_images/Fig2.png"><img alt="../_images/Fig2.png" src="../_images/Fig2.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">A broader range of phenotypes can be harder to consistently account for in conducting segmentation.</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 48 </span><span class="caption-text">A broader range of phenotypes can be harder to consistently account for in conducting segmentation.</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition tip">
@@ -752,6 +763,24 @@ You can visit <a class="reference external" href="https://plugins.cellprofiler.o
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../QuPath_demo/QuPath_demo.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Day 3, session 3: Practical introduction to QuPath</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../slides_et_al.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Links to slides and other course materials</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -769,6 +798,7 @@ You can visit <a class="reference external" href="https://plugins.cellprofiler.o
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-steps-to-do-first"><strong>Setup steps to do first</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-information"><strong>Background information</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-background-information">General background information</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-this-exercise">What is this exercise?</a></li>
@@ -785,14 +815,12 @@ You can visit <a class="reference external" href="https://plugins.cellprofiler.o
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-running-ilastik-locally-or-from-a-container"><strong>Exercise 2: Running ilastik locally or from a container</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#only-if-you-are-curious-how-did-we-train-the-classifier">Only if you are curious - how did we train the classifier?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grab-the-runilastik-plugin">Grab the Runilastik plugin</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-classifier-and-evaluate-it">Load the classifier and evaluate it</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-for-later-if-you-feel-exceptionally-good-on-time-train-your-own-ilastik-model">Bonus exercise (for later if you feel exceptionally good on time) - train your own ilastik model</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-running-cellpose-from-a-container-runner"><strong>Exercise 3: Running Cellpose from a container runner</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-docker-podman-desktop">Start Docker/Podman Desktop</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grab-the-runcellpose-plugin">Grab the RunCellpose plugin</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-pipeline-and-evaluate-segmentation">Load the pipeline and evaluate segmentation</a></li>
 </ul>
 </li>
