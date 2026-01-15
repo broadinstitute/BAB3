@@ -260,7 +260,7 @@ RunCellpose is by far our most popular plugin, simply because a) Cellpose is awe
 1. Drag the `images_Illum-corrected` subfolder from the main exercise into the Images module
 1. Put CellProfiler into TestMode <img src="./TutorialImages/startTestMode.png" width="120"/> 
 1. (Optional) If using Podman, adjust the setting `Run CellPose in a Docker/Podman container or local python environment` to `Podman`
-1. If needed, adjust the Cellpose model to a version CellProfiler can find
+1. You will need to `Select Cellpose version` and `Select Cellpose Docker image`. (e.g. you must select Cellpose version **3** for the Docker `runcellpose_with_pretrained:3.1.1.2` to be an option.)
 1. Open the eye icons <img src="./TutorialImages/EyeOpen.png" width="50"/> next to RunCellpose and OverlayOutlines, and then hit <img src="./TutorialImages/Run.png" width="120"/>
   - You may wish to put a pause next to SaveImages, or uncheck it, to keep it from saving images, but that's up to you
 
