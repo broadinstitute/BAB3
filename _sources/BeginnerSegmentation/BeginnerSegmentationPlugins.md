@@ -21,7 +21,7 @@ This will happen automatically the first time you call a given Docker from CellP
 
 In Docker Desktop or Podman Desktop you can search for containers in the top search bar (see below).
 Make sure you select a tag (version) that is supported by the plugin you are using and then select "Pull".
-We recommend `biocontainers/ilastik:1.4.0_cv2` for ilastik and `cellprofiler/runcellpose_with_pretrained:3.1.2.2` for Cellpose.
+We recommend `biocontainers/ilastik:1.4.0_cv2` for ilastik and `cellprofiler/runcellpose_with_pretrained:3.1.1.2` for Cellpose.
 
 If they are not appearing in search, you can instead pull them from the terminal with the command `docker pull CONTAINER` or `podman pull CONTAINER`, replacing `CONTAINER` with the container name and tag, e.g. `docker pull biocontainers/ilastik:1.4.0_cv2`
 
