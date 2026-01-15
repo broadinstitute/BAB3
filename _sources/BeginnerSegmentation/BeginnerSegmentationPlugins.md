@@ -46,7 +46,7 @@ OR
 GitHub's "Download Raw Files" button
 ```
 
-3. In CellProfiler's File -> Preferences menu (CellProfiler -> Preferences in Mac), set the `CellProfiler plugins directory` to the folder containing the plugins.
+3. In CellProfiler's File -> Preferences menu (CellProfiler -> Preferences in Mac), set the `CellProfiler plugins directory` to the folder containing the plugins (make sure you use the `active_plugins` subfolder).
 4. Close and reopen CellProfiler to load the plugins.
 
 ## **Background information**
@@ -143,7 +143,7 @@ Cell masks were made by navigating into the image folder and then running the co
 
 1. Open up a clean copy of CellProfiler (or run File -> New Project) and drag `bonus_1_import_masks.cppipe` into the pipeline panel.
 1. Drag the `images_Illum-corrected` subfolder from the main Beginner Segmentation exercise and also the `cellpose_masks_cells` subfolder from this exercise. *Do not drag in the `cellpose_masks_nuclei` folder.*
-1. Put CellProfiler into TestMode <img src="./TutorialImages/startTestMode.png" width="120"/>, open the eye icon <img src="./TutorialImages/EyeOpen.png" width="50"/> next to OverlayOutlines, and then hit <img src="./TutorialImages/Step.png" width="120"/> 3 times to create a classical segmentation and compare it with the Cellpose-generated version. You can check the settings in the OverlayOutlines module to see which outline color corresponds to which segmentation in the output.
+1. Put CellProfiler into TestMode <img src="./TutorialImages/StartTestMode.png" width="120"/>, open the eye icon <img src="./TutorialImages/EyeOpen.png" width="50"/> next to OverlayOutlines, and then hit <img src="./TutorialImages/Step.png" width="120"/> 3 times to create a classical segmentation and compare it with the Cellpose-generated version. You can check the settings in the OverlayOutlines module to see which outline color corresponds to which segmentation in the output.
 1. Optionally, open the Workspace Viewer using <img src="./TutorialImages/ViewWorkspace.png" width="120"/> to create easily on-the-fly customizable overlays.
 1. Hit <img src="./TutorialImages/NextImageSet.png" width="120"/> and repeat a couple of times to examine the segmentations on more images.
 
@@ -211,7 +211,7 @@ When using ilastik for fluorescence microscopy, you will likely get the best per
   - Docker-installed: change the top setting from Local to Docker.
   - Podman-installed: change the top setting from Local to Podman
 
-3. Put CellProfiler into TestMode <img src="./TutorialImages/startTestMode.png" width="120"/>, open the eye icons <img src="./TutorialImages/EyeOpen.png" width="50"/> next to Runilastik and OverlayOutlines, and then hit <img src="./TutorialImages/Run.png" width="120"/>. You can check the settings in the OverlayOutlines module to see which outline color corresponds to which segmentation in the output.
+3. Put CellProfiler into TestMode <img src="./TutorialImages/StartTestMode.png" width="120"/>, open the eye icons <img src="./TutorialImages/EyeOpen.png" width="50"/> next to Runilastik and OverlayOutlines, and then hit <img src="./TutorialImages/Run.png" width="120"/>. You can check the settings in the OverlayOutlines module to see which outline color corresponds to which segmentation in the output.
   - You may wish to put a pause <img src="./TutorialImages/Pause.png" width="50"/> next to SaveImages, or uncheck it <img src="./TutorialImages/InactivatedModule.png" width="50"/>, to keep it from saving images, but that's up to you.
 
 ```{note}
@@ -258,7 +258,7 @@ RunCellpose is by far our most popular plugin, simply because a) Cellpose is awe
 ### Load the pipeline and evaluate segmentation
 1. Drag `bonus_3_cellpose.cppipe` into the pipeline panel.
 1. Drag the `images_Illum-corrected` subfolder from the main exercise into the Images module
-1. Put CellProfiler into TestMode <img src="./TutorialImages/startTestMode.png" width="120"/> 
+1. Put CellProfiler into TestMode <img src="./TutorialImages/StartTestMode.png" width="120"/> 
 1. (Optional) If using Podman, adjust the setting `Run CellPose in a Docker/Podman container or local python environment` to `Podman`
 1. You will need to `Select Cellpose version` and `Select Cellpose Docker image`. (e.g. you must select Cellpose version **3** for the Docker `runcellpose_with_pretrained:3.1.1.2` to be an option.)
 1. Open the eye icons <img src="./TutorialImages/EyeOpen.png" width="50"/> next to RunCellpose and OverlayOutlines, and then hit <img src="./TutorialImages/Run.png" width="120"/>
