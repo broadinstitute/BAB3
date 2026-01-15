@@ -14,6 +14,7 @@ parts:
   - file: ilastik/PixelClassification.md
   - file: QuPath_demo/QuPath_demo.md
   - file: BeginnerSegmentation/BeginnerSegmentationPlugins.md
+  - file: MicroSAM/MicroSAM_workshop.md
 - caption:  Additional Resources
   chapters:
   - file: slides_et_al
