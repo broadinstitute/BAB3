@@ -1,6 +1,6 @@
 # Day 4, Session 6 - 'Segment Anything' Model (SAM) for Microscopy
 
-*Lab authors: Esteban A. Miglietta . 
+*Lab authors: Esteban A. Miglietta
 
 ---
 
@@ -13,20 +13,21 @@ You can find all the documentation for this tool [HERE](https://computational-ce
 While you can use MicroSAM directly from the [command line](https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#using-the-command-line-interface-cli) or as a [Python library](https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#using-the-python-library) (there's even [quick start jupyter notebooks](https://github.com/computational-cell-analytics/micro-sam/blob/master/notebooks/quick_start.ipynb) that you can run online on Kaggle or Google Colab), we will use the **MicroSAM Napari plugin** for this workshop.
 
 ## Learning Objectives
+
 - Learn about SAM and it's specific implementation for microscopy: MicroSAM
 - Explore MicroSAM as a tool for aiding in manual annotations in Napari, using the plugin
 - Explore the limitations of the model
 
 ### **Lab Data** 
+
 You can download some sample images from [this Drive folder](https://drive.google.com/drive/folders/1NOt_OeMVr6Y5ZK5CrYtG97-P05yABHlx?usp=sharing)
 
----
-
 ## Installation
+
 Using Pixi:
 Clone the **BAB3** repo locally (during the course, you should have already done this part!) and `cd` into that directory, then:
 
-```
+```bash
 cd pixi_envs/microsam #go to the directory containing the pixi files
 pixi shell --frozen #activate the new microsam environment (and install, if not already installed)
 ```
@@ -37,9 +38,10 @@ You can always exit the Pixi environment using the `exit` command.
 
 ---
 
-## Exercises:
+## Exercises
 
 ### Loading an image and calculating embeddings
+
 In order to use the MicroSAM models to segment the image, first we need to use the model to compute a simplified representation of the image, aka. an *embedding*.
 
 - Open napari using the command `napari` in the command line
@@ -61,16 +63,18 @@ Sample images menu.
 The very first time you open a sample image, the plugin will first download it, which might take a few seconds.
  ```
 
-- Go to `Plugins > SegmentAnything for Microscopy > 2d annotator`.
+- Go to `Plugins > SegmentAnything for Microscopy > Annotator 2d`.
 - In the plugin window, choose the image for which to compute the embeddings in the `Image Layer` menu and choose the appropriate `Model` according to the type of images to segment.
-- In the Embedding Settings menu, choose the `model size` (bigger) and change directory for saving embeddings
-- Run `Compute Embeddings` with the default parameters (check where the embeddings are saved, you can specify a different location).
+- In the Embedding Settings menu, choose the `model size`. (As of writing this excercise, the options are `tiny`, `base`, and `large`. We recommend starting with `base` but if your computer is struggling with memory you can try `tiny`. `large` will take even longer to compute so you may want to explore comparing models outside of this excercise.)
+- Specify where to save the embeddings by choosing an `embeddings save path`.
+- Run `Compute Embeddings` with the default parameters.
 
 ```{margin} NOTE
 The very first time you run any model, the plugin will first download the model weights, which might take a few minutes.
 ```
 
 ### Image annotation in 2D ([Documentation](https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#annotator-2d)  and [Video tutorial](https://www.youtube.com/watch?v=9xjJBg_Bfuc&ab_channel=ComputationalCellAnalytics))
+
 - Segment cells using either bounding box prompts or positive/negative point prompts
 
 ```{figure} ./images/2d_annotation.png
@@ -98,6 +102,7 @@ Automatic segmentation
 - Remember to `Commit` your segmented objects to save them!
 
 ### Annotate an entire folder: The image Series Annotator ([Documentation](https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#image-series-annotator) and [Video tutorial](https://www.youtube.com/watch?v=HqRoImdTX3c&ab_channel=ComputationalCellAnalytics))
+
 - Go to `Plugins > SegmentAnything for Microscopy > Image Series Annotator`.
 - As before, select the `Model` according to the image type, and it's `Size`.
 - Select the `Input Folder`, `Output Folder` and `embeddings save path` (each one should be a different folder, named accordingly).
@@ -111,6 +116,7 @@ Your input folder should **ONLY** contain your images and nothing else (like oth
 - When the embedding computations are done, segment the image the same way you did before and click `Next` (or hit `N`) to move to the next image in the directory and continue annotating.
 
 ### Image Annotation in 3D ([Documentation](https://computational-cell-analytics.github.io/micro-sam/micro_sam.html#annotator-3d) and [Video Tutorial](https://www.youtube.com/watch?v=nqpyNQSyu74&ab_channel=ComputationalCellAnalytics))
+
 - Similar to the the exercise before, but this time use the `Annotator 3d`, from `Plugins > Segment Anything for Microscopy`
 
 ```{margin}
@@ -128,7 +134,6 @@ Note that computing embeddings for the whole stack will, expectedly, take a long
 3D annotation (volume view)
 ```
 
-
 ### Bonus Exercise: try SAMJ in Fiji
 
 SAMJ is an implementation of SAM that can be run in ImageJ/Fiji using a plugin.
@@ -144,6 +149,7 @@ SAMJ is an implementation of SAM that can be run in ImageJ/Fiji using a plugin.
 ```{warning} NOTE
 Currently, **SAMj only supports either single channel (grayscale) or 3-channel RGB 2D images**. If you want to work with a multichannel image, you will need to convert it to one of these formats and/or extracting individual frames/slices (for 3D/timelapse datasets) before processing.
 ```
+
 ```{figure} ./images/SAMj_annotator.png
 :width: 600
 :align: center
@@ -154,5 +160,3 @@ Currently, **SAMj only supports either single channel (grayscale) or 3-channel R
 ```{margin}
 You can use preexisting point annotations (for example, generated using `Find Maxima`) as prompts by choosing the "Preset Prompts" option.
 ```
-
----
