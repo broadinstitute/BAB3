@@ -39,18 +39,11 @@ This table will be updated throughout the course with links to materials used du
 |Day 3, session 5: Colocalization (game by Romain Guiet) | [Learn more about the Coloc Game](https://focalplane.biologists.com/2024/10/20/teaching-co-localisation-analysis-from-lecture-to-leisure/) / [Extra handouts for the Coloc Game](https://drive.google.com/drive/folders/1SwBBbCgHNp4qB0qG6uhmk-P0QxB34qKv?usp=drive_link)|
 |Day 4, session 1: Command lines, environments, and containers | [Slide deck](https://docs.google.com/presentation/d/1XhyfhpymUa3scRyj8g3CuJmmYCKRtsgy77YncfvGrRA/edit?usp=sharing)|
 |Day 4, session 3: Introduction to Deep Learning | [Slide deck](https://docs.google.com/presentation/d/1W4GB4qLdBknFfvU9scJTma2BpWOvo-s3fMdhlRUvkKI/edit?usp=sharing) / [Tensorflow Playground](https://playground.tensorflow.org/)|
+|Day 4 SKIPPED LECTURE: Segmentation for Deep Learning | [Slide deck](https://docs.google.com/presentation/d/1uyMqr9h6g27746C9KOEzN_PZ2RquZFHq0-o0k-BSFpo/edit?usp=sharing)|
+|Day 4, session 5: Introduction to Napari | [Slide deck](https://docs.google.com/presentation/d/1wwY9B_wC2Ndtknunf2nFdw_s7tFvpwZ8CHUzZE9rNx8/edit?usp=sharing)|
 ---
 
 <!--
-
-
-
-
-
-
-
-|Day 4, session 4: Segmentation for Deep Learning | [Slide deck](https://docs.google.com/presentation/d/1uyMqr9h6g27746C9KOEzN_PZ2RquZFHq0-o0k-BSFpo/edit?usp=sharing)|
-|Day 4, session 5: Introduction to Napari | [Slide deck](https://docs.google.com/presentation/d/1wwY9B_wC2Ndtknunf2nFdw_s7tFvpwZ8CHUzZE9rNx8/edit?usp=sharing)|
 |Day 5, session 1: Introduction to Cellpose | [Slide deck](https://docs.google.com/presentation/d/1w_OvCa_7vyUs5E1o-tFpxxLpDvrxcTkiI_F9got7Mgw/edit?usp=sharing)|
 |Day 5, session 3: Community Resources |[slide deck](https://docs.google.com/presentation/d/1tEhY6ayOyQhBoUW-7gqBlcvT9bhrMXqJsLXxqpK7wbc/edit?slide=id.p#slide=id.p)|
 |Day 5, session 5: Wrapup | [slide deck](https://docs.google.com/presentation/d/1aln4lUI-H2_TDINVNt1V8bo4efcban1SHgs6CLZ1YfY/edit?slide=id.p#slide=id.p)|
