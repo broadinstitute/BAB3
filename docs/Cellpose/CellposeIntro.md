@@ -128,7 +128,9 @@ Not sure how to annotate? Try the help menu for tips and hotkeys!
 
 ## Exercise 3
 
-- Bring the worst peforming dataset (it will probably be the microglia) over to Cellpose 4. How well does it do out of the box? How well does it work after retraining with one images? Two?
+- Bring the worst peforming dataset (it will probably be the microglia) over to Cellpose 4. How well does it do out of the box?
+
+(Unfortunately, it looks like there is a bug in Cellpose 4.0.6, the version that we have in the pixi Cellpose 4 pixi environment, that affects retraining, so it may not work for you to retrain Cellpose 4 in the same way that you could in the previous exercise with Cellpose 3.)
 
 To exit Cellpose 3 and enter Cellpose 4, you will need to exit the Pixi shell and re-enter the other environment.
 
@@ -141,10 +143,12 @@ cellpose # start Cellpose 4
 
 As we've mentioned, Cellpose 4 uses a different architecture (SAM-based) and as a consequence is much more compute intensive. If you have a GPU available, you will absolutely want to use it. Cellpose 4 will run on CPU, but it will be (potentially prohibitively) slow.
 
-## Bonus exercise 
+<!--
+## Bonus exercise
 
 - How do Cellpose 3 (and Cellpose 4, if your computer can handle it) work on the 3D dataset?
 
 (Note that you'll have to close the GUI and reopen it with `cellpose --Zstack`)
 
 What if you try 2.5D mode (leave the stitch threshold parameter at 0) vs overlap mode (set the stitch threshold to something greater than 0)? Note that overlap is much faster, so you may want to try that first!
+-->
