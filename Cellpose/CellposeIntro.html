@@ -370,7 +370,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="day-5-session-2-segmenting-data-with-cellpose">
 <h1>Day 5, Session 2 - Segmenting Data with Cellpose<a class="headerlink" href="#day-5-session-2-segmenting-data-with-cellpose" title="Link to this heading">#</a></h1>
-<p><em>Lab authors: Beth Cimini</em> .</p>
+<p><em>Lab authors: Beth Cimini</em></p>
 <hr class="docutils" />
 <section id="learning-objectives">
 <h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
@@ -387,20 +387,20 @@ document.write(`
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
 <p>Using Pixi:
 Clone the <strong>BAB3</strong> repo locally (during the course, you should have already done this part!) and <code class="docutils literal notranslate"><span class="pre">cd</span></code> into that directory, then:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pixi_envs</span><span class="o">/</span><span class="n">cellpose3</span> <span class="c1">#go to the directory containing the pixi files</span>
-<span class="n">pixi</span> <span class="n">shell</span> <span class="o">--</span><span class="n">frozen</span> <span class="c1">#activate the new cellpose3 environment (and install, if not already installed)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>pixi_envs/cellpose3<span class="w"> </span><span class="c1">#go to the directory containing the pixi files</span>
+pixi<span class="w"> </span>shell<span class="w"> </span>--frozen<span class="w"> </span><span class="c1">#activate the new cellpose3 environment (and install, if not already installed)</span>
 </pre></div>
 </div>
 <p>If successful, you should see <code class="docutils literal notranslate"><span class="pre">(cellpose3)</span></code> before your command line prompt. Within this Pixi shell, you should have everything you need for this workshop. You can activate Cellpose just by running <code class="docutils literal notranslate"><span class="pre">cellpose</span></code></p>
 <p>You can always exit the Pixi environment using the <code class="docutils literal notranslate"><span class="pre">exit</span></code> command.</p>
 <p>If you get this error when activating Cellpose: <code class="docutils literal notranslate"><span class="pre">OMP:</span> <span class="pre">Error</span> <span class="pre">#15:</span> <span class="pre">Initializing</span> <span class="pre">libomp.dylib,</span> <span class="pre">but</span> <span class="pre">found</span> <span class="pre">libomp.dylib</span> <span class="pre">already</span> <span class="pre">initialized.</span></code> then run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">force</span><span class="o">-</span><span class="n">reinstall</span> <span class="s2">&quot;cellpose&lt;4&quot;</span> 
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--force-reinstall<span class="w"> </span><span class="s2">&quot;cellpose&lt;4&quot;</span><span class="w"> </span>
 </pre></div>
 </div>
 <p>When you’re ready for Cellpose4, the procedure is the same:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd pixi_envs/cellpose4 #go to the directory containing the pixi files
-pixi shell --frozen #activate the new cellpose4 environment (and install, if not already installed)
-`cellpose`
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>pixi_envs/cellpose4<span class="w"> </span><span class="c1">#go to the directory containing the pixi files</span>
+pixi<span class="w"> </span>shell<span class="w"> </span>--frozen<span class="w"> </span><span class="c1">#activate the new cellpose4 environment (and install, if not already installed)</span>
+<span class="sb">`</span>cellpose<span class="sb">`</span>
 </pre></div>
 </div>
 </section>
@@ -417,7 +417,7 @@ pixi shell --frozen #activate the new cellpose4 environment (and install, if not
 <h3>Initially explore performance with an image set<a class="headerlink" href="#initially-explore-performance-with-an-image-set" title="Link to this heading">#</a></h3>
 <p>So let’s go to one that’s a little less good and see how it does.</p>
 <ul class="simple">
-<li><p>Load an image from the timelpase set and let the <code class="docutils literal notranslate"><span class="pre">cyto3</span></code> default model run. Good, but not great!</p></li>
+<li><p>Load an image from the timelapse set and let the <code class="docutils literal notranslate"><span class="pre">cyto3</span></code> default model run. Good, but not great!</p></li>
 </ul>
 <img alt="../_images/Fluo_cyto3_init.png" src="../_images/Fluo_cyto3_init.png" />
 <ul class="simple">
@@ -430,7 +430,7 @@ pixi shell --frozen #activate the new cellpose4 environment (and install, if not
 </section>
 <section id="fixing-parameters-rather-than-retraining">
 <h3>Fixing parameters rather than retraining<a class="headerlink" href="#fixing-parameters-rather-than-retraining" title="Link to this heading">#</a></h3>
-<p>If we can avoid retraining, it is always nice to avoid it where we can. Thankfully, there are a couple more very powerful parameters we can tune in Cellpose - how “coherent” of a flow it needs to have in order to consider an object a cell or not, as well as the probability image of if it’s a cell or not. We can access these images in the top left under the “Views” menu, by changing from “Image” to “gradxy” or “cellprob”.</p>
+<p>If we can avoid retraining, it is always nice to avoid it where we can. Thankfully, there are a couple more very powerful parameters we can tune in Cellpose - how “coherent” of a flow it needs to have in order to consider an object a cell or not, as well as the probability threshold of if it’s a cell or not. Cellpose makes images of the flow and the probability and we can access these images in the top left under the “Views” menu, by changing from “Image” to “gradxy” or “cellprob”.</p>
 <img alt="../_images/Views.png" src="../_images/Views.png" />
 <p>See what they look like below!</p>
 <img alt="../_images/Fluo_cyto3_flows.png" src="../_images/Fluo_cyto3_flows.png" />
@@ -463,12 +463,12 @@ pixi shell --frozen #activate the new cellpose4 environment (and install, if not
 <img alt="../_images/Help.png" src="../_images/Help.png" /></p>
 </div>
 <ul class="simple">
-<li><p>Annotate any cells you need to, by right clicking (or ctl+click to start, then release ctl and just keep drawing until the circle closes)
+<li><p>Annotate any cells you need to, by right clicking (or ctl+click to start, then release ctl and just keep drawing until the circle closes).
 <img alt="../_images/AnnotateCell.gif" src="../_images/AnnotateCell.gif" /></p></li>
 <li><p>After you finish on image, go to <code class="docutils literal notranslate"><span class="pre">Models</span> <span class="pre">-&gt;</span> <span class="pre">Train</span></code> to train a new model. Cellpose will automatically run it for you once it’s done training.
 <img alt="../_images/TrainWindow.png" src="../_images/TrainWindow.png" /></p></li>
 <li><p>How did it do?</p></li>
-<li><p>Go to the next image, and try either a builtin model or your one-image model, and then fix up the annotations for training. Train with two images. How well does it work now?</p></li>
+<li><p>Go to the next image, and try either a built-in model or your one-image model, and then fix up the annotations for training. Train with two images. How well does it work now?</p></li>
 <li><p>How about with 3?</p></li>
 </ul>
 </section>
@@ -476,12 +476,9 @@ pixi shell --frozen #activate the new cellpose4 environment (and install, if not
 <section id="exercise-2">
 <h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Play around a bit with the microglia data, as above.</p>
-<ul>
+<li><p>Play around a bit with the microglia data, as above.</p></li>
 <li><p>How good can you make it look without retraining?</p></li>
 <li><p>How easily can you retrain it?</p></li>
-</ul>
-</li>
 </ul>
 </section>
 <section id="exercise-3">
@@ -489,6 +486,14 @@ pixi shell --frozen #activate the new cellpose4 environment (and install, if not
 <ul class="simple">
 <li><p>Bring the worst peforming dataset (it will probably be the microglia) over to Cellpose 4. How well does it do out of the box? How well does it work after retraining with one images? Two?</p></li>
 </ul>
+<p>To exit Cellpose 3 and enter Cellpose 4, you will need to exit the Pixi shell and re-enter the other environment.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">exit</span><span class="w"> </span><span class="c1"># exit Cellpose 3 pixi shell</span>
+<span class="nb">cd</span><span class="w"> </span>../cellpose4<span class="w"> </span><span class="c1"># go to the directory containing the Cellpose 4 pixi files</span>
+pixi<span class="w"> </span>shell<span class="w"> </span>--frozen<span class="w"> </span><span class="c1"># activate the new Cellpose 4 environment (and install, if not already installed)</span>
+cellpose<span class="w"> </span><span class="c1"># start Cellpose 4</span>
+</pre></div>
+</div>
+<p>As we’ve mentioned, Cellpose 4 uses a different architecture (SAM-based) and as a consequence is much more compute intensive. If you have a GPU available, you will absolutely want to use it. Cellpose 4 will run on CPU, but it will be (potentially prohibitively) slow.</p>
 </section>
 <section id="bonus-exercise">
 <h2>Bonus exercise<a class="headerlink" href="#bonus-exercise" title="Link to this heading">#</a></h2>
@@ -497,7 +502,6 @@ pixi shell --frozen #activate the new cellpose4 environment (and install, if not
 </ul>
 <p>(Note that you’ll have to close the GUI and reopen it with <code class="docutils literal notranslate"><span class="pre">cellpose</span> <span class="pre">--Zstack</span></code>)</p>
 <p>What if you try 2.5D mode (leave the stitch threshold parameter at 0) vs overlap mode (set the stitch threshold to something greater than 0)? Note that overlap is much faster, so you may want to try that first!</p>
-<hr class="docutils" />
 </section>
 </section>
 
