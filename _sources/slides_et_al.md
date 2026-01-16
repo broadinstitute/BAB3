@@ -43,7 +43,7 @@ This table will be updated throughout the course with links to materials used du
 |Day 4, session 5: Introduction to Napari | [Slide deck](https://docs.google.com/presentation/d/1wwY9B_wC2Ndtknunf2nFdw_s7tFvpwZ8CHUzZE9rNx8/edit?usp=sharing)|
 |Day 5, session 1: Introduction to Cellpose | [Slide deck](https://docs.google.com/presentation/d/1w_OvCa_7vyUs5E1o-tFpxxLpDvrxcTkiI_F9got7Mgw/edit?usp=sharing)|
 |Day 5, session 3: Community Resources |[slide deck](https://docs.google.com/presentation/d/1tEhY6ayOyQhBoUW-7gqBlcvT9bhrMXqJsLXxqpK7wbc/edit?slide=id.p#slide=id.p)|
-|Day 5, session 4: Collaborative Work | Coming soon! |
+|Day 5, session 4: Collaborative Work | [slide deck](https://docs.google.com/presentation/d/1qd2NGIihoFXFNcWCkhUL4Tf9nS8cLdocPzO8fQzf5KU/edit?usp=sharing) |
 ---
 
 <!--
