@@ -464,6 +464,28 @@ Next, using the wand tool (or any annotation tool of your preference), let us an
 When we perform cell detection within this area, the detected cells will have the annotation label `ROI`.
 Now, let's say, we are specifically interested in comparing two areas within this `ROI`, e.g. `region_1` and `region_2` and we want to compare the features of the cells that are located in those  two areas. In that case, we would want the detected cells to also have these additional annotation labels, i.e `region_1` and `region_2`.
 
+To achieve that, we will perform the following steps:
+
+1. Lock the annotation `ROI`. Right-click on the annotated area, select `Annotations --> Lock`
+
+<img src="TutorialImages/annotation_ROI_2.png" width="550" height="450" style="margin-left: 40px;">
+
+2. We now annotate the addtional areas of interest within `ROI`. I used the rectangle annotation tool, but any tool can be used.
+
+<img src="TutorialImages/annotation_ROI_3.png" width="550" height="450" style="margin-left: 40px;">
+
+
+3. To create annotations of the exact same size, I selected the first annotation, and clicked on `Objects --> Annotations --> Duplicate selected annotations`
+
+<img src="TutorialImages/annotation_ROI_4.png" width="450" height="450" style="margin-left: 40px;">
+
+4. The duplicated annotation will appear on top of the original annotation. Use the move tool to move it to the position where you want it placed.
+
+
+
+
+
+
 ### 2.2.3 Perform cell detection
 -------------------------------------
 Next, we will try to detect all the cells in the annotated area, and also obtain a count of cells that are positive for DAB-staining.
