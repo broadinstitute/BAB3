@@ -447,12 +447,12 @@ If you would want to get a bit more practice with steps 2.4 to 2.7, feel free to
 
 ## **2.2 PART II**
 
-For this part of the tutorial, we will learn how to detect positive cells, meaning cells that show staining, by analyzing a tissue section immunohistochemically stained with a nuclear marker. We will be working with the `OS-2.ndpi` image.
+For this part of the tutorial, we will learn how to detect positive cells, meaning cells that show staining, by analyzing a tissue section immunohistochemically stained with a nuclear marker. Before detecting positive cells, we will also annotate specific regions of interest within the tissue section, allowing us to link individual cell measurements back to the tissue regions where those cells are located.
+We will be working with the `OS-2.ndpi` image.
 
 ### 2.2.1 Create a QuPath project
 -------------------------------------
-We will create a new QuPath project and add the `OS-2.ndpi` image to the project. I have named the project `qupath_project_IHC`; you can name the project according to your preference.
-
+We will create a new QuPath project and add the `OS-2.ndpi` image to the project, following steps detailed in 2.1.2 and 2.1.3. I have named the project `qupath_project_IHC`; you can name the project according to your preference. We will set the image type as `Brightfield (H-DAB)`.
 
 ### 2.2.2 Annotate regions of interest
 -------------------------------------
