@@ -473,10 +473,16 @@ We will now detect all the cells in `ROI` to perform measurements on these cells
 <img src="TutorialImages/cell_detection_1.png" width="300" height="200" style="margin-left: 40px;">
 
 3. This will open a window where you can set up cell detection parameters, e.g. setting the minimum and maximum area of the cells, intensity threshold, and so on. Also, note that QuPath detects cell outlines by expanding the nucleus outlines by a fixed distance; this can also be set at this step.
-For the purpose of the tutorial, we will use the default parameters and hit `Run`.
 
 <img src="TutorialImages/cell_detection_2.png" width="350" height="500" style="margin-left: 40px;">
 
+For the purpose of the tutorial, we will use the default parameters and hit `Run`, and QuPath will start detecting the cells.
+
+<img src="TutorialImages/cell_detection_3.png" width="350" height="200" style="margin-left: 40px;">
+
+When QuPath finishes, the cell (detections) outlines will appear on the image within the annotated area (`ROI`) where the detection was run, and the number of detections will be updated in the analysis pane next to the annotation thumbnail.
+
+<img src="TutorialImages/cell_detection_4.png" width="350" height="200" style="margin-left: 40px;">
 
 
 
