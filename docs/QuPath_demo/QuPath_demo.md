@@ -73,22 +73,32 @@ QuPath provides powerful tools for **annotation, visualization, and image analys
 
 ## **2. Exercise steps**
 
- - [2.1 Install QuPath](#21-install-QuPath)
- - [2.2 Launch QuPath](#22-launch-QuPath)
- - [2.3 Create a QuPath project](#23-create-a-qupath-project)
- - [2.4 Add or remove images to your QuPath project](#24-add-or-remove-images-to-your-qupath-project)
- - [2.5 View and export images](#25-view-and-export-images)
- - [2.6 Set up image properties](#26-set-up-image-properties)
- - [2.7 Annotate images, perform and export annotation measurements](#27-annotate-images-perform-and-export-annotation-measurements)
- - [2.8 Detect positive cells](#28-detect-positive-cells)
+## **2.1 PART I**
+ - [2.1.1 Install QuPath](#211-install-qupath)
+ - [2.1.2 Launch QuPath](#22-launch-QuPath)
+ - [2.1.3 Create a QuPath project](#23-create-a-qupath-project)
+ - [2.1.4 Add or remove images to your QuPath project](#24-add-or-remove-images-to-your-qupath-project)
+ - [2.1.5 View and export images](#25-view-and-export-images)
+ - [2.1.6 Set up image properties](#26-set-up-image-properties)
+ - [2.1.7 Annotate images, perform and export annotation measurements](#27-annotate-images-perform-and-export-annotation-measurements)
 
+## **2.2 PART II**
+ - [2.2.1 Create a QuPath project]
+ - [2.2.2 Annotate regions of interest]
+ - [2.2.3 Perform cell detection]
+ - [2.2.4 Create and run object classifier]
+ - [2.2.5 Perform positive cell detection]
 
-### **2.1 Install QuPath**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+## **I. PART I**
+
+### **2.1.1 Install QuPath**
 -------------------------------------
 
 Please install the latest version from [here](https://qupath.github.io/)
 
-### **2.2 Launch QuPath**
+### **2.1.2 Launch QuPath**
 -------------------------------------
 
 Click on the QuPath icon, and wait for QuPath to launch.
@@ -96,7 +106,7 @@ When the QuPath window opens, you will notice the welcome screen, which links to
 
 <img src="TutorialImages/qupathwelcomescreen.jpg" width="450" height="300">
 
-### **2.3 Create a QuPath project**
+### **2.1.3 Create a QuPath project**
 -------------------------------------
 
 Although it is possible to view and work with single images in QuPath, creating a "Project" makes saving and reloading data associated with multiple images much more efficient. A QuPath project groups related images to easily switch between them via thumbnails and also organizes associated data files, scripts, and classifiers.
@@ -116,10 +126,10 @@ Although it is possible to view and work with single images in QuPath, creating 
 
   <img src="TutorialImages/createproject_3.png" width="270" height="100" style="margin-left: 40px;">
 
-### **2.4 Add or remove images to your QuPath project**
+### **2.1.4 Add or remove images to your QuPath project**
 -------------------------------------
 
-#### **2.4.1 Add images**
+#### **2.1.4.1 Add images**
   
   You can add images via `File --> Project --> Add images`. If you have not created a project and just want to open an image, you can also click on `File --> Open`. 
   Alternatively, you can drag and drop your images into QuPath -- this might be the more efficient option if you are working with a multiple images.
@@ -155,7 +165,7 @@ Although it is possible to view and work with single images in QuPath, creating 
 
   <img src="TutorialImages/createproject_4.jpg" width="250" height="200" style="margin-left: 40px;">
 
-#### **2.4.2 Remove images**
+#### **2.1.4.2 Remove images**
 
 To remove an image, right-click on the image thumbnail in the analysis pane, and select `Remove image`. 
 
@@ -169,10 +179,10 @@ To remove an image, right-click on the image thumbnail in the analysis pane, and
 Clicking on `Apply changes` will update the project with the new file paths!
 
 
-### **2.5 View and export images**
+### **2.1.5 View and export images**
 -------------------------------------
 
-#### **2.5.1 Customize the viewer**
+#### **2.1.5.1 Customize the viewer**
 
 Once you have imported the image(s) to your project, you will see the name(s) of these image(s) in the analysis pane (red box), and the image in the image viewer.
 
@@ -189,7 +199,7 @@ This is a good time to familiarize yourself with the options available under the
 <img src="TutorialImages/imageviewer_2.png" width="200" height="700" style="margin-left: 40px;">
 
 
-#### **2.5.2 Zooming and panning**
+#### **2.1.5.2 Zooming and panning**
 
 The **scroll wheel** of your mouse (or equivalent scrolling motion on a trackpad) can be used to **zoom in and out** of an image within QuPath.
 
@@ -204,7 +214,7 @@ You can pan the image with the move tool (red box) and clicking on the magnifyin
 <img src="TutorialImages/panimage.png" width="900" height="50" style="margin-left: 40px;">
 
 
-#### **2.5.3 Export images**
+#### **2.1.5.3 Export images**
 
 QuPath can also be handy for preparing figures for your publications or presentations. 
 The `Export images` button under `File` provides several options for exporting an image.
@@ -237,10 +247,10 @@ You can always change the Scalebar font size, font weight and thickness accordin
 <img src="TutorialImages/imageviewer_6.png" width="200" height="200" style="margin-left: 40px;">
 
 
-### **2.6 Set up image properties**
+### **2.1.6 Set up image properties**
 -------------------------------------
 
-#### **2.6.1 Set image type**
+#### **2.1.6.1 Set image type**
 
 You will be prompted to set the image type, e.g. Brightfield (H-DAB), Brightfield (H&E), Fluorescence etc. when you add an image to a project.
 
@@ -439,8 +449,7 @@ If you would want to get a bit more practice with steps 2.4 to 2.7, feel free to
 ### **2.8 Detect positive cells**
 -------------------------------
 
-
-
+For this part of the tutorial, we will analyze an immunohistochemistry image
 For this step, we will use the OS-2.ndpi image.
 We will first open the image and annoate a region of interest.
 Next, we will try to detect all the cells in the annotated area, and also obtain a count of cells that are positive for DAB-staining.
