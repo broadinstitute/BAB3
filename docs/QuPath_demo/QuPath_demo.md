@@ -470,10 +470,13 @@ We will now detect all the cells in `ROI` to perform measurements on these cells
 1. Select the annotation `ROI`; the color of the outline will change to yellow.
 2. Click on `Analyze --> Cell detection --> Cell detection`
 
-<img src="TutorialImages/cell_detection_1.png" width="400" height="300" style="margin-left: 40px;">
+<img src="TutorialImages/cell_detection_1.png" width="300" height="200" style="margin-left: 40px;">
 
+3. This will open a window where you can set up cell detection parameters, e.g. setting the minimum and maximum area of the cells, intensity threshold, and so on. Also, note that QuPath detects cell outlines by expanding the nucleus outlines by a fixed distance; this can also be set at this step.
+For the purpose of the tutorial, we will use the default parameters and hit `Run`.
 
-3. 
+<img src="TutorialImages/cell_detection_2.png" width="350" height="500" style="margin-left: 40px;">
+
 
 
 
