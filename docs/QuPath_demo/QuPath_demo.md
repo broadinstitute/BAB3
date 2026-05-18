@@ -486,12 +486,16 @@ To achieve that, we will perform the following steps:
 
 <img src="TutorialImages/annotation_ROI_6.png" width="450" height="450" style="margin-left: 40px;">
 
-5. Name these annotations `region_1` and `region_2` -- feel free to use any name that you like. In your real analysis, this will be guided by your research question.
-
+5. Name these annotations `region_1` and `region_2`, by selecting each annotation, right-clicking and the selecting `Annotations --> Set properties`. Feel free to use any name that you like. In your real analysis, this will be guided by your research question.
 
 
 6. Now, we need to let QuPath know that `region_1` and `region_2` belong to our first annotation `ROI`. This is called inserting objects into a hierarchy, where annotation objetc `ROI` will be the root or parent, and annotation objects `region_1` and `region_2` will be the children.
+To do this, select the thumbnails for `region_1` and `region_2` in the analysis pane (shift + down arrow keys), and then `Insert in hierarchy`
 
+<img src="TutorialImages/annotation_ROI_6.png" width="450" height="450" style="margin-left: 40px;">
+
+
+<img src="TutorialImages/annotation_ROI_6.png" width="450" height="450" style="margin-left: 40px;">
 
 
 
