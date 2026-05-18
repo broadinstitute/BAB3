@@ -494,7 +494,7 @@ If you zoom into the image and click on any detected cell, you will see the anal
 ### 2.2.4 Annotate areas within the region of interest
 -------------------------------------
 If you click on any of the detected cells, you will see in the analysis pane that the `Parent` of this cell (detection) object is `Annotation (ROI)`
-Now, let's say, we are interested in comparing features of cells that are located in two specific areas within this `ROI`, e.g. `region_1` and `region_2`. In that case, we would want the detected cells to also have these additional annotation labels, i.e `region_1` and `region_2`.
+Let's say, we are interested in comparing features of cells that are located in two specific areas within this `ROI`, e.g. `region_1` and `region_2`. In that case, we would want the detected cells to also have these additional annotation labels, i.e `region_1` and `region_2`.
 
 To achieve that, we will perform the following steps:
 
