@@ -73,7 +73,7 @@ QuPath provides powerful tools for **annotation, visualization, and image analys
 
 ## **2. Exercise steps**
 
-## **2.1 PART I**
+## [**2.1 PART I**](#21-part-i)
  - [2.1.1 Install and launch QuPath](#211-install-and-launch-qupath)
  - [2.1.2 Create a QuPath project](#212-create-a-qupath-project)
  - [2.1.3 Add or remove images to your QuPath project](#213-add-or-remove-images-to-your-qupath-project)
@@ -82,16 +82,18 @@ QuPath provides powerful tools for **annotation, visualization, and image analys
  - [2.1.6 Annotate images](#216-annotate-images)
  - [2.1.7 View and export annotation measurements](#217-view-and-export-annotation-measurements)
 
-## **2.2 PART II**
- - [2.2.1 Create a QuPath project]
- - [2.2.2 Annotate regions of interest]
- - [2.2.3 Perform cell detection]
- - [2.2.4 Create and run object classifier]
- - [2.2.5 Perform positive cell detection]
+## [**2.2 PART II**](#22-part-ii-1)
+ - [2.2.1 Create a QuPath project](#221-create-a-qupath-project)
+ - [2.2.2 Annotate regions of interest](#222-annotate-regions-of-interest)
+ - [2.2.3 Perform cell detection](#223-perform-cell-detection)
+ - [2.2.4 Create and run object classifier](#224-create-and-run-object-classifier)
+ - [2.2.5 Perform positive cell detection](#225-perform-positive-cell-detection)
+ - [2.2.6 Visualize data on the image](#226-visualize-data-on-the-image)
+ - [2.2.7 View and export detection measurements](#227-view-and-export-detection-measurements)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-## **I. PART I**
+## **2.1 PART I**
 
 ### **2.1.1 Install and launch QuPath**
 -------------------------------------
@@ -441,13 +443,23 @@ You will see the selected image move to the box on the left.
 <img src="TutorialImages/measurement_8.png" width="1500" height="200" style="margin-left: 40px;">
 
 If you would want to get a bit more practice with steps 2.4 to 2.7, feel free to download a couple more H&E images from [here](https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/) and add to your current project!
-
-### **2.2 Detect positive cells**
 -------------------------------
 
-For this part of the tutorial, we will analyze an immunohistochemistry image
-For this step, we will use the OS-2.ndpi image.
-We will first open the image and annoate a region of interest.
+## **2.2 PART II**
+
+For this part of the tutorial, we will learn how to detect positive cells, meaning cells that show staining, by analyzing a tissue section immunohistochemically stained with a nuclear marker. We will be working with the `OS-2.ndpi` image.
+
+### 2.2.1 Create a QuPath project
+-------------------------------------
+We will create a new QuPath project and add the `OS-2.ndpi` image to the project. I have named the project `qupath_project_IHC`; you can name the project according to your preference.
+
+
+### 2.2.2 Annotate regions of interest
+-------------------------------------
+
+
+### 2.2.3 Perform cell detection
+-------------------------------------
 Next, we will try to detect all the cells in the annotated area, and also obtain a count of cells that are positive for DAB-staining.
 We will click on `Analyze --> Cell detection --> Positive Cell detection`. 
 
@@ -462,7 +474,14 @@ The Annotations pane will show the count of all cells, positive cells and negati
 We can also visualize the detections as a heatmap overlaid on the image by clicking `Measure --> Show measurement maps`
 <img src="TutorialImages/cell_detection_4.jpg">
 
-#### 2.2.1 Positive cell detection
+
+
+### 2.2.4 Create and run object classifier
+-------------------------------------
+
+
+### 2.2.5 Perform positive cell detection
+-------------------------------------
 We can next assign the positive cells that were detected to specific areas in the tissue, e.g. tumor or stroma. This can help us compare the counts or other characteristics of the positive cells in the tumoral or the stromal regions.
 For this, we first annotate some regions within our region of interest as 'tumor' or 'stroma', and train the classifier `Classify --> Object classification --> Train object classifier`
 <img src="TutorialImages/classification_1.jpg">
@@ -470,7 +489,16 @@ For this, we first annotate some regions within our region of interest as 'tumor
 We will now get the measurement of the positive cells stratified into the classes (tumor/stroma) that we set.
 <img src="TutorialImages/classification_2.jpg">
 
-#### 2.2.2 Perform and export measurements
+
+### 2.2.6 Visualize data on the image
+-------------------------------------
+
+
+
+
+
+### 2.2.7 View and export detection measurements
+-------------------------------------
 QuPath makes some basic measuerements of the annotations and detections by default if no additional instruction is provided. However, more granular or more advanced measurements can also be made by clicking on `Analyze --> Calculate features` and then selecting the features that you would want to extract.
 <img src="TutorialImages/measurement_1.jpg">
 
@@ -478,8 +506,6 @@ These measurements can also be viewed as a heatmap overlaid on the image by clic
 <img src="TutorialImages/measurement_2.jpg">
 
 <img src="TutorialImages/measurement_3.jpg">
-
-#### 2.2.3 Visualize data on the image
 
 Finally, we export the measurements, by clicking `Measure --> Export measurements` and selecting the measurements we want to export (e.g. measurements for all images / some images, annotation measurements, detection measurements) and also the file format in which we would want the measurements saved (e.g., .csv, .tsv)
 
