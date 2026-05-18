@@ -520,18 +520,16 @@ To achieve that, we will perform the following steps:
 
 <img src="TutorialImages/annotation_ROI_6.png" width="450" height="450" style="margin-left: 40px;">
 
-6. Name these annotations `region_1` and `region_2`, by selecting each annotation, right-clicking and the selecting `Annotations --> Set properties`. Feel free to use any name that you like. In your real analysis, this will be guided by your research question.
+6. Create two new annotation classes `region_1` and `region_2`, as detailed in 2.1.6.2, and set the classifications of the annotations that you made in step 5. Feel free to use any name that you like. In your real analysis, this will be guided by your research question.
 
 
-7.  Now, we need to let QuPath know that `region_1` and `region_2` belong to our first annotation `ROI`. This is called inserting objects into a hierarchy, where annotation objetc `ROI` will be the root or parent, and annotation objects `region_1` and `region_2` will be the children.
+7. Now, we need to let QuPath know that `region_1` and `region_2` belong to our first annotation `ROI`. This is called inserting objects into a hierarchy, where annotation objetc `ROI` will be the root or parent, and annotation objects `region_1` and `region_2` will be the children.
 To do this, select the thumbnails for `region_1` and `region_2` in the analysis pane (shift + down arrow keys), and then `Insert in hierarchy`
 
-<img src="TutorialImages/object_hierarchy_1.png" width="450" height="300" style="margin-left: 40px;">
+<img src="TutorialImages/object_hierarchy_1.png" width="350" height="300" style="margin-left: 40px;">
 
-The analysis pane will update to indicate that the root annotation object `ROI` has two chidren objects.
+<img src="TutorialImages/object_hierarchy_2.png" width="350" height="300" style="margin-left: 40px;">
 
-
-<img src="TutorialImages/object_hierarchy_2.png" width="200" height="250" style="margin-left: 40px;">
 
 8. Lock the annotations `region_1` and `region_2`
 
