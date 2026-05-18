@@ -479,7 +479,18 @@ To achieve that, we will perform the following steps:
 
 <img src="TutorialImages/annotation_ROI_4.png" width="450" height="450" style="margin-left: 40px;">
 
-4. The duplicated annotation will appear on top of the original annotation. Use the move tool to move it to the position where you want it placed.
+4. The duplicated annotation will appear on top of the original annotation. Use the move tool to drag it to the position where you actually want it placed.
+
+<img src="TutorialImages/annotation_ROI_5.png" width="450" height="450" style="margin-left: 40px;">
+
+
+<img src="TutorialImages/annotation_ROI_6.png" width="450" height="450" style="margin-left: 40px;">
+
+5. Name these annotations `region_1` and `region_2` -- feel free to use any name that you like. In your real analysis, this will be guided by your research question.
+
+
+
+6. Now, we need to let QuPath know that `region_1` and `region_2` belong to our first annotation `ROI`. This is called inserting objects into a hierarchy, where annotation objetc `ROI` will be the root or parent, and annotation objects `region_1` and `region_2` will be the children.
 
 
 
