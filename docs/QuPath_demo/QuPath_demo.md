@@ -461,6 +461,15 @@ Next, using the wand tool (or any annotation tool of your preference), let us an
 
 <img src="TutorialImages/annotation_ROI_1.png" width="550" height="300" style="margin-left: 40px;">
 
+
+
+### 2.2.3 Perform cell detection
+-------------------------------------
+We will now detect all the cells in `ROI` to perform measurements on these cells, and also to later detect which of these are positive for the nuclear marker.
+
+
+### 2.2.4 Annotate areas within the region of interest
+-------------------------------------
 When we perform cell detection within this area, the detected cells will have the annotation label `ROI`.
 Now, let's say, we are specifically interested in comparing two areas within this `ROI`, e.g. `region_1` and `region_2` and we want to compare the features of the cells that are located in those  two areas. In that case, we would want the detected cells to also have these additional annotation labels, i.e `region_1` and `region_2`.
 
@@ -492,18 +501,16 @@ To achieve that, we will perform the following steps:
 6. Now, we need to let QuPath know that `region_1` and `region_2` belong to our first annotation `ROI`. This is called inserting objects into a hierarchy, where annotation objetc `ROI` will be the root or parent, and annotation objects `region_1` and `region_2` will be the children.
 To do this, select the thumbnails for `region_1` and `region_2` in the analysis pane (shift + down arrow keys), and then `Insert in hierarchy`
 
-<img src="TutorialImages/annotation_ROI_6.png" width="450" height="450" style="margin-left: 40px;">
+<img src="TutorialImages/object_hierarchy_1.png" width="450" height="300" style="margin-left: 40px;">
+
+The analysis pane will update to indicate that the root annotation object `ROI` has two chidren objects.
 
 
-<img src="TutorialImages/annotation_ROI_6.png" width="450" height="450" style="margin-left: 40px;">
+<img src="TutorialImages/object_hierarchy_2.png" width="200" height="250" style="margin-left: 40px;">
+
+7. Lock the annotations `region_1` and `region_2`
 
 
-
-
-
-### 2.2.3 Perform cell detection
--------------------------------------
-Next, we will try to detect all the cells in the annotated area, and also obtain a count of cells that are positive for DAB-staining.
 We will click on `Analyze --> Cell detection --> Positive Cell detection`. 
 
 <img src="TutorialImages/cell_detection_1.jpg">
@@ -519,7 +526,7 @@ We can also visualize the detections as a heatmap overlaid on the image by click
 
 
 
-### 2.2.4 Create and run object classifier
+### 2.2.5 Create and run object classifier
 -------------------------------------
 
 
