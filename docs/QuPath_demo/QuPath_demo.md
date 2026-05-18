@@ -74,13 +74,13 @@ QuPath provides powerful tools for **annotation, visualization, and image analys
 ## **2. Exercise steps**
 
 ## **2.1 PART I**
- - [2.1.1 Install QuPath](#211-install-qupath)
- - [2.1.2 Launch QuPath](#22-launch-QuPath)
- - [2.1.3 Create a QuPath project](#23-create-a-qupath-project)
- - [2.1.4 Add or remove images to your QuPath project](#24-add-or-remove-images-to-your-qupath-project)
- - [2.1.5 View and export images](#25-view-and-export-images)
- - [2.1.6 Set up image properties](#26-set-up-image-properties)
- - [2.1.7 Annotate images, perform and export annotation measurements](#27-annotate-images-perform-and-export-annotation-measurements)
+ - [2.1.1 Install and launch QuPath](#211-install-and-launch-qupath)
+ - [2.1.2 Create a QuPath project](#212-create-a-qupath-project)
+ - [2.1.3 Add or remove images to your QuPath project](#213-add-or-remove-images-to-your-qupath-project)
+ - [2.1.4 View and export images](#214-view-and-export-images)
+ - [2.1.5 Set up image properties](#215-set-up-image-properties)
+ - [2.1.6 Annotate images](#216-annotate-images)
+ - [2.1.7 View and export annotation measurements](#217-view-and-export-annotation-measurements)
 
 ## **2.2 PART II**
  - [2.2.1 Create a QuPath project]
@@ -93,20 +93,16 @@ QuPath provides powerful tools for **annotation, visualization, and image analys
 
 ## **I. PART I**
 
-### **2.1.1 Install QuPath**
+### **2.1.1 Install and launch QuPath**
 -------------------------------------
 
 Please install the latest version from [here](https://qupath.github.io/)
-
-### **2.1.2 Launch QuPath**
--------------------------------------
-
-Click on the QuPath icon, and wait for QuPath to launch.
+Once installed, click on the QuPath icon, and wait for QuPath to launch.
 When the QuPath window opens, you will notice the welcome screen, which links to QuPath documentation, the [image analysis forum](forum.image.sc), and also the [source code](https://github.com/qupath/qupath)
 
 <img src="TutorialImages/qupathwelcomescreen.jpg" width="450" height="300">
 
-### **2.1.3 Create a QuPath project**
+### **2.1.2 Create a QuPath project**
 -------------------------------------
 
 Although it is possible to view and work with single images in QuPath, creating a "Project" makes saving and reloading data associated with multiple images much more efficient. A QuPath project groups related images to easily switch between them via thumbnails and also organizes associated data files, scripts, and classifiers.
@@ -126,10 +122,10 @@ Although it is possible to view and work with single images in QuPath, creating 
 
   <img src="TutorialImages/createproject_3.png" width="270" height="100" style="margin-left: 40px;">
 
-### **2.1.4 Add or remove images to your QuPath project**
+### **2.1.3 Add or remove images to your QuPath project**
 -------------------------------------
 
-#### **2.1.4.1 Add images**
+#### **2.1.3.1 Add images**
   
   You can add images via `File --> Project --> Add images`. If you have not created a project and just want to open an image, you can also click on `File --> Open`. 
   Alternatively, you can drag and drop your images into QuPath -- this might be the more efficient option if you are working with a multiple images.
@@ -165,7 +161,7 @@ Although it is possible to view and work with single images in QuPath, creating 
 
   <img src="TutorialImages/createproject_4.jpg" width="250" height="200" style="margin-left: 40px;">
 
-#### **2.1.4.2 Remove images**
+#### **2.1.3.2 Remove images**
 
 To remove an image, right-click on the image thumbnail in the analysis pane, and select `Remove image`. 
 
@@ -179,10 +175,10 @@ To remove an image, right-click on the image thumbnail in the analysis pane, and
 Clicking on `Apply changes` will update the project with the new file paths!
 
 
-### **2.1.5 View and export images**
+### **2.1.4 View and export images**
 -------------------------------------
 
-#### **2.1.5.1 Customize the viewer**
+#### **2.1.4.1 Customize the viewer**
 
 Once you have imported the image(s) to your project, you will see the name(s) of these image(s) in the analysis pane (red box), and the image in the image viewer.
 
@@ -199,7 +195,7 @@ This is a good time to familiarize yourself with the options available under the
 <img src="TutorialImages/imageviewer_2.png" width="200" height="700" style="margin-left: 40px;">
 
 
-#### **2.1.5.2 Zooming and panning**
+#### **2.1.4.2 Zooming and panning**
 
 The **scroll wheel** of your mouse (or equivalent scrolling motion on a trackpad) can be used to **zoom in and out** of an image within QuPath.
 
@@ -214,7 +210,7 @@ You can pan the image with the move tool (red box) and clicking on the magnifyin
 <img src="TutorialImages/panimage.png" width="900" height="50" style="margin-left: 40px;">
 
 
-#### **2.1.5.3 Export images**
+#### **2.1.4.3 Export images**
 
 QuPath can also be handy for preparing figures for your publications or presentations. 
 The `Export images` button under `File` provides several options for exporting an image.
@@ -247,10 +243,10 @@ You can always change the Scalebar font size, font weight and thickness accordin
 <img src="TutorialImages/imageviewer_6.png" width="200" height="200" style="margin-left: 40px;">
 
 
-### **2.1.6 Set up image properties**
+### **2.1.5 Set up image properties**
 -------------------------------------
 
-#### **2.1.6.1 Set image type**
+#### **2.1.5.1 Set image type**
 
 You will be prompted to set the image type, e.g. Brightfield (H-DAB), Brightfield (H&E), Fluorescence etc. when you add an image to a project.
 
@@ -262,7 +258,7 @@ It is also important to correctly set the pixel size. QuPath does this automatic
 
 <img src="TutorialImages/setimageproperties_2.png" width="600" height="300" style="margin-left: 40px;">
 
-#### **2.6.2 Separate stains**
+#### **2.1.5.2 Separate stains**
 
 The first step to separating the stains in the image is to set the image type accurately, as described in the section above. For brightfield images, QuPath separates the stains by using [color deconvolution method introduced by Ruifrok and Johnston](https://pubmed.ncbi.nlm.nih.gov/11531144/). Please make sure to check out the [QuPath docs](https://qupath.readthedocs.io/en/stable/docs/tutorials/separating_stains.html) to learn more about color deconvolution in QuPath.
 
@@ -309,13 +305,13 @@ These scatterplots help assess whether the stain vectors match the pixel colors 
 If the vectors are not well aligned, the `Auto` option can estimate improved stain vectors from the selected region. However, unexpected colors, such as greenish pixels, can distort the estimate. In such cases, adjusting parameters like `Exclude unrecognised colors (H&E only)` can help remove irrelevant colors and produce more reliable stain separation.
 
 
-### **2.7 Annotate images, perform and export annotation measurements**
+### **2.1.6 Annotate images**
 -------------------------------------
 
 Annotations in QuPath can have many applications. Common use cases include measuring lengths or areas, defining specific regions where analysis should be applied, such as cell detection, as well as selecting representative areas for training a classifier. For this tutorial, we will learn to annotate some regions interest (ROI) in an image and perform and export measurements from these ROIs.
 
 
-#### **2.7.1 Draw annotations**
+#### **2.1.6.1 Draw annotations**
 
 **Annotation objects** can be created by drawing specific shapes on the image, using the (1) rectangle, (2) ellipse, (3) line, (4) polygon, or (5) polyline tools. The (6) brush tool and the (7) wand tool are particularly handy for drawing custom shapes. All of these tools can be applied by selecting the tool, clicking on the image, and dragging the mouse. For the polygon tool, the shape can be completed by releasing the mouse or by double-clicking where the final point should be.
 
@@ -333,7 +329,7 @@ Right-clicking on an annotation "locks" it, and prevents it from getting acciden
 
 Make sure to explore some of these annotation tools and draw different shapes and sizes on the image!
 
-#### **2.7.2 Set annotation properties**
+#### **2.1.6.2 Set annotation properties**
 
 QuPath allows you to make annotations of different classes - these classes depend on the image you are working with and your biological question. For example, if you are working with images of kidney tissue, these classes can be different structures you have annotated in the image and want to analyze further, e.g. glomerulus, tubules etc. Or, if you are working with images of diseased tissue, these can be tumor area / abnormal area or normal / healthy area and so on. 
 
@@ -399,7 +395,7 @@ If you now right-click on the annotation, you will have the option to assign it 
 <img src="TutorialImages/annotation_17.png" width="950" height="400" style="margin-left: 40px;">
 
 
-#### **2.7.3 View and export annotation measurements**
+### **2.1.7 View and export annotation measurements**
 
 For every annotation created on the image, QuPath performs some measurements such as area, perimeter, X and Y co-ordinates.
 There are several ways of viewing these measurements.
@@ -446,7 +442,7 @@ You will see the selected image move to the box on the left.
 
 If you would want to get a bit more practice with steps 2.4 to 2.7, feel free to download a couple more H&E images from [here](https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/) and add to your current project!
 
-### **2.8 Detect positive cells**
+### **2.2 Detect positive cells**
 -------------------------------
 
 For this part of the tutorial, we will analyze an immunohistochemistry image
@@ -466,7 +462,7 @@ The Annotations pane will show the count of all cells, positive cells and negati
 We can also visualize the detections as a heatmap overlaid on the image by clicking `Measure --> Show measurement maps`
 <img src="TutorialImages/cell_detection_4.jpg">
 
-#### 2.8.1 Positive cell detection
+#### 2.2.1 Positive cell detection
 We can next assign the positive cells that were detected to specific areas in the tissue, e.g. tumor or stroma. This can help us compare the counts or other characteristics of the positive cells in the tumoral or the stromal regions.
 For this, we first annotate some regions within our region of interest as 'tumor' or 'stroma', and train the classifier `Classify --> Object classification --> Train object classifier`
 <img src="TutorialImages/classification_1.jpg">
@@ -474,7 +470,7 @@ For this, we first annotate some regions within our region of interest as 'tumor
 We will now get the measurement of the positive cells stratified into the classes (tumor/stroma) that we set.
 <img src="TutorialImages/classification_2.jpg">
 
-#### 2.8.2 Perform and export measurements
+#### 2.2.2 Perform and export measurements
 QuPath makes some basic measuerements of the annotations and detections by default if no additional instruction is provided. However, more granular or more advanced measurements can also be made by clicking on `Analyze --> Calculate features` and then selecting the features that you would want to extract.
 <img src="TutorialImages/measurement_1.jpg">
 
@@ -483,7 +479,7 @@ These measurements can also be viewed as a heatmap overlaid on the image by clic
 
 <img src="TutorialImages/measurement_3.jpg">
 
-#### 2.8.3 Visualize data on the image
+#### 2.2.3 Visualize data on the image
 
 Finally, we export the measurements, by clicking `Measure --> Export measurements` and selecting the measurements we want to export (e.g. measurements for all images / some images, annotation measurements, detection measurements) and also the file format in which we would want the measurements saved (e.g., .csv, .tsv)
 
