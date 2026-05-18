@@ -456,7 +456,13 @@ We will create a new QuPath project and add the `OS-2.ndpi` image to the project
 
 ### 2.2.2 Annotate regions of interest
 -------------------------------------
+Let us first create a new class of annotations called `ROI` (region of interest), following steps detailed in 2.1.6. 
+Next, using the wand tool (or any annotation tool of your preference), let us annotate a specific part of the tissue. This is the part of the tissue where we want to detect the cells.
 
+<img src="TutorialImages/annotation_ROI_1.png" width="550" height="300" style="margin-left: 40px;">
+
+When we perform cell detection within this area, the detected cells will have the annotation label `ROI`.
+Now, let's say, we are specifically interested in comparing two areas within this `ROI`, e.g. `region_1` and `region_2` and we want to compare the features of the cells that are located in those  two areas. In that case, we would want the detected cells to also have these additional annotation labels, i.e `region_1` and `region_2`.
 
 ### 2.2.3 Perform cell detection
 -------------------------------------
