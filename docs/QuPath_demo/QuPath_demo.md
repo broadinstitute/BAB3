@@ -498,30 +498,32 @@ Let's say, we are interested in comparing features of cells that are located in 
 
 To achieve that, we will perform the following steps:
 
-1. Lock the annotation `ROI`. Right-click on the annotated area, select `Annotations --> Lock`
+1. Temporarily, turn off the cell outlines by clicking D or unchecking `Show detections` under `View`
+   
+2. Lock the annotation `ROI`. Right-click on the annotated area, select `Annotations --> Lock`
 
 <img src="TutorialImages/annotation_ROI_2.png" width="550" height="450" style="margin-left: 40px;">
 
-2. We now annotate the addtional areas of interest within `ROI`. I used the rectangle annotation tool, but any tool can be used.
+3. We now annotate the addtional areas of interest within `ROI`. I used the rectangle annotation tool, but any tool can be used.
 
 <img src="TutorialImages/annotation_ROI_3.png" width="550" height="450" style="margin-left: 40px;">
 
 
-3. To create annotations of the exact same size, I selected the first annotation, and clicked on `Objects --> Annotations --> Duplicate selected annotations`
+4. To create annotations of the exact same size, I selected the first annotation, and clicked on `Objects --> Annotations --> Duplicate selected annotations`
 
 <img src="TutorialImages/annotation_ROI_4.png" width="450" height="450" style="margin-left: 40px;">
 
-4. The duplicated annotation will appear on top of the original annotation. Use the move tool to drag it to the position where you actually want it placed.
+5. The duplicated annotation will appear on top of the original annotation. Use the move tool to drag it to the position where you actually want it placed.
 
 <img src="TutorialImages/annotation_ROI_5.png" width="450" height="450" style="margin-left: 40px;">
 
 
 <img src="TutorialImages/annotation_ROI_6.png" width="450" height="450" style="margin-left: 40px;">
 
-5. Name these annotations `region_1` and `region_2`, by selecting each annotation, right-clicking and the selecting `Annotations --> Set properties`. Feel free to use any name that you like. In your real analysis, this will be guided by your research question.
+6. Name these annotations `region_1` and `region_2`, by selecting each annotation, right-clicking and the selecting `Annotations --> Set properties`. Feel free to use any name that you like. In your real analysis, this will be guided by your research question.
 
 
-6. Now, we need to let QuPath know that `region_1` and `region_2` belong to our first annotation `ROI`. This is called inserting objects into a hierarchy, where annotation objetc `ROI` will be the root or parent, and annotation objects `region_1` and `region_2` will be the children.
+7.  Now, we need to let QuPath know that `region_1` and `region_2` belong to our first annotation `ROI`. This is called inserting objects into a hierarchy, where annotation objetc `ROI` will be the root or parent, and annotation objects `region_1` and `region_2` will be the children.
 To do this, select the thumbnails for `region_1` and `region_2` in the analysis pane (shift + down arrow keys), and then `Insert in hierarchy`
 
 <img src="TutorialImages/object_hierarchy_1.png" width="450" height="300" style="margin-left: 40px;">
@@ -531,8 +533,24 @@ The analysis pane will update to indicate that the root annotation object `ROI` 
 
 <img src="TutorialImages/object_hierarchy_2.png" width="200" height="250" style="margin-left: 40px;">
 
-7. Lock the annotations `region_1` and `region_2`
+8. Lock the annotations `region_1` and `region_2`
 
+
+
+
+
+### 2.2.5 Create and run object classifier
+-------------------------------------
+We can next assign the positive cells that were detected to specific areas in the tissue, e.g. tumor or stroma. This can help us compare the counts or other characteristics of the positive cells in the tumoral or the stromal regions.
+For this, we first annotate some regions within our region of interest as 'tumor' or 'stroma', and train the classifier `Classify --> Object classification --> Train object classifier`
+<img src="TutorialImages/classification_1.jpg">
+
+We will now get the measurement of the positive cells stratified into the classes (tumor/stroma) that we set.
+<img src="TutorialImages/classification_2.jpg">
+
+
+### 2.2.6 Perform positive cell detection
+-------------------------------------
 
 We will click on `Analyze --> Cell detection --> Positive Cell detection`. 
 
@@ -549,18 +567,6 @@ We can also visualize the detections as a heatmap overlaid on the image by click
 
 
 
-### 2.2.5 Create and run object classifier
--------------------------------------
-
-
-### 2.2.6 Perform positive cell detection
--------------------------------------
-We can next assign the positive cells that were detected to specific areas in the tissue, e.g. tumor or stroma. This can help us compare the counts or other characteristics of the positive cells in the tumoral or the stromal regions.
-For this, we first annotate some regions within our region of interest as 'tumor' or 'stroma', and train the classifier `Classify --> Object classification --> Train object classifier`
-<img src="TutorialImages/classification_1.jpg">
-
-We will now get the measurement of the positive cells stratified into the classes (tumor/stroma) that we set.
-<img src="TutorialImages/classification_2.jpg">
 
 
 ### 2.2.7 Visualize data on the image
