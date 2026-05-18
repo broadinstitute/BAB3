@@ -84,12 +84,13 @@ QuPath provides powerful tools for **annotation, visualization, and image analys
 
 ## [**2.2 PART II**](#22-part-ii-1)
  - [2.2.1 Create a QuPath project](#221-create-a-qupath-project)
- - [2.2.2 Annotate regions of interest](#222-annotate-regions-of-interest)
+ - [2.2.2 Annotate regions of interest](#222-annotate-the-region-of-interest)
  - [2.2.3 Perform cell detection](#223-perform-cell-detection)
- - [2.2.4 Create and run object classifier](#224-create-and-run-object-classifier)
- - [2.2.5 Perform positive cell detection](#225-perform-positive-cell-detection)
- - [2.2.6 Visualize data on the image](#226-visualize-data-on-the-image)
- - [2.2.7 View and export detection measurements](#227-view-and-export-detection-measurements)
+ - [2.2.4 Annotate areas within the region of interest](#224-annotate-areas-within-the-region-of-interest)
+ - [2.2.5 Create and run object classifier](#225-create-and-run-object-classifier)
+ - [2.2.6 Perform positive cell detection](#226-perform-positive-cell-detection)
+ - [2.2.7 Visualize data on the image](#227-visualize-data-on-the-image)
+ - [2.2.8 View and export detection measurements](#228-view-and-export-detection-measurements)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -454,7 +455,7 @@ We will be working with the `OS-2.ndpi` image.
 -------------------------------------
 We will create a new QuPath project and add the `OS-2.ndpi` image to the project, following steps detailed in 2.1.2 and 2.1.3. I have named the project `qupath_project_IHC`; you can name the project according to your preference. We will set the image type as `Brightfield (H-DAB)`.
 
-### 2.2.2 Annotate regions of interest
+### 2.2.2 Annotate the region of interest
 -------------------------------------
 Let us first create a new class of annotations called `ROI` (region of interest), following steps detailed in 2.1.6. 
 Next, using the wand tool (or any annotation tool of your preference), let us annotate a specific part of the tissue. This is the part of the tissue where we want to detect the cells.
@@ -462,16 +463,25 @@ Next, using the wand tool (or any annotation tool of your preference), let us an
 <img src="TutorialImages/annotation_ROI_1.png" width="550" height="300" style="margin-left: 40px;">
 
 
-
 ### 2.2.3 Perform cell detection
 -------------------------------------
-We will now detect all the cells in `ROI` to perform measurements on these cells, and also to later detect which of these are positive for the nuclear marker.
+We will now detect all the cells in `ROI` to perform measurements on these cells, and also to later classify these cells as positive or negative for the nuclear marker.
+
+1. Select the annotation `ROI`; the color of the outline will change to yellow.
+2. Click on `Analyze --> Cell detection --> Cell detection`
+
+<img src="TutorialImages/cell_detection_1.png" width="400" height="300" style="margin-left: 40px;">
+
+
+3. 
+
+
 
 
 ### 2.2.4 Annotate areas within the region of interest
 -------------------------------------
-When we perform cell detection within this area, the detected cells will have the annotation label `ROI`.
-Now, let's say, we are specifically interested in comparing two areas within this `ROI`, e.g. `region_1` and `region_2` and we want to compare the features of the cells that are located in those  two areas. In that case, we would want the detected cells to also have these additional annotation labels, i.e `region_1` and `region_2`.
+If you click on any of the detected cells, you will see in the analysis pane that the `Parent` of this cell (detection) object is `Annotation (ROI)`
+Now, let's say, we are interested in comparing features of cells that are located in two specific areas within this `ROI`, e.g. `region_1` and `region_2`. In that case, we would want the detected cells to also have these additional annotation labels, i.e `region_1` and `region_2`.
 
 To achieve that, we will perform the following steps:
 
@@ -530,7 +540,7 @@ We can also visualize the detections as a heatmap overlaid on the image by click
 -------------------------------------
 
 
-### 2.2.5 Perform positive cell detection
+### 2.2.6 Perform positive cell detection
 -------------------------------------
 We can next assign the positive cells that were detected to specific areas in the tissue, e.g. tumor or stroma. This can help us compare the counts or other characteristics of the positive cells in the tumoral or the stromal regions.
 For this, we first annotate some regions within our region of interest as 'tumor' or 'stroma', and train the classifier `Classify --> Object classification --> Train object classifier`
@@ -540,14 +550,14 @@ We will now get the measurement of the positive cells stratified into the classe
 <img src="TutorialImages/classification_2.jpg">
 
 
-### 2.2.6 Visualize data on the image
+### 2.2.7 Visualize data on the image
 -------------------------------------
 
 
 
 
 
-### 2.2.7 View and export detection measurements
+### 2.2.8 View and export detection measurements
 -------------------------------------
 QuPath makes some basic measuerements of the annotations and detections by default if no additional instruction is provided. However, more granular or more advanced measurements can also be made by clicking on `Analyze --> Calculate features` and then selecting the features that you would want to extract.
 <img src="TutorialImages/measurement_1.jpg">
