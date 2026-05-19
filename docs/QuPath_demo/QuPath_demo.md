@@ -69,7 +69,7 @@ QuPath provides powerful tools for **annotation, visualization, and image analys
   - tifffile
   - QuPath
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ## **2. Exercise steps**
 
@@ -90,8 +90,7 @@ QuPath provides powerful tools for **annotation, visualization, and image analys
  - [2.2.5 Create and run object classifier](#225-create-and-run-object-classifier)
  - [2.2.6 View and export detection measurements](#226-view-and-export-detection-measurements)
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ## **2.1 PART I**
 
 ### **2.1.1 Install and launch QuPath**
