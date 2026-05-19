@@ -84,7 +84,7 @@ QuPath provides powerful tools for **annotation, visualization, and image analys
 
 ## [**2.2 PART II**](#22-part-ii-1)
  - [2.2.1 Create a QuPath project](#221-create-a-qupath-project)
- - [2.2.2 Annotate regions of interest](#222-annotate-the-region-of-interest)
+ - [2.2.2 Annotate the region of interest](#222-annotate-the-region-of-interest)
  - [2.2.3 Perform cell detection](#223-perform-cell-detection)
  - [2.2.4 Annotate areas within the region of interest](#224-annotate-areas-within-the-region-of-interest)
  - [2.2.5 Perform positive cell detection](#225-perform-positive-cell-detection)
