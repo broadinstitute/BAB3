@@ -627,6 +627,7 @@ You will see the file with single-cell data saved in your QuPath project folder!
 
 ⚠️ **Hint:** The step above will export all the measurements. However, if you are interested in exporting only a specific subset of the measurements, click `Populate` and check the boxes of the measurements that you want to export!
 
+<img src="TutorialImages/measurement_16.png" width="600" height="500" style="margin-left: 40px;">
 
 
 
