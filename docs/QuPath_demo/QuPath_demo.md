@@ -87,8 +87,8 @@ QuPath provides powerful tools for **annotation, visualization, and image analys
  - [2.2.2 Annotate regions of interest](#222-annotate-the-region-of-interest)
  - [2.2.3 Perform cell detection](#223-perform-cell-detection)
  - [2.2.4 Annotate areas within the region of interest](#224-annotate-areas-within-the-region-of-interest)
- - [2.2.5 Create and run object classifier](#225-create-and-run-object-classifier)
- - [2.2.6 Perform positive cell detection](#226-perform-positive-cell-detection)
+ - [2.2.5 Perform positive cell detection](#225-perform-positive-cell-detection)
+ - [2.2.6 Create and run object classifier](#226-create-and-run-object-classifier)
  - [2.2.7 Visualize data on the image](#227-visualize-data-on-the-image)
  - [2.2.8 View and export detection measurements](#228-view-and-export-detection-measurements)
 
@@ -463,12 +463,12 @@ Next, using the wand tool (or any annotation tool of your preference), let us an
 <img src="TutorialImages/annotation_ROI_1.png" width="550" height="300" style="margin-left: 40px;">
 
 
-### 2.2.3 Perform cell detection
+### 2.2.3 Perform positive cell detection
 -------------------------------------
-We will now detect all the cells in `ROI` to perform measurements on these cells, and also to later classify these cells as positive or negative for the nuclear marker.
+We will now detect the cells in `ROI` to perform measurements on these cells, and also to classify these cells as positive or negative for the nuclear marker.
 
 1. Select the annotation `ROI`; the color of the outline will change to yellow.
-2. Click on `Analyze --> Cell detection --> Cell detection`
+2. Click on `Analyze --> Cell detection --> Positive cell detection`
 
 <img src="TutorialImages/cell_detection_1.png" width="300" height="200" style="margin-left: 40px;">
 
@@ -524,20 +524,21 @@ To achieve that, we will perform the following steps:
 
 
 7. Now, we need to let QuPath know that `region_1` and `region_2` belong to our first annotation `ROI`. This is called inserting objects into a hierarchy, where annotation objetc `ROI` will be the root or parent, and annotation objects `region_1` and `region_2` will be the children.
-To do this, select the thumbnails for `region_1` and `region_2` in the analysis pane (shift + down arrow keys), and then `Insert in hierarchy`
+To do this, select the thumbnails for `region_1` and `region_2` in the analysis pane (shift + down arrow keys), and then `Insert in hierarchy`.
 
 <img src="TutorialImages/object_hierarchy_1.png" width="350" height="300" style="margin-left: 40px;">
 
-<img src="TutorialImages/object_hierarchy_2.png" width="350" height="300" style="margin-left: 40px;">
+The analysis pane will now show the number of detections that are present in `region_1` and `region_2`.
+
+<img src="TutorialImages/object_hierarchy_2.png" width="350" height="100" style="margin-left: 40px;">
 
 
-8. Lock the annotations `region_1` and `region_2`
+8. Lock the annotations `region_1` and `region_2`.
 
 
 
 
-
-### 2.2.5 Create and run object classifier
+### 2.2.6 Create and run object classifier
 -------------------------------------
 We can next assign the positive cells that were detected to specific areas in the tissue, e.g. tumor or stroma. This can help us compare the counts or other characteristics of the positive cells in the tumoral or the stromal regions.
 For this, we first annotate some regions within our region of interest as 'tumor' or 'stroma', and train the classifier `Classify --> Object classification --> Train object classifier`
@@ -546,22 +547,6 @@ For this, we first annotate some regions within our region of interest as 'tumor
 We will now get the measurement of the positive cells stratified into the classes (tumor/stroma) that we set.
 <img src="TutorialImages/classification_2.jpg">
 
-
-### 2.2.6 Perform positive cell detection
--------------------------------------
-
-We will click on `Analyze --> Cell detection --> Positive Cell detection`. 
-
-<img src="TutorialImages/cell_detection_1.jpg">
-
-This opens up a window where we can set the parameters that will allow for accurate cell detection. Once the appropriate parameters are set, we can hit `Run`, and the cells will be detected.
-<img src="TutorialImages/cell_detection_2.jpg">
-
-The Annotations pane will show the count of all cells, positive cells and negative cells that were detected.
-<img src="TutorialImages/cell_detection_3.jpg">
-
-We can also visualize the detections as a heatmap overlaid on the image by clicking `Measure --> Show measurement maps`
-<img src="TutorialImages/cell_detection_4.jpg">
 
 
 
