@@ -605,26 +605,31 @@ We would want these measurements for all `Detections`
 
 *View detection measurements*
 
-Detection measurements can be viewed by clicking `Measure --> Show detection measurements`
+ - Detection measurements can be viewed by clicking `Measure --> Show detection measurements`
 
 <img src="TutorialImages/measurement_12.png" width="250" height="250" style="margin-left: 40px;">
 
-<img src="TutorialImages/measurement_13.png" width="900" height="450" style="margin-left: 40px;">
+<img src="TutorialImages/measurement_13.png" width="950" height="450" style="margin-left: 40px;">
+
+You can click `Show histograms` to visualize the distribution of cell counts for each metric. To choose a specific metric, use the dropdown menu (red arrow).
+
+<img src="TutorialImages/measurement_14.png" width="500" height="450" style="margin-left: 40px;">
+
+
+- You can also visualize the measurements as a heatmap overlaid on the image by clicking `Measure --> Show measurement maps`. You can choose the measurement you want to display and the color map, and also adjust how the color is displayed with the sliders.
+Here, I have displayed `Nucleus: DAB OD Mean` using the color map Inferno.
+
+<img src="TutorialImages/measurement_15.png" width="600" height="450" style="margin-left: 40px;">
+
+- Finally, to export the measurements, you can click on `Measure --> Export measurements` and select the objects for which you want to export the measurements (e.g. annotations, detections). We will name the file, select `Detections` and set the separator to `.csv`.
+
+You will see the file with single-cell data saved in your QuPath project folder!
+
+
+⚠️ **Hint:** The step above will export all the measurements. However, if you are interested in exporting only a specific subset of the measurements, click `Populate` and check the boxes of the measurements that you want to export!
 
 
 
-These measurements can also be viewed as a heatmap overlaid on the image by clicking `Measure --> Show measurement maps` or as a table by clicking `Measure --> Show detection measurements`
-<img src="TutorialImages/measurement_2.jpg">
-
-<img src="TutorialImages/measurement_3.jpg">
-
-Finally, we export the measurements, by clicking `Measure --> Export measurements` and selecting the measurements we want to export (e.g. measurements for all images / some images, annotation measurements, detection measurements) and also the file format in which we would want the measurements saved (e.g., .csv, .tsv)
-
-<img src="TutorialImages/export_1.jpg">
-
-You will see the file with the measurements saved in your QuPath project folder.
-
-<img src="TutorialImages/export_2.jpg">
 
 --------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------
