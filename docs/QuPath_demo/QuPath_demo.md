@@ -17,8 +17,7 @@ Specifically, the tutorial covers the following:
 - Detecting cells in the annotated regions
 - Performing measurements on the detected cells and exporting the data
 
-**Lab Data** in [this folder](https://drive.google.com/drive/folders/1z0FnjmPLGjEnIpPu_P8PTB-4ck6Z9BcA?usp=drive_link) 
-Originally sourced from [here](https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/) and [here](https://openslide.cs.cmu.edu/download/openslide-testdata/Aperio/CMU-1.svs)
+**Lab Data** in [this folder](https://drive.google.com/drive/folders/1z0FnjmPLGjEnIpPu_P8PTB-4ck6Z9BcA?usp=drive_link)(Originally sourced from [here](https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/) and [here](https://openslide.cs.cmu.edu/download/openslide-testdata/Aperio/CMU-1.svs))
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
