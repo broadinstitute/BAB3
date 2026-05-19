@@ -441,7 +441,7 @@ You will see the selected image move to the box on the left.
 
 <img src="TutorialImages/measurement_8.png" width="1500" height="200" style="margin-left: 40px;">
 
-If you would want to get a bit more practice with steps 2.4 to 2.7, feel free to download a couple more H&E images from [here](https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/) and add to your current project!
+If you want to get a bit more practice with steps 2.4 to 2.7, feel free to download a couple more H&E images from [here](https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/) and add to your current project!
 -------------------------------
 
 ## **2.2 PART II**
