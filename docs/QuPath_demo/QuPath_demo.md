@@ -481,6 +481,7 @@ For the purpose of the tutorial, we will use the default parameters and hit `Run
 <img src="TutorialImages/cell_detection_3.png" width="350" height="200" style="margin-left: 40px;">
 
 When QuPath finishes, the cell (detections) outlines will appear on the image within the annotated area (`ROI`) where the detection was run, and the number of detections will be updated in the analysis pane next to the annotation thumbnail. The positive cells are outlined in red and negative cells in blue.
+The analysis pane now also shows the number of positive and negative cells detected.
 
 <img src="TutorialImages/cell_detection_4.png" width="800" height="500" style="margin-left: 40px;">
 
