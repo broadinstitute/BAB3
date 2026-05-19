@@ -599,11 +599,17 @@ For the type of image we are analyzing, you may want to compute these additional
 
 We would want these measurements for all `Detections`
 
-<img src="TutorialImages/measurement_11.png" width="350" height="150" style="margin-left: 40px;">
+<img src="TutorialImages/measurement_11.png" width="400" height="150" style="margin-left: 40px;">
+
 
 
 *View detection measurements*
 
+Detection measurements can be viewed by clicking `Measure --> Show detection measurements`
+
+<img src="TutorialImages/measurement_12.png" width="250" height="250" style="margin-left: 40px;">
+
+<img src="TutorialImages/measurement_13.png" width="900" height="450" style="margin-left: 40px;">
 
 
 
