@@ -584,8 +584,28 @@ In addition to the classification, we will also know whether the cell was presen
 
 ### 2.2.7 View and export detection measurements
 -------------------------------------
-QuPath makes some basic measuerements of the annotations and detections by default if no additional instruction is provided. However, more granular or more advanced measurements can also be made by clicking on `Analyze --> Calculate features` and then selecting the features that you would want to extract.
-<img src="TutorialImages/measurement_1.jpg">
+
+
+*Measure additional features*
+
+QuPath measures some size/shape and intensity features for all the annotations and detections by default. However, you can also obtain more granular or more advanced measurements that take into consideration more contextual information.
+To do this, you can click on `Analyze --> Calculate features` and then select the features that you would want to extract.
+
+<img src="TutorialImages/measurement_9.png" width="350" height="200" style="margin-left: 40px;">
+
+For the type of image we are analyzing, you may want to compute these additional intensity features.
+
+<img src="TutorialImages/measurement_10.png" width="400" height="650" style="margin-left: 40px;">
+
+We would want these measurements for all `Detections`
+
+<img src="TutorialImages/measurement_11.png" width="350" height="150" style="margin-left: 40px;">
+
+
+*View detection measurements*
+
+
+
 
 These measurements can also be viewed as a heatmap overlaid on the image by clicking `Measure --> Show measurement maps` or as a table by clicking `Measure --> Show detection measurements`
 <img src="TutorialImages/measurement_2.jpg">
