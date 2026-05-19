@@ -87,9 +87,8 @@ QuPath provides powerful tools for **annotation, visualization, and image analys
  - [2.2.2 Annotate the region of interest](#222-annotate-the-region-of-interest)
  - [2.2.3 Perform positive cell detection](#223-perform-positive-cell-detection)
  - [2.2.4 Annotate areas within the region of interest](#224-annotate-areas-within-the-region-of-interest)
- - [2.2.5 Perform positive cell detection](#225-perform-positive-cell-detection)
- - [2.2.6 Create and run object classifier](#226-create-and-run-object-classifier)
- - [2.2.7 View and export detection measurements](#228-view-and-export-detection-measurements)
+ - [2.2.5 Create and run object classifier](#225-create-and-run-object-classifier)
+ - [2.2.6 View and export detection measurements](#226-view-and-export-detection-measurements)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -536,7 +535,7 @@ The analysis pane will now show the number of detections that are present in `re
 8. Lock the annotations `region_1` and `region_2`.
 
 
-### 2.2.6 Create and run object classifier
+### 2.2.5 Create and run object classifier
 -------------------------------------
 In addition to classifying cells as marker positive or marker negative, it is also possible to classify cells based on their morphological or biological properties. For example, in this tissue section, there are tumor cells and stromal cells. It might be helpful to know how many of the marker positive cells were tumoral and how many were stromal.
 To achieve this, we will need to perform object classification.
@@ -582,7 +581,7 @@ In addition to the classification, we will also know whether the cell was presen
 <img src="TutorialImages/cell_classification_6.png" width="850" height="500" style="margin-left: 40px;">
 
 
-### 2.2.7 View and export detection measurements
+### 2.2.6 View and export detection measurements
 -------------------------------------
 
 
