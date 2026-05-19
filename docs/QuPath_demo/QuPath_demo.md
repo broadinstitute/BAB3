@@ -541,15 +541,45 @@ The analysis pane will now show the number of detections that are present in `re
 In addition to classifying cells as marker positive or marker negative, it is also possible to classify cells based on their morphological or biological properties. For example, in this tissue section, there are tumor cells and stromal cells. It might be helpful to know how many of the marker positive cells were tumoral and how many were stromal.
 To achieve this, we will need to perform object classification.
 
-1. Create two new annotation classes - tumor and stroma
-2. 
+1. Create two new annotation classes - `tumor` and `stroma`
+2. Manually annotate some tumor and stroma regions within the `ROI` using any annotation tool of your preference - I have used the brush tool. Try to make sure you draw a comparable number of annotations of each class to avoid any class imbalance.
+3. Set the classification of every annotation you draw as `tumor` or `stroma`. 
+  
+<img src="TutorialImages/cell_classification_1.png" width="800" height="600" style="margin-left: 40px;">
 
-For this, we first annotate some regions within our region of interest as 'tumor' or 'stroma', and train the classifier `Classify --> Object classification --> Train object classifier`
-<img src="TutorialImages/classification_1.jpg">
+4. Once you are satisfied with the annotations you have drawn, click on `Classify --> Object classification --> Train object classifier`
 
-We will now get the measurement of the positive cells stratified into the classes (tumor/stroma) that we set.
-<img src="TutorialImages/classification_2.jpg">
+<img src="TutorialImages/cell_classification_2.png" width="350" height="200" style="margin-left: 40px;">
 
+5. We will train a Randome trees classifier using all detections and the unlocked annotations (tumor and stroma). QuPath also offers the option of training artifical neural network or K-nearest neighbor based classifiers. These can be selected by clicking on the dropdown next to `Classifier`.
+
+<img src="TutorialImages/cell_classification_3.png" width="450" height="500" style="margin-left: 40px;">
+
+6. Click on `Live update` to get a preview of the proportion of cells being categorized as `tumor` or `stroma`. If this does not match what you would expect from your visual estimate, you can try making more annotations or refining existing annotations to improve the classifier performance. Once you are satisfied with the performance of the classifier, you can give it an appropriate name and click on `Save`. The classifier will be save in your QuPath project folder.
+
+```
+├── classifiers
+│   ├── classes.json
+│   └── object_classifiers
+│       └── tumor_stroma.json
+```
+
+7. All the detected cells will now be classified as `tumor` or `stroma` by the classifier you just trained. The cells will also have the classification `positive` or `negative`
+
+<img src="TutorialImages/cell_classification_4.png" width="900" height="600" style="margin-left: 40px;">
+
+8. The cells detected within `ROI` will therefore be either of the following four classes:
+ - tumor: positive (brown outline)
+ - tumor: negative (orange outline)
+ - stroma: positive (dark green outline)
+ - stroma: negative (light green outline)
+In addition, we will also known whether the cells were present in `region_1`, `region_2`, or outside these regions.
+
+<img src="TutorialImages/cell_classification_5.png" width="500" height="500" style="margin-left: 40px;">
+
+In addition to the classification, we will also know whether the cell was present in `region_1`, `region_2`, or outside these regions.
+
+<img src="TutorialImages/cell_classification_6.png" width="700" height="500" style="margin-left: 40px;">
 
 
 ### 2.2.7 View and export detection measurements
