@@ -579,7 +579,7 @@ In addition, we will also known whether the cells were present in `region_1`, `r
 
 In addition to the classification, we will also know whether the cell was present in `region_1`, `region_2`, or outside these regions.
 
-<img src="TutorialImages/cell_classification_6.png" width="700" height="500" style="margin-left: 40px;">
+<img src="TutorialImages/cell_classification_6.png" width="850" height="500" style="margin-left: 40px;">
 
 
 ### 2.2.7 View and export detection measurements
@@ -603,12 +603,6 @@ You will see the file with the measurements saved in your QuPath project folder.
 --------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------
 
-## Congrats! Now you know the basics of QuPath!
-
-
-## Learn more about QuPath:
-- [QuPath Repo](https://github.com/qupath)
-- [QuPath docs](https://qupath.readthedocs.io/en/stable/)
-- [QuPath YouTube Channel](https://www.youtube.com/@petebankhead/videos)
+# Congrats! 🎉 You have now learnt the basics of QuPath! ✨
 
 ---
