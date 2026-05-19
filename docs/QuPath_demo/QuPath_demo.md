@@ -89,8 +89,7 @@ QuPath provides powerful tools for **annotation, visualization, and image analys
  - [2.2.4 Annotate areas within the region of interest](#224-annotate-areas-within-the-region-of-interest)
  - [2.2.5 Perform positive cell detection](#225-perform-positive-cell-detection)
  - [2.2.6 Create and run object classifier](#226-create-and-run-object-classifier)
- - [2.2.7 Visualize data on the image](#227-visualize-data-on-the-image)
- - [2.2.8 View and export detection measurements](#228-view-and-export-detection-measurements)
+ - [2.2.7 View and export detection measurements](#228-view-and-export-detection-measurements)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -537,8 +536,6 @@ The analysis pane will now show the number of detections that are present in `re
 8. Lock the annotations `region_1` and `region_2`.
 
 
-
-
 ### 2.2.6 Create and run object classifier
 -------------------------------------
 We can next assign the positive cells that were detected to specific areas in the tissue, e.g. tumor or stroma. This can help us compare the counts or other characteristics of the positive cells in the tumoral or the stromal regions.
@@ -550,17 +547,7 @@ We will now get the measurement of the positive cells stratified into the classe
 
 
 
-
-
-
-### 2.2.7 Visualize data on the image
--------------------------------------
-
-
-
-
-
-### 2.2.8 View and export detection measurements
+### 2.2.7 View and export detection measurements
 -------------------------------------
 QuPath makes some basic measuerements of the annotations and detections by default if no additional instruction is provided. However, more granular or more advanced measurements can also be made by clicking on `Analyze --> Calculate features` and then selecting the features that you would want to extract.
 <img src="TutorialImages/measurement_1.jpg">
