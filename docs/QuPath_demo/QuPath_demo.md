@@ -539,6 +539,7 @@ The analysis pane will now show the number of detections that are present in `re
 ### 2.2.6 Create and run object classifier
 -------------------------------------
 We can next assign the positive cells that were detected to specific areas in the tissue, e.g. tumor or stroma. This can help us compare the counts or other characteristics of the positive cells in the tumoral or the stromal regions.
+
 For this, we first annotate some regions within our region of interest as 'tumor' or 'stroma', and train the classifier `Classify --> Object classification --> Train object classifier`
 <img src="TutorialImages/classification_1.jpg">
 
