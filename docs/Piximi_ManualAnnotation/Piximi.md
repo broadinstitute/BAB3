@@ -1,4 +1,4 @@
-# Day 1 - Making manual annotations with Piximi
+# Day 1 - Making Manual Annotations with Piximi
 
 *Lab authors: Beth Cimini, Kate Bowers*.
 
@@ -12,7 +12,7 @@
 
 ## Preparation
 
-Prior to this exercise, you should have downloaded the Microglia image set. You do not need to download any software as Piximi runs in your web browser.
+Prior to this exercise, you should have downloaded the [Microglia image set](https://drive.google.com/drive/folders/1TyV_hzN2pDpX0lVQ_jh08A9AG5e4Bao8?usp=drive_link). You do not need to download any software as Piximi runs in your web browser.
 
 ## Exercise Overview
 
@@ -89,6 +89,6 @@ Currently, Piximi supports two broad classes of measurements - intensity measure
 
 - Try to annotate some cells - in the annotator view, hit `+` to create a new "Kind" called cells
 
-<img src="./images/NewKind.png" width="100%">
+<img src="./images/NewKind.png" width="100%" alt="new kind">
 
 - Annotate some cells, trying a few different Piximi functionalities for annotation - do you find the same tools optimal for annotating cells and nuclei? Are some tools better suited for one or the other? You can use the Channel Adjustment tool on the top bar to toggle the nuclei and microglia channels on and off.

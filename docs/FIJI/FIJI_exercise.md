@@ -10,7 +10,7 @@ Lab authors: Erin Weisbart
 
 ## Preparation
 
-Prior to this exercise, you should have [downloaded FIJI](https://fiji.sc) and the Beginner Segmentation image set.
+Prior to this exercise, you should have [downloaded FIJI](https://fiji.sc) and the [Beginner Segmentation image set](https://github.com/CellProfiler/tutorials/raw/master/BeginnerSegmentation/Archive_EN.zip).
 
 ## Warning
 
