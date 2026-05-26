@@ -1,10 +1,11 @@
 # Day 2, exercise 3: Advanced segmentation and organelle analysis
 
-*Lab authors: Beth Cimini* . 
+*Lab authors: Beth Cimini* .
 
 ---
 
 ## Learning Objectives
+
 - Learn to create classical segmentation settings robust to debris and blurriness
 - Learn to tune segmentaion models to be robust to many different phenotypes
 - Examine an example pipeline which contains complicated matching parameters in the NamesAndTypes module
@@ -12,7 +13,6 @@
 **Lab Data** in [this folder](https://drive.google.com/file/d/1qVaQiPZKqOPEsa62lYEpm7ot3th7ADqE/view?usp=sharing) (Machine_Learning)
 
 ---
-
 
 ## **Background information:**
 
@@ -86,10 +86,10 @@ a similar introductory exercise.
 
 - Start CellProfiler by double-clicking the desktop icon <img src="./TutorialImages/CellProfilerLogo.png" alt="CellProfiler icon" width="35"/>
 
-* Drag and drop the ‘BBBC022_Analysis_Start.cppipe’ file into the
+- Drag and drop the ‘BBBC022_Analysis_Start.cppipe’ file into the
   ‘Analysis modules’ box. 7 modules should pop up, and almost all of
   them will show errors. **This is the expected behavior.**
-* Drag and drop the ‘BBBC022_20585_AE’ folder into the ‘File list’ box.
+- Drag and drop the ‘BBBC022_20585_AE’ folder into the ‘File list’ box.
   It should automatically populate. Notice that illumination correction
   images (with a file extension of ‘.npy’) are included in this data
   set.
@@ -111,7 +111,7 @@ info for each image.
   location of the CSV file.  It is looking for it in CellProfiler's Default
   Input Folder, which we must therefore configure.
 
-  - Select the  <img src="./TutorialImages/OutputSettings.png" width="120"/> button in the bottom left corner of the screen.
+  - Select the  <img src="./TutorialImages/OutputSettings.png" width="120" alt="output settings"/> button in the bottom left corner of the screen.
   - Set the ‘Default Input Folder’ to the location of ‘20585_AE.csv’ within the exercise folder
 
 - Return to the ‘Metadata’ module and press ‘Update’. You should now see a number of columns in the Metadata window.
@@ -160,6 +160,7 @@ The channel mapping here is a bit more complicated than anything we've worked wi
 
 *Figure 3: A section of the ‘Image set matching’ dialog.*
 ```
+
 ## **Illumination correction**
 
 ### 4. **Examine the output of the CorrectIlluminationApply module (optional)**
@@ -342,7 +343,6 @@ will do so for Mitochondria in the following steps.
 *Figure 7: The MaskedMito image contains only the regions of interest.*
 ```
 
-
 ### 12. **IdentifyPrimaryObjects- Mitochondria**
 
 - **After** your MaskImage module but **before** the RelateObjects
@@ -382,6 +382,7 @@ will do so for Mitochondria in the following steps.
   pipeline.
 
 ## **Export data**
+
 In order to use the data visualization and machine learning tools
 in CellProfiler Analyst, the measurements will need to be saved to a
 database using the **ExportToDatabase**.
@@ -411,7 +412,6 @@ only be able to examine one object at a time in CellProfiler Analyst.*
   can make multiple selections by using Ctrl-click (Windows) or
   Command-click (Mac). Leave the rest of the settings at the default
   values.
-
 
 > **NOTE:** Because you have different object counts for some of your different
   types of objects (the counts of Nuclei, Cells, and Cytoplasm will be
