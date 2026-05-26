@@ -16,42 +16,45 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/style.css?v=45da4340" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
@@ -66,6 +69,7 @@
     <link rel="prev" title="Day 3, session 2: Practical introduction to ilastik" href="../ilastik/PixelClassification.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -81,19 +85,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -101,7 +94,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,8 +101,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -126,7 +118,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -156,21 +149,17 @@
     
     
     <img src="../_static/CLab_Square.png" class="logo__image only-light" alt="BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual - Home"/>
-    <script>document.write(`<img src="../_static/CLab_Square.png" class="logo__image only-dark" alt="BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual - Home"/>`);</script>
+    <img src="../_static/CLab_Square.png" class="logo__image only-dark pst-js-only" alt="BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -190,6 +179,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Translocation/Translocation.html">Day 2, exercise 5: Segmentation and Classification with CellProfiler and CellProfiler Analyst</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ilastik/PixelClassification.html">Day 3, session 2: Practical introduction to ilastik</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Day 3, session 3: Practical introduction to QuPath</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../BeginnerSegmentation/BeginnerSegmentationPlugins.html">Day 4, Session 2 - Interfacing CellProfiler with other software tools via files and plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MicroSAM/MicroSAM_workshop.html">Day 4, Session 6 - ‘Segment Anything’ Model (SAM) for Microscopy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Cellpose/CellposeIntro.html">Day 5, Session 2 - Segmenting Data with Cellpose</a></li>
@@ -207,9 +197,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -292,7 +287,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -306,25 +301,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -347,30 +334,58 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-information">1. Background information</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-qupath">1.1 What is QuPath?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-pyrmidal-file-formats">1.2 What are pyrmidal file formats?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Day 3, session 3: Practical introduction to QuPath</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives"><strong>Learning Objectives</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-information"><strong>1. Background information</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-qupath"><strong>1.1 What is QuPath?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-pyramidal-file-formats"><strong>1.2 What are pyramidal file formats?</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-steps">2. Exercise steps</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-qupath">2.1 Launch QuPath</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-qupath-project">2.2 Create a QuPath project</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-create-a-new-choose-a-project-folder">A. Create a new / choose a project folder</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-add-images-to-your-project">B. Add images to your project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-steps"><strong>2. Exercise steps</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i"><span class="xref myst"><strong>2.1 PART I</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii"><span class="xref myst"><strong>2.2 PART II</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>2.1 PART I</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-and-launch-qupath"><strong>2.1.1 Install and launch QuPath</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-qupath-project"><strong>2.1.2 Create a QuPath project</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-or-remove-images-to-your-qupath-project"><strong>2.1.3 Add or remove images to your QuPath project</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-images"><strong>2.1.3.1 Add images</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-images"><strong>2.1.3.2 Remove images</strong></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-image-properties">2.3 View image properties</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-regions-of-interest">2.4 Annotate regions of interest</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-annotation-measurements">2.5 View annotation measurements</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detect-cells">2.6 Detect cells</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classify-cells">2.7 Classify cells</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-and-export-measurements">2.8 Perform and export measurements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-and-export-images"><strong>2.1.4 View and export images</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#customize-the-viewer"><strong>2.1.4.1 Customize the viewer</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zooming-and-panning"><strong>2.1.4.2 Zooming and panning</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#export-images"><strong>2.1.4.3 Export images</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#congrats-now-you-know-the-basics-of-qupath">Congrats! Now you know the basics of QuPath!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more-about-qupath">Learn more about QuPath:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-image-properties"><strong>2.1.5 Set up image properties</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-image-type"><strong>2.1.5.1 Set image type</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#separate-stains"><strong>2.1.5.2 Separate stains</strong></a></li>
 </ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-images"><strong>2.1.6 Annotate images</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-annotations"><strong>2.1.6.1 Draw annotations</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-annotation-properties"><strong>2.1.6.2 Set annotation properties</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-and-export-annotation-measurements"><strong>2.1.7 View and export annotation measurements</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-want-to-get-a-bit-more-practice-with-steps-2-4-to-2-7-feel-free-to-download-a-couple-more-h-e-images-from-here-and-add-to-your-current-project">If you want to get a bit more practice with steps 2.4 to 2.7, feel free to download a couple more H&amp;E images from here and add to your current project!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>2.2 PART II</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.2.1 Create a QuPath project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-the-region-of-interest">2.2.2 Annotate the region of interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-positive-cell-detection">2.2.3 Perform positive cell detection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-areas-within-the-region-of-interest">2.2.4 Annotate areas within the region of interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-and-run-object-classifier">2.2.5 Create and run object classifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-and-export-detection-measurements">2.2.6 View and export detection measurements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#congrats-you-have-now-learnt-the-basics-of-qupath">Congrats! 🎉 You have now learnt the basics of QuPath! ✨</a></li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -384,168 +399,622 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="day-3-session-3-practical-introduction-to-qupath">
 <h1>Day 3, session 3: Practical introduction to QuPath<a class="headerlink" href="#day-3-session-3-practical-introduction-to-qupath" title="Link to this heading">#</a></h1>
 <p><em>Lab author: Shatavisha Dasgupta</em> .</p>
-<p>(Adapted from <a class="reference external" href="https://qupath.readthedocs.io/en/stable/docs/tutorials/index.html">QuPath documentation</a> and <a class="reference external" href="https://youtu.be/xtjsigsUrms?si=PLyccu1S0xfYJHYN">Pete Bankhead’s video tutorial</a>)</p>
+<p>Adapted from:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://qupath.readthedocs.io/en/stable/docs/tutorials/index.html">QuPath documentation</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/xtjsigsUrms?si=PLyccu1S0xfYJHYN">Pete Bankhead’s video tutorial</a></p></li>
+<li><p><a class="reference external" href="https://saramcardle.github.io/FS2K/README.html">From Samples to Knowledge 2025 Repo</a></p></li>
+</ol>
 <section id="learning-objectives">
-<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<h2><strong>Learning Objectives</strong><a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<p>This tutorial provides an overview of the basic functionalities of QuPath.
+Specifically, the tutorial covers the following:</p>
 <ul class="simple">
-<li><p>Create a QuPath project</p></li>
-<li><p>View pyramidal files in QuPath</p></li>
-<li><p>Annotate regions of interest</p></li>
-<li><p>Detect cells in the regions of interest</p></li>
-<li><p>Perform and export measurements on detected cells</p></li>
+<li><p>Creating a QuPath project</p></li>
+<li><p>Viewing pyramidal files</p></li>
+<li><p>Setting channel names of images</p></li>
+<li><p>Manually annotating regions of interest</p></li>
+<li><p>Detecting cells in the annotated regions</p></li>
+<li><p>Performing measurements on the detected cells and exporting the data</p></li>
 </ul>
-<p><strong>Lab Data</strong> in <a class="reference external" href="https://drive.google.com/drive/folders/1z0FnjmPLGjEnIpPu_P8PTB-4ck6Z9BcA?usp=drive_link">this folder</a> (Originally sourced from <a class="reference external" href="https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/">here</a> and <a class="reference internal" href="#(https://openslide.cs.cmu.edu/download/openslide-testdata/Aperio/CMU-1.svs)"><span class="xref myst">here</span></a></p>
+<p><strong>Lab Data</strong> in <a class="reference external" href="https://drive.google.com/drive/folders/1z0FnjmPLGjEnIpPu_P8PTB-4ck6Z9BcA?usp=drive_link">this folder</a> (Originally sourced from <a class="reference external" href="https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/">here</a> and <a class="reference external" href="https://openslide.cs.cmu.edu/download/openslide-testdata/Aperio/CMU-1.svs">here</a>)</p>
+<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
 </section>
-<hr class="docutils" />
 <section id="background-information">
-<h2>1. Background information<a class="headerlink" href="#background-information" title="Link to this heading">#</a></h2>
+<h2><strong>1. Background information</strong><a class="headerlink" href="#background-information" title="Link to this heading">#</a></h2>
 <section id="what-is-qupath">
-<h3>1.1 What is QuPath?<a class="headerlink" href="#what-is-qupath" title="Link to this heading">#</a></h3>
-<p>QuPath is open source software for bioimage analysis created and maintained by Peter Bankhead and his team at The University of Edinburgh. QuPath is commonly used for <strong>digital pathology in research</strong> because it offers a powerful set of tools for working with <strong>whole slide images</strong> - but it can be applied to lots of other kinds of image as well.</p>
+<h3><strong>1.1 What is QuPath?</strong><a class="headerlink" href="#what-is-qupath" title="Link to this heading">#</a></h3>
+<hr class="docutils" />
+<p>QuPath is an open source software for bioimage analysis created and maintained by Peter Bankhead and his team at The University of Edinburgh. QuPath is commonly used for <strong>digital pathology in research</strong> because it offers a powerful set of tools for working with <strong>whole slide images</strong> - but it can be applied to lots of other kinds of image as well.</p>
 <p>Read the <a class="reference external" href="https://doi.org/10.1038/s41598-017-17204-5">original publication introducing QuPath</a>!</p>
+<p>QuPath provides powerful tools for <strong>annotation, visualization, and image analysis</strong> through an easy-to-use modern interface. It includes built-in algorithms for cell and tissue detection, interactive machine learning for object and pixel classification, and supports many image formats, including whole-slide and multiplexed images. It also integrates with tools like ImageJ, OpenCV, OMERO, StarDist, InstanSeg, and Bio-Formats, and the functionalities can be expanded using Groovy scripts and extensions. Many of these functionalities are beyond the scope of this tutorial – if you are interested, <a class="reference external" href="https://qupath.readthedocs.io/en/stable/docs/tutorials/index.html">QuPath docs</a> and these videos/channels (<a class="reference external" href="https://www.youtube.com/playlist?list=PLlGXRBscPbCCA1yGCThNqdYKgTPOvjigp">1</a>, <a class="reference external" href="https://www.youtube.com/playlist?list=PLSCpSsEmyRpANBGQXB_oGslW9NIJz4A12">2</a>, <a class="reference external" href="https://www.youtube.com/playlist?list=PL4ta8RxZklWkPB_pwW-ZDVAGPGktAlE5Y">3</a>) are great resources to delve into!</p>
 </section>
-<section id="what-are-pyrmidal-file-formats">
-<h3>1.2 What are pyrmidal file formats?<a class="headerlink" href="#what-are-pyrmidal-file-formats" title="Link to this heading">#</a></h3>
+<section id="what-are-pyramidal-file-formats">
+<h3><strong>1.2 What are pyramidal file formats?</strong><a class="headerlink" href="#what-are-pyramidal-file-formats" title="Link to this heading">#</a></h3>
+<hr class="docutils" />
 <ul class="simple">
-<li><p>Whole slide images (WSIs) are a crucial part of translational research projects, because they allow studying changes in individual tissue structure in health or disease the context of the parent organ</p></li>
-<li><p>WSIs are often &gt; 10GB and contain billions of pixels, and are commonly stored in a pyramidal file format</p></li>
-<li><p>A pyramidal file format stores images at multiple resolutions in a single file, organized in a pyramid-like hierarchy(highest resolution at the base, progressively lower resolutions above).</p></li>
-<li><p>This optimizes performance for viewing, processing, and analyzing large images without needing to load the entire high-res image into memory.</p></li>
-<li><p>Common Use Cases:
-Digital pathology (e.g., .svs, .scn, .ndpi, .tiff)
-Spatial Biology (e.g. .tiff)
-Geospatial imaging (e.g., GeoTIFF)</p></li>
-<li><p>In histology images, zooming in (looking under higher magnification) allows examining the finer details in the cell / tissue structures</p></li>
-<li><p>Structure of pyramidal images (as shown in the figure):</p>
+<li><p>Whole slide images (WSIs) are a crucial component of translational research focussing on Histopathology, because they allow comparing changes in diseased tissue with healthy tissue, which are often present on the same slide. Additionally, they also allow quantifying parameters of prognostic significance, such as depth of invasion of tumors</p></li>
+<li><p>WSIs contain a wealth of information – and billions of pixels – so these tend to be of substantial size, often exceeding 10 GB</p></li>
+<li><p>To make viewing, processing, and analysis more efficient, WSIs are commonly stored in pyramidal file formats</p></li>
+<li><p>A pyramidal file stores the same image at multiple resolutions within a single file. These resolutions are arranged in a pyramid-like hierarchy, with the full-resolution image at the base and progressively lower-resolution versions above it</p></li>
+<li><p>This allows the software to load only the resolution needed for a given zoom level, rather than loading the entire high-resolution image into memory</p></li>
+<li><p>In histology, this is especially useful because low-resolution views allow rapid navigation across the tissue, while high-resolution views allow detailed examination of cellular and tissue structures</p></li>
+<li><p>As shown in the figure, pyramidal images are typically organized as:</p>
 <ul>
 <li><p>Level 0: Full-resolution image</p></li>
-<li><p>Higher levels : Downsampled versions (e.g., 1/2, 1/4, 1/8 scale)</p></li>
-</ul>
-</li>
-<li><p>Advantages of pyramidal file format:</p>
-<ul>
-<li><p>Faster loading and rendering of large images</p></li>
-<li><p>Reduced memory footprint when viewing subsets or low-resolution previews</p></li>
-<li><p>Facilitates region-of-interest (ROI) extraction without full image decoding</p></li>
-</ul>
-</li>
-<li><p>Common pyramidal file formats:</p>
-<ul>
-<li><p>TIFF with pyramid tags (.tiff/.ome.tiff)</p></li>
-<li><p>SVS (Aperio), NDPI (Hamamatsu), SCN (Leica), etc</p></li>
-</ul>
-</li>
-<li><p>Reading Tools:</p>
-<ul>
-<li><p>OpenSlide, Bio-Formats, pyvips, tifffile, QuPath, and others</p></li>
+<li><p>Higher levels: Downsampled versions, such as 1/2, 1/4, or 1/8 scale</p></li>
 </ul>
 </li>
 </ul>
-<p>Limitations:
-Larger file sizes due to storage of multiple resolutions
-Requires specialized software for reading/writing</p>
-<a class="reference internal image-reference" href="../_images/pyramidalimage.jpg"><img alt="alt text" src="../_images/pyramidalimage.jpg" style="width: 300px; height: 200px;" />
+<a class="reference internal image-reference" href="../_images/pyramidalimage.jpg"><img alt="alt text" src="../_images/pyramidalimage.jpg" style="width: 400px; height: 300px;" />
 </a>
+<ul class="simple">
+<li><p>Common use cases include:</p>
+<ul>
+<li><p>Digital pathology: .svs, .scn, .ndpi, .tiff</p></li>
+<li><p>Spatial biology: .tiff, .ome.tiff</p></li>
+<li><p>Geospatial imaging: GeoTIFF</p></li>
+</ul>
+</li>
+<li><p>Pyramidal file formats offer several advantages for large-image analysis:</p>
+<ul>
+<li><p>Faster loading and rendering</p></li>
+<li><p>Lower memory usage during visualization</p></li>
+<li><p>Efficient low-resolution previews</p></li>
+<li><p>Region-of-interest extraction without decoding the entire image</p></li>
+</ul>
+</li>
+<li><p>Limitations:</p>
+<ul>
+<li><p>Pyramidal files can be larger because they store multiple resolutions</p></li>
+<li><p>They often require specialized software for reading, writing, or processing</p></li>
+</ul>
+</li>
+<li><p>Common File Formats:</p>
+<ul>
+<li><p>TIFF-based formats such as .tiff and .ome.tiff</p></li>
+<li><p>Vendor-specific formats such as .svs (Aperio), .ndpi (Hamamatsu), or .scn (Leica)</p></li>
+</ul>
+</li>
+<li><p>These files can be read using tools such as:</p>
+<ul>
+<li><p>OpenSlide</p></li>
+<li><p>Bio-Formats</p></li>
+<li><p>pyvips</p></li>
+<li><p>tifffile</p></li>
+<li><p>QuPath</p></li>
+</ul>
+</li>
+</ul>
+<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
 </section>
 </section>
 <section id="exercise-steps">
-<h2>2. Exercise steps<a class="headerlink" href="#exercise-steps" title="Link to this heading">#</a></h2>
-<section id="launch-qupath">
-<h3>2.1 Launch QuPath<a class="headerlink" href="#launch-qupath" title="Link to this heading">#</a></h3>
-<p>The welcome screen links to QuPath documentation, <a class="reference external" href="http://forum.image.sc">forum.image.sc</a>, and the source code</p>
-<img alt="../_images/qupathwelcomescreen.jpg" src="../_images/qupathwelcomescreen.jpg" />
+<h2><strong>2. Exercise steps</strong><a class="headerlink" href="#exercise-steps" title="Link to this heading">#</a></h2>
+</section>
+<section id="part-i">
+<h2><a class="reference internal" href="#21-part-i"><span class="xref myst"><strong>2.1 PART I</strong></span></a><a class="headerlink" href="#part-i" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#211-install-and-launch-qupath"><span class="xref myst">2.1.1 Install and launch QuPath</span></a></p></li>
+<li><p><a class="reference internal" href="#212-create-a-qupath-project"><span class="xref myst">2.1.2 Create a QuPath project</span></a></p></li>
+<li><p><a class="reference internal" href="#213-add-or-remove-images-to-your-qupath-project"><span class="xref myst">2.1.3 Add or remove images to your QuPath project</span></a></p></li>
+<li><p><a class="reference internal" href="#214-view-and-export-images"><span class="xref myst">2.1.4 View and export images</span></a></p></li>
+<li><p><a class="reference internal" href="#215-set-up-image-properties"><span class="xref myst">2.1.5 Set up image properties</span></a></p></li>
+<li><p><a class="reference internal" href="#216-annotate-images"><span class="xref myst">2.1.6 Annotate images</span></a></p></li>
+<li><p><a class="reference internal" href="#217-view-and-export-annotation-measurements"><span class="xref myst">2.1.7 View and export annotation measurements</span></a></p></li>
+</ul>
+</section>
+<section id="part-ii">
+<h2><a class="reference internal" href="#22-part-ii-1"><span class="xref myst"><strong>2.2 PART II</strong></span></a><a class="headerlink" href="#part-ii" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#221-create-a-qupath-project"><span class="xref myst">2.2.1 Create a QuPath project</span></a></p></li>
+<li><p><a class="reference internal" href="#222-annotate-the-region-of-interest"><span class="xref myst">2.2.2 Annotate the region of interest</span></a></p></li>
+<li><p><a class="reference internal" href="#223-perform-positive-cell-detection"><span class="xref myst">2.2.3 Perform positive cell detection</span></a></p></li>
+<li><p><a class="reference internal" href="#224-annotate-areas-within-the-region-of-interest"><span class="xref myst">2.2.4 Annotate areas within the region of interest</span></a></p></li>
+<li><p><a class="reference internal" href="#225-create-and-run-object-classifier"><span class="xref myst">2.2.5 Create and run object classifier</span></a></p></li>
+<li><p><a class="reference internal" href="#226-view-and-export-detection-measurements"><span class="xref myst">2.2.6 View and export detection measurements</span></a></p></li>
+</ul>
+<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+</section>
+<section id="id1">
+<h2><strong>2.1 PART I</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="install-and-launch-qupath">
+<h3><strong>2.1.1 Install and launch QuPath</strong><a class="headerlink" href="#install-and-launch-qupath" title="Link to this heading">#</a></h3>
+<hr class="docutils" />
+<p>Please install the latest version from <a class="reference external" href="https://qupath.github.io/">here</a>
+Once installed, click on the QuPath icon, and wait for QuPath to launch.
+When the QuPath window opens, you will notice the welcome screen, which links to QuPath documentation, the <a class="reference internal" href="#forum.image.sc"><span class="xref myst">image analysis forum</span></a>, and also the <a class="reference external" href="https://github.com/qupath/qupath">source code</a></p>
+<a class="reference internal image-reference" href="../_images/qupathwelcomescreen.jpg"><img alt="../_images/qupathwelcomescreen.jpg" src="../_images/qupathwelcomescreen.jpg" style="width: 450px; height: 300px;" />
+</a>
 </section>
 <section id="create-a-qupath-project">
-<h3>2.2 Create a QuPath project<a class="headerlink" href="#create-a-qupath-project" title="Link to this heading">#</a></h3>
+<h3><strong>2.1.2 Create a QuPath project</strong><a class="headerlink" href="#create-a-qupath-project" title="Link to this heading">#</a></h3>
+<hr class="docutils" />
 <p>Although it is possible to view and work with single images in QuPath, creating a “Project” makes saving and reloading data associated with multiple images much more efficient. A QuPath project groups related images to easily switch between them via thumbnails and also organizes associated data files, scripts, and classifiers.</p>
-<section id="a-create-a-new-choose-a-project-folder">
-<h4>A. Create a new / choose a project folder<a class="headerlink" href="#a-create-a-new-choose-a-project-folder" title="Link to this heading">#</a></h4>
-<p>The project folder can be any folder, stored anywhere on your computer, but it <strong>must be empty</strong>.
-This can be done by doing either of the following:</p>
+<p>We start by creating a “project folder”, which can be any folder, stored anywhere on your computer, but it <strong>must be empty</strong>.</p>
+<p>This can be done by doing either of the following:</p>
 <ol class="arabic simple">
-<li><p>Through <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">--&gt;</span> <span class="pre">Project...</span> <span class="pre">--&gt;</span> <span class="pre">Create</span> <span class="pre">new</span> <span class="pre">project</span></code></p></li>
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">File</span></code>; then <code class="docutils literal notranslate"><span class="pre">Project</span></code> and <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">project</span></code></p></li>
 </ol>
-<img alt="../_images/createproject_1.jpg" src="../_images/createproject_1.jpg" />
-<p>This is how a QuPath project folder can look like:</p>
-<img alt="../_images/createproject_2.jpg" src="../_images/createproject_2.jpg" />
+<a class="reference internal image-reference" href="../_images/createproject_1.png"><img alt="../_images/createproject_1.png" src="../_images/createproject_1.png" style="width: 300px; height: 360px;" />
+</a>
 <ol class="arabic simple" start="2">
-<li><p>Dragging and dropping the folder into QuPath</p></li>
+<li><p>Clicking on the <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">project</span></code> button in the analysis pane</p></li>
+<li><p>Dragging and dropping the project folder into QuPath</p></li>
+</ol>
+<p>You can name the project anything you like – for this tutorial, I have named it <code class="docutils literal notranslate"><span class="pre">qupath_project</span></code>. Once the project is created, the project name will appear in the analysis pane.</p>
+<a class="reference internal image-reference" href="../_images/createproject_3.png"><img alt="../_images/createproject_3.png" src="../_images/createproject_3.png" style="width: 270px; height: 100px;" />
+</a>
+</section>
+<section id="add-or-remove-images-to-your-qupath-project">
+<h3><strong>2.1.3 Add or remove images to your QuPath project</strong><a class="headerlink" href="#add-or-remove-images-to-your-qupath-project" title="Link to this heading">#</a></h3>
+<hr class="docutils" />
+<section id="add-images">
+<h4><strong>2.1.3.1 Add images</strong><a class="headerlink" href="#add-images" title="Link to this heading">#</a></h4>
+<p>You can add images via <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">--&gt;</span> <span class="pre">Project</span> <span class="pre">--&gt;</span> <span class="pre">Add</span> <span class="pre">images</span></code>. If you have not created a project and just want to open an image, you can also click on <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">--&gt;</span> <span class="pre">Open</span></code>.
+Alternatively, you can drag and drop your images into QuPath – this might be the more efficient option if you are working with a multiple images.</p>
+<a class="reference internal image-reference" href="../_images/addimage_1.png"><img alt="../_images/addimage_1.png" src="../_images/addimage_1.png" style="width: 300px; height: 400px;" />
+</a>
+<p>Let us start by importing the image <code class="docutils literal notranslate"><span class="pre">CMU-1.ndpi</span></code>. This is a hematoxylin-eosin stained section of skin scanned by Hamamatsu scanner.</p>
+<p>When you import the image, a dialog box will open where you can set parameters related to the image being imported, as shown below.</p>
+<a class="reference internal image-reference" href="../_images/importimage.png"><img alt="../_images/importimage.png" src="../_images/importimage.png" style="width: 350px; height: 500px;" />
+</a>
+<p>The image <code class="docutils literal notranslate"><span class="pre">CMU-1.ndpi</span></code> is a brightfield, H&amp;E image, so we set the image type accordingly, and leave all other parameters unchanged, because we do not want to rotate the image right now, and there are no objects to import along with the image.</p>
+<p>Once the image(s) have been added to your project, you will see some folders created in your project folder.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>qupath_project
+├── classifiers
+│   └── classes.json
+├── data
+│   ├── 1
+│   │   ├── data.qpdata
+│   │   ├── server.json
+│   │   ├── summary.json
+│   │   └── thumbnail.jpg
+│   └── metadata.json
+├── project.qpproj
+└── project.qpproj.backup
+
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/createproject_4.jpg"><img alt="../_images/createproject_4.jpg" src="../_images/createproject_4.jpg" style="width: 250px; height: 200px;" />
+</a>
+</section>
+<section id="remove-images">
+<h4><strong>2.1.3.2 Remove images</strong><a class="headerlink" href="#remove-images" title="Link to this heading">#</a></h4>
+<p>To remove an image, right-click on the image thumbnail in the analysis pane, and select <code class="docutils literal notranslate"><span class="pre">Remove</span> <span class="pre">image</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/removeimage_1.png"><img alt="../_images/removeimage_1.png" src="../_images/removeimage_1.png" style="width: 350px; height: 400px;" />
+</a>
+<p>⚠️ <strong>Tip:</strong> If your project has only once image, or if you have added only one image to your project and want to remove it, make sure to close the viewer by right-clicking anywhere in the viewer, and clicking on <code class="docutils literal notranslate"><span class="pre">Multi-view..</span> <span class="pre">--&gt;</span> <span class="pre">Close</span> <span class="pre">viewer</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/removeimage_2.png"><img alt="../_images/removeimage_2.png" src="../_images/removeimage_2.png" style="width: 540px; height: 400px;" />
+</a>
+<p>⚠️ <strong>Tip:</strong> QuPath projects usually do not contain the images, but saves the path where your images are located. If you change the location of the images since creating the project, QuPath may have trouble finding the images when you re-open your project. QuPath does try to help by providing a dialogue box highlighting the paths that are missing and providing some suggestions of file paths where it thinks the images might be located. This dialogue box will also have a <code class="docutils literal notranslate"><span class="pre">Search…</span></code> button, with which you can set the new directory where the images are now located.
+Clicking on <code class="docutils literal notranslate"><span class="pre">Apply</span> <span class="pre">changes</span></code> will update the project with the new file paths!</p>
+</section>
+</section>
+<section id="view-and-export-images">
+<h3><strong>2.1.4 View and export images</strong><a class="headerlink" href="#view-and-export-images" title="Link to this heading">#</a></h3>
+<hr class="docutils" />
+<section id="customize-the-viewer">
+<h4><strong>2.1.4.1 Customize the viewer</strong><a class="headerlink" href="#customize-the-viewer" title="Link to this heading">#</a></h4>
+<p>Once you have imported the image(s) to your project, you will see the name(s) of these image(s) in the analysis pane (red box), and the image in the image viewer.</p>
+<a class="reference internal image-reference" href="../_images/imageviewer_1.png"><img alt="../_images/imageviewer_1.png" src="../_images/imageviewer_1.png" style="width: 700px; height: 400px;" />
+</a>
+<p>In the viewer pane, you will notice the following:</p>
+<ol class="arabic simple">
+<li><p>Slide overview (green arrow)</p></li>
+<li><p>X and Y co-ordinates and pixel values for the channels in the image (red arrow)</p></li>
+<li><p>Scale bar (green box)</p></li>
+</ol>
+<p>This is a good time to familiarize yourself with the options available under the <code class="docutils literal notranslate"><span class="pre">View</span></code> button. You will notice that there are options to toggle on or off the slide overview, analysis pane, scale bar and so on.</p>
+<a class="reference internal image-reference" href="../_images/imageviewer_2.png"><img alt="../_images/imageviewer_2.png" src="../_images/imageviewer_2.png" style="width: 200px; height: 700px;" />
+</a>
+</section>
+<section id="zooming-and-panning">
+<h4><strong>2.1.4.2 Zooming and panning</strong><a class="headerlink" href="#zooming-and-panning" title="Link to this heading">#</a></h4>
+<p>The <strong>scroll wheel</strong> of your mouse (or equivalent scrolling motion on a trackpad) can be used to <strong>zoom in and out</strong> of an image within QuPath.</p>
+<p>Alternatively, you can click on <code class="docutils literal notranslate"><span class="pre">View</span></code> and <code class="docutils literal notranslate"><span class="pre">Zoom</span></code> to zoom in or out, or to zoom to specific magnifications (e.g. 400%)</p>
+<a class="reference internal image-reference" href="../_images/zoomimage.png"><img alt="../_images/zoomimage.png" src="../_images/zoomimage.png" style="width: 350px; height: 400px;" />
+</a>
+<p>⚠️ <strong>Tip:</strong> You can also navigate to a specific part of the WSI by clicking on that area in the slide overview window.</p>
+<p>You can pan the image with the move tool (red box) and clicking on the magnifying glass icon (green box) will fit the image to the viewer.</p>
+<a class="reference internal image-reference" href="../_images/panimage.png"><img alt="../_images/panimage.png" src="../_images/panimage.png" style="width: 900px; height: 50px;" />
+</a>
+</section>
+<section id="export-images">
+<h4><strong>2.1.4.3 Export images</strong><a class="headerlink" href="#export-images" title="Link to this heading">#</a></h4>
+<p>QuPath can also be handy for preparing figures for your publications or presentations.
+The <code class="docutils literal notranslate"><span class="pre">Export</span> <span class="pre">images</span></code> button under <code class="docutils literal notranslate"><span class="pre">File</span></code> provides several options for exporting an image.</p>
+<a class="reference internal image-reference" href="../_images/exportimage_1.png"><img alt="../_images/exportimage_1.png" src="../_images/exportimage_1.png" style="width: 400px; height: 450px;" />
+</a>
+<p>If you select <code class="docutils literal notranslate"><span class="pre">Original</span> <span class="pre">pixels</span></code>, you will be provided a list of available file formats for saving the image.</p>
+<a class="reference internal image-reference" href="../_images/exportimage_2.png"><img alt="../_images/exportimage_2.png" src="../_images/exportimage_2.png" style="width: 500px; height: 200px;" />
+</a>
+<a class="reference internal image-reference" href="../_images/exportimage_3.png"><img alt="../_images/exportimage_3.png" src="../_images/exportimage_3.png" style="width: 500px; height: 200px;" />
+</a>
+<p>Selecting <code class="docutils literal notranslate"><span class="pre">Rendered</span> <span class="pre">RGB</span> <span class="pre">(with</span> <span class="pre">overlays)</span></code> exports the image as it appears in the QuPath viewer, including overlays. Please remember that because the image is converted to RGB, the exported pixel values may not match the original data. This option is therefore suitable for preparing figures, but not for downstream quantitative analysis.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Export</span> <span class="pre">snapshot</span></code> button includes two additional options that allow more of the QuPath interface to be exported, such as toolbars and panels.</p>
+<a class="reference internal image-reference" href="../_images/exportimage_4.png"><img alt="../_images/exportimage_4.png" src="../_images/exportimage_4.png" style="width: 400px; height: 450px;" />
+</a>
+<p>⚠️ <strong>Tip:</strong> You can change the appearance of the scalebar by clicking <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">--&gt;</span> <span class="pre">Preferences</span></code> and changing the parameters for Scalebar under the Viewer tab. The screenshot below shows the default parameters and appearance of the scalebar when default parameters are used.</p>
+<a class="reference internal image-reference" href="../_images/imageviewer_4.png"><img alt="../_images/imageviewer_4.png" src="../_images/imageviewer_4.png" style="width: 600px; height: 500px;" />
+</a>
+<a class="reference internal image-reference" href="../_images/imageviewer_3.png"><img alt="../_images/imageviewer_3.png" src="../_images/imageviewer_3.png" style="width: 200px; height: 200px;" />
+</a>
+<p>You can always change the Scalebar font size, font weight and thickness according to your preference, as shown below, and the changes will be reflected in the scalebar in the viewer.</p>
+<a class="reference internal image-reference" href="../_images/imageviewer_5.png"><img alt="../_images/imageviewer_5.png" src="../_images/imageviewer_5.png" style="width: 600px; height: 450px;" />
+</a>
+<a class="reference internal image-reference" href="../_images/imageviewer_6.png"><img alt="../_images/imageviewer_6.png" src="../_images/imageviewer_6.png" style="width: 200px; height: 200px;" />
+</a>
+</section>
+</section>
+<section id="set-up-image-properties">
+<h3><strong>2.1.5 Set up image properties</strong><a class="headerlink" href="#set-up-image-properties" title="Link to this heading">#</a></h3>
+<hr class="docutils" />
+<section id="set-image-type">
+<h4><strong>2.1.5.1 Set image type</strong><a class="headerlink" href="#set-image-type" title="Link to this heading">#</a></h4>
+<p>You will be prompted to set the image type, e.g. Brightfield (H-DAB), Brightfield (H&amp;E), Fluorescence etc. when you add an image to a project.</p>
+<p>You can always change this by clicking on <code class="docutils literal notranslate"><span class="pre">Image</span></code> in the analysis pane, and then <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">type</span></code>. The options for setting the image type will appear in a separate window.</p>
+<a class="reference internal image-reference" href="../_images/setimageproperties_1.png"><img alt="../_images/setimageproperties_1.png" src="../_images/setimageproperties_1.png" style="width: 650px; height: 500px;" />
+</a>
+<p>It is also important to correctly set the pixel size. QuPath does this automatically when the image is loaded, but you can also set this manually by clicking on <code class="docutils literal notranslate"><span class="pre">Pixel</span> <span class="pre">width</span></code> or <code class="docutils literal notranslate"><span class="pre">Pixel</span> <span class="pre">height</span></code> entering the desired values.</p>
+<a class="reference internal image-reference" href="../_images/setimageproperties_2.png"><img alt="../_images/setimageproperties_2.png" src="../_images/setimageproperties_2.png" style="width: 600px; height: 300px;" />
+</a>
+</section>
+<section id="separate-stains">
+<h4><strong>2.1.5.2 Separate stains</strong><a class="headerlink" href="#separate-stains" title="Link to this heading">#</a></h4>
+<p>The first step to separating the stains in the image is to set the image type accurately, as described in the section above. For brightfield images, QuPath separates the stains by using <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/11531144/">color deconvolution method introduced by Ruifrok and Johnston</a>. Please make sure to check out the <a class="reference external" href="https://qupath.readthedocs.io/en/stable/docs/tutorials/separating_stains.html">QuPath docs</a> to learn more about color deconvolution in QuPath.</p>
+<p>We will next follow the steps described below to set up the stain vectors. This is an important step because if the stain vectors are inaccurate, steps that rely on color deconvolution, such as cell detection, may perform poorly because the signals from different stains may not be properly separated.</p>
+<ol class="arabic simple">
+<li><p>Since you set the image type as Brightfield (H&amp;E), you would be able to see the names of the stains, Hematoxylin and Eosin, under the <code class="docutils literal notranslate"><span class="pre">Image</span></code> tab.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/setimageproperties_3.png"><img alt="../_images/setimageproperties_3.png" src="../_images/setimageproperties_3.png" style="width: 350px; height: 100px;" />
+</a>
+<ol class="arabic simple" start="2">
+<li><p>You can also visualize the different stains in your image individually by clicking <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">--&gt;</span> <span class="pre">Brightness</span> <span class="pre">and</span> <span class="pre">Contrast</span></code>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/setimageproperties_4.png"><img alt="../_images/setimageproperties_4.png" src="../_images/setimageproperties_4.png" style="width: 550px; height: 700px;" />
+</a>
+<p>The <code class="docutils literal notranslate"><span class="pre">Brightness</span> <span class="pre">and</span> <span class="pre">Contrast</span></code> button provides many helpful options,e.g.,</p>
+<p><em>Viewing one stain at a time</em></p>
+<a class="reference internal image-reference" href="../_images/setimageproperties_5.png"><img alt="../_images/setimageproperties_5.png" src="../_images/setimageproperties_5.png" style="width: 700px; height: 700px;" />
+</a>
+<a class="reference internal image-reference" href="../_images/setimageproperties_6.png"><img alt="../_images/setimageproperties_6.png" src="../_images/setimageproperties_6.png" style="width: 700px; height: 700px;" />
+</a>
+<p><em>Viewing the image in grayscale</em></p>
+<a class="reference internal image-reference" href="../_images/setimageproperties_7.png"><img alt="../_images/setimageproperties_7.png" src="../_images/setimageproperties_7.png" style="width: 700px; height: 700px;" />
+</a>
+<p><em>Inverting the colors of the image</em></p>
+<a class="reference internal image-reference" href="../_images/setimageproperties_8.png"><img alt="../_images/setimageproperties_8.png" src="../_images/setimageproperties_8.png" style="width: 700px; height: 700px;" />
+</a>
+<ol class="arabic simple" start="3">
+<li><p>Next, we annotate an area of the image that has clear examples of the stains that we want to separate, along with an area of the background. For this, we use the rectangle annotation tool (red box).</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/setimageproperties_9.png"><img alt="../_images/setimageproperties_9.png" src="../_images/setimageproperties_9.png" style="width: 700px; height: 700px;" />
+</a>
+<p>We then click on <code class="docutils literal notranslate"><span class="pre">Analyze</span> <span class="pre">--&gt;</span> <span class="pre">Estimate</span> <span class="pre">stain</span> <span class="pre">vectors</span></code> and then <code class="docutils literal notranslate"><span class="pre">Yes</span></code></p>
+<a class="reference internal image-reference" href="../_images/setimageproperties_10.png"><img alt="../_images/setimageproperties_10.png" src="../_images/setimageproperties_10.png" style="width: 700px; height: 700px;" />
+</a>
+<p>QuPath will then show the 3D relationship between the red, green, and blue pixels in the image as 2D scatterplots, and also indicates the existing stain vectors with colored lines.</p>
+<a class="reference internal image-reference" href="../_images/setimageproperties_11.png"><img alt="../_images/setimageproperties_11.png" src="../_images/setimageproperties_11.png" style="width: 600px; height: 600px;" />
+</a>
+<p>These scatterplots help assess whether the stain vectors match the pixel colors in the selected region. Ideally, the vectors should closely align with most of the scattered points.</p>
+<p>If the vectors are not well aligned, the <code class="docutils literal notranslate"><span class="pre">Auto</span></code> option can estimate improved stain vectors from the selected region. However, unexpected colors, such as greenish pixels, can distort the estimate. In such cases, adjusting parameters like <code class="docutils literal notranslate"><span class="pre">Exclude</span> <span class="pre">unrecognised</span> <span class="pre">colors</span> <span class="pre">(H&amp;E</span> <span class="pre">only)</span></code> can help remove irrelevant colors and produce more reliable stain separation.</p>
+</section>
+</section>
+<section id="annotate-images">
+<h3><strong>2.1.6 Annotate images</strong><a class="headerlink" href="#annotate-images" title="Link to this heading">#</a></h3>
+<hr class="docutils" />
+<p>Annotations in QuPath can have many applications. Common use cases include measuring lengths or areas, defining specific regions where analysis should be applied, such as cell detection, as well as selecting representative areas for training a classifier. For this tutorial, we will learn to annotate some regions interest (ROI) in an image and perform and export measurements from these ROIs.</p>
+<section id="draw-annotations">
+<h4><strong>2.1.6.1 Draw annotations</strong><a class="headerlink" href="#draw-annotations" title="Link to this heading">#</a></h4>
+<p><strong>Annotation objects</strong> can be created by drawing specific shapes on the image, using the (1) rectangle, (2) ellipse, (3) line, (4) polygon, or (5) polyline tools. The (6) brush tool and the (7) wand tool are particularly handy for drawing custom shapes. All of these tools can be applied by selecting the tool, clicking on the image, and dragging the mouse. For the polygon tool, the shape can be completed by releasing the mouse or by double-clicking where the final point should be.</p>
+<a class="reference internal image-reference" href="../_images/annotation_1.png"><img alt="../_images/annotation_1.png" src="../_images/annotation_1.png" style="width: 400px; height: 50px;" />
+</a>
+<p>⚠️ <strong>Tip:</strong> The wand tool is very helpful for making precise annotations around tissue boundaries.</p>
+<p>The (9) selection tool converts the annotation tools into tools for selection. This is helpful for selecting multiple annotated regions with a single click and drag. Clicking on the selection tool changes the annotation tool icons into their dashed versions.</p>
+<a class="reference internal image-reference" href="../_images/annotation_2.png"><img alt="../_images/annotation_2.png" src="../_images/annotation_2.png" style="width: 400px; height: 35px;" />
+</a>
+<p>Annotations can be deleted by selecting the annotation and pressing <code class="docutils literal notranslate"><span class="pre">Delete</span></code> on the keyboard, or right-clicking on the annotation and selecting <code class="docutils literal notranslate"><span class="pre">Delete</span> <span class="pre">object</span></code>.
+If you make a mistake while annotating with the brush or wand tool, simple press <code class="docutils literal notranslate"><span class="pre">Option</span></code> and click and drag your mouse to erase the incorrectly annotated area.
+Right-clicking on an annotation “locks” it, and prevents it from getting accidentally deleted.</p>
+<p>Make sure to explore some of these annotation tools and draw different shapes and sizes on the image!</p>
+</section>
+<section id="set-annotation-properties">
+<h4><strong>2.1.6.2 Set annotation properties</strong><a class="headerlink" href="#set-annotation-properties" title="Link to this heading">#</a></h4>
+<p>QuPath allows you to make annotations of different classes - these classes depend on the image you are working with and your biological question. For example, if you are working with images of kidney tissue, these classes can be different structures you have annotated in the image and want to analyze further, e.g. glomerulus, tubules etc. Or, if you are working with images of diseased tissue, these can be tumor area / abnormal area or normal / healthy area and so on.</p>
+<p>We will now create some annotations of a particular class and set the properties of these annotations.</p>
+<ol class="arabic simple">
+<li><p>Create an annotation class by clicking on the three dots next to <code class="docutils literal notranslate"><span class="pre">Auto</span> <span class="pre">set</span></code> under the <code class="docutils literal notranslate"><span class="pre">Annotations</span></code> tab in the Analysis pane. Then click <code class="docutils literal notranslate"><span class="pre">Add/Remove</span> <span class="pre">--&gt;</span> <span class="pre">Add</span> <span class="pre">class</span></code>. A window will open where you can enter the name of the annotation class; we will enter Squamous_Epithelium.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/annotation_3.png"><img alt="../_images/annotation_3.png" src="../_images/annotation_3.png" style="width: 500px; height: 250px;" />
+</a>
+<a class="reference internal image-reference" href="../_images/annotation_4.png"><img alt="../_images/annotation_4.png" src="../_images/annotation_4.png" style="width: 300px; height: 150px;" />
+</a>
+<ol class="arabic simple" start="2">
+<li><p>This new class of annotation will appear in the analysis pane. If you like, you can double-click on the annotation and select a different color for your annotation by clicking on the drop-down – I have changed the annotation color to Lime.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/annotation_5.png"><img alt="../_images/annotation_5.png" src="../_images/annotation_5.png" style="width: 550px; height: 300px;" />
+</a>
+<a class="reference internal image-reference" href="../_images/annotation_6.png"><img alt="../_images/annotation_6.png" src="../_images/annotation_6.png" style="width: 250px; height: 150px;" />
+</a>
+<ol class="arabic simple" start="3">
+<li><p>We will now draw some annotations on the squamous epithelial lining of the tissue. You can use any tool to do this; I have used the brush tool. You will see the list of annotations appear in the analysis pane. We will now assign a class to these annotations.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/annotation_7.png"><img alt="../_images/annotation_7.png" src="../_images/annotation_7.png" style="width: 1000px; height: 600px;" />
+</a>
+<ol class="arabic simple" start="4">
+<li><p>Double-click on any annotation – you will see the outline color change to yellow, which means you have now selected the annotation.
+If you now right-click on the annotation, you will have the option to assign it a class. Click on <code class="docutils literal notranslate"><span class="pre">Set</span> <span class="pre">classification</span> <span class="pre">--&gt;</span> <span class="pre">Squamous_Epithelium</span></code>. You can do this one-by-one for each annotation. You will see now the thumbnails of the annotations will have a class next to them, and the class Sqaumous_Epithelium has a number next to it indicating the number of annotations that exist in this class.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/annotation_9.png"><img alt="../_images/annotation_9.png" src="../_images/annotation_9.png" style="width: 500px; height: 300px;" />
+</a>
+<a class="reference internal image-reference" href="../_images/annotation_10.png"><img alt="../_images/annotation_10.png" src="../_images/annotation_10.png" style="width: 1000px; height: 500px;" />
+</a>
+<p>⚠️ <strong>Tip:</strong> To assign a class to multiple annotations in one step, select all the annotation thumbnails in the analysis pane. This will select all the annotations in the viewer. You can then right-click on any annotation and set the classification as described above.</p>
+<ol class="arabic" start="5">
+<li><p>Now we will set the properties for each annotation, i.e., assign a unique label to each annotated area of the class Squamous_Epithelium.</p>
+<p>To assign labels, we double-click on each annotation, select <code class="docutils literal notranslate"><span class="pre">Annotations</span> <span class="pre">--&gt;</span> <span class="pre">Set</span> <span class="pre">properties</span></code> and enter a name, You can also add a description if you like. I have named the annotations S_E_1 (abbreviation for Squamous_Epithelium) through S_E_5. You will notice that the annotation labels now appear next to the annotation thumbnails in the analysis pane, and you can also visualize these labels in the viewer.</p>
+</li>
+</ol>
+<a class="reference internal image-reference" href="../_images/annotation_13.png"><img alt="../_images/annotation_13.png" src="../_images/annotation_13.png" style="width: 400px; height: 300px;" />
+</a>
+<a class="reference internal image-reference" href="../_images/annotation_11.png"><img alt="../_images/annotation_11.png" src="../_images/annotation_11.png" style="width: 400px; height: 300px;" />
+</a>
+<a class="reference internal image-reference" href="../_images/annotation_14.png"><img alt="../_images/annotation_14.png" src="../_images/annotation_14.png" style="width: 1000px; height: 400px;" />
+</a>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Why do we do this step?
+
+If we do not assign unique labels to each annotation, when we perform measurements and export the data, we will not be able to tell exactly which annotation the measurements belong to. This is because, the exported measurement table will look like the figure below, where each row has the measurements for each annotation, but without labels, so we cannot look back at the image and map the measurements back to the annotations.
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/annotation_15.png"><img alt="../_images/annotation_15.png" src="../_images/annotation_15.png" style="width: 1000px; height: 400px;" />
+</a>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>However, if we assign unique labels to the annotations, the exported table will include these annotation labels, as you can see in the figure below, and these labels can also be visualized in the viewer. This allows us to precisely map the measurements back to the annotations in the image.
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/annotation_16.png"><img alt="../_images/annotation_16.png" src="../_images/annotation_16.png" style="width: 1000px; height: 400px;" />
+</a>
+<p>Now try making annotations of a different class with different names as shown in the figure below!</p>
+<p>⚠️ <strong>Hint:</strong> You will pretty much use the same steps as described above!</p>
+<a class="reference internal image-reference" href="../_images/annotation_17.png"><img alt="../_images/annotation_17.png" src="../_images/annotation_17.png" style="width: 950px; height: 400px;" />
+</a>
+</section>
+</section>
+<section id="view-and-export-annotation-measurements">
+<h3><strong>2.1.7 View and export annotation measurements</strong><a class="headerlink" href="#view-and-export-annotation-measurements" title="Link to this heading">#</a></h3>
+<p>For every annotation created on the image, QuPath performs some measurements such as area, perimeter, X and Y co-ordinates.
+There are several ways of viewing these measurements.</p>
+<ul class="simple">
+<li><p>If you click on the thumbnail of any annotation under the Annotations tab, you will see the measurements that QuPath has made for that annotation will populate the table below.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/annotation_18.png"><img alt="../_images/annotation_18.png" src="../_images/annotation_18.png" style="width: 400px; height: 600px;" />
+</a>
+<ul class="simple">
+<li><p>You can also view the per-annotation measurement table by clicking on <code class="docutils literal notranslate"><span class="pre">Measure</span> <span class="pre">--&gt;</span> <span class="pre">Show</span> <span class="pre">annotation</span> <span class="pre">measurements</span></code></p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/measurement_1.png"><img alt="../_images/measurement_1.png" src="../_images/measurement_1.png" style="width: 200px; height: 200px;" />
+</a>
+<a class="reference internal image-reference" href="../_images/measurement_2.png"><img alt="../_images/measurement_2.png" src="../_images/measurement_2.png" style="width: 900px; height: 400px;" />
+</a>
+<p>To export the measurements, you can click on <code class="docutils literal notranslate"><span class="pre">Save</span></code> in the measurement table. This will allow you to export this table as a <code class="docutils literal notranslate"><span class="pre">.txt</span></code> file.</p>
+<p>Alternatively, you can click on <code class="docutils literal notranslate"><span class="pre">Measure</span> <span class="pre">--&gt;</span> <span class="pre">Export</span> <span class="pre">measurements</span></code>. But before you do this, make sure you have saved the changes by clicking <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">--&gt;</span> <span class="pre">Save</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/measurement_3.png"><img alt="../_images/measurement_3.png" src="../_images/measurement_3.png" style="width: 200px; height: 200px;" />
+</a>
+<p>This will open a window where you will need to set the following:</p>
+<ul class="simple">
+<li><p>Choose the image for which you want to export the measurement. In this tutorial, we have only one image, and select this by clicking on the arrow (red box)</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/measurement_4.png"><img alt="../_images/measurement_4.png" src="../_images/measurement_4.png" style="width: 500px; height: 400px;" />
+</a>
+<p>You will see the selected image move to the box on the left.</p>
+<a class="reference internal image-reference" href="../_images/measurement_5.png"><img alt="../_images/measurement_5.png" src="../_images/measurement_5.png" style="width: 500px; height: 400px;" />
+</a>
+<ul class="simple">
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">Choose</span></code> to set up the name of the file and the location where the file should be saved.</p></li>
+<li><p>Select the type of measurements you want to export, i.e., image, annotations, detections etc. We want to export the annotation measurements.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/measurement_6.png"><img alt="../_images/measurement_6.png" src="../_images/measurement_6.png" style="width: 500px; height: 400px;" />
+</a>
+<ul class="simple">
+<li><p>Select whether you want the measurements exported to a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> or <code class="docutils literal notranslate"><span class="pre">.tsv</span></code> file. Let us export the measurement to a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/measurement_7.png"><img alt="../_images/measurement_7.png" src="../_images/measurement_7.png" style="width: 500px; height: 400px;" />
+</a>
+<ul class="simple">
+<li><p>Then, click <code class="docutils literal notranslate"><span class="pre">Export</span></code>. QuPath will export the data into a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> having the name that you set and the location that you selected. For this tutorial with the annotations I made, the file looks like this opened in Excel.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/measurement_8.png"><img alt="../_images/measurement_8.png" src="../_images/measurement_8.png" style="width: 1500px; height: 200px;" />
+</a>
+</section>
+</section>
+<section id="if-you-want-to-get-a-bit-more-practice-with-steps-2-4-to-2-7-feel-free-to-download-a-couple-more-h-e-images-from-here-and-add-to-your-current-project">
+<h2>If you want to get a bit more practice with steps 2.4 to 2.7, feel free to download a couple more H&amp;E images from <a class="reference external" href="https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/">here</a> and add to your current project!<a class="headerlink" href="#if-you-want-to-get-a-bit-more-practice-with-steps-2-4-to-2-7-feel-free-to-download-a-couple-more-h-e-images-from-here-and-add-to-your-current-project" title="Link to this heading">#</a></h2>
+</section>
+<section id="id2">
+<h2><strong>2.2 PART II</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>For this part of the tutorial, we will learn how to detect positive cells, meaning cells that show staining, by analyzing a tissue section immunohistochemically stained with a nuclear marker. Before detecting positive cells, we will also annotate specific regions of interest within the tissue section, allowing us to link individual cell measurements back to the tissue regions where those cells are located.
+We will be working with the <code class="docutils literal notranslate"><span class="pre">OS-2.ndpi</span></code> image.</p>
+<section id="id3">
+<h3>2.2.1 Create a QuPath project<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<hr class="docutils" />
+<p>We will create a new QuPath project and add the <code class="docutils literal notranslate"><span class="pre">OS-2.ndpi</span></code> image to the project, following steps detailed in 2.1.2 and 2.1.3. I have named the project <code class="docutils literal notranslate"><span class="pre">qupath_project_IHC</span></code>; you can name the project according to your preference. We will set the image type as <code class="docutils literal notranslate"><span class="pre">Brightfield</span> <span class="pre">(H-DAB)</span></code>.</p>
+</section>
+<section id="annotate-the-region-of-interest">
+<h3>2.2.2 Annotate the region of interest<a class="headerlink" href="#annotate-the-region-of-interest" title="Link to this heading">#</a></h3>
+<hr class="docutils" />
+<p>Let us first create a new class of annotations called <code class="docutils literal notranslate"><span class="pre">ROI</span></code> (region of interest), following steps detailed in 2.1.6.
+Next, using the wand tool (or any annotation tool of your preference), let us annotate a specific part of the tissue. This is the part of the tissue where we want to detect the cells.</p>
+<a class="reference internal image-reference" href="../_images/annotation_ROI_1.png"><img alt="../_images/annotation_ROI_1.png" src="../_images/annotation_ROI_1.png" style="width: 550px; height: 300px;" />
+</a>
+</section>
+<section id="perform-positive-cell-detection">
+<h3>2.2.3 Perform positive cell detection<a class="headerlink" href="#perform-positive-cell-detection" title="Link to this heading">#</a></h3>
+<hr class="docutils" />
+<p>We will now detect the cells in <code class="docutils literal notranslate"><span class="pre">ROI</span></code> to perform measurements on these cells, and also to classify these cells as positive or negative for the nuclear marker.</p>
+<ol class="arabic simple">
+<li><p>Select the annotation <code class="docutils literal notranslate"><span class="pre">ROI</span></code>; the color of the outline will change to yellow.</p></li>
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">Analyze</span> <span class="pre">--&gt;</span> <span class="pre">Cell</span> <span class="pre">detection</span> <span class="pre">--&gt;</span> <span class="pre">Positive</span> <span class="pre">cell</span> <span class="pre">detection</span></code></p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/cell_detection_1.png"><img alt="../_images/cell_detection_1.png" src="../_images/cell_detection_1.png" style="width: 350px; height: 200px;" />
+</a>
+<ol class="arabic simple" start="3">
+<li><p>This will open a window where you can set up cell detection parameters, e.g. setting the minimum and maximum area of the cells, intensity threshold, and so on. Also, note that QuPath detects cell outlines by expanding the nucleus outlines by a fixed distance; this can also be set at this step. Since we are categorizing cells as positive or negative based on a nuclear marker, we use <code class="docutils literal notranslate"><span class="pre">Nucleus:</span> <span class="pre">OD</span> <span class="pre">DAB</span> <span class="pre">mean</span></code> as the score compartment to set the intensity threshold.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/cell_detection_2.png"><img alt="../_images/cell_detection_2.png" src="../_images/cell_detection_2.png" style="width: 350px; height: 700px;" />
+</a>
+<p>For the purpose of the tutorial, we will use the default parameters and hit <code class="docutils literal notranslate"><span class="pre">Run</span></code>, and QuPath will start detecting the cells.</p>
+<a class="reference internal image-reference" href="../_images/cell_detection_3.png"><img alt="../_images/cell_detection_3.png" src="../_images/cell_detection_3.png" style="width: 350px; height: 200px;" />
+</a>
+<p>When QuPath finishes, the cell (detections) outlines will appear on the image within the annotated area (<code class="docutils literal notranslate"><span class="pre">ROI</span></code>) where the detection was run, and the number of detections will be updated in the analysis pane next to the annotation thumbnail. The positive cells are outlined in red and negative cells in blue.
+The analysis pane now also shows the number of positive and negative cells detected.</p>
+<a class="reference internal image-reference" href="../_images/cell_detection_4.png"><img alt="../_images/cell_detection_4.png" src="../_images/cell_detection_4.png" style="width: 800px; height: 550px;" />
+</a>
+<p>If you zoom into the image and click on any detected cell, you will see the analysis pane will be populated with the measurements that were performed on that cell.</p>
+<a class="reference internal image-reference" href="../_images/cell_detection_5.png"><img alt="../_images/cell_detection_5.png" src="../_images/cell_detection_5.png" style="width: 800px; height: 500px;" />
+</a>
+<p>⚠️ <strong>Hint:</strong> You can turn annotations and detections on and off in the viewer by clicking A and D on the keyboard respectively!</p>
+</section>
+<section id="annotate-areas-within-the-region-of-interest">
+<h3>2.2.4 Annotate areas within the region of interest<a class="headerlink" href="#annotate-areas-within-the-region-of-interest" title="Link to this heading">#</a></h3>
+<hr class="docutils" />
+<p>If you click on any of the detected cells, you will see in the analysis pane that the <code class="docutils literal notranslate"><span class="pre">Parent</span></code> of this cell (detection) object is <code class="docutils literal notranslate"><span class="pre">Annotation</span> <span class="pre">(ROI)</span></code>
+Let’s say, we are interested in comparing features of cells that are located in two specific areas within this <code class="docutils literal notranslate"><span class="pre">ROI</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">region_1</span></code> and <code class="docutils literal notranslate"><span class="pre">region_2</span></code>. In that case, we would want the detected cells to also have these additional annotation labels, i.e <code class="docutils literal notranslate"><span class="pre">region_1</span></code> and <code class="docutils literal notranslate"><span class="pre">region_2</span></code>.</p>
+<p>To achieve that, we will perform the following steps:</p>
+<ol class="arabic simple">
+<li><p>Temporarily, turn off the cell outlines by clicking D or unchecking <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">detections</span></code> under <code class="docutils literal notranslate"><span class="pre">View</span></code></p></li>
+<li><p>Lock the annotation <code class="docutils literal notranslate"><span class="pre">ROI</span></code>. Right-click on the annotated area, select <code class="docutils literal notranslate"><span class="pre">Annotations</span> <span class="pre">--&gt;</span> <span class="pre">Lock</span></code></p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/annotation_ROI_2.png"><img alt="../_images/annotation_ROI_2.png" src="../_images/annotation_ROI_2.png" style="width: 550px; height: 450px;" />
+</a>
+<ol class="arabic simple" start="3">
+<li><p>We now annotate the addtional areas of interest within <code class="docutils literal notranslate"><span class="pre">ROI</span></code>. I used the rectangle annotation tool, but any tool can be used.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/annotation_ROI_3.png"><img alt="../_images/annotation_ROI_3.png" src="../_images/annotation_ROI_3.png" style="width: 550px; height: 450px;" />
+</a>
+<ol class="arabic simple" start="4">
+<li><p>To create annotations of the exact same size, I selected the first annotation, and clicked on <code class="docutils literal notranslate"><span class="pre">Objects</span> <span class="pre">--&gt;</span> <span class="pre">Annotations</span> <span class="pre">--&gt;</span> <span class="pre">Duplicate</span> <span class="pre">selected</span> <span class="pre">annotations</span></code></p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/annotation_ROI_4.png"><img alt="../_images/annotation_ROI_4.png" src="../_images/annotation_ROI_4.png" style="width: 450px; height: 450px;" />
+</a>
+<ol class="arabic simple" start="5">
+<li><p>The duplicated annotation will appear on top of the original annotation. Use the move tool to drag it to the position where you actually want it placed.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/annotation_ROI_5.png"><img alt="../_images/annotation_ROI_5.png" src="../_images/annotation_ROI_5.png" style="width: 450px; height: 450px;" />
+</a>
+<a class="reference internal image-reference" href="../_images/annotation_ROI_6.png"><img alt="../_images/annotation_ROI_6.png" src="../_images/annotation_ROI_6.png" style="width: 450px; height: 450px;" />
+</a>
+<ol class="arabic simple" start="6">
+<li><p>Create two new annotation classes <code class="docutils literal notranslate"><span class="pre">region_1</span></code> and <code class="docutils literal notranslate"><span class="pre">region_2</span></code>, as detailed in 2.1.6.2, and set the classifications of the annotations that you made in step 5. Feel free to use any name that you like. In your real analysis, this will be guided by your research question.</p></li>
+<li><p>Now, we need to let QuPath know that <code class="docutils literal notranslate"><span class="pre">region_1</span></code> and <code class="docutils literal notranslate"><span class="pre">region_2</span></code> belong to our first annotation <code class="docutils literal notranslate"><span class="pre">ROI</span></code>. This is called inserting objects into a hierarchy, where annotation objetc <code class="docutils literal notranslate"><span class="pre">ROI</span></code> will be the root or parent, and annotation objects <code class="docutils literal notranslate"><span class="pre">region_1</span></code> and <code class="docutils literal notranslate"><span class="pre">region_2</span></code> will be the children.
+To do this, select the thumbnails for <code class="docutils literal notranslate"><span class="pre">region_1</span></code> and <code class="docutils literal notranslate"><span class="pre">region_2</span></code> in the analysis pane (shift + down arrow keys), and then <code class="docutils literal notranslate"><span class="pre">Insert</span> <span class="pre">in</span> <span class="pre">hierarchy</span></code>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/object_hierarchy_1.png"><img alt="../_images/object_hierarchy_1.png" src="../_images/object_hierarchy_1.png" style="width: 350px; height: 300px;" />
+</a>
+<p>The analysis pane will now show the number of detections that are present in <code class="docutils literal notranslate"><span class="pre">region_1</span></code> and <code class="docutils literal notranslate"><span class="pre">region_2</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/object_hierarchy_2.png"><img alt="../_images/object_hierarchy_2.png" src="../_images/object_hierarchy_2.png" style="width: 350px; height: 100px;" />
+</a>
+<ol class="arabic simple" start="8">
+<li><p>Lock the annotations <code class="docutils literal notranslate"><span class="pre">region_1</span></code> and <code class="docutils literal notranslate"><span class="pre">region_2</span></code>.</p></li>
 </ol>
 </section>
-<section id="b-add-images-to-your-project">
-<h4>B. Add images to your project<a class="headerlink" href="#b-add-images-to-your-project" title="Link to this heading">#</a></h4>
-<p>You can add images via <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">--&gt;</span> <span class="pre">Project...</span> <span class="pre">--&gt;</span> <span class="pre">Add</span> <span class="pre">images</span></code>, or, you can drag and drop the images into QuPath. This will open a dialog box, where you can set parameters related to the image being imported.</p>
-<img alt="../_images/imageparameters.jpg" src="../_images/imageparameters.jpg" />
-</section>
-</section>
-<section id="view-image-properties">
-<h3>2.3 View image properties<a class="headerlink" href="#view-image-properties" title="Link to this heading">#</a></h3>
-<p>Click the <strong>Image</strong> tab to get a table of properties related to your image.
-<img alt="../_images/imageproperties.jpg" src="../_images/imageproperties.jpg" /></p>
-<p>The <strong>scroll wheel</strong> of your mouse (or equivalent scrolling motion on a trackpad) can be used to <strong>zoom in and out</strong> of an image within QuPath.
-You can visualize the different stains in your image individually by clicking <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">--&gt;</span> <span class="pre">Brightness</span> <span class="pre">and</span> <span class="pre">Contrast</span></code> and choose the specific stains / channels to view
-<img alt="../_images/imagedisplay.jpg" src="../_images/imagedisplay.jpg" /></p>
-</section>
-<section id="annotate-regions-of-interest">
-<h3>2.4 Annotate regions of interest<a class="headerlink" href="#annotate-regions-of-interest" title="Link to this heading">#</a></h3>
-<p><strong>Annotation objects</strong> can be created by drawing specific shapes on the image, using rectangle / circle / polygon tools. One can also use the brush tools to draw custom shapes. This can be done by selecting the tool, clicking on the image, and dragging the mouse. Creating annotation objects allows us to define regions within which we can perform detections. Right-clicking on an annotation “locks” it, and prevents it from getting accidentally deleted. One can make annotations of different classes in QuPath and information regarding the class to which the annotation belongs can be entered by right clicking on the annotated area, and then clicking on <code class="docutils literal notranslate"><span class="pre">Set</span> <span class="pre">Classification</span></code>.</p>
-<img alt="../_images/annotations_1.jpg" src="../_images/annotations_1.jpg" />
-<img alt="../_images/annotations_2.jpg" src="../_images/annotations_2.jpg" />
-</section>
-<section id="view-annotation-measurements">
-<h3>2.5 View annotation measurements<a class="headerlink" href="#view-annotation-measurements" title="Link to this heading">#</a></h3>
-<p>Within the <strong>Analysis panel</strong>, below the annotation list you should see a table showing measurements for the currently selected object. This updates automatically if another annotation is selected. Alternatively, you can click on <code class="docutils literal notranslate"><span class="pre">Measure</span> <span class="pre">--&gt;</span> <span class="pre">Show</span> <span class="pre">annotation</span> <span class="pre">measurements</span></code>, and a table will pop-up showing the annotation measurements.</p>
-<img alt="alt text" src="../_images/annotation_measurements.jpg" />
-</section>
-<section id="detect-cells">
-<h3>2.6 Detect cells<a class="headerlink" href="#detect-cells" title="Link to this heading">#</a></h3>
-<p>For this step, we will use the OS-2.ndpi image.
-We will first open the image and annoate a region of interest.
-Next, we will try to detect all the cells in the annotated area, and also obtain a count of cells that are positive for DAB-staining.
-We will click on <code class="docutils literal notranslate"><span class="pre">Analyze</span> <span class="pre">--&gt;</span> <span class="pre">Cell</span> <span class="pre">detection</span> <span class="pre">--&gt;</span> <span class="pre">Positive</span> <span class="pre">Cell</span> <span class="pre">detection</span></code>.</p>
-<img alt="../_images/cell_detection_1.jpg" src="../_images/cell_detection_1.jpg" />
-<p>This opens up a window where we can set the parameters that will allow for accurate cell detection. Once the appropriate parameters are set, we can hit <code class="docutils literal notranslate"><span class="pre">Run</span></code>, and the cells will be detected.
-<img alt="../_images/cell_detection_2.jpg" src="../_images/cell_detection_2.jpg" /></p>
-<p>The Annotations pane will show the count of all cells, positive cells and negative cells that were detected.
-<img alt="../_images/cell_detection_3.jpg" src="../_images/cell_detection_3.jpg" /></p>
-<p>We can also visualize the detections as a heatmap overlaid on the image by clicking <code class="docutils literal notranslate"><span class="pre">Measure</span> <span class="pre">--&gt;</span> <span class="pre">Show</span> <span class="pre">measurement</span> <span class="pre">maps</span></code>
-<img alt="../_images/cell_detection_4.jpg" src="../_images/cell_detection_4.jpg" /></p>
-</section>
-<section id="classify-cells">
-<h3>2.7 Classify cells<a class="headerlink" href="#classify-cells" title="Link to this heading">#</a></h3>
-<p>We can next assign the positive cells that were detected to specific areas in the tissue, e.g. tumor or stroma. This can help us compare the counts or other characteristics of the positive cells in the tumoral or the stromal regions.
-For this, we first annotate some regions within our region of interest as ‘tumor’ or ‘stroma’, and train the classifier <code class="docutils literal notranslate"><span class="pre">Classify</span> <span class="pre">--&gt;</span> <span class="pre">Object</span> <span class="pre">classification</span> <span class="pre">--&gt;</span> <span class="pre">Train</span> <span class="pre">object</span> <span class="pre">classifier</span></code>
-<img alt="../_images/classification_1.jpg" src="../_images/classification_1.jpg" /></p>
-<p>We will now get the measurement of the positive cells stratified into the classes (tumor/stroma) that we set.
-<img alt="../_images/classification_2.jpg" src="../_images/classification_2.jpg" /></p>
-</section>
-<section id="perform-and-export-measurements">
-<h3>2.8 Perform and export measurements<a class="headerlink" href="#perform-and-export-measurements" title="Link to this heading">#</a></h3>
-<p>QuPath makes some basic measuerements of the annotations and detections by default if no additional instruction is provided. However, more granular or more advanced measurements can also be made by clicking on <code class="docutils literal notranslate"><span class="pre">Analyze</span> <span class="pre">--&gt;</span> <span class="pre">Calculate</span> <span class="pre">features</span></code> and then selecting the features that you would want to extract.
-<img alt="../_images/measurement_1.jpg" src="../_images/measurement_1.jpg" /></p>
-<p>These measurements can also be viewed as a heatmap overlaid on the image by clicking <code class="docutils literal notranslate"><span class="pre">Measure</span> <span class="pre">--&gt;</span> <span class="pre">Show</span> <span class="pre">measurement</span> <span class="pre">maps</span></code> or as a table by clicking <code class="docutils literal notranslate"><span class="pre">Measure</span> <span class="pre">--&gt;</span> <span class="pre">Show</span> <span class="pre">detection</span> <span class="pre">measurements</span></code>
-<img alt="../_images/measurement_2.jpg" src="../_images/measurement_2.jpg" /></p>
-<img alt="../_images/measurement_3.jpg" src="../_images/measurement_3.jpg" />
-<p>Finally, we export the measurements, by clicking <code class="docutils literal notranslate"><span class="pre">Measure</span> <span class="pre">--&gt;</span> <span class="pre">Export</span> <span class="pre">measurements</span></code>  and selecting the measurements we want to export (e.g. measurements for all images / some images, annotation measurements, detection measurements) and also the file format in which we would want the measurements saved (e.g. .csv, .tsv)</p>
-<img alt="../_images/export_1.jpg" src="../_images/export_1.jpg" />
-<p>You will see the file with the measurements saved in your QuPath project folder.</p>
-<img alt="../_images/export_2.jpg" src="../_images/export_2.jpg" />
+<section id="create-and-run-object-classifier">
+<h3>2.2.5 Create and run object classifier<a class="headerlink" href="#create-and-run-object-classifier" title="Link to this heading">#</a></h3>
 <hr class="docutils" />
-</section>
-</section>
-<hr class="docutils" />
-<section id="congrats-now-you-know-the-basics-of-qupath">
-<h2>Congrats! Now you know the basics of QuPath!<a class="headerlink" href="#congrats-now-you-know-the-basics-of-qupath" title="Link to this heading">#</a></h2>
-</section>
-<section id="learn-more-about-qupath">
-<h2>Learn more about QuPath:<a class="headerlink" href="#learn-more-about-qupath" title="Link to this heading">#</a></h2>
+<p>In addition to classifying cells as marker positive or marker negative, it is also possible to classify cells based on their morphological or biological properties. For example, in this tissue section, there are tumor cells and stromal cells. It might be helpful to know how many of the marker positive cells were tumoral and how many were stromal.
+To achieve this, we will need to perform object classification.</p>
+<ol class="arabic simple">
+<li><p>Create two new annotation classes - <code class="docutils literal notranslate"><span class="pre">tumor</span></code> and <code class="docutils literal notranslate"><span class="pre">stroma</span></code></p></li>
+<li><p>Manually annotate some tumor and stroma regions within the <code class="docutils literal notranslate"><span class="pre">ROI</span></code> using any annotation tool of your preference - I have used the brush tool. Try to make sure you draw a comparable number of annotations of each class to avoid any class imbalance.</p></li>
+<li><p>Set the classification of every annotation you draw as <code class="docutils literal notranslate"><span class="pre">tumor</span></code> or <code class="docutils literal notranslate"><span class="pre">stroma</span></code>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/cell_classification_1.png"><img alt="../_images/cell_classification_1.png" src="../_images/cell_classification_1.png" style="width: 800px; height: 600px;" />
+</a>
+<ol class="arabic simple" start="4">
+<li><p>Once you are satisfied with the annotations you have drawn, click on <code class="docutils literal notranslate"><span class="pre">Classify</span> <span class="pre">--&gt;</span> <span class="pre">Object</span> <span class="pre">classification</span> <span class="pre">--&gt;</span> <span class="pre">Train</span> <span class="pre">object</span> <span class="pre">classifier</span></code></p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/cell_classification_2.png"><img alt="../_images/cell_classification_2.png" src="../_images/cell_classification_2.png" style="width: 350px; height: 200px;" />
+</a>
+<ol class="arabic simple" start="5">
+<li><p>We will train a Randome trees classifier using all detections and the unlocked annotations (tumor and stroma). QuPath also offers the option of training artifical neural network or K-nearest neighbor based classifiers. These can be selected by clicking on the dropdown next to <code class="docutils literal notranslate"><span class="pre">Classifier</span></code>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/cell_classification_3.png"><img alt="../_images/cell_classification_3.png" src="../_images/cell_classification_3.png" style="width: 450px; height: 500px;" />
+</a>
+<ol class="arabic simple" start="6">
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">Live</span> <span class="pre">update</span></code> to get a preview of the proportion of cells being categorized as <code class="docutils literal notranslate"><span class="pre">tumor</span></code> or <code class="docutils literal notranslate"><span class="pre">stroma</span></code>. If this does not match what you would expect from your visual estimate, you can try making more annotations or refining existing annotations to improve the classifier performance. Once you are satisfied with the performance of the classifier, you can give it an appropriate name and click on <code class="docutils literal notranslate"><span class="pre">Save</span></code>. The classifier will be save in your QuPath project folder.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>├── classifiers
+│   ├── classes.json
+│   └── object_classifiers
+│       └── tumor_stroma.json
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>All the detected cells will now be classified as <code class="docutils literal notranslate"><span class="pre">tumor</span></code> or <code class="docutils literal notranslate"><span class="pre">stroma</span></code> by the classifier you just trained. The cells will also have the classification <code class="docutils literal notranslate"><span class="pre">positive</span></code> or <code class="docutils literal notranslate"><span class="pre">negative</span></code></p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/cell_classification_4.png"><img alt="../_images/cell_classification_4.png" src="../_images/cell_classification_4.png" style="width: 900px; height: 600px;" />
+</a>
+<ol class="arabic simple" start="8">
+<li><p>The cells detected within <code class="docutils literal notranslate"><span class="pre">ROI</span></code> will therefore be either of the following four classes:</p></li>
+</ol>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/qupath">QuPath Repo</a></p></li>
-<li><p><a class="reference external" href="https://qupath.readthedocs.io/en/stable/">QuPath docs</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/&#64;petebankhead/videos">QuPath YouTube Channel</a></p></li>
+<li><p>tumor: positive (brown outline)</p></li>
+<li><p>tumor: negative (orange outline)</p></li>
+<li><p>stroma: positive (dark green outline)</p></li>
+<li><p>stroma: negative (light green outline)
+In addition, we will also known whether the cells were present in <code class="docutils literal notranslate"><span class="pre">region_1</span></code>, <code class="docutils literal notranslate"><span class="pre">region_2</span></code>, or outside these regions.</p></li>
 </ul>
+<a class="reference internal image-reference" href="../_images/cell_classification_5.png"><img alt="../_images/cell_classification_5.png" src="../_images/cell_classification_5.png" style="width: 500px; height: 500px;" />
+</a>
+<p>In addition to the classification, we will also know whether the cell was present in <code class="docutils literal notranslate"><span class="pre">region_1</span></code>, <code class="docutils literal notranslate"><span class="pre">region_2</span></code>, or outside these regions.</p>
+<a class="reference internal image-reference" href="../_images/cell_classification_6.png"><img alt="../_images/cell_classification_6.png" src="../_images/cell_classification_6.png" style="width: 850px; height: 500px;" />
+</a>
+</section>
+<section id="view-and-export-detection-measurements">
+<h3>2.2.6 View and export detection measurements<a class="headerlink" href="#view-and-export-detection-measurements" title="Link to this heading">#</a></h3>
+<hr class="docutils" />
+<p><em>Measure additional features</em></p>
+<p>QuPath measures some size/shape and intensity features for all the annotations and detections by default. However, you can also obtain more granular or more advanced measurements that take into consideration more contextual information.
+To do this, you can click on <code class="docutils literal notranslate"><span class="pre">Analyze</span> <span class="pre">--&gt;</span> <span class="pre">Calculate</span> <span class="pre">features</span></code> and then select the features that you would want to extract.</p>
+<a class="reference internal image-reference" href="../_images/measurement_9.png"><img alt="../_images/measurement_9.png" src="../_images/measurement_9.png" style="width: 350px; height: 200px;" />
+</a>
+<p>For the type of image we are analyzing, you may want to compute these additional intensity features.</p>
+<a class="reference internal image-reference" href="../_images/measurement_10.png"><img alt="../_images/measurement_10.png" src="../_images/measurement_10.png" style="width: 400px; height: 650px;" />
+</a>
+<p>We would want these measurements for all <code class="docutils literal notranslate"><span class="pre">Detections</span></code></p>
+<a class="reference internal image-reference" href="../_images/measurement_11.png"><img alt="../_images/measurement_11.png" src="../_images/measurement_11.png" style="width: 400px; height: 150px;" />
+</a>
+<p><em>View detection measurements</em></p>
+<ul class="simple">
+<li><p>Detection measurements can be viewed by clicking <code class="docutils literal notranslate"><span class="pre">Measure</span> <span class="pre">--&gt;</span> <span class="pre">Show</span> <span class="pre">detection</span> <span class="pre">measurements</span></code></p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/measurement_12.png"><img alt="../_images/measurement_12.png" src="../_images/measurement_12.png" style="width: 250px; height: 250px;" />
+</a>
+<a class="reference internal image-reference" href="../_images/measurement_13.png"><img alt="../_images/measurement_13.png" src="../_images/measurement_13.png" style="width: 950px; height: 450px;" />
+</a>
+<p>You can click <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">histograms</span></code> to visualize the distribution of cell counts for each metric. To choose a specific metric, use the dropdown menu (red arrow).</p>
+<a class="reference internal image-reference" href="../_images/measurement_14.png"><img alt="../_images/measurement_14.png" src="../_images/measurement_14.png" style="width: 500px; height: 450px;" />
+</a>
+<ul class="simple">
+<li><p>You can also visualize the measurements as a heatmap overlaid on the image by clicking <code class="docutils literal notranslate"><span class="pre">Measure</span> <span class="pre">--&gt;</span> <span class="pre">Show</span> <span class="pre">measurement</span> <span class="pre">maps</span></code>. You can choose the measurement you want to display and the color map, and also adjust how the color is displayed with the sliders.
+Here, I have displayed <code class="docutils literal notranslate"><span class="pre">Nucleus:</span> <span class="pre">DAB</span> <span class="pre">OD</span> <span class="pre">Mean</span></code> using the color map Inferno.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/measurement_15.png"><img alt="../_images/measurement_15.png" src="../_images/measurement_15.png" style="width: 600px; height: 450px;" />
+</a>
+<ul class="simple">
+<li><p>Finally, to export the measurements, you can click on <code class="docutils literal notranslate"><span class="pre">Measure</span> <span class="pre">--&gt;</span> <span class="pre">Export</span> <span class="pre">measurements</span></code> and select the objects for which you want to export the measurements (e.g. annotations, detections). We will name the file, select <code class="docutils literal notranslate"><span class="pre">Detections</span></code> and set the separator to <code class="docutils literal notranslate"><span class="pre">.csv</span></code>.</p></li>
+</ul>
+<p>You will see the file with single-cell data saved in your QuPath project folder!</p>
+<p>⚠️ <strong>Hint:</strong> The step above will export all the measurements. However, if you are interested in exporting only a specific subset of the measurements, click <code class="docutils literal notranslate"><span class="pre">Populate</span></code> and check the boxes of the measurements that you want to export!</p>
+<a class="reference internal image-reference" href="../_images/measurement_16.png"><img alt="../_images/measurement_16.png" src="../_images/measurement_16.png" style="width: 600px; height: 500px;" />
+</a>
 <hr class="docutils" />
 </section>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="congrats-you-have-now-learnt-the-basics-of-qupath">
+<h1>Congrats! 🎉 You have now learnt the basics of QuPath! ✨<a class="headerlink" href="#congrats-you-have-now-learnt-the-basics-of-qupath" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
 </section>
 
     <script type="text/x-thebe-config">
@@ -603,39 +1072,69 @@ For this, we first annotate some regions within our region of interest as ‘tum
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-information">1. Background information</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-qupath">1.1 What is QuPath?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-pyrmidal-file-formats">1.2 What are pyrmidal file formats?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Day 3, session 3: Practical introduction to QuPath</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives"><strong>Learning Objectives</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-information"><strong>1. Background information</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-qupath"><strong>1.1 What is QuPath?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-pyramidal-file-formats"><strong>1.2 What are pyramidal file formats?</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-steps">2. Exercise steps</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-qupath">2.1 Launch QuPath</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-qupath-project">2.2 Create a QuPath project</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-create-a-new-choose-a-project-folder">A. Create a new / choose a project folder</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-add-images-to-your-project">B. Add images to your project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-steps"><strong>2. Exercise steps</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i"><span class="xref myst"><strong>2.1 PART I</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii"><span class="xref myst"><strong>2.2 PART II</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>2.1 PART I</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-and-launch-qupath"><strong>2.1.1 Install and launch QuPath</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-qupath-project"><strong>2.1.2 Create a QuPath project</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-or-remove-images-to-your-qupath-project"><strong>2.1.3 Add or remove images to your QuPath project</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-images"><strong>2.1.3.1 Add images</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-images"><strong>2.1.3.2 Remove images</strong></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-image-properties">2.3 View image properties</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-regions-of-interest">2.4 Annotate regions of interest</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-annotation-measurements">2.5 View annotation measurements</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detect-cells">2.6 Detect cells</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classify-cells">2.7 Classify cells</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-and-export-measurements">2.8 Perform and export measurements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-and-export-images"><strong>2.1.4 View and export images</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#customize-the-viewer"><strong>2.1.4.1 Customize the viewer</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zooming-and-panning"><strong>2.1.4.2 Zooming and panning</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#export-images"><strong>2.1.4.3 Export images</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#congrats-now-you-know-the-basics-of-qupath">Congrats! Now you know the basics of QuPath!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more-about-qupath">Learn more about QuPath:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-image-properties"><strong>2.1.5 Set up image properties</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-image-type"><strong>2.1.5.1 Set image type</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#separate-stains"><strong>2.1.5.2 Separate stains</strong></a></li>
 </ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-images"><strong>2.1.6 Annotate images</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-annotations"><strong>2.1.6.1 Draw annotations</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-annotation-properties"><strong>2.1.6.2 Set annotation properties</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-and-export-annotation-measurements"><strong>2.1.7 View and export annotation measurements</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-want-to-get-a-bit-more-practice-with-steps-2-4-to-2-7-feel-free-to-download-a-couple-more-h-e-images-from-here-and-add-to-your-current-project">If you want to get a bit more practice with steps 2.4 to 2.7, feel free to download a couple more H&amp;E images from here and add to your current project!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>2.2 PART II</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.2.1 Create a QuPath project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-the-region-of-interest">2.2.2 Annotate the region of interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-positive-cell-detection">2.2.3 Perform positive cell detection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-areas-within-the-region-of-interest">2.2.4 Annotate areas within the region of interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-and-run-object-classifier">2.2.5 Create and run object classifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-and-export-detection-measurements">2.2.6 View and export detection measurements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#congrats-you-have-now-learnt-the-basics-of-qupath">Congrats! 🎉 You have now learnt the basics of QuPath! ✨</a></li>
+</ul>
+
   </nav></div>
 
 </div></div>
@@ -683,8 +1182,8 @@ By Broad Institute Imaging Platform
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
