@@ -8,6 +8,7 @@ parts:
   chapters:
   - file: FIJI/FIJI_exercise.md
   - file: developing_intutions.md
+  - file: Piximi_ManualAnnotation/Piximi.md
 - caption:  Additional Resources
   chapters:
   - file: downloads
