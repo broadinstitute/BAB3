@@ -371,13 +371,13 @@
 <h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Run a completed CellProfiler pipeline to get measurements from images</p></li>
-<li><p>Load measurements into CellProfiler Analyst and exlore some of its features</p></li>
+<li><p>Load measurements into CellProfiler Analyst and explore some of its features</p></li>
 <li><p>Perform classical machine learning to build a classifier in CellProfiler Analyst</p></li>
 </ul>
 </section>
 <section id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
-<p>Prior to this exercise, you should have <a class="reference external" href="https://cellprofileranalyst.org/">downloaded CellProfiler Analyst</a> and the Translocation image set.</p>
+<p>Prior to this exercise, you should have <a class="reference external" href="https://cellprofileranalyst.org/">downloaded CellProfiler Analyst</a> and the <a class="reference external" href="https://github.com/CellProfiler/tutorials/raw/master/Translocation/Archive_EN.zip">Translocation image set</a>.</p>
 <p>This exercise builds on what you have learned in the <strong>Beginning Segmentation</strong> and <strong>Advanced Segmentation</strong> sections of the course. You should by now be familiar with basic use of CellProfiler, principles of pipeline building, and have some experience troubleshooting difficult segmentation tasks.</p>
 </section>
 <section id="background-information">
@@ -388,9 +388,7 @@
 GFP (Green Fluorescent Protein). In proliferating cells, FOXO1A is localized in the cytoplasm; it is constantly moving into the nucleus,
 but is transported out again by export proteins. Upon inhibition of nuclear export, FOXO1A accumulates in the nucleus. We know that 150nM of
 Wortmannin (the drug we are using as a positive control in this experiment) inhibits transport of the FOXO1A protein from the nucleus
-back out to the cytoplasm (Fig. 1). Labeling FOXO1A with GFP allows us to visualize its subcellular localization. In this exercise, we wanted to characterize our positive control by determining the lowest possible dose of Wortmannin necessary to observe the nuclear accumulation of FOXO1A. The big-picture goal of developing
-image-based screens of this type is to aid in the search for unknown drugs that have the same effect as Wortmannin on FOXO1A subcellular
-localization (and hence may be possible treatments for osteosarcoma patients), but possess fewer side effects than the known drugs.</p>
+back out to the cytoplasm (Fig. 1). Labeling FOXO1A with GFP allows us to visualize its subcellular localization. In this exercise, we wanted to characterize our positive control by determining the lowest possible dose of Wortmannin necessary to observe the nuclear accumulation of FOXO1A. The big-picture goal of developing image-based screens of this type is to aid in the search for unknown drugs that have the same effect as Wortmannin on FOXO1A subcellular localization (and hence may be possible treatments for osteosarcoma patients), but possess fewer side effects than the known drugs.</p>
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/Fig19.png"><img alt="../_images/Fig19.png" src="../_images/Fig19.png" style="width: 900px;" />
 </a>
@@ -468,7 +466,7 @@ Green: <strong>GFP</strong>, Magenta: <strong>DNA</strong>.</em></span><a class=
 <section id="start-cellprofiler-analyst-and-load-the-measurement-database">
 <h3>1. Start CellProfiler Analyst and load the measurement database<a class="headerlink" href="#start-cellprofiler-analyst-and-load-the-measurement-database" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Start CellProfiler Analyst by double-clicking the icon on the desktop &lt;img src=”./TutorialImages/CPAlogo.png”  width=”35” alt=’CellProfiler Analyst logo/&gt;.</p></li>
+<li><p>Start CellProfiler Analyst by double-clicking the icon on the desktop <a class="reference internal" href="../_images/CPAlogo.png"><img alt="CellProfiler Analyst logo" src="../_images/CPAlogo.png" style="width: 35px;" /></a>.</p></li>
 <li><p>When CPA is started, it will ask to select a <em>properties file</em>. Select the properties file named <code class="docutils literal notranslate"><span class="pre">DefaultDB.properties</span></code>, located in CellProfiler’s Default Output Folder. The properties file was created by the <strong>ExportToDatabase</strong> module in your CellProfiler pipeline. This file is a text file that contains the settings necessary for CPA to connect to the database that CellProfiler generated. (It contains the measurement data obtained from all 26 images, and pointers to the location of those images on your hard drive. If you move the database file, you’ll need to edit the properties file to point to the new database location.)</p></li>
 </ul>
 </section>
