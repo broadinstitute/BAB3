@@ -28,7 +28,7 @@ Optionally, a container runner will also be used in one session but is not requi
 
 Please download the following sets of images. Unzip the folders if necessary, and have each folder of images in one parent location:
 
-[Beginner Segmentation](https://github.com/CellProfiler/tutorials/raw/master/BeginnerSegmentation/Archive_EN.zip)
-[Beginner Segmentation - bonus materials](https://github.com/CellProfiler/tutorials/raw/master/BeginnerSegmentation/bonus_materials_EN.zip)
-[Advanced Segmentation](https://drive.google.com/file/d/1qVaQiPZKqOPEsa62lYEpm7ot3th7ADqE/view?usp=sharing)
-[Microglia](https://drive.google.com/drive/folders/1TyV_hzN2pDpX0lVQ_jh08A9AG5e4Bao8?usp=drive_link)
+- [Beginner Segmentation](https://github.com/CellProfiler/tutorials/raw/master/BeginnerSegmentation/Archive_EN.zip)
+- [Beginner Segmentation - bonus materials](https://github.com/CellProfiler/tutorials/raw/master/BeginnerSegmentation/bonus_materials_EN.zip)
+- [Advanced Segmentation](https://drive.google.com/file/d/1qVaQiPZKqOPEsa62lYEpm7ot3th7ADqE/view?usp=sharing)
+- [Microglia](https://drive.google.com/drive/folders/1TyV_hzN2pDpX0lVQ_jh08A9AG5e4Bao8?usp=drive_link)
