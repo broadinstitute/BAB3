@@ -24,8 +24,8 @@ The links below will populate as we work our way through the course.
 | | ImageJ | [Slides](https://docs.google.com/presentation/d/1LwuUcZQSzUxVRgVakENDpyYDTOq5Z_aylSuUMHOVTDc/edit?slide=id.g392812eb3a8_0_43#slide=id.g392812eb3a8_0_43) / [Exercise](FIJI/FIJI_exercise.md) |
 | | Intro to Thinking About Images | [Slides](https://docs.google.com/presentation/d/1oJdyHTjTW1m0Pr2_XQwq0yPtDdEwcuUTE9k3xJ9fDp4/edit?slide=id.g303d086ded7_0_1390#slide=id.g303d086ded7_0_1390) |
 | | Thinking About Images | [Exercise](developing_intutions.md) |
-| | Intro to Piximi | Slides |
-| | Manual Annotation in Piximi | Exercise |
+| | Intro to Piximi | [Slides](https://docs.google.com/presentation/d/1PMBQ6ZqDIjnALHr6JnaN_373O9lriOc45MoUtMKwuK8/edit?slide=id.p1#slide=id.p1) |
+| | Manual Annotation in Piximi | [Exercise](Piximi_ManualAnnotation/Piximi.md) |
 | Tuesday | Classical Segmentation | Slides |
 | | Intro to CellProfiler | Exercise |
 | | Thinking About Measurements | Slides |
