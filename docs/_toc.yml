@@ -6,7 +6,7 @@ root: intro
 parts:
 - caption: Labs and Exercises
   chapters:
-  - file: FIJI/FIJI_exercise.md
+  - file: Fiji/Fiji_exercise.md
 - caption:  Additional Resources
   chapters:
   - file: downloads

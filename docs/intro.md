@@ -21,7 +21,7 @@ The links below will populate as we work our way through the course.
 | Monday | Welcome | [Slides](https://docs.google.com/presentation/d/1jA_nVKdt_TIQES6hCca7mVulRSf86vO-GrO_f_kH5bM/edit?slide=id.g3451164a7b7_0_35#slide=id.g3451164a7b7_0_35) |
 | | Participant Intro | [Slides](https://docs.google.com/presentation/d/1-gnZj4N9UlETzAakZG5aYgSDV1WgHB-Vgyi7S1-9DDY/edit?slide=id.g3a898b17628_0_90#slide=id.g3a898b17628_0_90) |
 | | Intro to Images and Workflows | [Slides](https://docs.google.com/presentation/d/1zOpvk9U6I7af9mUG9WUnMWh92mrLPijwKOxQ6D660HU/edit?slide=id.g3be383ad8a9_0_243#slide=id.g3be383ad8a9_0_243) |
-| | ImageJ | [Slides](https://docs.google.com/presentation/d/1LwuUcZQSzUxVRgVakENDpyYDTOq5Z_aylSuUMHOVTDc/edit?slide=id.g392812eb3a8_0_43#slide=id.g392812eb3a8_0_43) / [Exercise](FIJI/FIJI_exercise.md) |
+| | ImageJ | [Slides](https://docs.google.com/presentation/d/1LwuUcZQSzUxVRgVakENDpyYDTOq5Z_aylSuUMHOVTDc/edit?slide=id.g392812eb3a8_0_43#slide=id.g392812eb3a8_0_43) / [Exercise](Fiji/Fiji_exercise.md) |
 | | Intro to Thinking About Images | Slides |
 | | Thinking About Images | Exercise |
 | | Conclusion to Thinking About Images | Slides |
@@ -40,7 +40,7 @@ The links below will populate as we work our way through the course.
 | | Intro to Colocalization | Exercise |
 | Thursday | Command Line, Environments, and Containers | Slides |
 | | Containerized Plugins in CellProfiler | Exercise |
-| | FIJI Macros | Slides |
+| | Fiji Macros | Slides |
 | | Intro to Deep Learning | Slides |
 | | Tensorflow Playground | Exercise |
 | | Intro to Napari | Slides |
