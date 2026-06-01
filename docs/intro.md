@@ -22,9 +22,8 @@ The links below will populate as we work our way through the course.
 | | Participant Intro | [Slides](https://docs.google.com/presentation/d/1-gnZj4N9UlETzAakZG5aYgSDV1WgHB-Vgyi7S1-9DDY/edit?slide=id.g3a898b17628_0_90#slide=id.g3a898b17628_0_90) |
 | | Intro to Images and Workflows | [Slides](https://docs.google.com/presentation/d/1zOpvk9U6I7af9mUG9WUnMWh92mrLPijwKOxQ6D660HU/edit?slide=id.g3be383ad8a9_0_243#slide=id.g3be383ad8a9_0_243) |
 | | ImageJ | [Slides](https://docs.google.com/presentation/d/1LwuUcZQSzUxVRgVakENDpyYDTOq5Z_aylSuUMHOVTDc/edit?slide=id.g392812eb3a8_0_43#slide=id.g392812eb3a8_0_43) / [Exercise](FIJI/FIJI_exercise.md) |
-| | Intro to Thinking About Images | Slides |
-| | Thinking About Images | Exercise |
-| | Conclusion to Thinking About Images | Slides |
+| | Intro to Thinking About Images | [Slides](https://docs.google.com/presentation/d/1oJdyHTjTW1m0Pr2_XQwq0yPtDdEwcuUTE9k3xJ9fDp4/edit?slide=id.g303d086ded7_0_1390#slide=id.g303d086ded7_0_1390) |
+| | Thinking About Images | [Exercise](developing_intuitions.md) |
 | | Intro to Piximi | Slides |
 | | Manual Annotation in Piximi | Exercise |
 | Tuesday | Classical Segmentation | Slides |
