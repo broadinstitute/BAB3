@@ -5,12 +5,12 @@ Lab authors: Beth Cimini, Carolina Wählby, Martin Simonsson, Megan Rokop, Mark 
 ## Learning Objectives
 
 - Run a completed CellProfiler pipeline to get measurements from images
-- Load measurements into CellProfiler Analyst and exlore some of its features
+- Load measurements into CellProfiler Analyst and explore some of its features
 - Perform classical machine learning to build a classifier in CellProfiler Analyst
 
 ## Preparation
 
-Prior to this exercise, you should have [downloaded CellProfiler Analyst](https://cellprofileranalyst.org/) and the Translocation image set.
+Prior to this exercise, you should have [downloaded CellProfiler Analyst](https://cellprofileranalyst.org/) and the [Translocation image set](https://github.com/CellProfiler/tutorials/raw/master/Translocation/Archive_EN.zip).
 
 This exercise builds on what you have learned in the **Beginning Segmentation** and **Advanced Segmentation** sections of the course. You should by now be familiar with basic use of CellProfiler, principles of pipeline building, and have some experience troubleshooting difficult segmentation tasks.
 
@@ -22,9 +22,7 @@ In this experiment, we are working with human U2OS osteosarcoma (bone cancer) ce
 GFP (Green Fluorescent Protein). In proliferating cells, FOXO1A is localized in the cytoplasm; it is constantly moving into the nucleus,
 but is transported out again by export proteins. Upon inhibition of nuclear export, FOXO1A accumulates in the nucleus. We know that 150nM of
 Wortmannin (the drug we are using as a positive control in this experiment) inhibits transport of the FOXO1A protein from the nucleus
-back out to the cytoplasm (Fig. 1). Labeling FOXO1A with GFP allows us to visualize its subcellular localization. In this exercise, we wanted to characterize our positive control by determining the lowest possible dose of Wortmannin necessary to observe the nuclear accumulation of FOXO1A. The big-picture goal of developing
-image-based screens of this type is to aid in the search for unknown drugs that have the same effect as Wortmannin on FOXO1A subcellular
-localization (and hence may be possible treatments for osteosarcoma patients), but possess fewer side effects than the known drugs.
+back out to the cytoplasm (Fig. 1). Labeling FOXO1A with GFP allows us to visualize its subcellular localization. In this exercise, we wanted to characterize our positive control by determining the lowest possible dose of Wortmannin necessary to observe the nuclear accumulation of FOXO1A. The big-picture goal of developing image-based screens of this type is to aid in the search for unknown drugs that have the same effect as Wortmannin on FOXO1A subcellular localization (and hence may be possible treatments for osteosarcoma patients), but possess fewer side effects than the known drugs.
 
 ```{figure} ./TutorialImages/Fig1.png
 :width: 900
@@ -106,7 +104,7 @@ Because we know something about the biology we are trying to capture, we have de
 
 ### 1. Start CellProfiler Analyst and load the measurement database
 
-- Start CellProfiler Analyst by double-clicking the icon on the desktop <img src="./TutorialImages/CPAlogo.png"  width="35" alt='CellProfiler Analyst logo/>.
+- Start CellProfiler Analyst by double-clicking the icon on the desktop <img src="./TutorialImages/CPAlogo.png"  width="35" alt="CellProfiler Analyst logo" />.
 
 - When CPA is started, it will ask to select a *properties file*. Select the properties file named `DefaultDB.properties`, located in CellProfiler's Default Output Folder. The properties file was created by the **ExportToDatabase** module in your CellProfiler pipeline. This file is a text file that contains the settings necessary for CPA to connect to the database that CellProfiler generated. (It contains the measurement data obtained from all 26 images, and pointers to the location of those images on your hard drive. If you move the database file, you'll need to edit the properties file to point to the new database location.)
 
@@ -115,7 +113,7 @@ Because we know something about the biology we are trying to capture, we have de
 CPA has several tools available for displaying data for exploration. If your data came from a multi-well plate, such as the 96-well plate for
 this particular translocation assay, then one of the most useful data visualization tools available is the plate layout format.
 
-- Click on the `Plate Viewer` icon in the main CPA window (<img src="./TutorialImages/Inline09.png"  width="50" alt="Plate Viewer icon"/>, 3rd from the left). This selection brings up a 96-well formatted display of the plate from which your images originated. The colored squares represent wells for which measurement data is present; crossed-out wells indicate wells with no measurements. Notice that 26 out of the 96 wells have data associated with them. Mouse over a few of the wells to see a `tool-tip` box appear, which states the actual per-well value.
+- Click on the `Plate Viewer` icon in the main CPA window (<img src="./TutorialImages/Inline09.png"  width="50" alt="Plate Viewer icon" />, 3rd from the left). This selection brings up a 96-well formatted display of the plate from which your images originated. The colored squares represent wells for which measurement data is present; crossed-out wells indicate wells with no measurements. Notice that 26 out of the 96 wells have data associated with them. Mouse over a few of the wells to see a `tool-tip` box appear, which states the actual per-well value.
 
 - The initial color coding represents the image index, a bookkeeping measurement which is not relevant for the analysis that we are doing in this exercise. Under the *Measurements* drop-down list, choose `Image_Metadata_Dose` from the list, in order to visualize the drug concentrations added to each well. You should see:
   - Column 1, rows A-D, column 12, rows E-H and well E02: Negative controls, i.e. no drug added
