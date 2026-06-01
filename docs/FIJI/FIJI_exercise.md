@@ -20,7 +20,7 @@ As we are using this same image set in future exercises, please do not save any 
 
 Open Fiji.
 
-![Image open in Fiji](Fiji_images/open_image_in_Fiji.png)
+![Image open in Fiji](FIJI_images/open_image_in_Fiji.png)
 
 Open the first image in the `images_Illum-corrected` folder in Fiji. You can do this by going to `File > Open...` and navigating to the image location, or by dragging and dropping the image file into the Fiji window.
 
@@ -28,7 +28,7 @@ Open the first image in the `images_Illum-corrected` folder in Fiji. You can do 
 
 Hover your mouse over the image and notice the x, y coordinates and the pixel value being reported in the status bar at the bottom of the Fiji window.
 
-![Image with Adjusted Contrast](Fiji_images/contrast_in_Fiji.png)
+![Image with Adjusted Contrast](FIJI_images/contrast_in_FIJI.png)
 
 Adjust the contrast of the image by going to `Image > Adjust > Brightness/Contrast...` (or pressing `Shift + C`). In the Brightness/Contrast window, click `Auto` to automatically adjust the contrast. You can also manually adjust the sliders to change the brightness and contrast of the image. Look at the pixel values in the status bar as you adjust the contrast.
 
@@ -40,7 +40,7 @@ Close the image (without saving changes) and open it again. Change the bit depth
 
 Change the LUT of the image by going to `Image > Lookup Tables` and selecting a different LUT. Try a number of different LUTs.
 
-![Image with Adjusted LUT](Fiji_images/LUT.png)
+![Image with Adjusted LUT](FIJI_images/LUT.png)
 
 - How does this change the appearance of the image?
 - Does it change the pixel values reported in the status bar?
