@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Day 1: Introduction to FIJI &#8212; BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual</title>
+    <title>Day 1: Introduction to Fiji &#8212; BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual</title>
   
   
   
@@ -65,8 +65,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'FIJI/FIJI_exercise';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Downloads" href="../downloads.html" />
-    <link rel="prev" title="Welcome to BAB3" href="../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -117,6 +115,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -170,11 +170,7 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and Exercises</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Day 1: Introduction to FIJI</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../downloads.html">Downloads</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../links.html">Helpful links for now and the future</a></li>
@@ -314,7 +310,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Day 1: Introduction to FIJI</h1>
+    <h1>Day 1: Introduction to Fiji</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -327,7 +323,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warning">Warning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-an-image-in-fiji">Open an image in FIJI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-an-image-in-fiji">Open an image in Fiji</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-image-properties">Explore image properties</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-look-up-tables-luts">Explore Look Up Tables (LUTs)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-filters">Explore filters</a></li>
@@ -343,34 +339,34 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="day-1-introduction-to-fiji">
-<h1>Day 1: Introduction to FIJI<a class="headerlink" href="#day-1-introduction-to-fiji" title="Link to this heading">#</a></h1>
+<h1>Day 1: Introduction to Fiji<a class="headerlink" href="#day-1-introduction-to-fiji" title="Link to this heading">#</a></h1>
 <p>Lab authors: Erin Weisbart</p>
 <section id="learning-objectives">
 <h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Be introduced to FIJI</p></li>
-<li><p>Practice opening images in FIJI and exploring some of their properties</p></li>
-<li><p>Practice applying filters to an image in FIJI</p></li>
+<li><p>Be introduced to Fiji</p></li>
+<li><p>Practice opening images in Fiji and exploring some of their properties</p></li>
+<li><p>Practice applying filters to an image in Fiji</p></li>
 </ul>
 </section>
 <section id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
-<p>Prior to this exercise, you should have <a class="reference external" href="https://fiji.sc">downloaded FIJI</a> and the <a class="reference external" href="https://github.com/CellProfiler/tutorials/raw/master/BeginnerSegmentation/Archive_EN.zip">Beginner Segmentation image set</a>.</p>
+<p>Prior to this exercise, you should have <a class="reference external" href="https://Fiji.sc">downloaded Fiji</a> and the <a class="reference external" href="https://github.com/CellProfiler/tutorials/raw/master/BeginnerSegmentation/Archive_EN.zip">Beginner Segmentation image set</a>.</p>
 </section>
 <section id="warning">
 <h2>Warning<a class="headerlink" href="#warning" title="Link to this heading">#</a></h2>
 <p>As we are using this same image set in future exercises, please do not save any changes to the original images.</p>
 </section>
 <section id="open-an-image-in-fiji">
-<h2>Open an image in FIJI<a class="headerlink" href="#open-an-image-in-fiji" title="Link to this heading">#</a></h2>
-<p>Open FIJI.</p>
-<p><img alt="Image open in FIJI" src="../_images/open_image_in_FIJI.png" /></p>
-<p>Open the first image in the <code class="docutils literal notranslate"><span class="pre">images_Illum-corrected</span></code> folder in FIJI. You can do this by going to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Open...</span></code> and navigating to the image location, or by dragging and dropping the image file into the FIJI window.</p>
+<h2>Open an image in Fiji<a class="headerlink" href="#open-an-image-in-fiji" title="Link to this heading">#</a></h2>
+<p>Open Fiji.</p>
+<p><img alt="Image open in Fiji" src="FIJI/Fiji_images/open_image_in_Fiji.png" /></p>
+<p>Open the first image in the <code class="docutils literal notranslate"><span class="pre">images_Illum-corrected</span></code> folder in Fiji. You can do this by going to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Open...</span></code> and navigating to the image location, or by dragging and dropping the image file into the Fiji window.</p>
 </section>
 <section id="explore-image-properties">
 <h2>Explore image properties<a class="headerlink" href="#explore-image-properties" title="Link to this heading">#</a></h2>
-<p>Hover your mouse over the image and notice the x, y coordinates and the pixel value being reported in the status bar at the bottom of the FIJI window.</p>
-<p><img alt="Image with Adjusted Contrast" src="../_images/contrast_in_FIJI.png" /></p>
+<p>Hover your mouse over the image and notice the x, y coordinates and the pixel value being reported in the status bar at the bottom of the Fiji window.</p>
+<p><img alt="Image with Adjusted Contrast" src="FIJI/Fiji_images/contrast_in_Fiji.png" /></p>
 <p>Adjust the contrast of the image by going to <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Adjust</span> <span class="pre">&gt;</span> <span class="pre">Brightness/Contrast...</span></code> (or pressing <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">C</span></code>). In the Brightness/Contrast window, click <code class="docutils literal notranslate"><span class="pre">Auto</span></code> to automatically adjust the contrast. You can also manually adjust the sliders to change the brightness and contrast of the image. Look at the pixel values in the status bar as you adjust the contrast.</p>
 <p>Click <code class="docutils literal notranslate"><span class="pre">Apply</span></code> in the Brightness/Contrast window and look at the pixel values again. How have they changed?</p>
 <p>Close the image (without saving changes) and open it again. Change the bit depth by going to <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Type</span> <span class="pre">&gt;</span> <span class="pre">8-bit</span></code>. Look at the pixel values in the status bar again. How have they changed?</p>
@@ -378,18 +374,22 @@
 <section id="explore-look-up-tables-luts">
 <h2>Explore Look Up Tables (LUTs)<a class="headerlink" href="#explore-look-up-tables-luts" title="Link to this heading">#</a></h2>
 <p>Change the LUT of the image by going to <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Lookup</span> <span class="pre">Tables</span></code> and selecting a different LUT. Try a number of different LUTs.</p>
-<p><img alt="Image with Adjusted LUT" src="../_images/LUT.png" /></p>
+<p><img alt="Image with Adjusted LUT" src="FIJI/Fiji_images/LUT.png" /></p>
 <ul class="simple">
 <li><p>How does this change the appearance of the image?</p></li>
 <li><p>Does it change the pixel values reported in the status bar?</p></li>
 <li><p>Are there any LUTs that make it <em>easier</em> to see differences in nuclei intensities in the image?</p></li>
 <li><p>Are there any LUTs that make it <em>harder</em> to see differences in nuclei intensities in the image? (hint: try <code class="docutils literal notranslate"><span class="pre">Blue</span></code>)</p></li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Some colormaps are explicitly good for linear information, and some not! <a class="reference external" href="https://matplotlib.org/stable/users/explain/colors/colormaps.html">A good introduction to colormaps can be found here</a>. Are there any in Fiji you wouldn’t use for an image? Do any make especially pretty pictures?</p>
+</div>
 </section>
 <section id="explore-filters">
 <h2>Explore filters<a class="headerlink" href="#explore-filters" title="Link to this heading">#</a></h2>
 <p>Return your image to the default LUT by going to <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Lookup</span> <span class="pre">Tables</span> <span class="pre">&gt;</span> <span class="pre">Grays</span></code>.</p>
-<p>Explore some of the filters available in FIJI by going to <code class="docutils literal notranslate"><span class="pre">Process</span> <span class="pre">&gt;</span> <span class="pre">Filters</span></code> and selecting a filter to apply to the image. See how the filter changes the appearance of the image. See if it pixel affects intensities.</p>
+<p>Explore some of the filters available in Fiji by going to <code class="docutils literal notranslate"><span class="pre">Process</span> <span class="pre">&gt;</span> <span class="pre">Filters</span></code> and selecting a filter to apply to the image. See how the filter changes the appearance of the image. See if it pixel affects intensities.</p>
 <p>Hint: You can undo filter applications by going to <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Undo</span></code> or pressing <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Z</span></code> (or <code class="docutils literal notranslate"><span class="pre">Cmd</span> <span class="pre">+</span> <span class="pre">Z</span></code> on Mac).</p>
 </section>
 </section>
@@ -424,24 +424,6 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../intro.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to BAB3</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../downloads.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Downloads</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -463,7 +445,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warning">Warning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-an-image-in-fiji">Open an image in FIJI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-an-image-in-fiji">Open an image in Fiji</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-image-properties">Explore image properties</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-look-up-tables-luts">Explore Look Up Tables (LUTs)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-filters">Explore filters</a></li>

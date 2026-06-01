@@ -6,7 +6,7 @@ In preparation for this course you are asked to download a variety of softwares 
 
 Before starting the course, please install all of these software (that you are able). We use them in the course in this order.
 
-- [ImageJ/Fiji](https://fiji.sc/)
+- [ImageJ/Fiji](https://Fiji.sc/)
 - [CellProfiler](https://cellprofiler.org/)
 - [CellProfiler Analyst](https://cellprofileranalyst.org/)
 - [Ilastik](https://www.ilastik.org/)
