@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Day 1, Exercise 5 - Making manual annotations with Piximi &#8212; BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual</title>
+    <title>Day 1 - Making Manual Annotations with Piximi &#8212; BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual</title>
   
   
   
@@ -173,10 +173,10 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and Exercises</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../developing_intutions.html">Day 1, Exercise 3: developing image processing intutions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Day 1, Exercise 5 - Making manual annotations with Piximi</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Day 1 - Making Manual Annotations with Piximi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../BeginnerSegmentation/CPbeginner_Segmentation.html">Day 2, exercise 2: Introduction to CellProfiler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AdvancedSegmentation/BBBC022_AnalysisExercise.html">Day 2, exercise 3: Advanced segmentation and organelle analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Translocation/Translocation.html">Day 2, exercise 5: Segmentation and Classification with CellProfiler and CellProfiler Analyst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Translocation/Translocation.html">Day 2: Classification with CellProfiler Analyst</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ilastik/PixelClassification.html">Day 3, session 2: Practical introduction to ilastik</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../QuPath_demo/QuPath_demo.html">Day 3, session 3: Practical introduction to QuPath</a></li>
 
@@ -186,7 +186,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../slides_et_al.html">Links to slides and other course materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../downloads.html">Downloads</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../links.html">Helpful links for now and the future</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -324,7 +324,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Day 1, Exercise 5 - Making manual annotations with Piximi</h1>
+    <h1>Day 1 - Making Manual Annotations with Piximi</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -335,6 +335,8 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-overview">Exercise Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-part-1-manually-annotate-some-nuclei">Exercise Part 1 - Manually annotate some nuclei</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-part-2-making-some-measurements">Exercise Part 2 - Making some measurements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-annotating-some-cells"><strong>Bonus Exercise - Annotating some cells</strong></a></li>
@@ -349,20 +351,26 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="day-1-exercise-5-making-manual-annotations-with-piximi">
-<h1>Day 1, Exercise 5 - Making manual annotations with Piximi<a class="headerlink" href="#day-1-exercise-5-making-manual-annotations-with-piximi" title="Link to this heading">#</a></h1>
-<p><em>Lab authors: Beth Cimini, Kate Bowers</em> .</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="day-1-making-manual-annotations-with-piximi">
+<h1>Day 1 - Making Manual Annotations with Piximi<a class="headerlink" href="#day-1-making-manual-annotations-with-piximi" title="Link to this heading">#</a></h1>
+<p><em>Lab authors: Beth Cimini, Kate Bowers</em>.</p>
 <hr class="docutils" />
 <section id="learning-objectives">
 <h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Practice making manual annotations in multichannel images in Piximi</p></li>
-<li><p>Turn images into measurements and graphs</p></li>
+<li><p>Practice making manual object annotations in multichannel images in Piximi</p></li>
+<li><p>Categorize some objects in Piximi</p></li>
+<li><p>Turn images/objects into measurements and explore them using graphs</p></li>
 </ul>
-<p><strong>Lab Data</strong> in <a class="reference external" href="https://drive.google.com/drive/folders/1TyV_hzN2pDpX0lVQ_jh08A9AG5e4Bao8?usp=drive_link">this folder</a></p>
-<hr class="docutils" />
+</section>
+<section id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
+<p>Prior to this exercise, you should have downloaded the <a class="reference external" href="https://drive.google.com/drive/folders/1TyV_hzN2pDpX0lVQ_jh08A9AG5e4Bao8?usp=drive_link">Microglia image set</a>. You do not need to download any software as Piximi runs in your web browser.</p>
+</section>
+<section id="exercise-overview">
+<h2>Exercise Overview<a class="headerlink" href="#exercise-overview" title="Link to this heading">#</a></h2>
 <p>While <a class="reference external" href="https://piximi.app/">Piximi</a><span class="bibtex-citation" id="id1"><sup><a class="reference internal" href="../bibliography.html#id27" title="Levin M Moser, Nodar Gogoberidze, Andréa Papaleo, Alice Lucas, David Dao, Christoph A Friedrich, Lassi Paavolainen, Csaba Molnar, David R Stirling, Jane Hung, Rex Wang, Callum Tromans-Coia, Bin Li, Edward L Evans, Kevin W Eliceiri, Peter Horvath, Anne E Carpenter, and Beth A Cimini. Piximi - an images to discovery web tool for bioimages and beyond. bioRxiv, pages 2024.06.03.597232, June 2024.">1</a></sup></span> can do a lot of cool things, today we’ll only be using two of its functionalities - manual annotation and measurement.</p>
-<p>We’ll be using a dataset of microglia stained in rat brains - you can read more of the specifics in the <a class="reference external" href="https://drive.google.com/file/d/1wdz7pikmfWAEXUeGQ3VcDn1rwnqKyYYm/view?usp=sharing">dataset readme</a>.</p>
+<p>We’ll be using a dataset of microglia stained in rat brains - you can read more of the specifics in the <code class="docutils literal notranslate"><span class="pre">README.txt</span></code> file in the dataset folder. In brief, the images have two channels - one with labeled microglia and one with labeled nuclei. Your job will be to manually annotate the nuclei in these images, and then take some measurements of those nuclei.</p>
 </section>
 <section id="exercise-part-1-manually-annotate-some-nuclei">
 <h2>Exercise Part 1 - Manually annotate some nuclei<a class="headerlink" href="#exercise-part-1-manually-annotate-some-nuclei" title="Link to this heading">#</a></h2>
@@ -371,44 +379,42 @@
 <p>Check out the <a class="reference external" href="https://documentation.piximi.app/intro.html">documentation</a> (which includes some full-length tutorials), or check them out on <a class="reference external" href="https://forum.image.sc/tag/piximi">the image.sc forum!</a></p>
 </aside>
 <ul class="simple">
-<li><p>Download the dataset linked above to your local machine. We’ll be using it throughout the week, so don’t delete it!</p></li>
 <li><p>Open Piximi.app, and click “Start New Project”.</p></li>
 <li><p>Drag the images from the folder to Piximi, and tell Piximi that they have 2 channels.</p></li>
 </ul>
-<img alt="../_images/Channels.png" src="../_images/Channels.png" />
+<img alt="Setting number of channels in Piximi" src="../_images/Channels.png" />
 <ul class="simple">
 <li><p>The images should now all be visible in Piximi’s main experiment view - hit “Annotate” to bring them into the Annotator View (also called the Image View).
-<img alt="../_images/AnnotationButton.png" src="../_images/AnnotationButton.png" /></p></li>
+<img alt="Annotation button in Piximi" src="../_images/AnnotationButton.png" /></p></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Running into trouble? Toggle on Piximi’s help mode on the left bar, which will help you figure out how to use each feature!</p>
-<a class="reference internal image-reference" href="../_images/HelpMode.png"><img alt="../_images/HelpMode.png" src="../_images/HelpMode.png" style="width: 150%;" />
-</a>
+<p>Running into trouble? Toggle on Piximi’s help mode on the left bar, which will help you figure out how to use each feature!
+<a class="reference internal" href="../_images/HelpMode.png"><img alt="Help mode button in Piximi" src="../_images/HelpMode.png" style="width: 150%;" /></a></p>
 </div>
 <ul class="simple">
-<li><p>Hit the <code class="docutils literal notranslate"><span class="pre">+</span></code> button next to the word Kinds to make a new object kind - you’ll probably want to call it Nuclei or something like that.</p></li>
+<li><p>Hit the <code class="docutils literal notranslate"><span class="pre">+</span></code> button next to the word <code class="docutils literal notranslate"><span class="pre">Kinds</span></code> to make a new object kind - you’ll probably want to call it Nuclei or something like that.</p></li>
 </ul>
-<img alt="../_images/NewKind.png" src="../_images/NewKind.png" />
+<img alt="Creating a new Kind in Piximi" src="../_images/NewKind.png" />
 <ul class="simple">
-<li><p>Optionally - if you’d like to separate your nuclei into categories (such as “microglial nuclei” or even just “big nuclei” vs “small nuclei”), you can do this in one of two ways:</p>
+<li><p>Optional: In your experiment, if you think you would like to categorize your objects, you may want to categorize them as you annotate them. (You can always categorize objects independently after annotation). In this experiment, you may want to separate your nuclei into categories (such as “microglial nuclei” or even just “big nuclei” vs “small nuclei”). You can do this in one of two ways:</p>
 <ul>
 <li><p>In the menu under Nuclei, you can make as many categories as you like, and if a category is selected while you are annotating, the object will be automatically assigned to that category.</p></li>
 <li><p>Once you’ve made and saved your annotations, you can see the objects you’ve made back in the Experiment view - you can add (or change!) categories for as many objects as you would like.
-<img alt="../_images/ExperimentViewCategorization.png" src="../_images/ExperimentViewCategorization.png" /></p></li>
+<img alt="See categories in Piximi Experiment View" src="../_images/ExperimentViewCategorization.png" /></p></li>
 </ul>
 </li>
-<li><p>Time to play! Piximi has several kinds of annotation, <a class="reference external" href="https://documentation.piximi.app/pages/detail/imageviewer.html#annotation-tools">which you can learn more about here</a> and see in action <a class="reference external" href="https://documentation.piximi.app/pages/detail/imageviewer-tools-annotation.html">here</a>.</p></li>
+<li><p>Time to play! Piximi has several kinds of annotation, which you can <a class="reference external" href="https://documentation.piximi.app/pages/detail/imageviewer.html#annotation-tools">read more about here</a> and <a class="reference external" href="https://documentation.piximi.app/pages/detail/imageviewer-tools-annotation.html">see in action here</a>.</p></li>
 <li><p>To annotate, select an annotation tool from the right sidebar. Try out a few different tools, and explore their options. For example:</p>
 <ul>
-<li><p>Use the rectangle, ellipse, or polygon tools to make an annotation of a particular shape.</p></li>
-<li><p>Try using the pen tool to fill in a nucleus. You can change the size of the pen by selecting the tool and pressing the small arrow to the left of the icon to access the size slider.</p></li>
-<li><p>With the Color/Fill tool, try clicking the center of a nucleus and dragging out to create an annotation over the object.</p></li>
-<li><p>Play around with the Quick Annotation tool, which tries to predict annotations near your cursor. You can adjust the sensitivity with a slider.</p></li>
-<li><p>Select an area with the Threshold tool, then use the slider to adjust the threshold to detect the bounds of your object. (Any objects identified within this area will be recorded as one annotation.)</p></li>
+<li><p>Use the <strong>Rectangle</strong>, <strong>Ellipse</strong>, or <strong>Polygon</strong> tools to make an annotation of a particular shape.</p></li>
+<li><p>Try using the <strong>Pen</strong> tool to fill in a nucleus. You can change the size of the pen by selecting the tool and pressing the small arrow to the left of the icon to access the size slider.</p></li>
+<li><p>With the <strong>Color/Fill</strong> tool, try clicking the center of a nucleus and dragging out to create an annotation over the object.</p></li>
+<li><p>Play around with the <strong>Quick Annotation</strong> tool, which tries to predict annotations near your cursor. You can adjust the sensitivity with a slider.</p></li>
+<li><p>Select an area with the <strong>Threshold</strong> tool, then use the slider to adjust the threshold to detect the bounds of your object. (Any objects identified within this area will be recorded as one annotation.)</p></li>
 </ul>
 </li>
-<li><p>You can also modify existing annotations with the augmentation tools Combine, Subtract, Intersection, and Invert.</p></li>
+<li><p>You can also modify existing annotations with the augmentation tools <strong>Combine</strong>, <strong>Subtract</strong>, <strong>Intersection</strong>, and <strong>Invert</strong>.</p></li>
 <li><p>Which annotation tools work best for you? Are some better for certain “classes” of nuclei?</p></li>
 </ul>
 <div class="admonition tip">
@@ -418,17 +424,15 @@
 <ul class="simple">
 <li><p>When you are done annotating (and/or want to change some categories for some annotations), hit the back arrow to return to the main view.</p></li>
 </ul>
-<img alt="../_images/SaveAndReturn.png" src="../_images/SaveAndReturn.png" />
+<img alt="Save and return button in Piximi" src="../_images/SaveAndReturn.png" />
 <ul class="simple">
 <li><p>Make sure to save your project file for future use!</p></li>
 <li><p>In the main view, you can click to the ‘Nuclei’ section on the top bar and see all of the annotations you just made. How do they look? You can add or change categories for any objects.</p></li>
 </ul>
 </section>
-<hr class="docutils" />
 <section id="exercise-part-2-making-some-measurements">
 <h2>Exercise Part 2 - Making some measurements<a class="headerlink" href="#exercise-part-2-making-some-measurements" title="Link to this heading">#</a></h2>
-<p>Rarely do we want stop at just finding objects and categorizing them - often, we want to know things about them.
-With Piximi, we can take different measurements of these objects, plot the data in Piximi, and export measurements for further analysis.</p>
+<p>Rarely do we want stop at just finding objects and categorizing them - often, we want to know things about them. With Piximi, we can take different measurements of these objects, plot the data in Piximi, and export measurements for further analysis.</p>
 <p>Currently, Piximi supports two broad classes of measurements - intensity measurements, which work for images OR objects, and shape/geometry measurements, which work for objects alone. More categories of measurements will be rolling out in time - stay tuned!</p>
 <ul class="simple">
 <li><p>Follow Piximi’s <a class="reference external" href="https://documentation.piximi.app/pages/tutorial/creating-measurements.html">Measurements tutorial</a> to learn how to create and export measurements for your identified nuclei.</p>
@@ -441,18 +445,16 @@ With Piximi, we can take different measurements of these objects, plot the data 
 <li><p>How would you use these measurement and plotting tools on your data?</p></li>
 </ul>
 </section>
-<hr class="docutils" />
 <section id="bonus-exercise-annotating-some-cells">
 <h2><strong>Bonus Exercise - Annotating some cells</strong><a class="headerlink" href="#bonus-exercise-annotating-some-cells" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Try to annotate some cells - in the annotator view, hit <code class="docutils literal notranslate"><span class="pre">+</span></code> to create a new “Kind” called cells</p></li>
 </ul>
-<a class="reference internal image-reference" href="../_images/NewKind.png"><img alt="../_images/NewKind.png" src="../_images/NewKind.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="../_images/NewKind.png"><img alt="new kind" src="../_images/NewKind.png" style="width: 100%;" />
 </a>
 <ul class="simple">
 <li><p>Annotate some cells, trying a few different Piximi functionalities for annotation - do you find the same tools optimal for annotating cells and nuclei? Are some tools better suited for one or the other? You can use the Channel Adjustment tool on the top bar to toggle the nuclei and microglia channels on and off.</p></li>
 </ul>
-<hr class="docutils" />
 </section>
 </section>
 
@@ -523,6 +525,8 @@ With Piximi, we can take different measurements of these objects, plot the data 
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-overview">Exercise Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-part-1-manually-annotate-some-nuclei">Exercise Part 1 - Manually annotate some nuclei</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-part-2-making-some-measurements">Exercise Part 2 - Making some measurements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-annotating-some-cells"><strong>Bonus Exercise - Annotating some cells</strong></a></li>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Day 5, Session 2 - Segmenting Data with Cellpose &#8212; BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual</title>
+    <title>Day 1: Introduction to FIJI &#8212; BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual</title>
   
   
   
@@ -62,11 +62,9 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Cellpose/CellposeIntro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'FIJI/FIJI_exercise';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Downloads" href="../downloads.html" />
-    <link rel="prev" title="Day 4, Session 6 - ‘Segment Anything’ Model (SAM) for Microscopy" href="../MicroSAM/MicroSAM_workshop.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -117,6 +115,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -171,7 +171,7 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and Exercises</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../developing_intutions.html">Day 1, Exercise 3: developing image processing intutions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Piximi_ManualAnnotation/Piximi.html">Day 1 - Making Manual Annotations with Piximi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../BeginnerSegmentation/CPbeginner_Segmentation.html">Day 2, exercise 2: Introduction to CellProfiler</a></li>
@@ -182,7 +182,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../BeginnerSegmentation/BeginnerSegmentationPlugins.html">Day 4, Session 2 - Interfacing CellProfiler with other software tools via files and plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MicroSAM/MicroSAM_workshop.html">Day 4, Session 6 - ‘Segment Anything’ Model (SAM) for Microscopy</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Day 5, Session 2 - Segmenting Data with Cellpose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Cellpose/CellposeIntro.html">Day 5, Session 2 - Segmenting Data with Cellpose</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -248,7 +248,7 @@
       
       
       
-      <li><a href="../_sources/Cellpose/CellposeIntro.md" target="_blank"
+      <li><a href="../_sources/FIJI/FIJI_exercise.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -324,7 +324,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Day 5, Session 2 - Segmenting Data with Cellpose</h1>
+    <h1>Day 1: Introduction to FIJI</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -335,15 +335,12 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-part-1-cellpose-3">Exercise part 1 - Cellpose 3</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initially-explore-performance-with-an-image-set">Initially explore performance with an image set</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-parameters-rather-than-retraining">Fixing parameters rather than retraining</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retraining">Retraining</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warning">Warning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-an-image-in-fiji">Open an image in FIJI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-image-properties">Explore image properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-look-up-tables-luts">Explore Look Up Tables (LUTs)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-filters">Explore filters</a></li>
 </ul>
             </nav>
         </div>
@@ -355,142 +352,56 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="day-5-session-2-segmenting-data-with-cellpose">
-<h1>Day 5, Session 2 - Segmenting Data with Cellpose<a class="headerlink" href="#day-5-session-2-segmenting-data-with-cellpose" title="Link to this heading">#</a></h1>
-<p><em>Lab authors: Beth Cimini</em></p>
-<hr class="docutils" />
+  <section class="tex2jax_ignore mathjax_ignore" id="day-1-introduction-to-fiji">
+<h1>Day 1: Introduction to FIJI<a class="headerlink" href="#day-1-introduction-to-fiji" title="Link to this heading">#</a></h1>
+<p>Lab authors: Erin Weisbart</p>
 <section id="learning-objectives">
 <h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Try Cellpose models on a variety of data</p></li>
-<li><p>Learn to tell if Cellpose needs to be re-trained or just the parameters played with</p></li>
-<li><p>Compare performance in Cellpose 4 to performance in Cellpose 3</p></li>
-</ul>
-<p>You can download some sample images from <a class="reference external" href="https://drive.google.com/drive/folders/1NOt_OeMVr6Y5ZK5CrYtG97-P05yABHlx?usp=sharing">this Drive folder</a> (it’s the same data we used yesterday in MicroSAM, if you already downloaded that, plus some of the images we used the first day on Piximi, if you still have those)</p>
-<hr class="docutils" />
-<p>It’s finally here, the last software we’re going to teach you - Cellpose!</p>
-</section>
-<section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
-<p>Using Pixi:
-Clone the <strong>BAB3</strong> repo locally (during the course, you should have already done this part!) and <code class="docutils literal notranslate"><span class="pre">cd</span></code> into that directory, then:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>pixi_envs/cellpose3<span class="w"> </span><span class="c1">#go to the directory containing the pixi files</span>
-pixi<span class="w"> </span>shell<span class="w"> </span>--frozen<span class="w"> </span><span class="c1">#activate the new cellpose3 environment (and install, if not already installed)</span>
-</pre></div>
-</div>
-<p>If successful, you should see <code class="docutils literal notranslate"><span class="pre">(cellpose3)</span></code> before your command line prompt. Within this Pixi shell, you should have everything you need for this workshop. You can activate Cellpose just by running <code class="docutils literal notranslate"><span class="pre">cellpose</span></code></p>
-<p>You can always exit the Pixi environment using the <code class="docutils literal notranslate"><span class="pre">exit</span></code> command.</p>
-<p>If you get this error when activating Cellpose: <code class="docutils literal notranslate"><span class="pre">OMP:</span> <span class="pre">Error</span> <span class="pre">#15:</span> <span class="pre">Initializing</span> <span class="pre">libomp.dylib,</span> <span class="pre">but</span> <span class="pre">found</span> <span class="pre">libomp.dylib</span> <span class="pre">already</span> <span class="pre">initialized.</span></code> then run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--force-reinstall<span class="w"> </span><span class="s2">&quot;cellpose&lt;4&quot;</span><span class="w"> </span>
-</pre></div>
-</div>
-<p>When you’re ready for Cellpose4, the procedure is the same:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>pixi_envs/cellpose4<span class="w"> </span><span class="c1">#go to the directory containing the pixi files</span>
-pixi<span class="w"> </span>shell<span class="w"> </span>--frozen<span class="w"> </span><span class="c1">#activate the new cellpose4 environment (and install, if not already installed)</span>
-<span class="sb">`</span>cellpose<span class="sb">`</span>
-</pre></div>
-</div>
-</section>
-<section id="exercise-part-1-cellpose-3">
-<h2>Exercise part 1 - Cellpose 3<a class="headerlink" href="#exercise-part-1-cellpose-3" title="Link to this heading">#</a></h2>
-<aside class="margin sidebar">
-<p class="sidebar-title">Want to learn more about working with Cellpose?</p>
-<p>Check out the <a class="reference external" href="https://cellpose.readthedocs.io/en/latest/">documentation</a>, or check them out on <a class="reference external" href="https://forum.image.sc/tag/Cellpose">the image.sc forum!</a></p>
-</aside>
-<p>Today, we have access to 3 of the MicroSAM example datasets (a timelapse set, a pathology set, and a 3D set, as well as the microglia images from Monday’s exercise). Let’s see how well they perform!</p>
-<p>Cellpose 3 can be pretty great out of the box - here it is, untrained, on one of the pathology images.</p>
-<img alt="../_images/Path_cyto3.png" src="../_images/Path_cyto3.png" />
-<section id="initially-explore-performance-with-an-image-set">
-<h3>Initially explore performance with an image set<a class="headerlink" href="#initially-explore-performance-with-an-image-set" title="Link to this heading">#</a></h3>
-<p>So let’s go to one that’s a little less good and see how it does.</p>
-<ul class="simple">
-<li><p>Load an image from the timelapse set and let the <code class="docutils literal notranslate"><span class="pre">cyto3</span></code> default model run. Good, but not great!</p></li>
-</ul>
-<img alt="../_images/Fluo_cyto3_init.png" src="../_images/Fluo_cyto3_init.png" />
-<ul class="simple">
-<li><p>One parameter Cellpose (in 1-3, anyway) is pretty sensitive to is the initial diameter prediction - what happens when we change that?</p></li>
-</ul>
-<img alt="../_images/Fluo_fixedsize.png" src="../_images/Fluo_fixedsize.png" />
-<ul class="simple">
-<li><p>Check the “dataset-specific models” on the left bar - do any of them do better than cyto3?</p></li>
+<li><p>Be introduced to FIJI</p></li>
+<li><p>Practice opening images in FIJI and exploring some of their properties</p></li>
+<li><p>Practice applying filters to an image in FIJI</p></li>
 </ul>
 </section>
-<section id="fixing-parameters-rather-than-retraining">
-<h3>Fixing parameters rather than retraining<a class="headerlink" href="#fixing-parameters-rather-than-retraining" title="Link to this heading">#</a></h3>
-<p>If we can avoid retraining, it is always nice to avoid it where we can. Thankfully, there are a couple more very powerful parameters we can tune in Cellpose - how “coherent” of a flow it needs to have in order to consider an object a cell or not, as well as the probability threshold of if it’s a cell or not. Cellpose makes images of the flow and the probability and we can access these images in the top left under the “Views” menu, by changing from “Image” to “gradxy” or “cellprob”.</p>
-<img alt="../_images/Views.png" src="../_images/Views.png" />
-<p>See what they look like below!</p>
-<img alt="../_images/Fluo_cyto3_flows.png" src="../_images/Fluo_cyto3_flows.png" />
-<img alt="../_images/Fluo_cyto3_probmap.png" src="../_images/Fluo_cyto3_probmap.png" />
-<p>In the “Additional Settings” menu, Cellpose lets us adjust these parameters</p>
-<aside class="margin sidebar">
-<p class="sidebar-title"></p>
-<p>Using Cellpose models in CellProfiler? We let you adjust them too!</p>
-</aside>
-<img alt="../_images/Additional_Settings_Menu.png" src="../_images/Additional_Settings_Menu.png" />
-<ul class="simple">
-<li><p>Play around with the flow threshold and cellprob threshold - can you improve the segmentation without retraining?</p></li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Not sure how to tune these parameters or what they mean? Hover over them to learn more!
-<img alt="../_images/HoverHelp.png" src="../_images/HoverHelp.png" /></p>
-</div>
+<section id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
+<p>Prior to this exercise, you should have <a class="reference external" href="https://fiji.sc">downloaded FIJI</a> and the <a class="reference external" href="https://github.com/CellProfiler/tutorials/raw/master/BeginnerSegmentation/Archive_EN.zip">Beginner Segmentation image set</a>.</p>
 </section>
-<section id="retraining">
-<h3>Retraining<a class="headerlink" href="#retraining" title="Link to this heading">#</a></h3>
-<p>Human-in-the-loop retraining (and easy finetuning) is why we love Cellpose so much, so let’s give it a try!</p>
+<section id="warning">
+<h2>Warning<a class="headerlink" href="#warning" title="Link to this heading">#</a></h2>
+<p>As we are using this same image set in future exercises, please do not save any changes to the original images.</p>
+</section>
+<section id="open-an-image-in-fiji">
+<h2>Open an image in FIJI<a class="headerlink" href="#open-an-image-in-fiji" title="Link to this heading">#</a></h2>
+<p>Open FIJI.</p>
+<p><img alt="Image open in FIJI" src="../_images/open_image_in_FIJI.png" /></p>
+<p>Open the first image in the <code class="docutils literal notranslate"><span class="pre">images_Illum-corrected</span></code> folder in FIJI. You can do this by going to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Open...</span></code> and navigating to the image location, or by dragging and dropping the image file into the FIJI window.</p>
+</section>
+<section id="explore-image-properties">
+<h2>Explore image properties<a class="headerlink" href="#explore-image-properties" title="Link to this heading">#</a></h2>
+<p>Hover your mouse over the image and notice the x, y coordinates and the pixel value being reported in the status bar at the bottom of the FIJI window.</p>
+<p><img alt="Image with Adjusted Contrast" src="../_images/contrast_in_FIJI.png" /></p>
+<p>Adjust the contrast of the image by going to <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Adjust</span> <span class="pre">&gt;</span> <span class="pre">Brightness/Contrast...</span></code> (or pressing <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">C</span></code>). In the Brightness/Contrast window, click <code class="docutils literal notranslate"><span class="pre">Auto</span></code> to automatically adjust the contrast. You can also manually adjust the sliders to change the brightness and contrast of the image. Look at the pixel values in the status bar as you adjust the contrast.</p>
+<p>Click <code class="docutils literal notranslate"><span class="pre">Apply</span></code> in the Brightness/Contrast window and look at the pixel values again. How have they changed?</p>
+<p>Close the image (without saving changes) and open it again. Change the bit depth by going to <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Type</span> <span class="pre">&gt;</span> <span class="pre">8-bit</span></code>. Look at the pixel values in the status bar again. How have they changed?</p>
+</section>
+<section id="explore-look-up-tables-luts">
+<h2>Explore Look Up Tables (LUTs)<a class="headerlink" href="#explore-look-up-tables-luts" title="Link to this heading">#</a></h2>
+<p>Change the LUT of the image by going to <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Lookup</span> <span class="pre">Tables</span></code> and selecting a different LUT. Try a number of different LUTs.</p>
+<p><img alt="Image with Adjusted LUT" src="../_images/LUT.png" /></p>
 <ul class="simple">
-<li><p>Take a good automatic prediction, and delete the masks you don’t want anymore
-<img alt="../_images/DeleteAnnotations.png" src="../_images/DeleteAnnotations.png" /></p></li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Not sure how to annotate? Try the help menu for tips and hotkeys!
-<img alt="../_images/Help.png" src="../_images/Help.png" /></p>
-</div>
-<ul class="simple">
-<li><p>Annotate any cells you need to, by right clicking (or ctl+click to start, then release ctl and just keep drawing until the circle closes).
-<img alt="../_images/AnnotateCell.gif" src="../_images/AnnotateCell.gif" /></p></li>
-<li><p>After you finish on image, go to <code class="docutils literal notranslate"><span class="pre">Models</span> <span class="pre">-&gt;</span> <span class="pre">Train</span></code> to train a new model. Cellpose will automatically run it for you once it’s done training.
-<img alt="../_images/TrainWindow.png" src="../_images/TrainWindow.png" /></p></li>
-<li><p>How did it do?</p></li>
-<li><p>Go to the next image, and try either a built-in model or your one-image model, and then fix up the annotations for training. Train with two images. How well does it work now?</p></li>
-<li><p>How about with 3?</p></li>
+<li><p>How does this change the appearance of the image?</p></li>
+<li><p>Does it change the pixel values reported in the status bar?</p></li>
+<li><p>Are there any LUTs that make it <em>easier</em> to see differences in nuclei intensities in the image?</p></li>
+<li><p>Are there any LUTs that make it <em>harder</em> to see differences in nuclei intensities in the image? (hint: try <code class="docutils literal notranslate"><span class="pre">Blue</span></code>)</p></li>
 </ul>
 </section>
+<section id="explore-filters">
+<h2>Explore filters<a class="headerlink" href="#explore-filters" title="Link to this heading">#</a></h2>
+<p>Return your image to the default LUT by going to <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Lookup</span> <span class="pre">Tables</span> <span class="pre">&gt;</span> <span class="pre">Grays</span></code>.</p>
+<p>Explore some of the filters available in FIJI by going to <code class="docutils literal notranslate"><span class="pre">Process</span> <span class="pre">&gt;</span> <span class="pre">Filters</span></code> and selecting a filter to apply to the image. See how the filter changes the appearance of the image. See if it pixel affects intensities.</p>
+<p>Hint: You can undo filter applications by going to <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Undo</span></code> or pressing <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Z</span></code> (or <code class="docutils literal notranslate"><span class="pre">Cmd</span> <span class="pre">+</span> <span class="pre">Z</span></code> on Mac).</p>
 </section>
-<section id="exercise-2">
-<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Play around a bit with the microglia data, as above.</p></li>
-<li><p>How good can you make it look without retraining?</p></li>
-<li><p>How easily can you retrain it?</p></li>
-</ul>
-</section>
-<section id="exercise-3">
-<h2>Exercise 3<a class="headerlink" href="#exercise-3" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Bring the worst peforming dataset (it will probably be the microglia) over to Cellpose 4. How well does it do out of the box?</p></li>
-</ul>
-<p>(Unfortunately, it looks like there is a bug in Cellpose 4.0.6, the version that we have in the pixi Cellpose 4 pixi environment, that affects retraining, so it may not work for you to retrain Cellpose 4 in the same way that you could in the previous exercise with Cellpose 3.)</p>
-<p>To exit Cellpose 3 and enter Cellpose 4, you will need to exit the Pixi shell and re-enter the other environment.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">exit</span><span class="w"> </span><span class="c1"># exit Cellpose 3 pixi shell</span>
-<span class="nb">cd</span><span class="w"> </span>../cellpose4<span class="w"> </span><span class="c1"># go to the directory containing the Cellpose 4 pixi files</span>
-pixi<span class="w"> </span>shell<span class="w"> </span>--frozen<span class="w"> </span><span class="c1"># activate the new Cellpose 4 environment (and install, if not already installed)</span>
-cellpose<span class="w"> </span><span class="c1"># start Cellpose 4</span>
-</pre></div>
-</div>
-<p>As we’ve mentioned, Cellpose 4 uses a different architecture (SAM-based) and as a consequence is much more compute intensive. If you have a GPU available, you will absolutely want to use it. Cellpose 4 will run on CPU, but it will be (potentially prohibitively) slow.</p>
-<!--
-## Bonus exercise
-
-- How do Cellpose 3 (and Cellpose 4, if your computer can handle it) work on the 3D dataset?
-
-(Note that you'll have to close the GUI and reopen it with `cellpose --Zstack`)
-
-What if you try 2.5D mode (leave the stitch threshold parameter at 0) vs overlap mode (set the stitch threshold to something greater than 0)? Note that overlap is much faster, so you may want to try that first!
---></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -506,7 +417,7 @@ What if you try 2.5D mode (leave the stitch threshold parameter at 0) vs overlap
         },
         kernelOptions: {
             name: "python3",
-            path: "./Cellpose"
+            path: "./FIJI"
         },
         predefinedOutput: true
     }
@@ -523,24 +434,6 @@ What if you try 2.5D mode (leave the stitch threshold parameter at 0) vs overlap
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../MicroSAM/MicroSAM_workshop.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Day 4, Session 6 - ‘Segment Anything’ Model (SAM) for Microscopy</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../downloads.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Downloads</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -560,15 +453,12 @@ What if you try 2.5D mode (leave the stitch threshold parameter at 0) vs overlap
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-part-1-cellpose-3">Exercise part 1 - Cellpose 3</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initially-explore-performance-with-an-image-set">Initially explore performance with an image set</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-parameters-rather-than-retraining">Fixing parameters rather than retraining</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retraining">Retraining</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warning">Warning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-an-image-in-fiji">Open an image in FIJI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-image-properties">Explore image properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-look-up-tables-luts">Explore Look Up Tables (LUTs)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-filters">Explore filters</a></li>
 </ul>
   </nav></div>
 
