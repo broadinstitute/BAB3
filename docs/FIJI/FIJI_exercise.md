@@ -20,7 +20,7 @@ As we are using this same image set in future exercises, please do not save any 
 
 Open Fiji.
 
-![Image open in Fiji](FIJI_images/open_image_in_Fiji.png)
+![Image open in Fiji](FIJI_images/open_image_in_FIJI.png)
 
 Open the first image in the `images_Illum-corrected` folder in Fiji. You can do this by going to `File > Open...` and navigating to the image location, or by dragging and dropping the image file into the Fiji window.
 
