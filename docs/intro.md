@@ -28,8 +28,8 @@ The links below will populate as we work our way through the course.
 | | Manual Annotation in Piximi | [Exercise](Piximi_ManualAnnotation/Piximi.md) |
 | Tuesday | Classical Segmentation | [Slides](https://docs.google.com/presentation/d/1p9PFNboYmvywN9RIEZHshjxqMFZ2u0c4G9bAWkjvYbc/edit?slide=id.g3e4cdfd361a_2_73#slide=id.g3e4cdfd361a_2_73) |
 | | Intro to CellProfiler | [Exercise](BeginnerSegmentation/CPbeginner_Segmentation.md) |
-| | Thinking About Measurements | Slides |
-| | Advanced Segmentation in CellProfiler | Exercise |
+| | Thinking About Measurements | [Slides](https://docs.google.com/presentation/d/1cYoGZT_HUBnzFiTkt-Xn3-CI9JtRp0q-orOfJYX55Zc/edit?slide=id.g303d086ded7_0_1390#slide=id.g303d086ded7_0_1390) |
+| | Advanced Segmentation in CellProfiler | [Exercise](AdvancedSegmentation/BBBC022_AnalysisExercise.md) |
 | | Classical Machine Learning | Slides |
 | | CellProfiler Analyst | Exercise |
 | Wednesday | Pitfalls in Classic Machine Learning/Intro to Ilastik | Slides |

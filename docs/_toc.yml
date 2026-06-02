@@ -10,6 +10,7 @@ parts:
   - file: developing_intutions.md
   - file: Piximi_ManualAnnotation/Piximi.md
   - file: BeginnerSegmentation/CPbeginner_Segmentation.md
+  - file: AdvancedSegmentation/BBBC022_AnalysisExercise.md
 - caption:  Additional Resources
   chapters:
   - file: downloads
