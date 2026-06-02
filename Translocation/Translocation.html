@@ -353,6 +353,16 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-your-classifier-for-use-in-a-cellprofiler-pipeline">9. Exporting your classifier for use in a CellProfiler pipeline</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-using-piximi-for-classification-optional">Exercise 3: Using Piximi for classification (optional)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-fix-how-the-images-look">Optional: fix how the images look</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-a-classifier">Train a Classifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-your-classifier">Evaluate your classifier</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fix-some-mistakes">Fix some mistakes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#save-things-for-later">Save things for later</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -683,6 +693,85 @@ You now have your initial training set, and the rules that define the computer<c
 </ul>
 </section>
 </section>
+<section id="exercise-3-using-piximi-for-classification-optional">
+<h2>Exercise 3: Using Piximi for classification (optional)<a class="headerlink" href="#exercise-3-using-piximi-for-classification-optional" title="Link to this heading">#</a></h2>
+<p>There is never a single way to do image analysis and choosing the “best” way can be influenced by how accessible the software is to you and how familiar you are with the software. So on that note, we’re going to perform the same classification task that we just did using CellProfiler and CellProfiler Analyst and instead use Piximi this time.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Sometimes this data set takes a long time to load, sometimes it doesn’t! We’re not sure why.</p>
+</div>
+<ul class="simple">
+<li><p>Open <a class="reference external" href="https://piximi.app">Piximi</a>, and then load the U2OS-cells cytoplasm crops example dataset (Open &gt; Project &gt; Example Project &gt; Human U2OS-cells cytoplasm crops)</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/piximi_bbbc013.png"><img alt="load translocation dataset in Piximi" src="../_images/piximi_bbbc013.png" style="height: 180px;" />
+</a>
+<section id="optional-fix-how-the-images-look">
+<h3>Optional: fix how the images look<a class="headerlink" href="#optional-fix-how-the-images-look" title="Link to this heading">#</a></h3>
+<p>You need not do this, since it can be a bit slow, but it is necessary if you want to assess the performance of the no-GFP class (and will make things much easier if you are red-green colorblind).</p>
+<p>Piximi’s current defaults are to load two-channel images as red and green, and to rescale each image min-max individually. While we work to fix those bugs, here’s how you can manually set the colors to something better (and more uniform):</p>
+<ul class="simple">
+<li><p>Hit Ctrl+A to select all cells or use the “Select all” button in the top bar</p></li>
+<li><p>Hit “Annotate” to open the annotation viewer
+<a class="reference internal" href="../_images/piximi_annotate.png"><img alt="piximi annotate" src="../_images/piximi_annotate.png" style="height: 180px;" /></a></p></li>
+<li><p>Open the channel adjustment bar on the top right (<a class="reference internal" href="../_images/piximi_channel_tool.png"><img alt="piximi channel tool" src="../_images/piximi_channel_tool.png" style="height: 25px;" /></a>), and change color mapping to better lookup tables and values. Hit “Apply to all images open in the annotator” when you’re done (and then wait a couple of minutes)</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/piximi_channels.png"><img alt="piximi channels" src="../_images/piximi_channels.png" style="height: 180px;" />
+</a>
+</section>
+<section id="train-a-classifier">
+<h3>Train a Classifier<a class="headerlink" href="#train-a-classifier" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Return to the image viewer by selecting the arrow in the upper left corner. Select Yes to save the changes to your annotations.</p></li>
+<li><p>Some of the cells have already been labeled which you can see by looking at the <code class="docutils literal notranslate"><span class="pre">Categories</span></code> on the left sidebar. The flags that are visible on the upper left of each image correspond to the category it has been annotated to. Note that you can change the color of a flag by clicking on the the three dots next to its name and selecting Edit.</p></li>
+<li><p>Tell Piximi you want to fit a classifier for these images by selecting the 3 dots in the left side bar. Go ahead and use the pre-populated defaults and select <a class="reference internal" href="../_images/piximi_fit_classifer.png"><img alt="fit classifier" src="../_images/piximi_fit_classifer.png" style="height: 40px;" /></a> to train.</p></li>
+<li><p>After an initialization step, you will see a performance chart that looks like the one below, as well as a loss graph. You can keep hitting <code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">Classifier</span></code> to keep adding more epochs of training.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/piximi_training_performance.png"><img alt="Piximi training performance" src="../_images/piximi_training_performance.png" style="height: 180px;" />
+</a>
+</section>
+<section id="evaluate-your-classifier">
+<h3>Evaluate your classifier<a class="headerlink" href="#evaluate-your-classifier" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Once you’re satisfied with your training (either because it’s great or because you’re satisfied that it has plateaued), close the training dialog. Hit the <code class="docutils literal notranslate"><span class="pre">Evaluate</span> <span class="pre">Model</span></code> button to check your confusion matrix. A confusion matrix helps you figure out patterns of mistakes, but it can only tell you about the performance of your model on data for which you’ve already provided the answer - it can’t tell you about performance in your unlabeled data. It is <em>critical</em> then to always apply your classifier to new, unseen data to see how it performs <em><strong>especially</strong></em> when only a small fraction of your data is labeled which is typically the case for biological cases (after all, if you have to hand label almost all of your data, then what’s the point of training a model?).</p></li>
+<li><p>Hit the <code class="docutils literal notranslate"><span class="pre">Predict</span> <span class="pre">Model</span></code> button to apply the model to the unlabeled data</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/piximi_predict.png"><img alt="Piximi predict" src="../_images/piximi_predict.png" style="height: 180px;" />
+</a>
+<ul class="simple">
+<li><p>Evaluate the performance of the predictions by looking at the newly predicted images. Use the filter/sort button on the right sidebar to filter to certain categories. You may want to filter to just “Inference” to look at just the new predictions.</p></li>
+</ul>
+<section id="fix-some-mistakes">
+<h4>Fix some mistakes<a class="headerlink" href="#fix-some-mistakes" title="Link to this heading">#</a></h4>
+<p>When you find some errors in the predictions, you can fix them by assigning them a new category. Select the images and select “Categorize” from the top bar.</p>
+<a class="reference internal image-reference" href="../_images/piximi_categorize.png"><img alt="Piximi recategorize errors" src="../_images/piximi_categorize.png" style="height: 180px;" />
+</a>
+<p>Depending on why you’re using machine learning, you might choose to fix all the wrong images at this stage, or only some:</p>
+<ul class="simple">
+<li><p><strong>Is your goal to just get the classifications right and then use them for something else, and most of them have already been correctly classified?</strong></p>
+<ul>
+<li><p>In that case, there’s no harm in just fixing the few mistakes and then moving on to other downstream quantification steps.</p></li>
+<li><p>If this is your goal but there are a lot of mistakes, you might not choose to fix all of them at this stage, but just fix a subset and then try to train again so you can get to a point where the errors are at a small enough level that you CAN do final data cleaning by hand</p></li>
+</ul>
+</li>
+<li><p><strong>Is your goal to create a robust, reusable classifier to use on other sets or in other contexts?</strong></p>
+<ul>
+<li><p>In that case, you might want to fix only a subset of the mistakes before retraining, so you can get a sense of if your model performance is improving.</p></li>
+<li><p>If retraining, once you’ve done your chosen recategorizations, use filters to delete “Inference” categorizations and then hit “Fit Model” again.</p></li>
+<li><p>If this is indeed your goal, you need to have some unseen <strong>test</strong> data somewhere else that you are not tuning on here! Once you’ve run any version of your model, at any stage, on unseen data, that data is now “seen data”, and can’t be used as a test set anymore. How you plan your data splits (and how much, and which, data you keep locked away as test set(s)) is critical to any kind of machine learning research.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="save-things-for-later">
+<h4>Save things for later<a class="headerlink" href="#save-things-for-later" title="Link to this heading">#</a></h4>
+<p>Reproducible science matters! You can therefore save your Piximi project file for later, as well as save your model for later use. You might find the former handy if you want to add more data later, and/or you just want to confer with someone else (including a paper reviewer, or future you) about how difficult data points were handled.</p>
+<a class="reference internal image-reference" href="../_images/piximi_save_project.png"><img alt="Piximi save project" src="../_images/piximi_save_project.png" style="height: 180px;" />
+</a>
+<a class="reference internal image-reference" href="../_images/piximi_save_model.png"><img alt="Piximi save model" src="../_images/piximi_save_model.png" style="height: 180px;" />
+</a>
+</section>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -758,6 +847,16 @@ You now have your initial training set, and the rules that define the computer<c
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-scores-to-the-measurement-database-for-visualization">7. Saving the scores to the measurement database for visualization</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-scoring-results-to-estimate-the-lowest-dose-necessary-to-induce-fox1o-gfp-translocation">8. Plotting the scoring results to estimate the lowest dose necessary to induce FOX1O-GFP translocation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-your-classifier-for-use-in-a-cellprofiler-pipeline">9. Exporting your classifier for use in a CellProfiler pipeline</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-using-piximi-for-classification-optional">Exercise 3: Using Piximi for classification (optional)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-fix-how-the-images-look">Optional: fix how the images look</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-a-classifier">Train a Classifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-your-classifier">Evaluate your classifier</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fix-some-mistakes">Fix some mistakes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#save-things-for-later">Save things for later</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
