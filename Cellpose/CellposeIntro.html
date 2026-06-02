@@ -351,7 +351,7 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="day-5-session-2-segmenting-data-with-cellpose">
 <h1>Day 5, Session 2 - Segmenting Data with Cellpose<a class="headerlink" href="#day-5-session-2-segmenting-data-with-cellpose" title="Link to this heading">#</a></h1>
-<p><em>Lab authors: Beth Cimini</em></p>
+<p><em>Lab authors: Beth Cimini.</em></p>
 <hr class="docutils" />
 <section id="learning-objectives">
 <h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
@@ -393,18 +393,18 @@ pixi<span class="w"> </span>shell<span class="w"> </span>--frozen<span class="w"
 </aside>
 <p>Today, we have access to 3 of the MicroSAM example datasets (a timelapse set, a pathology set, and a 3D set, as well as the microglia images from Monday’s exercise). Let’s see how well they perform!</p>
 <p>Cellpose 3 can be pretty great out of the box - here it is, untrained, on one of the pathology images.</p>
-<img alt="../_images/Path_cyto3.png" src="../_images/Path_cyto3.png" />
+<img alt="cyto3 on pathology image" src="../_images/Path_cyto3.png" />
 <section id="initially-explore-performance-with-an-image-set">
 <h3>Initially explore performance with an image set<a class="headerlink" href="#initially-explore-performance-with-an-image-set" title="Link to this heading">#</a></h3>
 <p>So let’s go to one that’s a little less good and see how it does.</p>
 <ul class="simple">
 <li><p>Load an image from the timelapse set and let the <code class="docutils literal notranslate"><span class="pre">cyto3</span></code> default model run. Good, but not great!</p></li>
 </ul>
-<img alt="../_images/Fluo_cyto3_init.png" src="../_images/Fluo_cyto3_init.png" />
+<img alt="cyto3 on fluorescence image" src="../_images/Fluo_cyto3_init.png" />
 <ul class="simple">
-<li><p>One parameter Cellpose (in 1-3, anyway) is pretty sensitive to is the initial diameter prediction - what happens when we change that?</p></li>
+<li><p>One parameter in Cellpose (versions 1-3) is pretty sensitive to is the initial diameter prediction - what happens when we change that?</p></li>
 </ul>
-<img alt="../_images/Fluo_fixedsize.png" src="../_images/Fluo_fixedsize.png" />
+<img alt="parameter tuning on fluorescence image" src="../_images/Fluo_fixedsize.png" />
 <ul class="simple">
 <li><p>Check the “dataset-specific models” on the left bar - do any of them do better than cyto3?</p></li>
 </ul>
@@ -412,23 +412,23 @@ pixi<span class="w"> </span>shell<span class="w"> </span>--frozen<span class="w"
 <section id="fixing-parameters-rather-than-retraining">
 <h3>Fixing parameters rather than retraining<a class="headerlink" href="#fixing-parameters-rather-than-retraining" title="Link to this heading">#</a></h3>
 <p>If we can avoid retraining, it is always nice to avoid it where we can. Thankfully, there are a couple more very powerful parameters we can tune in Cellpose - how “coherent” of a flow it needs to have in order to consider an object a cell or not, as well as the probability threshold of if it’s a cell or not. Cellpose makes images of the flow and the probability and we can access these images in the top left under the “Views” menu, by changing from “Image” to “gradxy” or “cellprob”.</p>
-<img alt="../_images/Views.png" src="../_images/Views.png" />
+<img alt="views" src="../_images/Views.png" />
 <p>See what they look like below!</p>
-<img alt="../_images/Fluo_cyto3_flows.png" src="../_images/Fluo_cyto3_flows.png" />
-<img alt="../_images/Fluo_cyto3_probmap.png" src="../_images/Fluo_cyto3_probmap.png" />
+<img alt="flows" src="../_images/Fluo_cyto3_flows.png" />
+<img alt="probability map" src="../_images/Fluo_cyto3_probmap.png" />
 <p>In the “Additional Settings” menu, Cellpose lets us adjust these parameters</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Using Cellpose models in CellProfiler? We let you adjust them too!</p>
 </aside>
-<img alt="../_images/Additional_Settings_Menu.png" src="../_images/Additional_Settings_Menu.png" />
+<img alt="additional settings" src="../_images/Additional_Settings_Menu.png" />
 <ul class="simple">
 <li><p>Play around with the flow threshold and cellprob threshold - can you improve the segmentation without retraining?</p></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Not sure how to tune these parameters or what they mean? Hover over them to learn more!
-<img alt="../_images/HoverHelp.png" src="../_images/HoverHelp.png" /></p>
+<img alt="hover help" src="../_images/HoverHelp.png" /></p>
 </div>
 </section>
 <section id="retraining">
@@ -436,7 +436,7 @@ pixi<span class="w"> </span>shell<span class="w"> </span>--frozen<span class="w"
 <p>Human-in-the-loop retraining (and easy finetuning) is why we love Cellpose so much, so let’s give it a try!</p>
 <ul class="simple">
 <li><p>Take a good automatic prediction, and delete the masks you don’t want anymore
-<img alt="../_images/DeleteAnnotations.png" src="../_images/DeleteAnnotations.png" /></p></li>
+<img alt="delete annotations" src="../_images/DeleteAnnotations.png" /></p></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -445,12 +445,20 @@ pixi<span class="w"> </span>shell<span class="w"> </span>--frozen<span class="w"
 </div>
 <ul class="simple">
 <li><p>Annotate any cells you need to, by right clicking (or ctl+click to start, then release ctl and just keep drawing until the circle closes).
-<img alt="../_images/AnnotateCell.gif" src="../_images/AnnotateCell.gif" /></p></li>
-<li><p>After you finish on image, go to <code class="docutils literal notranslate"><span class="pre">Models</span> <span class="pre">-&gt;</span> <span class="pre">Train</span></code> to train a new model. Cellpose will automatically run it for you once it’s done training.
-<img alt="../_images/TrainWindow.png" src="../_images/TrainWindow.png" /></p></li>
+<img alt="annotate cells" src="../_images/AnnotateCell.gif" /></p></li>
+</ul>
+<p>After annotating an image, look in the folder of images in your computer’s file manager (Finder for Mac, File Explorer for PC). You can see that there is now a file that ends in <code class="docutils literal notranslate"><span class="pre">_seg.npy</span></code>. This is how Cellpose saves the annotations that you have made on any image.</p>
+<img alt="_seg.npy files" src="../_images/seg_npy_files.png" />
+<ul class="simple">
+<li><p>After you finish on image, go to <code class="docutils literal notranslate"><span class="pre">Models</span> <span class="pre">-&gt;</span> <span class="pre">Train</span> <span class="pre">new</span> <span class="pre">model</span> <span class="pre">with</span> <span class="pre">image+masks</span> <span class="pre">in</span> <span class="pre">folder</span></code> to train a new model. Cellpose will automatically run your new model for you once it’s done training.
+<img alt="train window" src="../_images/TrainWindow.png" /></p></li>
 <li><p>How did it do?</p></li>
+</ul>
+<p>If it didn’t do well, you might need to adjust the learning rate to lower than the default starting value of <code class="docutils literal notranslate"><span class="pre">.1</span></code>. If the learning rate is too high, the model might fluctuate too much and may diverge entirely. If it is too low it will take a very long time and you might get stuck in local minima. We’ve found that changing it to <code class="docutils literal notranslate"><span class="pre">.01</span></code> is a good balance.</p>
+<img alt="change learning rate" src="../_images/change_learning_rate.png" />
+<ul class="simple">
 <li><p>Go to the next image, and try either a built-in model or your one-image model, and then fix up the annotations for training. Train with two images. How well does it work now?</p></li>
-<li><p>How about with 3?</p></li>
+<li><p>How about when you’ve trained on 3 images?</p></li>
 </ul>
 </section>
 </section>

@@ -1,6 +1,6 @@
 # Day 5, Session 2 - Segmenting Data with Cellpose
 
-*Lab authors: Beth Cimini*
+*Lab authors: Beth Cimini.*
 
 ---
 
@@ -54,7 +54,7 @@ Today, we have access to 3 of the MicroSAM example datasets (a timelapse set, a 
 
 Cellpose 3 can be pretty great out of the box - here it is, untrained, on one of the pathology images.
 
-<img src="./TutorialImages/Path_cyto3.png">
+<img src="./TutorialImages/Path_cyto3.png" alt="cyto3 on pathology image"/>
 
 ### Initially explore performance with an image set
 
@@ -62,11 +62,11 @@ So let's go to one that's a little less good and see how it does.
 
 - Load an image from the timelapse set and let the `cyto3` default model run. Good, but not great!
 
-<img src="./TutorialImages/Fluo_cyto3_init.png">
+<img src="./TutorialImages/Fluo_cyto3_init.png" alt="cyto3 on fluorescence image"/>
 
-- One parameter Cellpose (in 1-3, anyway) is pretty sensitive to is the initial diameter prediction - what happens when we change that?
+- One parameter in Cellpose (versions 1-3) is pretty sensitive to is the initial diameter prediction - what happens when we change that?
 
-<img src="./TutorialImages/Fluo_fixedsize.png">
+<img src="./TutorialImages/Fluo_fixedsize.png" alt="parameter tuning on fluorescence image"/>
 
 - Check the "dataset-specific models" on the left bar - do any of them do better than cyto3?
 
@@ -74,12 +74,12 @@ So let's go to one that's a little less good and see how it does.
 
 If we can avoid retraining, it is always nice to avoid it where we can. Thankfully, there are a couple more very powerful parameters we can tune in Cellpose - how "coherent" of a flow it needs to have in order to consider an object a cell or not, as well as the probability threshold of if it's a cell or not. Cellpose makes images of the flow and the probability and we can access these images in the top left under the "Views" menu, by changing from "Image" to "gradxy" or "cellprob".
 
-<img src="./TutorialImages/Views.png">
+<img src="./TutorialImages/Views.png" alt="views"/>
 
 See what they look like below!
 
-<img src="./TutorialImages/Fluo_cyto3_flows.png">
-<img src="./TutorialImages/Fluo_cyto3_probmap.png">
+<img src="./TutorialImages/Fluo_cyto3_flows.png" alt="flows"/>
+<img src="./TutorialImages/Fluo_cyto3_probmap.png" alt="probability map"/>
 
 In the "Additional Settings" menu, Cellpose lets us adjust these parameters
 
@@ -87,13 +87,13 @@ In the "Additional Settings" menu, Cellpose lets us adjust these parameters
 Using Cellpose models in CellProfiler? We let you adjust them too!
 ```
 
-<img src="./TutorialImages/Additional_Settings_Menu.png">
+<img src="./TutorialImages/Additional_Settings_Menu.png" alt="additional settings"/>
 
 - Play around with the flow threshold and cellprob threshold - can you improve the segmentation without retraining?
 
 ```{tip}
 Not sure how to tune these parameters or what they mean? Hover over them to learn more!
-<img src="./TutorialImages/HoverHelp.png"> 
+<img src="./TutorialImages/HoverHelp.png" alt="hover help"/> 
 ```
 
 ### Retraining
@@ -101,7 +101,7 @@ Not sure how to tune these parameters or what they mean? Hover over them to lear
 Human-in-the-loop retraining (and easy finetuning) is why we love Cellpose so much, so let's give it a try!
 
 - Take a good automatic prediction, and delete the masks you don't want anymore
-<img src="./TutorialImages/DeleteAnnotations.png">
+<img src="./TutorialImages/DeleteAnnotations.png" alt="delete annotations"/>
 
 ```{tip}
 Not sure how to annotate? Try the help menu for tips and hotkeys!
@@ -109,16 +109,24 @@ Not sure how to annotate? Try the help menu for tips and hotkeys!
 ```
 
 - Annotate any cells you need to, by right clicking (or ctl+click to start, then release ctl and just keep drawing until the circle closes).
-<img src="TutorialImages/AnnotateCell.gif">
+<img src="TutorialImages/AnnotateCell.gif" alt="annotate cells"/>
 
-- After you finish on image, go to `Models -> Train` to train a new model. Cellpose will automatically run it for you once it's done training.
-<img src="TutorialImages/TrainWindow.png">
+After annotating an image, look in the folder of images in your computer's file manager (Finder for Mac, File Explorer for PC). You can see that there is now a file that ends in `_seg.npy`. This is how Cellpose saves the annotations that you have made on any image.
+
+<img src="TutorialImages/seg_npy_files.png" alt= "_seg.npy files" />
+
+- After you finish on image, go to `Models -> Train new model with image+masks in folder` to train a new model. Cellpose will automatically run your new model for you once it's done training.
+<img src="TutorialImages/TrainWindow.png" alt= "train window" />
 
 - How did it do?
 
+If it didn't do well, you might need to adjust the learning rate to lower than the default starting value of `.1`. If the learning rate is too high, the model might fluctuate too much and may diverge entirely. If it is too low it will take a very long time and you might get stuck in local minima. We've found that changing it to `.01` is a good balance.
+
+<img src="TutorialImages/change_learning_rate.png" alt= "change learning rate" />
+
 - Go to the next image, and try either a built-in model or your one-image model, and then fix up the annotations for training. Train with two images. How well does it work now?
 
-- How about with 3?
+- How about when you've trained on 3 images?
 
 ## Exercise 2
 
