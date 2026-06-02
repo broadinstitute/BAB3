@@ -69,7 +69,7 @@ In this exercise, you will use CellProfiler to load a provided pipeline and run 
 
 - Click on the **NamesAndTypes** module. Note how the images are assigned to channels: images containing "w1" in their file name are assigned to the name "rawGFP", while those with "w2" are assigned "rawDNA". Click the `Update` button below the divider to display a table that shows each channel pair matched up for the 26 wells in the assay.
 
-### 2. Walk through the CellProfiler pipeline
+### 2. Walk (very quickly!) through the CellProfiler pipeline
 
 - Click the <img src="./TutorialImages/StartTestMode.png" width="120" alt="Start Test Mode button"/> button to the bottom-left of the CellProfiler interface. You will see <img src="./TutorialImages/PauseBlack.png" width="35" alt="Pause button"/> icons appear next to the modules in the pipeline, as well as new buttons appear below the modules.
 
@@ -317,7 +317,7 @@ Head back to the Classifier tool. Export a `.model` file which stores the traine
 
 - Within CellProfiler 4+, the `ClassifyObjects` and `FilterObjects` modules can load these model files and use them to assign objects to classes during the pipeline itself. This allows you to classify new data sets without needing to train in CellProfiler Analyst again. (Note that to use model files in CellProfiler, the pipeline needs to produce the same measurements that were present in your CPA database during training. These measurements must be captured before the module which will use your model.)
 
-## Exercise 3: Using Piximi for classification (optional)
+## Bonus Exercise: Using Piximi for classification (optional)
 
 There is never a single way to do image analysis and choosing the "best" way can be influenced by how accessible the software is to you and how familiar you are with the software. So on that note, we're going to perform the same classification task that we just did using CellProfiler and CellProfiler Analyst and instead use Piximi this time.
 
