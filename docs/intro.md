@@ -30,8 +30,8 @@ The links below will populate as we work our way through the course.
 | | Intro to CellProfiler | [Exercise](BeginnerSegmentation/CPbeginner_Segmentation.md) |
 | | Thinking About Measurements | [Slides](https://docs.google.com/presentation/d/1cYoGZT_HUBnzFiTkt-Xn3-CI9JtRp0q-orOfJYX55Zc/edit?slide=id.g303d086ded7_0_1390#slide=id.g303d086ded7_0_1390) |
 | | Advanced Segmentation in CellProfiler | [Exercise](AdvancedSegmentation/BBBC022_AnalysisExercise.md) |
-| | Classical Machine Learning | Slides |
-| | CellProfiler Analyst | Exercise |
+| | Classical Machine Learning | [Slides](https://docs.google.com/presentation/d/1cPuSW_rZvzvckyuppJHFunY7OjKLieTuDgq0myPdzlc/edit?slide=id.g363bc1384b1_0_5#slide=id.g363bc1384b1_0_5) |
+| | CellProfiler Analyst | [Exercise](Translocation/Translocation.md) |
 | Wednesday | Pitfalls in Classic Machine Learning/Intro to Ilastik | Slides |
 | | Ilastik | Exercise |
 | | Intro to QuPath | Slides |
