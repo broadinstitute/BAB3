@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Day 2, exercise 2: Introduction to CellProfiler &#8212; BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual</title>
+    <title>Day 2, Exercise 1: Introduction to CellProfiler &#8212; BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual</title>
   
   
   
@@ -65,6 +65,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'BeginnerSegmentation/CPbeginner_Segmentation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Downloads" href="../downloads.html" />
+    <link rel="prev" title="Day 1, Exercise 3: Making Manual Annotations with Piximi" href="../Piximi_ManualAnnotation/Piximi.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -115,8 +117,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -171,10 +171,11 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and Exercises</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../FIJI/FIJI_exercise.html">Day 1: Introduction to Fiji</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developing_intutions.html">Day 1, Exercise 3: developing image processing intutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Piximi_ManualAnnotation/Piximi.html">Day 1 - Making Manual Annotations with Piximi</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../FIJI/FIJI_exercise.html">Day 1, Exercise 1: Introduction to Fiji</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing_intutions.html">Day 1, Exercise 2: developing image processing intuitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Piximi_ManualAnnotation/Piximi.html">Day 1, Exercise 3: Making Manual Annotations with Piximi</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Day 2, Exercise 1: Introduction to CellProfiler</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -316,7 +317,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Day 2, exercise 2: Introduction to CellProfiler</h1>
+    <h1>Day 2, Exercise 1: Introduction to CellProfiler</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -345,7 +346,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-do-add-measurement-modules-to-your-pipeline-10min">9. 🔴 TO DO: Add measurement modules to your pipeline (10min)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relate-nucleoli-to-their-corresponding-nuclei-using-the-relateobjects-module-5min">10. Relate Nucleoli to their corresponding Nuclei using the RelateObjects module (5min)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#export-measurements">11. Export measurements</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-overlay-images-optional">12. Save overlay images** **[OPTIONAL]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-overlay-images-optional-but-highly-encouraged">12. Save overlay images** **[OPTIONAL BUT HIGHLY ENCOURAGED]</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-pipeline">13. Run the pipeline</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-set-up-the-input-modules-10min">3. [OPTIONAL] Set up the input modules (10min)</a></li>
 </ul>
@@ -361,8 +362,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="day-2-exercise-2-introduction-to-cellprofiler">
-<h1>Day 2, exercise 2: Introduction to CellProfiler<a class="headerlink" href="#day-2-exercise-2-introduction-to-cellprofiler" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="day-2-exercise-1-introduction-to-cellprofiler">
+<h1>Day 2, Exercise 1: Introduction to CellProfiler<a class="headerlink" href="#day-2-exercise-1-introduction-to-cellprofiler" title="Link to this heading">#</a></h1>
 <p><em>Lab authors: Beth Cimini, Barbara Diaz-Rohrer, Esteban Miglietta, Paula Llanos, Mario Cruz and Rebecca Senft.</em></p>
 <hr class="docutils" />
 <section id="learning-objectives">
@@ -372,12 +373,12 @@
 <li><p>Segment multiple organelles, creating parent-child relationships</p></li>
 <li><p>Create overlays for assessing segmentation</p></li>
 </ul>
-<p>This excercise uses the <a class="reference external" href="https://github.com/CellProfiler/tutorials/raw/master/BeginnerSegmentation/Archive_EN.zip">Beginner Segmentation</a> dataset. Don’t make permanent edits to these images as we will be using them again.</p>
+<p>This exercise uses the <a class="reference external" href="https://github.com/CellProfiler/tutorials/raw/master/BeginnerSegmentation/Archive_EN.zip">Beginner Segmentation</a> dataset. Don’t make permanent edits to these images as we will be using them again.</p>
 </section>
 <hr class="docutils" />
 <section id="background-information">
 <h2>Background information:<a class="headerlink" href="#background-information" title="Link to this heading">#</a></h2>
-<p>The images in this experiment come from the <a class="reference external" href="https://data.broadinstitute.org/bbbc/BBBC022/">Broad Bioimage Benchmark Collection</a>. They are ﬁelds of U2OS cells imaged in ﬁve channels (Cell Painting assay; see Gustafsdottir et al., 2013<span class="bibtex-citation" id="id1"><sup><a class="reference internal" href="../bibliography.html#id18" title="Sigrun M Gustafsdottir, Vebjorn Ljosa, Katherine L Sokolnicki, J Anthony Wilson, Deepika Walpita, Melissa M Kemp, Kathleen Petri Seiler, Hyman A Carrel, Todd R Golub, Stuart L Schreiber, Paul A Clemons, Anne E Carpenter, and Alykhan F Shamji. Multiplex cytological profiling assay to measure diverse cellular states. PLoS One, 8(12):e80999, December 2013.">11</a></sup></span>).</p>
+<p>The images in this experiment come from the <a class="reference external" href="https://data.broadinstitute.org/bbbc/BBBC022/">Broad Bioimage Benchmark Collection</a>. They are fields of U2OS cells imaged in five channels (Cell Painting assay; see Gustafsdottir et al., 2013<span class="bibtex-citation" id="id1"><sup><a class="reference internal" href="../bibliography.html#id18" title="Sigrun M Gustafsdottir, Vebjorn Ljosa, Katherine L Sokolnicki, J Anthony Wilson, Deepika Walpita, Melissa M Kemp, Kathleen Petri Seiler, Hyman A Carrel, Todd R Golub, Stuart L Schreiber, Paul A Clemons, Anne E Carpenter, and Alykhan F Shamji. Multiplex cytological profiling assay to measure diverse cellular states. PLoS One, 8(12):e80999, December 2013.">2</a></sup></span>).</p>
 <blockquote>
 <div><h3 class="rubric" id="the-cell-painting-assay">The <strong>Cell Painting</strong> assay</h3>
 <p>The Cell Painting assay is a high-content, high-throughput imaging technique used to capture a wide array of cellular phenotypes in response to diverse perturbations. Briefly, cells are treated with a variety of drugs, environmental changes or genetic perturbations (using CRISPR, for example) and then fixed and stained with six fluorescent dyes that mark different cellular compartments, including nuclei, cytoplasm, endoplasmic reticulum, Golgi apparatus, mitochondria, and actin.</p>
@@ -388,13 +389,13 @@
 <a class="reference internal image-reference" href="../_images/Fig11.png"><img alt="../_images/Fig11.png" src="../_images/Fig11.png" style="width: 900px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Figure 1: Cell Painting assays are commonly run on multiwell plates and several Images (‘Sites’) are taken from each well. Each image contains information of 6 different cellular dyes, imaged in 5 channels.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Figure 1: Cell Painting assays are commonly run on multiwell plates and several Images (‘Sites’) are taken from each well. Each image contains information of 6 different cellular dyes, imaged in 5 channels.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="goals-of-this-exercise">
 <h2>Goals of this exercise:<a class="headerlink" href="#goals-of-this-exercise" title="Link to this heading">#</a></h2>
-<p>This exercise will give you the chance to practice ﬁnding segmentation parameters for larger “parent” objects (nucleus, cell, and cytoplasm) and show you ways
+<p>This exercise will give you the chance to practice finding segmentation parameters for larger “parent” objects (nucleus, cell, and cytoplasm) and show you ways
 to pull out smaller features in your image by segmenting organelles within the cells and nuclei (like nucleoli or mitochondria). You will also be shown how to use
 RelateObjects so that you can relate the average counts, distances, and measurements of the smaller “child” organelles to their larger “parent” objects (i.e., cell and nucleus).</p>
 </section>
@@ -408,17 +409,17 @@ RelateObjects so that you can relate the average counts, distances, and measurem
 <section id="load-starting-pipeline-2-min">
 <h3>1. Load starting pipeline (2 min)<a class="headerlink" href="#load-starting-pipeline-2-min" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Start CellProﬁler<span class="bibtex-citation" id="id2"><sup><a class="reference internal" href="../bibliography.html#id5" title="David R Stirling, Madison J Swain-Bowden, Alice M Lucas, Anne E Carpenter, Beth A Cimini, and Allen Goodman. CellProfiler 4: improvements in speed, utility and usability. BMC Bioinformatics, 22(1):433, September 2021.">12</a></sup></span> by double-clicking the desktop icon: <a class="reference internal" href="../_images/CellProfilerLogo1.png"><img alt="CellProfiler logo" src="../_images/CellProfilerLogo1.png" style="width: 40px;" /></a></p></li>
+<li><p>Start CellProfiler<span class="bibtex-citation" id="id2"><sup><a class="reference internal" href="../bibliography.html#id5" title="David R Stirling, Madison J Swain-Bowden, Alice M Lucas, Anne E Carpenter, Beth A Cimini, and Allen Goodman. CellProfiler 4: improvements in speed, utility and usability. BMC Bioinformatics, 22(1):433, September 2021.">3</a></sup></span> by double-clicking the desktop icon: <a class="reference internal" href="../_images/CellProfilerLogo1.png"><img alt="CellProfiler logo" src="../_images/CellProfilerLogo1.png" style="width: 40px;" /></a></p></li>
 </ul>
 <figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="../_images/Fig21.png"><img alt="../_images/Fig21.png" src="../_images/Fig21.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Figure 2: <strong>Main CellProfiler window</strong>. To load images, drag and drop images into the right area. To load a pipeline (.ccpipe or .ccproj files), drag and drop the pipeline file into the left area.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Figure 2: <strong>Main CellProfiler window</strong>. To load images, drag and drop images into the right area. To load a pipeline (.cppipe or .cpproj files), drag and drop the pipeline file into the left area.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul>
-<li><p>Drag and drop the <code class="docutils literal notranslate"><span class="pre">‘segmentation_start.cppipe’</span></code> ﬁle into the <code class="docutils literal notranslate"><span class="pre">‘Analysis</span> <span class="pre">modules’</span></code> pane on the left.</p>
+<li><p>Drag and drop the <code class="docutils literal notranslate"><span class="pre">‘segmentation_start.cppipe’</span></code> file into the <code class="docutils literal notranslate"><span class="pre">‘Analysis</span> <span class="pre">modules’</span></code> pane on the left.</p>
 <blockquote>
 <div><p>Alternatively, you can also import a pipeline by going to <code class="docutils literal notranslate"><span class="pre">File</span></code> in the main menu (top), then <code class="docutils literal notranslate"><span class="pre">Import</span>&#160; <span class="pre">&gt;</span>&#160; <span class="pre">Pipeline</span> <span class="pre">from</span> <span class="pre">file</span></code></p>
 </div></blockquote>
@@ -428,7 +429,7 @@ RelateObjects so that you can relate the average counts, distances, and measurem
 <a class="reference internal image-reference" href="../_images/load_pipeline_start.png"><img alt="../_images/load_pipeline_start.png" src="../_images/load_pipeline_start.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Figure 2b: <strong>Loading the starting pipeline</strong>. When you succesfully load the <code class="docutils literal notranslate"><span class="pre">‘segmentation_start.cppipe’</span></code> file into CellProfiler, you will notice a welcome message in the Notes panel. This initial pipeline has no analysis modules (you will fix that soon!) but has all the Loading modules already configured for you (see <strong>Step 3</strong> for more details)</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Figure 2b: <strong>Loading the starting pipeline</strong>. When you successfully load the <code class="docutils literal notranslate"><span class="pre">‘segmentation_start.cppipe’</span></code> file into CellProfiler, you will notice a welcome message in the Notes panel. This initial pipeline has no analysis modules (you will fix that soon!) but has all the Loading modules already configured for you (see <strong>Step 3</strong> for more details)</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -446,7 +447,7 @@ RelateObjects so that you can relate the average counts, distances, and measurem
 <a class="reference internal image-reference" href="../_images/Fig31.png"><img alt="../_images/Fig31.png" src="../_images/Fig31.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text"><em>Figure 3: The <strong>Images</strong> module, grey out files will <strong>not</strong> be available for downstream modules</em></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text"><em>Figure 3: The <strong>Images</strong> module, grey out files will <strong>not</strong> be available for downstream modules</em></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <blockquote>
@@ -465,7 +466,7 @@ RelateObjects so that you can relate the average counts, distances, and measurem
 <section id="optional-step-set-up-the-input-modules">
 <h3>3. [OPTIONAL STEP] Set up the input modules<a class="headerlink" href="#optional-step-set-up-the-input-modules" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p><em>We suggest you skip this step for now, it will not affect the rest of the pipeline, as these modules have been properly set up in the starting pipeline (<code class="docutils literal notranslate"><span class="pre">segmentation_start.cpipe</span></code>).</em></p>
+<div><p><em>We suggest you skip this step for now, it will not affect the rest of the pipeline, as these modules have been properly set up in the starting pipeline (<code class="docutils literal notranslate"><span class="pre">segmentation_start.cppipe</span></code>).</em></p>
 <p><em>At the end of this tutorial you will find instructions on how to set up the input modules</em></p>
 </div></blockquote>
 </section>
@@ -496,7 +497,7 @@ When you are done developing your pipeline, you can exit the <code class="docuti
 <a class="reference internal image-reference" href="../_images/BeginnerPipelineSummary.png"><img alt="../_images/BeginnerPipelineSummary.png" src="../_images/BeginnerPipelineSummary.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text"><em>Overview of the final <strong>pipeline</strong> that you will be building with the general aim of each section</em></span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text"><em>Overview of the final <strong>pipeline</strong> that you will be building with the general aim of each section</em></span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="identifyprimaryobjects-nuclei-10min">
@@ -515,7 +516,7 @@ When you are done developing your pipeline, you can exit the <code class="docuti
 <a class="reference internal image-reference" href="../_images/Fig81.png"><img alt="../_images/Fig81.png" src="../_images/Fig81.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-text"><em>Figure 8: The ‘Add Modules’ window, modules are divided in categories based on their function</em></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text"><em>Figure 8: The ‘Add Modules’ window, modules are divided in categories based on their function</em></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul>
@@ -539,7 +540,7 @@ When you are done developing your pipeline, you can exit the <code class="docuti
 <a class="reference internal image-reference" href="../_images/Fig91.png"><img alt="../_images/Fig91.png" src="../_images/Fig91.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text"><em>Figure 9: The <strong>IdentifyPrimaryObjects</strong> module output, you can use the information in this window to modify your segmentation parameters</em></span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text"><em>Figure 9: The <strong>IdentifyPrimaryObjects</strong> module output, you can use the information in this window to modify your segmentation parameters</em></span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul>
@@ -585,7 +586,7 @@ When you are done developing your pipeline, you can exit the <code class="docuti
 <a class="reference internal image-reference" href="../_images/Fig10.png"><img alt="../_images/Fig10.png" src="../_images/Fig10.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text"><em>Figure 10: The <strong>IdentifySecondaryObjects</strong> module output</em></span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text"><em>Figure 10: The <strong>IdentifySecondaryObjects</strong> module output</em></span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul>
@@ -619,11 +620,11 @@ When you are done developing your pipeline, you can exit the <code class="docuti
 <a class="reference internal image-reference" href="../_images/Fig111.png"><img alt="../_images/Fig111.png" src="../_images/Fig111.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text"><em>Figure 11: A section of the <code class="docutils literal notranslate"><span class="pre">Choose</span> <span class="pre">Image</span> <span class="pre">Set</span></code> menu.</em></span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text"><em>Figure 11: A section of the <code class="docutils literal notranslate"><span class="pre">Choose</span> <span class="pre">Image</span> <span class="pre">Set</span></code> menu.</em></span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
-<li><p>Run tthe new image set you selected in test mode for your ﬁrst 2 modules (through your <strong>IdentifySecondaryObjects</strong> step).</p>
+<li><p>Run the new image set you selected in test mode for your first 2 modules (through your <strong>IdentifySecondaryObjects</strong> step).</p>
 <ul>
 <li><p>You can do it by clicking the <a class="reference internal" href="../_images/Step.png"><img alt="step" src="../_images/Step.png" style="width: 120px;" /></a> button, or</p></li>
 <li><p>You can activate the pause button (<a class="reference internal" href="../_images/Pause.png"><img alt="pause" src="../_images/Pause.png" style="width: 40px;" /></a>) on the module after <strong>IdentifySecondaryObjects</strong> and hit <a class="reference internal" href="../_images/Run.png"><img alt="run" src="../_images/Run.png" style="width: 120px;" /></a>, this will run all modules before the pause.</p></li>
@@ -634,11 +635,11 @@ When you are done developing your pipeline, you can exit the <code class="docuti
 <a class="reference internal image-reference" href="../_images/Fig12.png"><img alt="../_images/Fig12.png" src="../_images/Fig12.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-text"><em>Figure 12: A section of the ‘Analysis modules’ pane.</em></span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text"><em>Figure 12: A section of the ‘Analysis modules’ pane.</em></span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
-<li><p>Examine the output – did your nuclear and cellular segmentation hold up compared to the ﬁrst images you looked at?</p></li>
+<li><p>Examine the output – did your nuclear and cellular segmentation hold up compared to the first images you looked at?</p></li>
 <li><p><strong>🔴 TO DO</strong>: Adjust the parameters to get comparable results to the first image. Once your segmentation is good, try it on another image.</p></li>
 </ul>
 </section>
@@ -698,7 +699,7 @@ explore.</p>
 <a class="reference internal image-reference" href="../_images/Fig13.png"><img alt="../_images/Fig13.png" src="../_images/Fig13.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text"><em>Figure 13. The <strong>EnhanceOrSuppress</strong> module output, enhancing the OrigRNA image allows you to isolate nucleoli against the nucleoplasmic background signal.</em></span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text"><em>Figure 13. The <strong>EnhanceOrSuppress</strong> module output, enhancing the OrigRNA image allows you to isolate nucleoli against the nucleoplasmic background signal.</em></span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul>
@@ -717,13 +718,13 @@ explore.</p>
 <a class="reference internal image-reference" href="../_images/Fig14.png"><img alt="../_images/Fig14.png" src="../_images/Fig14.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text"><em>Figure 14. The <strong>MaskImage</strong> module output, the contrast was adjusted to show that the intensity of the pixels outside the nuclei are now set to 0.</em></span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text"><em>Figure 14. The <strong>MaskImage</strong> module output, the contrast was adjusted to show that the intensity of the pixels outside the nuclei are now set to 0.</em></span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul>
 <li><p>After the <strong>MaskImage</strong> module, add an <strong>IdentifyPrimaryObject</strong> module.</p>
 <ul class="simple">
-<li><p><strong>IdentifyPrimaryObjects</strong> is used to ﬁnd the nucleoli. This is a Primary object segmentation because we are not using another object as a seed (i.e., starting point), and are only segmenting based off the intensity in our <code class="docutils literal notranslate"><span class="pre">RNA_in_Nuclei</span></code> image.</p></li>
+<li><p><strong>IdentifyPrimaryObjects</strong> is used to find the nucleoli. This is a Primary object segmentation because we are not using another object as a seed (i.e., starting point), and are only segmenting based off the intensity in our <code class="docutils literal notranslate"><span class="pre">RNA_in_Nuclei</span></code> image.</p></li>
 </ul>
 <p><strong>🔴 TO DO: Segment nucleoli</strong></p>
 <ul class="simple">
@@ -734,7 +735,7 @@ explore.</p>
 <blockquote>
 <div><p><strong>Tip</strong>: you can use a similar strategy to segment mitochondria using the <code class="docutils literal notranslate"><span class="pre">OrigMito</span></code> channel</p>
 </div></blockquote>
-<p><strong>🔴 TO DO</strong>: Add an <strong>OverlayOutlines</strong> module at this point to overlay the identiﬁed nucleoli on the <code class="docutils literal notranslate"><span class="pre">Orig_RNA</span></code> image to assure yourself that the segmentation not only matches the speckle enhanced <code class="docutils literal notranslate"><span class="pre">FilteredRNA</span></code> image, but also looks accurate on the unprocessed image as well. This is not strictly necessary but can be a nice “sanity check”.</p>
+<p><strong>🔴 TO DO</strong>: Add an <strong>OverlayOutlines</strong> module at this point to overlay the identified nucleoli on the <code class="docutils literal notranslate"><span class="pre">Orig_RNA</span></code> image to assure yourself that the segmentation not only matches the speckle enhanced <code class="docutils literal notranslate"><span class="pre">FilteredRNA</span></code> image, but also looks accurate on the unprocessed image as well. This is not strictly necessary but can be a nice “sanity check”.</p>
 <ul class="simple">
 <li><p><strong>Goal</strong>: display outlines of your nucleoli and your nuclei on the unprocessed <code class="docutils literal notranslate"><span class="pre">OrigRNA</span></code> image.</p></li>
 <li><p>Name the output image <code class="docutils literal notranslate"><span class="pre">SanityCheck</span></code></p></li>
@@ -746,7 +747,7 @@ explore.</p>
 <a class="reference internal image-reference" href="../_images/Fig15.png"><img alt="../_images/Fig15.png" src="../_images/Fig15.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text"><em>Figure 15. The <strong>OverlayOutlines</strong> module output, all detected nucleoli are within the nuclei.</em></span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text"><em>Figure 15. The <strong>OverlayOutlines</strong> module output, all detected nucleoli are within the nuclei.</em></span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -755,7 +756,7 @@ explore.</p>
 <ul>
 <li><p>After your segmentation of the nucleoli, add as many object measurement modules as you would like.</p>
 <ul class="simple">
-<li><p>Some suggested modules to add: <strong>MeasureObjectIntensity</strong>, <strong>MeasurebjectSizeShape</strong>, <strong>MeasureColocalization</strong>, <strong>MeasureObjectNeighbors</strong>.</p></li>
+<li><p>Some suggested modules to add: <strong>MeasureObjectIntensity</strong>, <strong>MeasureObjectSizeShape</strong>, <strong>MeasureColocalization</strong>, <strong>MeasureObjectNeighbors</strong>.</p></li>
 </ul>
 <blockquote>
 <div><p><strong>IMPORTANT!</strong></p>
@@ -767,7 +768,7 @@ explore.</p>
 </ul>
 <p>For a typical Cell Painting experiment you would add as many measurements as possible, but that isn’t necessary here; however, do make sure every object gets at least some measurements.</p>
 <blockquote>
-<div><p><strong>IMPORTANT NOTE</strong>: there are many more measurement modules and, while we encourage you to explore them and some of them like <strong>MeasureCorrelation</strong>, <strong>MeasureTexture</strong> and <strong>MeasureObjectIntensityDistribution</strong> can produce valuable data for downstream proﬁling, they can be memory-intensive and/or slow. So, for the sake of running this analysis within a reasonable time, they should <strong>not</strong> be added for this example pipeline.</p>
+<div><p><strong>IMPORTANT NOTE</strong>: there are many more measurement modules and, while we encourage you to explore them and some of them like <strong>MeasureCorrelation</strong>, <strong>MeasureTexture</strong> and <strong>MeasureObjectIntensityDistribution</strong> can produce valuable data for downstream profiling, they can be memory-intensive and/or slow. So, for the sake of running this analysis within a reasonable time, they should <strong>not</strong> be added for this example pipeline.</p>
 </div></blockquote>
 </section>
 <section id="relate-nucleoli-to-their-corresponding-nuclei-using-the-relateobjects-module-5min">
@@ -780,7 +781,7 @@ explore.</p>
 <a class="reference internal image-reference" href="../_images/Fig16.png"><img alt="../_images/Fig16.png" src="../_images/Fig16.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text"><em>Figure 16: The <strong>RelateObjects</strong> module output.</em></span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text"><em>Figure 16: The <strong>RelateObjects</strong> module output.</em></span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Relating the objects allows you to create per-parent means (e.g., for this cell, what is the average size of an individual mitochondrion) and calculate distances from the child objects to the edge and/or the center of the parent (e.g., how far is each nucleolus from the center of the nucleus).</p>
@@ -807,12 +808,12 @@ explore.</p>
 <a class="reference internal image-reference" href="../_images/Fig17.png"><img alt="../_images/Fig17.png" src="../_images/Fig17.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text"><em>Figure 17: The <strong>ExportToSpreadsheet</strong> module.</em></span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text"><em>Figure 17: The <strong>ExportToSpreadsheet</strong> module.</em></span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
-<section id="save-overlay-images-optional">
-<h3>12. Save overlay images** **[OPTIONAL]<a class="headerlink" href="#save-overlay-images-optional" title="Link to this heading">#</a></h3>
+<section id="save-overlay-images-optional-but-highly-encouraged">
+<h3>12. Save overlay images** **[OPTIONAL BUT HIGHLY ENCOURAGED]<a class="headerlink" href="#save-overlay-images-optional-but-highly-encouraged" title="Link to this heading">#</a></h3>
 <p>As we are exporting the results of our analysis, it can also be worthwhile to save the SanityCheck images we made previously because they are useful as a control of your segmentations and to share your work with others!</p>
 <ul class="simple">
 <li><p>Add a <strong>SaveImages</strong> module at the end of the pipeline.</p></li>
@@ -835,7 +836,7 @@ explore.</p>
 <a class="reference internal image-reference" href="../_images/Fig18.png"><img alt="../_images/Fig18.png" src="../_images/Fig18.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text"><em>Figure 18: The <strong>SaveImages</strong> module.</em></span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text"><em>Figure 18: The <strong>SaveImages</strong> module.</em></span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -859,7 +860,7 @@ explore.</p>
 <h3>3. [OPTIONAL] Set up the input modules (10min)<a class="headerlink" href="#optional-set-up-the-input-modules-10min" title="Link to this heading">#</a></h3>
 <p>The four input modules (<strong>Images</strong>, <strong>Metadata</strong>, <strong>NamesAndTypes</strong>, and <strong>Groups</strong>) are crucial for any CellProfiler pipeline because they define how images are loaded and organized.</p>
 <ul class="simple">
-<li><p>The <strong>Metadata</strong> module is already conﬁgured. With it, you can extract information that is required for you analysis and which is not contained within the images themselves (thus, the name ‘Metadata’):</p>
+<li><p>The <strong>Metadata</strong> module is already configured. With it, you can extract information that is required for you analysis and which is not contained within the images themselves (thus, the name ‘Metadata’):</p>
 <ul>
 <li><p>In this case, the module extracts the <strong>Plate</strong>, <strong>Well</strong>, <strong>Site</strong> and <strong>ChannelNumber</strong> from the image files’ names.</p>
 <ul>
@@ -888,7 +889,7 @@ explore.</p>
 <a class="reference internal image-reference" href="../_images/Fig41.png"><img alt="../_images/Fig41.png" src="../_images/Fig41.png" style="width: 650px;" />
 </a>
 <figcaption>
-<p><span class="caption-text"><em>Figure 4: The <strong>Metadata</strong> module, columns in table correspond to metadata categories</em></span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text"><em>Figure 4: The <strong>Metadata</strong> module, columns in table correspond to metadata categories</em></span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -902,7 +903,7 @@ explore.</p>
 <a class="reference internal image-reference" href="../_images/Fig51.png"><img alt="../_images/Fig51.png" src="../_images/Fig51.png" style="width: 800px;" />
 </a>
 <figcaption>
-<p><span class="caption-text"><em>Figure 5: Image mapping using extracted metadata</em></span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text"><em>Figure 5: Image mapping using extracted metadata</em></span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -912,7 +913,7 @@ explore.</p>
 <a class="reference internal image-reference" href="../_images/Fig61.png"><img alt="../_images/Fig61.png" src="../_images/Fig61.png" style="width: 800px;" />
 </a>
 <figcaption>
-<p><span class="caption-text"><em>Figure 6: Image set matching using extracted metadata</em></span><a class="headerlink" href="#id21" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text"><em>Figure 6: Image set matching using extracted metadata</em></span><a class="headerlink" href="#id21" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -955,6 +956,24 @@ explore.</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../Piximi_ManualAnnotation/Piximi.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Day 1, Exercise 3: Making Manual Annotations with Piximi</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../downloads.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Downloads</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -992,7 +1011,7 @@ explore.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-do-add-measurement-modules-to-your-pipeline-10min">9. 🔴 TO DO: Add measurement modules to your pipeline (10min)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relate-nucleoli-to-their-corresponding-nuclei-using-the-relateobjects-module-5min">10. Relate Nucleoli to their corresponding Nuclei using the RelateObjects module (5min)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#export-measurements">11. Export measurements</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-overlay-images-optional">12. Save overlay images** **[OPTIONAL]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-overlay-images-optional-but-highly-encouraged">12. Save overlay images** **[OPTIONAL BUT HIGHLY ENCOURAGED]</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-pipeline">13. Run the pipeline</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-set-up-the-input-modules-10min">3. [OPTIONAL] Set up the input modules (10min)</a></li>
 </ul>

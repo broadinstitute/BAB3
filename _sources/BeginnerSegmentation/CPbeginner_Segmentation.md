@@ -1,5 +1,5 @@
 
-# Day 2, exercise 2: Introduction to CellProfiler
+# Day 2, Exercise 1: Introduction to CellProfiler
 
 *Lab authors: Beth Cimini, Barbara Diaz-Rohrer, Esteban Miglietta, Paula Llanos, Mario Cruz and Rebecca Senft.*
 
@@ -11,13 +11,13 @@
 - Segment multiple organelles, creating parent-child relationships
 - Create overlays for assessing segmentation
 
-This excercise uses the [Beginner Segmentation](https://github.com/CellProfiler/tutorials/raw/master/BeginnerSegmentation/Archive_EN.zip) dataset. Don't make permanent edits to these images as we will be using them again.
+This exercise uses the [Beginner Segmentation](https://github.com/CellProfiler/tutorials/raw/master/BeginnerSegmentation/Archive_EN.zip) dataset. Don't make permanent edits to these images as we will be using them again.
 
 ---
 
 ## Background information:
 
-The images in this experiment come from the [Broad Bioimage Benchmark Collection](https://data.broadinstitute.org/bbbc/BBBC022/). They are ﬁelds of U2OS cells imaged in ﬁve channels (Cell Painting assay; see Gustafsdottir et al., 2013{cite}`Gustafsdottir2013-ng`).
+The images in this experiment come from the [Broad Bioimage Benchmark Collection](https://data.broadinstitute.org/bbbc/BBBC022/). They are fields of U2OS cells imaged in five channels (Cell Painting assay; see Gustafsdottir et al., 2013{cite}`Gustafsdottir2013-ng`).
 
 >### The **Cell Painting** assay
 >
@@ -36,7 +36,7 @@ Figure 1: Cell Painting assays are commonly run on multiwell plates and several 
 
 ## Goals of this exercise:
 
-This exercise will give you the chance to practice ﬁnding segmentation parameters for larger “parent” objects (nucleus, cell, and cytoplasm) and show you ways
+This exercise will give you the chance to practice finding segmentation parameters for larger “parent” objects (nucleus, cell, and cytoplasm) and show you ways
 to pull out smaller features in your image by segmenting organelles within the cells and nuclei (like nucleoli or mitochondria). You will also be shown how to use
 RelateObjects so that you can relate the average counts, distances, and measurements of the smaller “child” organelles to their larger “parent” objects (i.e., cell and nucleus).
 
@@ -50,16 +50,16 @@ Read through the steps below and follow instructions where stated. Steps where y
 
 ### 1. Load starting pipeline (2 min)
 
-- Start CellProﬁler{cite}`Stirling2021-sg` by double-clicking the desktop icon: <img src="./TutorialImages/CellProfilerLogo.png" width="40" alt="CellProfiler logo">
+- Start CellProfiler{cite}`Stirling2021-sg` by double-clicking the desktop icon: <img src="./TutorialImages/CellProfilerLogo.png" width="40" alt="CellProfiler logo">
 
 ```{figure} ./TutorialImages/Fig2.png
 :width: 700
 :align: center
 
- Figure 2: **Main CellProfiler window**. To load images, drag and drop images into the right area. To load a pipeline (.ccpipe or .ccproj files), drag and drop the pipeline file into the left area.
+ Figure 2: **Main CellProfiler window**. To load images, drag and drop images into the right area. To load a pipeline (.cppipe or .cpproj files), drag and drop the pipeline file into the left area.
 ```
 
-- Drag and drop the `‘segmentation_start.cppipe’` ﬁle into the `‘Analysis modules’` pane on the left.
+- Drag and drop the `‘segmentation_start.cppipe’` file into the `‘Analysis modules’` pane on the left.
 
     > Alternatively, you can also import a pipeline by going to `File` in the main menu (top), then `Import  >  Pipeline from file`
 
@@ -67,7 +67,7 @@ Read through the steps below and follow instructions where stated. Steps where y
 :width: 700
 :align: center
 
- Figure 2b: **Loading the starting pipeline**. When you succesfully load the `‘segmentation_start.cppipe’` file into CellProfiler, you will notice a welcome message in the Notes panel. This initial pipeline has no analysis modules (you will fix that soon!) but has all the Loading modules already configured for you (see **Step 3** for more details)
+ Figure 2b: **Loading the starting pipeline**. When you successfully load the `‘segmentation_start.cppipe’` file into CellProfiler, you will notice a welcome message in the Notes panel. This initial pipeline has no analysis modules (you will fix that soon!) but has all the Loading modules already configured for you (see **Step 3** for more details)
 ```
 
 ### 2. Load images
@@ -95,7 +95,7 @@ Read through the steps below and follow instructions where stated. Steps where y
 
 ### 3. [OPTIONAL STEP] Set up the input modules
   
-  > *We suggest you skip this step for now, it will not affect the rest of the pipeline, as these modules have been properly set up in the starting pipeline (`segmentation_start.cpipe`).*
+  > *We suggest you skip this step for now, it will not affect the rest of the pipeline, as these modules have been properly set up in the starting pipeline (`segmentation_start.cppipe`).*
   >
   > *At the end of this tutorial you will find instructions on how to set up the input modules*
 
@@ -239,7 +239,7 @@ It’s (relatively!) easy to come up with a good set of segmentation parameters 
 *Figure 11: A section of the `Choose Image Set` menu.*
 ```
 
-- Run tthe new image set you selected in test mode for your ﬁrst 2 modules (through your **IdentifySecondaryObjects** step).
+- Run the new image set you selected in test mode for your first 2 modules (through your **IdentifySecondaryObjects** step).
 
   - You can do it by clicking the <img src="./TutorialImages/Step.png" width="120" alt="step"/> button, or
   - You can activate the pause button (<img src="./TutorialImages/Pause.png" width="40" alt="pause"/>) on the module after **IdentifySecondaryObjects** and hit <img src="./TutorialImages/Run.png" width="120" alt="run"/>, this will run all modules before the pause.
@@ -251,7 +251,7 @@ It’s (relatively!) easy to come up with a good set of segmentation parameters 
 *Figure 12: A section of the ‘Analysis modules’ pane.*
 ```
 
-- Examine the output – did your nuclear and cellular segmentation hold up compared to the ﬁrst images you looked at?
+- Examine the output – did your nuclear and cellular segmentation hold up compared to the first images you looked at?
 - **🔴 TO DO**: Adjust the parameters to get comparable results to the first image. Once your segmentation is good, try it on another image.
 
 ### 7. IdentifyTertiaryObjects- Cytoplasm (2min)
@@ -325,7 +325,7 @@ The next 3 modules will help address these issues to create the `'Nucleoli'` obj
 ```
 
 - After the **MaskImage** module, add an **IdentifyPrimaryObject** module.
-  - **IdentifyPrimaryObjects** is used to ﬁnd the nucleoli. This is a Primary object segmentation because we are not using another object as a seed (i.e., starting point), and are only segmenting based off the intensity in our `RNA_in_Nuclei` image.
+  - **IdentifyPrimaryObjects** is used to find the nucleoli. This is a Primary object segmentation because we are not using another object as a seed (i.e., starting point), and are only segmenting based off the intensity in our `RNA_in_Nuclei` image.
 
   **🔴 TO DO: Segment nucleoli**
 
@@ -335,7 +335,7 @@ The next 3 modules will help address these issues to create the `'Nucleoli'` obj
 
   > **Tip**: you can use a similar strategy to segment mitochondria using the `OrigMito` channel
 
-  **🔴 TO DO**: Add an **OverlayOutlines** module at this point to overlay the identiﬁed nucleoli on the `Orig_RNA` image to assure yourself that the segmentation not only matches the speckle enhanced `FilteredRNA` image, but also looks accurate on the unprocessed image as well. This is not strictly necessary but can be a nice “sanity check”.
+  **🔴 TO DO**: Add an **OverlayOutlines** module at this point to overlay the identified nucleoli on the `Orig_RNA` image to assure yourself that the segmentation not only matches the speckle enhanced `FilteredRNA` image, but also looks accurate on the unprocessed image as well. This is not strictly necessary but can be a nice “sanity check”.
 
   - **Goal**: display outlines of your nucleoli and your nuclei on the unprocessed `OrigRNA` image.
   - Name the output image `SanityCheck`
@@ -351,7 +351,7 @@ The next 3 modules will help address these issues to create the `'Nucleoli'` obj
 ### 9. 🔴 TO DO: Add measurement modules to your pipeline (10min)
 
 - After your segmentation of the nucleoli, add as many object measurement modules as you would like.
-  - Some suggested modules to add: **MeasureObjectIntensity**, **MeasurebjectSizeShape**, **MeasureColocalization**, **MeasureObjectNeighbors**.
+  - Some suggested modules to add: **MeasureObjectIntensity**, **MeasureObjectSizeShape**, **MeasureColocalization**, **MeasureObjectNeighbors**.
   > **IMPORTANT!**
   >
   >If you choose to include the **MeasureColocalization** module, we highly recommend setting the `Calculate the Manders coefficients using Costes auto threshold` option to `NO`. Otherwise, this module can be very time-consuming
@@ -361,7 +361,7 @@ The next 3 modules will help address these issues to create the `'Nucleoli'` obj
 
 For a typical Cell Painting experiment you would add as many measurements as possible, but that isn’t necessary here; however, do make sure every object gets at least some measurements.
 
-> **IMPORTANT NOTE**: there are many more measurement modules and, while we encourage you to explore them and some of them like **MeasureCorrelation**, **MeasureTexture** and **MeasureObjectIntensityDistribution** can produce valuable data for downstream proﬁling, they can be memory-intensive and/or slow. So, for the sake of running this analysis within a reasonable time, they should **not** be added for this example pipeline.
+> **IMPORTANT NOTE**: there are many more measurement modules and, while we encourage you to explore them and some of them like **MeasureCorrelation**, **MeasureTexture** and **MeasureObjectIntensityDistribution** can produce valuable data for downstream profiling, they can be memory-intensive and/or slow. So, for the sake of running this analysis within a reasonable time, they should **not** be added for this example pipeline.
 
 ### 10. Relate Nucleoli to their corresponding Nuclei using the RelateObjects module (5min)
 
@@ -397,7 +397,7 @@ Relating the objects allows you to create per-parent means (e.g., for this cell,
  
 ```
 
-### 12. Save overlay images** **[OPTIONAL]
+### 12. Save overlay images** **[OPTIONAL BUT HIGHLY ENCOURAGED]
 
 As we are exporting the results of our analysis, it can also be worthwhile to save the SanityCheck images we made previously because they are useful as a control of your segmentations and to share your work with others!
 
@@ -440,7 +440,7 @@ Now you have a pipeline that works well across different images. It is time to r
   
 The four input modules (**Images**, **Metadata**, **NamesAndTypes**, and **Groups**) are crucial for any CellProfiler pipeline because they define how images are loaded and organized.
 
-- The **Metadata** module is already conﬁgured. With it, you can extract information that is required for you analysis and which is not contained within the images themselves (thus, the name 'Metadata'):
+- The **Metadata** module is already configured. With it, you can extract information that is required for you analysis and which is not contained within the images themselves (thus, the name 'Metadata'):
 
   - In this case, the module extracts the **Plate**, **Well**, **Site** and **ChannelNumber** from the image files' names.
 

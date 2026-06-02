@@ -1,4 +1,4 @@
-# Day 2, Exercise 3: Advanced Segmentation and Organelle Analysis
+# Day 2, Exercise 2: Advanced Segmentation and Organelle Analysis
 
 *Lab authors: Beth Cimini, Erin Weisbart*.
 
@@ -47,7 +47,7 @@ These 1200 images (240 sites in 5 channels) represent 120 wells from a single 38
 
 2) **Object Relationships**. This exercise will additionally show you some ways to pull out smaller features in your image by segmenting organelles within the cells and nuclei. You will also be shown how to use `RelateObjects` so that you can study the average counts, distances, and measurements of the smaller organelles inside their larger parent objects.
 
-3) **Advanced Input Modules**. This excercise walks you through troubleshooting and tuning the CellProfiler input modules.
+3) **Advanced Input Modules**. This exercise walks you through troubleshooting and tuning the CellProfiler input modules.
 
 ### Input images and configure metadata
 
@@ -312,7 +312,7 @@ The images you will be analyzing were taken from cells growing in a standard 96-
 
 ### 1. Segment Primary Objects - Nuclei
 
-If you start test mode and examine the default Nuclei segmentation parameters, you'll see that they need some tuning! Since you are now experts at segementation, you can spend some time optimizing Nuclei segmentation in this module, or you can skip to tuning it with the following parameters if you want to save some time:
+If you start test mode and examine the default Nuclei segmentation parameters, you'll see that they need some tuning! Since you are now experts at segmentation, you can spend some time optimizing Nuclei segmentation in this module, or you can skip to tuning it with the following parameters if you want to save some time:
 
 <img src="./TutorialImages/advanced_primary_seg.png" alt="identify primary objects parameters" />
 

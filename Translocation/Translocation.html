@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Day 2: Classification with CellProfiler Analyst &#8212; BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual</title>
+    <title>Day 2, Exercise 3: Classification with CellProfiler Analyst &#8212; BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual</title>
   
   
   
@@ -172,9 +172,10 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and Exercises</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../FIJI/FIJI_exercise.html">Day 1: Introduction to Fiji</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developing_intutions.html">Day 1, Exercise 3: developing image processing intutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Piximi_ManualAnnotation/Piximi.html">Day 1 - Making Manual Annotations with Piximi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FIJI/FIJI_exercise.html">Day 1, Exercise 1: Introduction to Fiji</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing_intutions.html">Day 1, Exercise 2: developing image processing intuitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Piximi_ManualAnnotation/Piximi.html">Day 1, Exercise 3: Making Manual Annotations with Piximi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BeginnerSegmentation/CPbeginner_Segmentation.html">Day 2, Exercise 1: Introduction to CellProfiler</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -316,7 +317,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Day 2: Classification with CellProfiler Analyst</h1>
+    <h1>Day 2, Exercise 3: Classification with CellProfiler Analyst</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -374,15 +375,15 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="day-2-classification-with-cellprofiler-analyst">
-<h1>Day 2: Classification with CellProfiler Analyst<a class="headerlink" href="#day-2-classification-with-cellprofiler-analyst" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="day-2-exercise-3-classification-with-cellprofiler-analyst">
+<h1>Day 2, Exercise 3: Classification with CellProfiler Analyst<a class="headerlink" href="#day-2-exercise-3-classification-with-cellprofiler-analyst" title="Link to this heading">#</a></h1>
 <p>Lab authors: Beth Cimini, Carolina Wählby, Martin Simonsson, Megan Rokop, Mark Bray and Erin Weisbart.</p>
 <section id="learning-objectives">
 <h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Run a completed CellProfiler pipeline to get measurements from images</p></li>
 <li><p>Load measurements into CellProfiler Analyst and explore some of its features</p></li>
-<li><p>Perform classical machine learning to build a classifier in CellProfiler Analyst</p></li>
+<li><p>Perform classical machine learning to build a classifier in CellProfiler Analyst (and if you have time, using deep learning in Piximi)</p></li>
 </ul>
 </section>
 <section id="preparation">
@@ -430,7 +431,7 @@ Green: <strong>GFP</strong>, Magenta: <strong>DNA</strong>.</em></span><a class=
 <h3>1. Start CellProfiler and configure the input data for analysis<a class="headerlink" href="#start-cellprofiler-and-configure-the-input-data-for-analysis" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Start CellProfiler by double-clicking the desktop icon <a class="reference internal" href="../_images/CellProfilerLogo2.png"><img alt="CellProfiler logo" src="../_images/CellProfilerLogo2.png" style="width: 35px;" /></a></p></li>
-<li><p>Load the <code class="docutils literal notranslate"><span class="pre">Translocation.cppipe</span></code> pipeline by dragging and dropping it into the pipeline pannel or by <code class="docutils literal notranslate"><span class="pre">File</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Import</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Pipeline</span> <span class="pre">from</span> <span class="pre">file</span></code>.</p></li>
+<li><p>Load the <code class="docutils literal notranslate"><span class="pre">Translocation_final.cppipe</span></code> pipeline by dragging and dropping it into the pipeline panel or by <code class="docutils literal notranslate"><span class="pre">File</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Import</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Pipeline</span> <span class="pre">from</span> <span class="pre">file</span></code>. If you’d rather use your pipeline from last exercise, you can do that too!</p></li>
 <li><p>Load the images into the pipeline. From File Explorer (Windows) or Finder (Mac), drag and drop the <code class="docutils literal notranslate"><span class="pre">TranslocationData</span></code> folder into this panel. Double-click on <code class="docutils literal notranslate"><span class="pre">BBBC013_A01_s1_w1.tif</span></code> and <code class="docutils literal notranslate"><span class="pre">BBBC013_A12_s1_w1.tif</span></code> to see what examples of negative and positive GFP controls look like, respectively.</p></li>
 <li><p>Scroll to the bottom of the File list and note that in addition to the image files, there is a file called <code class="docutils literal notranslate"><span class="pre">Translocation_doses_and_controls.csv</span></code>. We only want image files to be analyzed in CellProfiler so we need to tell CellProfiler to ignore this file. Below the file list, select <code class="docutils literal notranslate"><span class="pre">Images</span> <span class="pre">only</span></code> from the Filter Images dropdown menu. Click on the <a class="reference internal" href="../_images/ApplyFilters.png"><img alt="Apply Filters Button" src="../_images/ApplyFilters.png" style="width: 150px;" /></a> button to filter out non-image files. You will see that the CSV file is then grayed-out in the list, indicating that it will not be read in as an image file.</p></li>
 <li><p>Click on the <strong>Metadata</strong> module, which is the second module in the Input module panel. The pipeline already has the Metadata module configured to use Regular Expressions (RegEx) to extract metadata from the image file names.</p></li>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Day 2, Exercise 3: Advanced Segmentation and Organelle Analysis &#8212; BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual</title>
+    <title>Day 2, Exercise 2: Advanced Segmentation and Organelle Analysis &#8212; BAB3 (Bioimage Analysis Beginnings Broad Bootcamp) Lab Manual</title>
   
   
   
@@ -172,9 +172,10 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and Exercises</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../FIJI/FIJI_exercise.html">Day 1: Introduction to Fiji</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developing_intutions.html">Day 1, Exercise 3: developing image processing intutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Piximi_ManualAnnotation/Piximi.html">Day 1 - Making Manual Annotations with Piximi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FIJI/FIJI_exercise.html">Day 1, Exercise 1: Introduction to Fiji</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing_intutions.html">Day 1, Exercise 2: developing image processing intuitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Piximi_ManualAnnotation/Piximi.html">Day 1, Exercise 3: Making Manual Annotations with Piximi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BeginnerSegmentation/CPbeginner_Segmentation.html">Day 2, Exercise 1: Introduction to CellProfiler</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -316,7 +317,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Day 2, Exercise 3: Advanced Segmentation and Organelle Analysis</h1>
+    <h1>Day 2, Exercise 2: Advanced Segmentation and Organelle Analysis</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -396,8 +397,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="day-2-exercise-3-advanced-segmentation-and-organelle-analysis">
-<h1>Day 2, Exercise 3: Advanced Segmentation and Organelle Analysis<a class="headerlink" href="#day-2-exercise-3-advanced-segmentation-and-organelle-analysis" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="day-2-exercise-2-advanced-segmentation-and-organelle-analysis">
+<h1>Day 2, Exercise 2: Advanced Segmentation and Organelle Analysis<a class="headerlink" href="#day-2-exercise-2-advanced-segmentation-and-organelle-analysis" title="Link to this heading">#</a></h1>
 <p><em>Lab authors: Beth Cimini, Erin Weisbart</em>.</p>
 <hr class="docutils" />
 <section id="learning-objectives">
@@ -439,7 +440,7 @@
 <ol class="arabic simple">
 <li><p><strong>Advanced Segmentation</strong>. This exercise will give you practice at finding segmentation parameters that will be robust across whatever variability may exist in your sample. This is not always straightforward, so examining your segmentation across a wide range of images will be necessary.</p></li>
 <li><p><strong>Object Relationships</strong>. This exercise will additionally show you some ways to pull out smaller features in your image by segmenting organelles within the cells and nuclei. You will also be shown how to use <code class="docutils literal notranslate"><span class="pre">RelateObjects</span></code> so that you can study the average counts, distances, and measurements of the smaller organelles inside their larger parent objects.</p></li>
-<li><p><strong>Advanced Input Modules</strong>. This excercise walks you through troubleshooting and tuning the CellProfiler input modules.</p></li>
+<li><p><strong>Advanced Input Modules</strong>. This exercise walks you through troubleshooting and tuning the CellProfiler input modules.</p></li>
 </ol>
 </section>
 <section id="input-images-and-configure-metadata">
@@ -757,7 +758,7 @@
 </section>
 <section id="segment-primary-objects-nuclei">
 <h3>1. Segment Primary Objects - Nuclei<a class="headerlink" href="#segment-primary-objects-nuclei" title="Link to this heading">#</a></h3>
-<p>If you start test mode and examine the default Nuclei segmentation parameters, you’ll see that they need some tuning! Since you are now experts at segementation, you can spend some time optimizing Nuclei segmentation in this module, or you can skip to tuning it with the following parameters if you want to save some time:</p>
+<p>If you start test mode and examine the default Nuclei segmentation parameters, you’ll see that they need some tuning! Since you are now experts at segmentation, you can spend some time optimizing Nuclei segmentation in this module, or you can skip to tuning it with the following parameters if you want to save some time:</p>
 <img alt="identify primary objects parameters" src="../_images/advanced_primary_seg.png" />
 </section>
 <section id="segment-secondary-objects-cells">
