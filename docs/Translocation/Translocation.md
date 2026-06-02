@@ -256,6 +256,7 @@ bins, in order to improve the classifier`s performance.
 - Repeat this step until you have at least 20 cells in each bin.
 
 **Exploring the retraining:**
+
 - Click the `Train classifier` button
 - Questions to consider:\
 *(1) What is the top-most rule that shows up in your classification rules?\
@@ -315,3 +316,72 @@ You can use additional data tools in CPA to visualize your data in other ways. I
 Head back to the Classifier tool. Export a `.model` file which stores the trained classifier for use in other software with `File` -> `Save Classifier Model`.
 
 - Within CellProfiler 4+, the `ClassifyObjects` and `FilterObjects` modules can load these model files and use them to assign objects to classes during the pipeline itself. This allows you to classify new data sets without needing to train in CellProfiler Analyst again. (Note that to use model files in CellProfiler, the pipeline needs to produce the same measurements that were present in your CPA database during training. These measurements must be captured before the module which will use your model.)
+
+## Exercise 3: Using Piximi for classification (optional)
+
+There is never a single way to do image analysis and choosing the "best" way can be influenced by how accessible the software is to you and how familiar you are with the software. So on that note, we're going to perform the same classification task that we just did using CellProfiler and CellProfiler Analyst and instead use Piximi this time.
+
+```{note}
+Sometimes this data set takes a long time to load, sometimes it doesn't! We're not sure why.
+```
+
+- Open [Piximi](https://piximi.app), and then load the U2OS-cells cytoplasm crops example dataset (Open \> Project \> Example Project \> Human U2OS-cells cytoplasm crops)
+
+<img src="./TutorialImages/piximi_bbbc013.png" height="180px" alt="load translocation dataset in Piximi"/>
+
+### Optional: fix how the images look
+
+You need not do this, since it can be a bit slow, but it is necessary if you want to assess the performance of the no-GFP class (and will make things much easier if you are red-green colorblind).
+
+Piximi's current defaults are to load two-channel images as red and green, and to rescale each image min-max individually. While we work to fix those bugs, here's how you can manually set the colors to something better (and more uniform):
+
+- Hit Ctrl+A to select all cells or use the "Select all" button in the top bar
+- Hit "Annotate" to open the annotation viewer
+<img src="./TutorialImages/piximi_annotate.png" height="180px" alt="piximi annotate"/>
+- Open the channel adjustment bar on the top right (<img src="./TutorialImages/piximi_channel_tool.png" height="25px" alt="piximi channel tool"/>), and change color mapping to better lookup tables and values. Hit "Apply to all images open in the annotator" when you're done (and then wait a couple of minutes)
+
+<img src="./TutorialImages/piximi_channels.png" height="180px" alt="piximi channels"/>
+
+### Train a Classifier
+
+- Return to the image viewer by selecting the arrow in the upper left corner. Select Yes to save the changes to your annotations.
+- Some of the cells have already been labeled which you can see by looking at the `Categories` on the left sidebar. The flags that are visible on the upper left of each image correspond to the category it has been annotated to. Note that you can change the color of a flag by clicking on the the three dots next to its name and selecting Edit.
+- Tell Piximi you want to fit a classifier for these images by selecting the 3 dots in the left side bar. Go ahead and use the pre-populated defaults and select <img src="./TutorialImages/piximi_fit_classifer.png" height="40px" alt="fit classifier"/> to train.
+- After an initialization step, you will see a performance chart that looks like the one below, as well as a loss graph. You can keep hitting `Fit Classifier` to keep adding more epochs of training.
+
+<img src="./TutorialImages/piximi_training_performance.png" height="180px" alt="Piximi training performance"/>
+
+### Evaluate your classifier
+
+- Once you're satisfied with your training (either because it's great or because you're satisfied that it has plateaued), close the training dialog. Hit the `Evaluate Model` button to check your confusion matrix. A confusion matrix helps you figure out patterns of mistakes, but it can only tell you about the performance of your model on data for which you've already provided the answer - it can't tell you about performance in your unlabeled data. It is *critical* then to always apply your classifier to new, unseen data to see how it performs ***especially*** when only a small fraction of your data is labeled which is typically the case for biological cases (after all, if you have to hand label almost all of your data, then what's the point of training a model?).
+
+- Hit the `Predict Model` button to apply the model to the unlabeled data
+
+<img src="./TutorialImages/piximi_predict.png" height="180px" alt="Piximi predict"/>
+
+- Evaluate the performance of the predictions by looking at the newly predicted images. Use the filter/sort button on the right sidebar to filter to certain categories. You may want to filter to just "Inference" to look at just the new predictions.
+
+#### Fix some mistakes
+
+When you find some errors in the predictions, you can fix them by assigning them a new category. Select the images and select "Categorize" from the top bar.
+
+<img src="./TutorialImages/piximi_categorize.png" height="180px" alt="Piximi recategorize errors"/>
+
+Depending on why you're using machine learning, you might choose to fix all the wrong images at this stage, or only some:
+
+- **Is your goal to just get the classifications right and then use them for something else, and most of them have already been correctly classified?**
+  - In that case, there's no harm in just fixing the few mistakes and then moving on to other downstream quantification steps.
+  - If this is your goal but there are a lot of mistakes, you might not choose to fix all of them at this stage, but just fix a subset and then try to train again so you can get to a point where the errors are at a small enough level that you CAN do final data cleaning by hand
+
+- **Is your goal to create a robust, reusable classifier to use on other sets or in other contexts?**
+  - In that case, you might want to fix only a subset of the mistakes before retraining, so you can get a sense of if your model performance is improving.
+  - If retraining, once you've done your chosen recategorizations, use filters to delete "Inference" categorizations and then hit "Fit Model" again.
+  - If this is indeed your goal, you need to have some unseen **test** data somewhere else that you are not tuning on here! Once you've run any version of your model, at any stage, on unseen data, that data is now "seen data", and can't be used as a test set anymore. How you plan your data splits (and how much, and which, data you keep locked away as test set(s)) is critical to any kind of machine learning research.
+
+#### Save things for later
+
+Reproducible science matters! You can therefore save your Piximi project file for later, as well as save your model for later use. You might find the former handy if you want to add more data later, and/or you just want to confer with someone else (including a paper reviewer, or future you) about how difficult data points were handled.
+
+<img src="./TutorialImages/piximi_save_project.png" height="180px" alt="Piximi save project"/>
+
+<img src="./TutorialImages/piximi_save_model.png" height="180px" alt="Piximi save model"/>
