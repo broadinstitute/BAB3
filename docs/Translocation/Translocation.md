@@ -1,4 +1,4 @@
-# Day 2: Classification with CellProfiler Analyst
+# Day 2, Exercise 3: Classification with CellProfiler Analyst
 
 Lab authors: Beth Cimini, Carolina Wählby, Martin Simonsson, Megan Rokop, Mark Bray and Erin Weisbart.
 
@@ -6,7 +6,7 @@ Lab authors: Beth Cimini, Carolina Wählby, Martin Simonsson, Megan Rokop, Mark 
 
 - Run a completed CellProfiler pipeline to get measurements from images
 - Load measurements into CellProfiler Analyst and explore some of its features
-- Perform classical machine learning to build a classifier in CellProfiler Analyst
+- Perform classical machine learning to build a classifier in CellProfiler Analyst (and if you have time, using deep learning in Piximi)
 
 ## Preparation
 
@@ -53,7 +53,7 @@ In this exercise, you will use CellProfiler to load a provided pipeline and run 
 
 - Start CellProfiler by double-clicking the desktop icon <img src="./TutorialImages/CellProfilerLogo.png"  width="35" alt="CellProfiler logo"/>
 
-- Load the `Translocation.cppipe` pipeline by dragging and dropping it into the pipeline pannel or by `File` > `Import` > `Pipeline from file`.
+- Load the `Translocation_final.cppipe` pipeline by dragging and dropping it into the pipeline panel or by `File` > `Import` > `Pipeline from file`. If you'd rather use your pipeline from last exercise, you can do that too!
 
 - Load the images into the pipeline. From File Explorer (Windows) or Finder (Mac), drag and drop the `TranslocationData` folder into this panel. Double-click on `BBBC013_A01_s1_w1.tif` and `BBBC013_A12_s1_w1.tif` to see what examples of negative and positive GFP controls look like, respectively.
 

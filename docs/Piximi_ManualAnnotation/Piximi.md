@@ -1,4 +1,4 @@
-# Day 1 - Making Manual Annotations with Piximi
+# Day 1, Exercise 3: Making Manual Annotations with Piximi
 
 *Lab authors: Beth Cimini, Kate Bowers*.
 

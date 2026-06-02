@@ -1,4 +1,4 @@
-# Day 1, Exercise 3: developing image processing intutions
+# Day 1, Exercise 2: developing image processing intuitions
 
 *Lab authors: Beth Cimini*
 

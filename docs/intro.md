@@ -26,6 +26,44 @@ The links below will populate as we work our way through the course.
 | | Thinking About Images | [Exercise](developing_intutions.md) |
 | | Intro to Piximi | [Slides](https://docs.google.com/presentation/d/1PMBQ6ZqDIjnALHr6JnaN_373O9lriOc45MoUtMKwuK8/edit?slide=id.p1#slide=id.p1) |
 | | Manual Annotation in Piximi | [Exercise](Piximi_ManualAnnotation/Piximi.md) |
+| Tuesday | Classical Segmentation | [Slides](https://docs.google.com/presentation/d/1p9PFNboYmvywN9RIEZHshjxqMFZ2u0c4G9bAWkjvYbc/edit?slide=id.g3e4cdfd361a_2_73#slide=id.g3e4cdfd361a_2_73) |
+| | Intro to CellProfiler | [Exercise](BeginnerSegmentation/CPbeginner_Segmentation.md) |
+| | Thinking About Measurements | Slides |
+| | Advanced Segmentation in CellProfiler | Exercise |
+| | Classical Machine Learning | Slides |
+| | CellProfiler Analyst | Exercise |
+| Wednesday | Pitfalls in Classic Machine Learning/Intro to Ilastik | Slides |
+| | Ilastik | Exercise |
+| | Intro to QuPath | Slides |
+| | QuPath | Exercise |
+| | Intro to Colocalization | Exercise |
+| Thursday | Command Line, Environments, and Containers | Slides |
+| | Containerized Plugins in CellProfiler | Exercise |
+| | Fiji Macros | Slides |
+| | Intro to Deep Learning | Slides |
+| | Tensorflow Playground | Exercise |
+| | Intro to Napari | Slides |
+| | MicroSAM in Napari | Exercise |
+| Friday | Intro to Cellpose | Lecture |
+| | Train Your Own Cellpose | Exercise |
+| | Community Resources | Slides |
+| | Personal Project Playtime | Slides |
+| | Wrapup | Slides |
+
+<!--
+
+Empty table:
+
+| Day | Title | Link |
+| --- | --- | --- |
+| Monday | Welcome | Slides |
+| | Participant Intro | Slides |
+| | Intro to Images and Workflows | Slides |
+| | ImageJ | Slides / Exercise |
+| | Intro to Thinking About Images | Slides |
+| | Thinking About Images | Exercise |
+| | Intro to Piximi | Slides |
+| | Manual Annotation in Piximi | Exercise |
 | Tuesday | Classical Segmentation | Slides |
 | | Intro to CellProfiler | Exercise |
 | | Thinking About Measurements | Slides |
@@ -49,3 +87,7 @@ The links below will populate as we work our way through the course.
 | | Community Resources | Slides |
 | | Personal Project Playtime | Slides |
 | | Wrapup | Slides |
+
+Full table (to be added after this run, then copy/paste will be easy):
+
+-->

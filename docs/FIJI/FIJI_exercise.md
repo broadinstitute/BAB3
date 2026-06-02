@@ -1,4 +1,4 @@
-# Day 1: Introduction to Fiji
+# Day 1, Exercise 1: Introduction to Fiji
 
 Lab authors: Erin Weisbart
 

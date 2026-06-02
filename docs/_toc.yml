@@ -9,6 +9,7 @@ parts:
   - file: FIJI/FIJI_exercise.md
   - file: developing_intutions.md
   - file: Piximi_ManualAnnotation/Piximi.md
+  - file: BeginnerSegmentation/CPbeginner_Segmentation.md
 - caption:  Additional Resources
   chapters:
   - file: downloads
