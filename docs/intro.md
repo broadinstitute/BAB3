@@ -32,8 +32,8 @@ The links below will populate as we work our way through the course.
 | | Advanced Segmentation in CellProfiler | [Exercise](AdvancedSegmentation/BBBC022_AnalysisExercise.md) |
 | | Classical Machine Learning | [Slides](https://docs.google.com/presentation/d/1cPuSW_rZvzvckyuppJHFunY7OjKLieTuDgq0myPdzlc/edit?slide=id.g363bc1384b1_0_5#slide=id.g363bc1384b1_0_5) |
 | | CellProfiler Analyst | [Exercise](Translocation/Translocation.md) |
-| Wednesday | Pitfalls in Classic Machine Learning/Intro to Ilastik | Slides |
-| | Ilastik | Exercise |
+| Wednesday | Pitfalls in Classic Machine Learning/Intro to Ilastik | [Slides](https://docs.google.com/presentation/d/1pEwc-odMk9q0byzv1gghN9YH0V1lAK0errcTvGs3nFM/edit?slide=id.g3e7766a1bff_0_190#slide=id.g3e7766a1bff_0_190) |
+| | Ilastik | [Exercise](ilastik/PixelClassification.md) |
 | | Intro to QuPath | Slides |
 | | QuPath | Exercise |
 | | Intro to Colocalization | Exercise |

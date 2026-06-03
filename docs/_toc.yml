@@ -12,6 +12,7 @@ parts:
   - file: BeginnerSegmentation/CPbeginner_Segmentation.md
   - file: AdvancedSegmentation/BBBC022_AnalysisExercise.md
   - file: Translocation/Translocation.md
+  - file: ilastik/PixelClassification.md
 - caption:  Additional Resources
   chapters:
   - file: downloads

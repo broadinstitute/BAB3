@@ -1,4 +1,4 @@
-# Day 3, session 3: Practical introduction to QuPath
+# Day 3, Exercise 2: Practical introduction to QuPath
 
 *Lab author: Shatavisha Dasgupta* . 
 
@@ -633,6 +633,6 @@ You will see the file with single-cell data saved in your QuPath project folder!
 --------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------
 
-# Congrats! 🎉 You have now learnt the basics of QuPath! ✨
+# Congrats! 🎉 You have now learned the basics of QuPath! ✨
 
 ---

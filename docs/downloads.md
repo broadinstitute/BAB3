@@ -65,3 +65,5 @@ Please download the following sets of images. Unzip the folders if necessary, an
 - [Advanced Segmentation](https://drive.google.com/file/d/1qVaQiPZKqOPEsa62lYEpm7ot3th7ADqE/view?usp=sharing)
 - [Microglia](https://drive.google.com/drive/folders/1TyV_hzN2pDpX0lVQ_jh08A9AG5e4Bao8?usp=drive_link)
 - [Translocation](https://github.com/CellProfiler/tutorials/raw/master/Translocation/Archive_EN.zip)
+- [Tissue images for QuPath](https://drive.google.com/drive/folders/1z0FnjmPLGjEnIpPu_P8PTB-4ck6Z9BcA)
+- [Diverse images for MicroSAM](https://drive.google.com/drive/folders/1NOt_OeMVr6Y5ZK5CrYtG97-P05yABHlx)
