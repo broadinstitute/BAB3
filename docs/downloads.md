@@ -53,8 +53,7 @@ Search in Docker Desktop for your desired container
 - `cd` into the correct directory (for initial testing, you can try `cellpose3`)
 -- For pixi, type `pixi shell --frozen`
 -- For mamba, type `mamba create --file {name_of_file.yml}`
-
-
+-- For older versions of conda (if you have an older version), syntax is `conda env create --file {name_of_file.yml}`
 
 ## Image Sets
 
