@@ -25,10 +25,10 @@ You can download some sample images from [this Drive folder](https://drive.googl
 ## Installation
 
 Using Pixi:
-Clone the **BAB3** repo locally (during the course, you should have already done this part!) and `cd` into that directory, then:
+Clone the **BAB3_environments** repo locally (during the course, you should have already done this part!) and `cd` into that directory, then:
 
 ```bash
-cd pixi_envs/microsam #go to the directory containing the pixi files
+cd microsam #go to the directory containing the pixi files
 pixi shell --frozen #activate the new microsam environment (and install, if not already installed)
 ```
 
@@ -141,7 +141,7 @@ the `Lucchi++ 3d dataset` (in Napari, `Files > Open Sample > Segment Anything fo
 
 SAMJ is an implementation of SAM that can be run in ImageJ/Fiji using a plugin.
 
-- Install the SAMJ-IJ for Fiji/ImageJ following the installation guide [HERE](https://github.com/segment-anything-models-java/SAMJ-IJ?tab=readme-ov-file#fiji-and-plugin-installation)
+- Install the SAMJ-IJ for Fiji/ImageJ following the installation guide [HERE](https://github.com/segment-anything-models-java/SAMJ-IJ?tab=readme-ov-file#Fiji-and-plugin-installation)
 
 - Open `Plugins > SAMJ > SAMJ annotator`
 

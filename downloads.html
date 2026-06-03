@@ -329,7 +329,14 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-the-code-and-container-tools-needed">Installing the code and container tools needed</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#container-instructions">Container instructions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#code-instructions">Code instructions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-sets">Image Sets</a></li>
 </ul>
             </nav>
@@ -357,7 +364,7 @@
 </ul>
 <p>Please install one of the following environment managers, if not already installed on your computer:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://pixi.sh/dev/installation/">Pixi</a> (our recommendation) OR</p></li>
+<li><p><a class="reference external" href="https://pixi.sh/dev/installation/">Pixi</a> (our strong recommendation) OR</p></li>
 <li><p><a class="reference external" href="https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html#automatic-install">Micromamba</a> (if you already have conda or mamba running on your machine, this is fine too)</p></li>
 </ul>
 <p>Windows machine users -  you will also need to install the <a class="reference external" href="https://visualstudio.microsoft.com/visual-cpp-build-tools">Microsoft Build Tools</a></p>
@@ -366,6 +373,36 @@
 <li><p><a class="reference external" href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a> (our recommendation if you’re less computationally comfortable, though note your institution may be charged for it)</p></li>
 <li><p><a class="reference external" href="https://podman.io/">Podman</a> (our recommendation if you’re more computationally comfortable)</p></li>
 </ul>
+<section id="installing-the-code-and-container-tools-needed">
+<h3>Installing the code and container tools needed<a class="headerlink" href="#installing-the-code-and-container-tools-needed" title="Link to this heading">#</a></h3>
+<p>Before you come Thursday morning, please <em>attempt</em> the following; help is available Wednesday at lunch, and then during the Thursday morning session.</p>
+<section id="container-instructions">
+<h4>Container instructions<a class="headerlink" href="#container-instructions" title="Link to this heading">#</a></h4>
+<p>(These may take upwards of 15-20 minutes to download, and require ~20GB of space)</p>
+<p>In Docker Desktop or Podman Desktop you can search for containers in the top search bar (see below).
+Make sure you select a tag (version) that is supported by the plugin you are using and then select “Pull”.
+We recommend <code class="docutils literal notranslate"><span class="pre">biocontainers/ilastik:1.4.0_cv2</span></code> for ilastik and <code class="docutils literal notranslate"><span class="pre">cellprofiler/runcellpose_with_pretrained:3.1.1.2</span></code> for Cellpose.</p>
+<p>If they are not appearing in search, you can instead pull them from the terminal with the command <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">CONTAINER</span></code> or <code class="docutils literal notranslate"><span class="pre">podman</span> <span class="pre">pull</span> <span class="pre">CONTAINER</span></code>, replacing <code class="docutils literal notranslate"><span class="pre">CONTAINER</span></code> with the container name and tag, e.g. <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">biocontainers/ilastik:1.4.0_cv2</span></code></p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/DockerSearch.png"><img alt="_images/DockerSearch.png" src="_images/DockerSearch.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Search in Docker Desktop for your desired container</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="code-instructions">
+<h4>Code instructions<a class="headerlink" href="#code-instructions" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Install environment manager for code (Pixi or Micromamba)</p></li>
+<li><p>Download or clone the <a class="reference external" href="https://github.com/broadinstitute/BAB3_environments">BAB3_environments</a> GitHub repository (if you’re downloading, hit the green “Code” button, then “Download Zip”, then unzip the file)</p></li>
+<li><p>Open your terminal, type <code class="docutils literal notranslate"><span class="pre">pixi</span> <span class="pre">--help</span></code> or <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">--help</span></code> to ensure the tools are installed and accessible in the terminal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span></code> into the correct directory (for initial testing, you can try <code class="docutils literal notranslate"><span class="pre">cellpose3</span></code>)
+– For pixi, type <code class="docutils literal notranslate"><span class="pre">pixi</span> <span class="pre">shell</span> <span class="pre">--frozen</span></code>
+– For mamba, type <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">create</span> <span class="pre">--file</span> <span class="pre">{name_of_file.yml}</span></code></p></li>
+</ul>
+</section>
+</section>
 </section>
 <section id="image-sets">
 <h2>Image Sets<a class="headerlink" href="#image-sets" title="Link to this heading">#</a></h2>
@@ -446,7 +483,14 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-the-code-and-container-tools-needed">Installing the code and container tools needed</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#container-instructions">Container instructions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#code-instructions">Code instructions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-sets">Image Sets</a></li>
 </ul>
   </nav></div>

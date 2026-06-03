@@ -14,7 +14,7 @@ Before starting the course, please install all of these software (that you are a
 
 Please install one of the following environment managers, if not already installed on your computer:
 
-- [Pixi](https://pixi.sh/dev/installation/) (our recommendation) OR
+- [Pixi](https://pixi.sh/dev/installation/) (our strong recommendation) OR
 - [Micromamba](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html#automatic-install) (if you already have conda or mamba running on your machine, this is fine too)
 
 Windows machine users -  you will also need to install the [Microsoft Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools)
@@ -23,6 +23,38 @@ Optionally, a container runner will also be used in one session but is not requi
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (our recommendation if you're less computationally comfortable, though note your institution may be charged for it)
 - [Podman](https://podman.io/) (our recommendation if you're more computationally comfortable)
+
+### Installing the code and container tools needed
+
+Before you come Thursday morning, please _attempt_ the following; help is available Wednesday at lunch, and then during the Thursday morning session.
+
+#### Container instructions
+
+(These may take upwards of 15-20 minutes to download, and require ~20GB of space)
+
+In Docker Desktop or Podman Desktop you can search for containers in the top search bar (see below).
+Make sure you select a tag (version) that is supported by the plugin you are using and then select "Pull".
+We recommend `biocontainers/ilastik:1.4.0_cv2` for ilastik and `cellprofiler/runcellpose_with_pretrained:3.1.1.2` for Cellpose.
+
+If they are not appearing in search, you can instead pull them from the terminal with the command `docker pull CONTAINER` or `podman pull CONTAINER`, replacing `CONTAINER` with the container name and tag, e.g. `docker pull biocontainers/ilastik:1.4.0_cv2`
+
+```{figure} ./BeginnerSegmentation/TutorialImages/DockerSearch.png
+:width: 400
+:align: center
+
+Search in Docker Desktop for your desired container
+```
+
+#### Code instructions
+
+- Install environment manager for code (Pixi or Micromamba)
+- Download or clone the [BAB3_environments](https://github.com/broadinstitute/BAB3_environments) GitHub repository (if you're downloading, hit the green "Code" button, then "Download Zip", then unzip the file)
+- Open your terminal, type `pixi --help` or `mamba --help` to ensure the tools are installed and accessible in the terminal
+- `cd` into the correct directory (for initial testing, you can try `cellpose3`)
+-- For pixi, type `pixi shell --frozen`
+-- For mamba, type `mamba create --file {name_of_file.yml}`
+
+
 
 ## Image Sets
 
