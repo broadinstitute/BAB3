@@ -36,7 +36,8 @@ The links below will populate as we work our way through the course.
 | | Ilastik | [Exercise](ilastik/PixelClassification.md) |
 | | Intro to QuPath | [Slides](https://docs.google.com/presentation/d/1OEu0oTtWHIXWNE6j6C0TT_WKW-3DHYB_/edit?slide=id.p1#slide=id.p1) |
 | | QuPath | [Exercise](QuPath_demo/QuPath_demo.md) |
-| | Intro to Colocalization | Exercise |
+| | Intro to Colocalization | [Slides](https://docs.google.com/presentation/d/15xlO8o9OTAhJXMfV89v7mTuE-5USL6tY/edit?slide=id.p11#slide=id.p11) / [Extra Ref 1](https://cdr.lib.unc.edu/concern/multimeds/3j333c851?locale=en) / [Extra Ref 2](https://zenodo.org/records/10854280)|
+| | The Colocalization Game | [Exercise](https://coloc-biop.epfl.ch/) |
 | Thursday | Command Line, Environments, and Containers | Slides |
 | | Containerized Plugins in CellProfiler | Exercise |
 | | Fiji Macros | Slides |
