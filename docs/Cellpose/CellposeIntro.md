@@ -19,10 +19,10 @@ It's finally here, the last software we're going to teach you - Cellpose!
 ## Installation
 
 Using Pixi:
-Clone the **BAB3** repo locally (during the course, you should have already done this part!) and `cd` into that directory, then:
+Clone the **BAB3_environments** repo locally (during the course, you should have already done this part!) and `cd` into that directory, then:
 
 ```bash
-cd pixi_envs/cellpose3 #go to the directory containing the pixi files
+cd cellpose3 #go to the directory containing the pixi files
 pixi shell --frozen #activate the new cellpose3 environment (and install, if not already installed)
 ```
 
@@ -39,7 +39,7 @@ pip install --force-reinstall "cellpose<4"
 When you're ready for Cellpose4, the procedure is the same:
 
 ```bash
-cd pixi_envs/cellpose4 #go to the directory containing the pixi files
+cd cellpose4 #go to the directory containing the pixi files
 pixi shell --frozen #activate the new cellpose4 environment (and install, if not already installed)
 `cellpose`
 ```
