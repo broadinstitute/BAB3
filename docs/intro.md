@@ -34,8 +34,8 @@ The links below will populate as we work our way through the course.
 | | CellProfiler Analyst | [Exercise](Translocation/Translocation.md) |
 | Wednesday | Pitfalls in Classic Machine Learning/Intro to Ilastik | [Slides](https://docs.google.com/presentation/d/1pEwc-odMk9q0byzv1gghN9YH0V1lAK0errcTvGs3nFM/edit?slide=id.g3e7766a1bff_0_190#slide=id.g3e7766a1bff_0_190) |
 | | Ilastik | [Exercise](ilastik/PixelClassification.md) |
-| | Intro to QuPath | Slides |
-| | QuPath | Exercise |
+| | Intro to QuPath | [Slides](https://docs.google.com/presentation/d/1OEu0oTtWHIXWNE6j6C0TT_WKW-3DHYB_/edit?slide=id.p1#slide=id.p1) |
+| | QuPath | [Exercise](QuPath_demo/QuPath_demo.md) |
 | | Intro to Colocalization | Exercise |
 | Thursday | Command Line, Environments, and Containers | Slides |
 | | Containerized Plugins in CellProfiler | Exercise |
