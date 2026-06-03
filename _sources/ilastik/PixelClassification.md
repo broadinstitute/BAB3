@@ -1,4 +1,4 @@
-# Day 3, session 2: Practical introduction to ilastik
+# Day 3, Exercise 1: Practical introduction to ilastik
 
 *Lab authors: Kyle Karhohs, Mario Cruz, Beth Cimini* . 
 
