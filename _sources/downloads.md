@@ -65,5 +65,7 @@ Please download the following sets of images. Unzip the folders if necessary, an
 - [Advanced Segmentation](https://drive.google.com/file/d/1qVaQiPZKqOPEsa62lYEpm7ot3th7ADqE/view?usp=sharing)
 - [Microglia](https://drive.google.com/drive/folders/1TyV_hzN2pDpX0lVQ_jh08A9AG5e4Bao8?usp=drive_link)
 - [Translocation](https://github.com/CellProfiler/tutorials/raw/master/Translocation/Archive_EN.zip)
+- [Brightfield data for Ilastik](https://github.com/CellProfiler/tutorials/raw/master/PixelBasedClassification/Archive.zip)
+- [3D data for Ilastik](https://drive.google.com/drive/folders/103WGOpXX4pu2kUBh3nCEuMrPjI3pZK4N?usp=drive_link)
 - [Tissue images for QuPath](https://drive.google.com/drive/folders/1z0FnjmPLGjEnIpPu_P8PTB-4ck6Z9BcA)
 - [Diverse images for MicroSAM](https://drive.google.com/drive/folders/1NOt_OeMVr6Y5ZK5CrYtG97-P05yABHlx)
