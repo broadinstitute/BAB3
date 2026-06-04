@@ -23,7 +23,7 @@ In Docker Desktop or Podman Desktop you can search for containers in the top sea
 Make sure you select a tag (version) that is supported by the plugin you are using and then select "Pull".
 We recommend `biocontainers/ilastik:1.4.0_cv2` for ilastik and `cellprofiler/runcellpose_with_pretrained:3.1.1.2` for Cellpose.
 
-If they are not appearing in search, you can instead pull them from the terminal with the command `docker pull CONTAINER` or `podman pull CONTAINER`, replacing `CONTAINER` with the container name and tag, e.g. `docker pull biocontainers/ilastik:1.4.0_cv2`
+If they are not appearing in search, you can instead pull them from the terminal with the command `docker pull CONTAINER` or `podman pull CONTAINER`, replacing `CONTAINER` with the container name and tag, e.g. `docker pull biocontainers/ilastik:1.4.0_cv2` . If you get a "platform error" on a Apple Silicon Mac (or other arm64 computer), you can add `--platform=linux/amd64` to your pull command, aka `docker pull biocontainers/ilastik:1.4.0_cv2 --platform=linux/amd64`
 
 ```{figure} ./TutorialImages/DockerSearch.png
 :width: 400
