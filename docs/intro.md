@@ -41,8 +41,8 @@ The links below will populate as we work our way through the course.
 | Thursday | Command Line, Environments, and Containers | [Slides](https://docs.google.com/presentation/d/1XhyfhpymUa3scRyj8g3CuJmmYCKRtsgy77YncfvGrRA/edit?slide=id.p1#slide=id.p1) |
 | | Containerized Plugins in CellProfiler | [Exercise](BeginnerSegmentation/BeginnerSegmentationPlugins.md) |
 | | Fiji Macros | [Slides](https://docs.google.com/presentation/d/1UclLIGEJIypAzvySFtjgV1pfPCnR8NtP-YgNRumCXJY/edit?slide=id.g3be383ad8a9_0_55#slide=id.g3be383ad8a9_0_55) / [Demo Images and Macro](https://drive.google.com/drive/folders/1BV7IOCwVzAceacBQl-WKrXpzETakxt_M)|
-| | Intro to Deep Learning | Slides |
-| | Tensorflow Playground | Exercise |
+| | Intro to Deep Learning | [Slides](https://docs.google.com/presentation/d/1W4GB4qLdBknFfvU9scJTma2BpWOvo-s3fMdhlRUvkKI/edit?slide=id.p#slide=id.p) |
+| | Tensorflow Playground | [Exercise](https://playground.tensorflow.org/) |
 | | Intro to Napari | Slides |
 | | MicroSAM in Napari | Exercise |
 | Friday | Intro to Cellpose | Lecture |
