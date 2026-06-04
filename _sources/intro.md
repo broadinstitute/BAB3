@@ -38,9 +38,9 @@ The links below will populate as we work our way through the course.
 | | QuPath | [Exercise](QuPath_demo/QuPath_demo.md) |
 | | Intro to Colocalization | [Slides](https://drive.google.com/file/d/1OzjsVK0nEICFfcGkxnA2Gw_ODW9HpuVZ/view)|
 | | The CoLoc Game | [Slides](https://drive.google.com/drive/folders/1DPsWGnwDC_fyw9L-IF8u0qr-60D9vKBY) / [Game Website](https://coloc-biop.epfl.ch/) |
-| Thursday | Command Line, Environments, and Containers | Slides |
-| | Containerized Plugins in CellProfiler | Exercise |
-| | Fiji Macros | Slides |
+| Thursday | Command Line, Environments, and Containers | [Slides](https://docs.google.com/presentation/d/1XhyfhpymUa3scRyj8g3CuJmmYCKRtsgy77YncfvGrRA/edit?slide=id.p1#slide=id.p1) |
+| | Containerized Plugins in CellProfiler | [Exercise](BeginnerSegmentation/BeginnerSegmentationPlugins.md) |
+| | Fiji Macros | [Slides](https://docs.google.com/presentation/d/1UclLIGEJIypAzvySFtjgV1pfPCnR8NtP-YgNRumCXJY/edit?slide=id.g3be383ad8a9_0_55#slide=id.g3be383ad8a9_0_55) / [Demo Images and Macro](https://drive.google.com/drive/folders/1BV7IOCwVzAceacBQl-WKrXpzETakxt_M)|
 | | Intro to Deep Learning | Slides |
 | | Tensorflow Playground | Exercise |
 | | Intro to Napari | Slides |
