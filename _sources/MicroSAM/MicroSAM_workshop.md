@@ -25,7 +25,7 @@ You can download some sample images from [this Drive folder](https://drive.googl
 ## Installation
 
 Using Pixi:
-Clone the **BAB3_environments** repo locally (during the course, you should have already done this part!) and `cd` into that directory, then:
+Clone the [**BAB3_environments**](https://github.com/broadinstitute/BAB3_environments) repo locally (during the course, you should have already done this part!) and `cd` into that directory, then:
 
 ```bash
 cd microsam #go to the directory containing the pixi files
