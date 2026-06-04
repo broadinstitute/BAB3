@@ -43,7 +43,7 @@ The links below will populate as we work our way through the course.
 | | Fiji Macros | [Slides](https://docs.google.com/presentation/d/1UclLIGEJIypAzvySFtjgV1pfPCnR8NtP-YgNRumCXJY/edit?slide=id.g3be383ad8a9_0_55#slide=id.g3be383ad8a9_0_55) / [Demo Images and Macro](https://drive.google.com/drive/folders/1BV7IOCwVzAceacBQl-WKrXpzETakxt_M)|
 | | Intro to Deep Learning | [Slides](https://docs.google.com/presentation/d/1W4GB4qLdBknFfvU9scJTma2BpWOvo-s3fMdhlRUvkKI/edit?slide=id.p#slide=id.p) |
 | | Tensorflow Playground | [Exercise](https://playground.tensorflow.org/) |
-| | Intro to Napari | Slides |
+| | Intro to Napari | [Slides](https://docs.google.com/presentation/d/1-k62TjmzqkBwUn7_npibG3sPtx-CuY7ZHfksEmxhp2U/edit?slide=id.g3e821dec5bf_0_118#slide=id.g3e821dec5bf_0_118) |
 | | MicroSAM in Napari | Exercise |
 | Friday | Intro to Cellpose | Lecture |
 | | Train Your Own Cellpose | Exercise |
