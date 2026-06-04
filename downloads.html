@@ -337,6 +337,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-the-code-and-container-tools-needed">Installing the code and container tools needed</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#container-instructions">Container instructions</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#code-instructions">Code instructions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cellpose-error">Cellpose error</a></li>
 </ul>
 </li>
 </ul>
@@ -406,6 +407,19 @@ We recommend <code class="docutils literal notranslate"><span class="pre">biocon
 – For mamba, type <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">create</span> <span class="pre">--file</span> <span class="pre">{name_of_file.yml}</span></code>
 – For older versions of conda (if you have an older version), syntax is <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">--file</span> <span class="pre">{name_of_file.yml}</span></code></p></li>
 </ul>
+</section>
+<section id="cellpose-error">
+<h4>Cellpose error<a class="headerlink" href="#cellpose-error" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>cellpose3<span class="w"> </span><span class="c1">#go to the directory containing the pixi files</span>
+pixi<span class="w"> </span>shell<span class="w"> </span>--frozen<span class="w"> </span><span class="c1">#activate the new cellpose3 environment (and install, if not already installed)</span>
+</pre></div>
+</div>
+<p>If successful, you should see <code class="docutils literal notranslate"><span class="pre">(cellpose3)</span></code> before your command line prompt. Within this Pixi shell, you should have everything you need for this workshop. You can activate Cellpose just by running <code class="docutils literal notranslate"><span class="pre">cellpose</span></code></p>
+<p>You can always exit the Pixi environment using the <code class="docutils literal notranslate"><span class="pre">exit</span></code> command.</p>
+<p>If you get this error when activating Cellpose: <code class="docutils literal notranslate"><span class="pre">OMP:</span> <span class="pre">Error</span> <span class="pre">#15:</span> <span class="pre">Initializing</span> <span class="pre">libomp.dylib,</span> <span class="pre">but</span> <span class="pre">found</span> <span class="pre">libomp.dylib</span> <span class="pre">already</span> <span class="pre">initialized.</span></code> then run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--force-reinstall<span class="w"> </span><span class="s2">&quot;cellpose&lt;4&quot;</span><span class="w"> </span>
+</pre></div>
+</div>
 </section>
 </section>
 </section>
@@ -496,6 +510,7 @@ We recommend <code class="docutils literal notranslate"><span class="pre">biocon
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-the-code-and-container-tools-needed">Installing the code and container tools needed</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#container-instructions">Container instructions</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#code-instructions">Code instructions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cellpose-error">Cellpose error</a></li>
 </ul>
 </li>
 </ul>

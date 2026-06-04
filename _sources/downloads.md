@@ -55,6 +55,23 @@ Search in Docker Desktop for your desired container
 -- For mamba, type `mamba create --file {name_of_file.yml}`
 -- For older versions of conda (if you have an older version), syntax is `conda env create --file {name_of_file.yml}`
 
+#### Cellpose error
+
+```bash
+cd cellpose3 #go to the directory containing the pixi files
+pixi shell --frozen #activate the new cellpose3 environment (and install, if not already installed)
+```
+
+If successful, you should see `(cellpose3)` before your command line prompt. Within this Pixi shell, you should have everything you need for this workshop. You can activate Cellpose just by running `cellpose`
+
+You can always exit the Pixi environment using the `exit` command.
+
+If you get this error when activating Cellpose: `OMP: Error #15: Initializing libomp.dylib, but found libomp.dylib already initialized.` then run:
+
+```bash
+pip install --force-reinstall "cellpose<4" 
+```
+
 ## Image Sets
 
 Please download the following sets of images. Unzip the folders if necessary, and have each folder of images in one parent location:
