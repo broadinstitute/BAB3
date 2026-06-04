@@ -65,6 +65,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'MicroSAM/MicroSAM_workshop';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Downloads" href="../downloads.html" />
+    <link rel="prev" title="Day 4, Exercise 1 - Interfacing CellProfiler with other software tools via files and plugins" href="../BeginnerSegmentation/BeginnerSegmentationPlugins.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -115,8 +117,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -171,7 +171,7 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and Exercises</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../FIJI/FIJI_exercise.html">Day 1, Exercise 1: Introduction to Fiji</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developing_intutions.html">Day 1, Exercise 2: developing image processing intuitions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Piximi_ManualAnnotation/Piximi.html">Day 1, Exercise 3: Making Manual Annotations with Piximi</a></li>
@@ -182,6 +182,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../QuPath_demo/QuPath_demo.html">Day 3, Exercise 2: Practical introduction to QuPath</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../BeginnerSegmentation/BeginnerSegmentationPlugins.html">Day 4, Exercise 1 - Interfacing CellProfiler with other software tools via files and plugins</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Day 4, Session 6 - ‘Segment Anything’ Model (SAM) for Microscopy</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -410,7 +411,7 @@ Currently, <strong>MicroSAM only supports either single channel (grayscale) or 3
 <a class="reference internal image-reference" href="../_images/Sample_images.png"><img alt="../_images/Sample_images.png" src="../_images/Sample_images.png" style="width: 500px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Sample images menu.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 45 </span><span class="caption-text">Sample images menu.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <aside class="margin sidebar">
@@ -438,7 +439,7 @@ Currently, <strong>MicroSAM only supports either single channel (grayscale) or 3
 <a class="reference internal image-reference" href="../_images/2d_annotation.png"><img alt="../_images/2d_annotation.png" src="../_images/2d_annotation.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">2D annotation tool using polygons or point prompts.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 46 </span><span class="caption-text">2D annotation tool using polygons or point prompts.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <aside class="margin sidebar">
@@ -452,7 +453,7 @@ Currently, <strong>MicroSAM only supports either single channel (grayscale) or 3
 <a class="reference internal image-reference" href="../_images/automatic_segmentation.png"><img alt="../_images/automatic_segmentation.png" src="../_images/automatic_segmentation.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Automatic segmentation</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 47 </span><span class="caption-text">Automatic segmentation</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -495,7 +496,7 @@ the <code class="docutils literal notranslate"><span class="pre">Lucchi++</span>
 <a class="reference internal image-reference" href="../_images/3d_annotation.png"><img alt="../_images/3d_annotation.png" src="../_images/3d_annotation.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">3D annotation (volume view)</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 48 </span><span class="caption-text">3D annotation (volume view)</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -517,7 +518,7 @@ Currently, <strong>SAMj only supports either single channel (grayscale) or 3-cha
 <a class="reference internal image-reference" href="../_images/SAMj_annotator.png"><img alt="../_images/SAMj_annotator.png" src="../_images/SAMj_annotator.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">SAMj annotator in Fiji</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 49 </span><span class="caption-text">SAMj annotator in Fiji</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <aside class="margin sidebar">
@@ -558,6 +559,24 @@ Currently, <strong>SAMj only supports either single channel (grayscale) or 3-cha
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../BeginnerSegmentation/BeginnerSegmentationPlugins.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Day 4, Exercise 1 - Interfacing CellProfiler with other software tools via files and plugins</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../downloads.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Downloads</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
