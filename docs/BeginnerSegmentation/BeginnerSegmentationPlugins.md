@@ -1,4 +1,4 @@
-# Day 4, Session 2 - Interfacing CellProfiler with other software tools via files and plugins
+# Day 4, Exercise 1 - Interfacing CellProfiler with other software tools via files and plugins
 
 *Lab authors: Beth Cimini*. 
 
