@@ -1,6 +1,6 @@
-# Day 4, Session 6 - 'Segment Anything' Model (SAM) for Microscopy
+# Day 4, Exercise 2 - 'Segment Anything' Model (SAM) for Microscopy
 
-*Lab authors: Esteban A. Miglietta
+*Lab authors: Esteban A. Miglietta*
 
 ---
 

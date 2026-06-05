@@ -44,9 +44,10 @@ The links below will populate as we work our way through the course.
 | | Intro to Deep Learning | [Slides](https://docs.google.com/presentation/d/1W4GB4qLdBknFfvU9scJTma2BpWOvo-s3fMdhlRUvkKI/edit?slide=id.p#slide=id.p) |
 | | Tensorflow Playground | [Exercise](https://playground.tensorflow.org/) |
 | | Intro to Napari | [Slides](https://docs.google.com/presentation/d/1-k62TjmzqkBwUn7_npibG3sPtx-CuY7ZHfksEmxhp2U/edit?slide=id.g3e821dec5bf_0_118#slide=id.g3e821dec5bf_0_118) |
-| | MicroSAM in Napari | Exercise |
-| Friday | Intro to Cellpose | Lecture |
-| | Train Your Own Cellpose | Exercise |
+| | MicroSAM in Napari | [Slides](https://docs.google.com/presentation/d/14E1Rd3Zd3MUmV9Efx0c_MNqGwybb9G4t/edit?slide=id.p1#slide=id.p1) / [Exercise](MicroSAM/MicroSAM_workshop.md) |
+| Friday | Intro to Cellpose | [Slides](https://docs.google.com/presentation/d/1w_OvCa_7vyUs5E1o-tFpxxLpDvrxcTkiI_F9got7Mgw/edit?slide=id.p#slide=id.p) |
+| | Train Your Own Cellpose | [Exercise](Cellpose/CellposeIntro.md) |
+| | BioImaging North America | Slides |
 | | Community Resources | Slides |
 | | Personal Project Playtime | Slides |
 | | Wrapup | Slides |
