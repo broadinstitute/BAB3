@@ -47,9 +47,9 @@ The links below will populate as we work our way through the course.
 | | MicroSAM in Napari | [Slides](https://docs.google.com/presentation/d/14E1Rd3Zd3MUmV9Efx0c_MNqGwybb9G4t/edit?slide=id.p1#slide=id.p1) / [Exercise](MicroSAM/MicroSAM_workshop.md) |
 | Friday | Intro to Cellpose | [Slides](https://docs.google.com/presentation/d/1w_OvCa_7vyUs5E1o-tFpxxLpDvrxcTkiI_F9got7Mgw/edit?slide=id.p#slide=id.p) |
 | | Train Your Own Cellpose | [Exercise](Cellpose/CellposeIntro.md) |
-| | BioImaging North America | Slides |
-| | Community Resources | Slides |
-| | Personal Project Playtime | Slides |
+| | BioImaging North America | [Slides](https://docs.google.com/presentation/d/1sy8SDRMn8JthylaZgX1gS77oNHuNAamvAZkHbeW3oJk/edit?slide=id.g34972e2b2ae_0_249#slide=id.g34972e2b2ae_0_249) |
+| | Community Resources | [Slides](https://docs.google.com/presentation/d/1tEhY6ayOyQhBoUW-7gqBlcvT9bhrMXqJsLXxqpK7wbc/edit?slide=id.p#slide=id.p) |
+| | Personal Project Playtime | [Slides](https://docs.google.com/presentation/d/1Xd30TGW-arsWPDIh_4iroHsiue31GoyKsCcVWnyMsbM/edit?slide=id.g3e82437e601_0_0#slide=id.g3e82437e601_0_0) |
 | | Wrapup | Slides |
 
 <!--
