@@ -50,7 +50,7 @@ The links below will populate as we work our way through the course.
 | | BioImaging North America | [Slides](https://docs.google.com/presentation/d/1sy8SDRMn8JthylaZgX1gS77oNHuNAamvAZkHbeW3oJk/edit?slide=id.g34972e2b2ae_0_249#slide=id.g34972e2b2ae_0_249) |
 | | Community Resources | [Slides](https://docs.google.com/presentation/d/1tEhY6ayOyQhBoUW-7gqBlcvT9bhrMXqJsLXxqpK7wbc/edit?slide=id.p#slide=id.p) |
 | | Personal Project Playtime | [Slides](https://docs.google.com/presentation/d/1Xd30TGW-arsWPDIh_4iroHsiue31GoyKsCcVWnyMsbM/edit?slide=id.g3e82437e601_0_0#slide=id.g3e82437e601_0_0) |
-| | Wrapup | Slides |
+| | Wrapup | [Slides](https://docs.google.com/presentation/d/1aln4lUI-H2_TDINVNt1V8bo4efcban1SHgs6CLZ1YfY/edit?slide=id.p#slide=id.p) |
 
 <!--
 
