@@ -16,6 +16,7 @@ parts:
   - file: QuPath_demo/QuPath_demo.md
   - file: BeginnerSegmentation/BeginnerSegmentationPlugins.md
   - file: MicroSAM/MicroSAM_workshop.md
+  - file: Cellpose/CellposeIntro.md
 - caption:  Additional Resources
   chapters:
   - file: downloads

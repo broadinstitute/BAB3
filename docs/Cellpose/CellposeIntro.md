@@ -1,4 +1,4 @@
-# Day 5, Session 2 - Segmenting Data with Cellpose
+# Day 5, Exercise 1 - Segmenting Data with Cellpose
 
 *Lab authors: Beth Cimini.*
 
@@ -18,6 +18,7 @@ It's finally here, the last software we're going to teach you - Cellpose!
 
 ## Installation
 
+### Cellpose 3 - you did this yesterday, but a reminder
 Using Pixi:
 Clone the **BAB3_environments** repo locally (during the course, you should have already done this part!) and `cd` into that directory, then:
 
@@ -36,7 +37,13 @@ If you get this error when activating Cellpose: `OMP: Error #15: Initializing li
 pip install --force-reinstall "cellpose<4" 
 ```
 
+When you're done, type `exit` in the terminal to close the pixi session
+
+### Cellpose 4
+
 When you're ready for Cellpose4, the procedure is the same:
+
+(if still in another pixi session, type `exit` to exit it before proceeding)
 
 ```bash
 cd cellpose4 #go to the directory containing the pixi files
